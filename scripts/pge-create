@@ -1,0 +1,3 @@
+#!/bin/bash
+cp ~/scripts/pge-template.cpp ./Main.cpp
+nvim Main.cpp

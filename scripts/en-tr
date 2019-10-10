@@ -1,0 +1,3 @@
+#!/bin/bash
+RES="$(sdcv -u 'English - Turkish' "$1")"
+echo "$RES" | sed -n "6,31p"

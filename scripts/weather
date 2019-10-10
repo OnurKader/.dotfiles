@@ -1,0 +1,5 @@
+#!/bin/bash
+TEMP=$(curl --silent wttr.in/"$1")
+clear
+echo "$TEMP" | head -n -2
+

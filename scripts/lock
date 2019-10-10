@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# i3lock -fni ~/Pictures/Wallpaper/Lock.png -p default -c 000000
+
+B="#00000008"
+C="#FFFFFF24"
+D="#D1321CDD"
+T="#D8D2F5FD"
+DT="#7042B4FE"
+W="#A3CE0AEF"
+V="#666666FF"
+
+i3lock -mni ~/Pictures/Wallpaper/Lock.png -p default\
+	--insidevercolor=$C			\
+	--ringvercolor=$V			\
+	--insidewrongcolor=$C		\
+	--ringwrongcolor=$W			\
+	--insidecolor=$B			\
+	--ringcolor=$D				\
+	--linecolor=$B				\
+	--separatorcolor=$D			\
+	--verifcolor=$T				\
+	--wrongcolor=$T				\
+	--timecolor=$T				\
+	--datecolor=$DT				\
+	--layoutcolor=$T			\
+	--keyhlcolor=$W				\
+	--bshlcolor=$W				\
+	--indicator					\
+	--clock						\
+	--timestr="%H:%M:%S"		\
+	--datestr="%a, %m/%Y"		\
+	--greetertext="Peki..."		\
+	--greeterpos="118:1068"		\
+	--greetersize=72			\
+	--greetercolor="#C986207A"	\
+	--timesize=39				\
+	--datesize=25				\
+	--radius=120				\
+	--ring-width=12.0
+

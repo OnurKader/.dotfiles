@@ -1,0 +1,50 @@
+command=/home/beronthecolossus/.scripts/statusbar/$BLOCK_NAME
+separator_block_width=21
+markup=pango
+
+[spotify]
+command=getsong
+interval=30
+color=#3BFFB5
+label=
+
+[memory]
+interval=30
+color=#EEEFF2
+label=
+
+[disk]
+interval=144
+command=echo "$(df -h / | awk '/dev/ {print $4"/"$2}')"
+color=#EEEFF2
+label=
+
+[volume]
+interval=30
+color=#EEEFF2
+signal=10
+
+[cpu-heat]
+interval=30
+color=#EEEFF2
+
+[battery]
+interval=30
+command=battery
+
+# [battery-plus]
+# instance=BAT0
+# interval=69
+
+[clock]
+interval=1
+label=
+
+[cpufreq]
+command=cpufreq
+interval=once
+
+[nightlight]
+command=nightlight
+interval=once
+

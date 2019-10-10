@@ -1,0 +1,3 @@
+#!/bin/bash
+clear
+figlet -w 101 -f /home/beronthecolossus/.fonts/figlet-fonts-master/3d.flf "$1" | lolcat -tfp 2.1 -F 0.07

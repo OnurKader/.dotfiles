@@ -1,0 +1,3 @@
+#!/bin/bash
+exec /opt/multimc/run.sh
+echo "Launching MultiMC"

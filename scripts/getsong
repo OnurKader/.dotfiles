@@ -1,0 +1,19 @@
+#!/bin/bash
+pgrep -i "spotify" >/dev/null || echo ""
+NAME="$(sp eval | grep -i "TITLE" | cut -d= -f2)"
+ARTIST="$(sp eval | grep -i "_ARTIST" | cut -d= -f2)"
+SONG="$ARTIST - $NAME"
+SONG="${SONG//\"/}"
+STR_LEN=$(echo "$SONG" | wc -c)
+if [ $STR_LEN -gt 27 ] ; then
+	echo "$(echo "$SONG" | cut -b-27)..."
+else
+	echo "$SONG "
+fi
+
+case $BLOCK_BUTTON in
+	1) notify-send "${NAME//\"/}" "${ARTIST//\"/}" ;;
+	2) notify-send "???" "Why would you Middle-Click on this?!";;
+	3) notify-send "Usage:" "Just Left Click To Get The Whole Song Name";;
+esac
+

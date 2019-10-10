@@ -1,0 +1,5 @@
+#!/bin/bash
+youtube-dl --add-metadata --no-playlist --download-archive "$HOME/Music/YouTube/Song-List.txt" -ciwf bestaudio "ytsearch2:$(spot-get)" -o "$HOME/Music/YouTube/%(title)s.%(ext)s"
+sp next
+sp pause
+

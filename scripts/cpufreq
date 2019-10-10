@@ -1,0 +1,3 @@
+#!/bin/bash
+pgrep -i "indicator" >/dev/null && exit
+indicator-cpufreq & disown

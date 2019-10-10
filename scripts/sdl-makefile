@@ -1,0 +1,6 @@
+clean:
+	rm -f Main
+build:
+	g++ -o Main Main.cpp -O3 `pkg-config --cflags --libs sdl2` -pedantic -Wall -pedantic-errors
+run:
+	clear && ./Main

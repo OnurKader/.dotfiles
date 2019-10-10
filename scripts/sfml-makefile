@@ -1,0 +1,7 @@
+clean:
+	rm -f Main
+build:
+	g++ -o Main Main.cpp -O3 -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-network -lsfml-system -Wall -Wno-switch -pedantic -pedantic-errors
+run:
+	clear && ./Main
+

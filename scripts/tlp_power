@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo cp /etc/default/tlp /etc/default/.tlp.bak
+sudo cp /home/beronthecolossus/Code/_tlp_power /etc/default/tlp -f
+sudo tlp start

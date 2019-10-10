@@ -1,0 +1,3 @@
+#!/bin/bash
+pgrep -i "redshift-gtk" >/dev/null && exit
+redshift-gtk & disown

@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+case "$(printf "Selected Area\nCurrent Window\nFullscreen" | dmenu -l 3 -i -p "Screenshot which area?")" in
+	"Selected Area") scrot -z -s -q 100 "$HOME/Pictures/Screenshots/$(date '+%Y-%m-%d %H-%M-%S').png" ;;
+	"Current Window") scrot -u -z -q 97 "$HOME/Pictures/Screenshots/$(date '+%Y-%m-%d %H-%M-%S').png" ;;
+	"Fullscreen") scrot -b -z -q 95 "$HOME/Pictures/Screenshots/$(date '+%Y-%m-%d %H-%M-%S').png" ;;
+esac

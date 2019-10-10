@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ANS=$(printf "Yes\nNo" | dmenu -i -p "$1")
+[ "$ANS" = "Yes" ] && "$2"
+

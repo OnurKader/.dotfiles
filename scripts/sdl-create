@@ -1,0 +1,4 @@
+#!/bin/bash
+cp "$HOME/scripts/sdl-template.cpp" "./$1"
+cp "$HOME/scripts/sdl-makefile" "./Makefile"
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+Name=$(echo "$1" | cut -d"." -f1)
+echo "Compiling $1..."
+gcc "$1" -o "$Name" -O3 -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-network -lsfml-system && ./"$Name" &
+

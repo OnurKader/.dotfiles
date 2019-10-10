@@ -1,0 +1,3 @@
+#!/bin/bash
+terminator -e $SHELL -c "cd '$(pwd)'; exec $SHELL"
+

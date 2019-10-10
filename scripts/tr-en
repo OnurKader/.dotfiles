@@ -1,0 +1,4 @@
+#!/bin/bash
+# RES="$(sdcv -u 'Turkish - English' "$1")"
+# echo "$RES" | sed -n "1,30p"
+echo "This Dictionary sucks find a new one"
