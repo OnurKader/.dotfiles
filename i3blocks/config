@@ -32,10 +32,6 @@ color=#EEEFF2
 interval=30
 command=battery
 
-# [battery-plus]
-# instance=BAT0
-# interval=69
-
 [clock]
 interval=1
 label=
