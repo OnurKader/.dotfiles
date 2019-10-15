@@ -1,0 +1,5 @@
+#!/bin/bash
+# Get a list of printable characters
+ # show their unicode representation but when Enter'ed, just copy the number so if the user enters
+ # a number that wasn't on there we can say printf "\\u%d" selection
+ # cat $(which dmenuunicode)

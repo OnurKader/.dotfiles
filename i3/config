@@ -129,6 +129,7 @@ bindsym $mod+w layout toggle split
 # ddspawn Doesn't Work
 # bindsym $mod+u $exe ddspawn tmuxdd
 bindsym $mod+u $exe dmenuunicode
+bindsym $mod+$alt+u $exe enter_unicode
 
 # Firefox / Browser
 bindsym $mod+Shift+w $exe $BROWSER
