@@ -72,7 +72,7 @@ floating_modifier $mod
 ## Key Bindings
 
 # start a terminal
-bindsym $mod+Return $exe terminator
+bindsym $mod+Return $exe alacritty
 bindsym $mod+Shift+Return $exe cdterm
 
 # bindsym $mod+Shift+a $exe NULL
@@ -94,7 +94,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+f $exe terminator -T "Cal" -e "calcurse"
+bindsym $mod+Shift+f $exe alacritty -t "Cal" -e "calcurse"
 
 # Increase-Decrease Gaps
 bindsym $mod+c        gaps inner current plus 4
@@ -103,11 +103,11 @@ bindsym $mod+z        gaps outer current plus 4
 bindsym $mod+Shift+z  gaps outer current minus 4
 
 # HTOP
-bindsym $mod+i $exe terminator -e htop
+bindsym $mod+i $exe alacritty -e htop
 
 # VIFM / File Manager
-bindsym $mod+Shift+n $exe terminator -e "vifmrun"
-bindsym $mod+Shift+v $exe terminator -e vifmrun
+bindsym $mod+Shift+n $exe alacritty -e "vifmrun"
+bindsym $mod+Shift+v $exe alacritty -e vifmrun
 
 # Move the Window Around with `vim` keys
 bindsym $mod+Shift+h move left 24
@@ -134,7 +134,7 @@ bindsym $mod+u $exe dmenuunicode
 bindsym $mod+Shift+w $exe $BROWSER
 
 # bindsym $mod+m exec $term -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym $mod+m $exe terminator -e "neomutt"
+bindsym $mod+m $exe alacritty -e "neomutt"
 
 # Shutdown
 bindsym $mod+Shift+x $exe shut "Shutdown Now?" "turnoff"
@@ -262,5 +262,5 @@ exec_always --no-startup-id unity-settings-daemon
 exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Disable While Typing Enabled" 0
 exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id exec terminator -T "TermStart"
+exec --no-startup-id exec alacritty -t "TermStart"
 
