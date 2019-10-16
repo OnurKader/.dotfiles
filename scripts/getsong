@@ -12,7 +12,7 @@ else
 fi
 
 case $BLOCK_BUTTON in
-	1) notify-send "${NAME//\"/}" "${ARTIST//\"/}" ;;
+	1) notify-send " ${NAME//\"/}" "${ARTIST//\"/}" ;;
 	2) notify-send "???" "Why would you Middle-Click on this?!";;
 	3) notify-send "Usage:" "Just Left Click To Get The Whole Song Name";;
 esac
