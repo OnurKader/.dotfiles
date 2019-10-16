@@ -3,3 +3,9 @@
  # show their unicode representation but when Enter'ed, just copy the number so if the user enters
  # a number that wasn't on there we can say printf "\\u%d" selection
  # cat $(which dmenuunicode)
+NUM=$(rofi -dmenu -p "Enter Unicode sequence: " -l 2)
+UNI=$(echo -en "\u$NUM")
+echo -n $UNI | xclip -sel primary
+echo -n $UNI | xclip -sel clipboard
+notify-send "$UNI Copied to Clipboard" "\\\u$NUM=$UNI" &
+echo -n $UNI
