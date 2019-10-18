@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 case $BLOCK_BUTTON in
 	1) setsid "$TERMINAL" -e pulsemixer & ;;
@@ -10,7 +10,7 @@ case $BLOCK_BUTTON in
 - Scroll to change."
 esac
 
-["$(pulsemixer --get-mute)" = "1" ] && printf "🔇\\n" && exit
+[ "$(pulsemixer --get-mute)" = "1" ] && printf "🔇\\n" && exit
 
 vol=$(pulsemixer --get-volume | awk '{print $1}')
 
@@ -22,5 +22,5 @@ else
 	icon=""
 fi
 
-printf "%s%s%%\\n" "$icon " "$vol"
+printf "%s%s%%" "$icon " "$vol"
 

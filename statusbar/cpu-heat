@@ -1,2 +1,2 @@
-#!/bin/sh
-echo " $(sensors | awk '/CPU:/ {print $2}')"
+#!/bin/bash
+echo -n " $(sensors | awk '/CPU:/ {print $2}')"

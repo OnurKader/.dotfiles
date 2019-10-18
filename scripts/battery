@@ -14,17 +14,6 @@ elif [ "$PERC_INT" -ge 25 ]; then SYMBOL="";
 else SYMBOL=""; color="#FF0B0A"
 fi
 
-function clamp
-{
-	if [[ $1 -gt $3 ]] ; then
-		clamped=$3
-	elif [[ $1 -lt $2 ]] ; then
-		clamped=$2
-	else
-		clamped=$1
-	fi
-}
-
 # Arguments => "Current Percentage, Zero Percent Color ('#ABCDEF' format), Full Percentage Color"
 function getColor {
 	local r;
@@ -52,29 +41,20 @@ function getColor {
 	r=$((r-rz)); r=${r#-}
 	g=$((g-gz)); g=${g#-}
 	b=$((b-bz)); b=${b#-}
-	# Make sure colors are in [0, 255]
-	# clamp $r 0 255
-	# r=$clamped
-	# clamp $g 0 255
-	# g=$clamped
-	# clamp $b 0 255
-	# b=$clamped
 	color=$(printf "#%02X%02X%02X" "$r" "$g" "$b")
 }
 
-# ZERO = RED | HUNDRED = GREEN
 getColor "$PERC_INT" "$START_COL" "$END_COL"
-# getColor "$PERC_INT" "#FF0606" "#E609F5"
 
 
 TIME="$(acpi -b | cut -d, -f3 | cut -b1-9)"
 
 case $BLOCK_BUTTON in
 	1)  if [ "$(acpi -b | grep "Discharging")" ] ; then
-			notify-send "Remaining Time" "$TIME"
+			notify-send "Remaining Time" "$TIME" &
 			DISC=""
 		else
-			notify-send "Time Until Charged" "$TIME"
+			notify-send "Time Until Charged" "$TIME" &
 			DISC=" "
 		fi ;;
 	2) ;;
@@ -83,4 +63,4 @@ esac
 
 [ "$PERC_INT" -lt 12 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!  $PERC"
 
-echo "<span foreground='$color'>$SYMBOL $PERC</span><span foreground='#FCFC12'>$DISC</span>"
+echo -n "<span foreground='$color'>$SYMBOL $PERC</span><span foreground='#FCFC12'>$DISC</span>"
