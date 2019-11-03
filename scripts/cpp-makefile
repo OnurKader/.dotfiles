@@ -12,5 +12,8 @@ clean:
 build: <++>.o
 	$(CC) -o ../bin/<++> <++>.o
 
+run: ../bin/<++>
+	clear && ../bin/<++>
+
 install: <++>
 	sudo ln -sf /home/beronthecolossus/Peki/C++/Projects/<++> /usr/local/bin/<++>
