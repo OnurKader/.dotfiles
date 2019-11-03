@@ -1,0 +1,17 @@
+CC=gcc
+CFLAGS= -g -std=c11 -Wall -Wextra -Wpedantic -O3
+
+all: clean build
+
+clean:
+	rm -f ../bin/* ./*.o
+
+%.o : %.c
+	$(CC) -c $(CFLAGS) $<
+
+build: <++>.o
+	$(CC) -o ../bin/<++> <++>.o
+
+install: <++>
+	sudo ln -sf /home/beronthecolossus/Peki/C/Projects/<++> /usr/local/bin/<++>
+

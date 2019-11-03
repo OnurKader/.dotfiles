@@ -1,0 +1,3 @@
+#!/bin/bash
+cp /home/beronthecolossus/scripts/c-makefile ./Makefile
+
