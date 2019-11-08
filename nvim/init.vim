@@ -64,6 +64,7 @@ Plug 'dense-analysis/ale'
 Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json'
 Plug 'gko/vim-coloresque'
+Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'junegunn/goyo.vim'
@@ -248,6 +249,8 @@ let g:UltiSnipsExpandTrigger="<CR>"
 " ALE
 let g:ale_linters = {
 			\	'cpp': ['ccls'],
+			\	'hpp': ['ccls'],
+			\	'h': ['ccls'],
 			\	'c': ['ccls'],
 			\	'javascript': ['eslint'],
 			\}
