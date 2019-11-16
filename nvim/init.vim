@@ -65,11 +65,13 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json'
 Plug 'gko/vim-coloresque'
 Plug 'godlygeek/tabular'
+Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'kana/vim-operator-user'
+Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
@@ -130,13 +132,13 @@ nnoremap j gj
 nnoremap k gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
+inoremap jk <Esc>
+inoremap jj <Esc>
 " Moving to Windows (Split)
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-inoremap jk <Esc>
-inoremap jj <Esc>
 " gj gk Arrow Key Functionality in Normal Mode
 nnoremap <Up> gk
 nnoremap <Down> gj
@@ -150,7 +152,7 @@ let g:pear_tree_smart_openers = 1
 let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_backspace = 1
 " CTRL-P
-nnoremap <leader>a :Ag
+nnoremap <Leader>ag :Ag
 autocmd FileType c,cpp,h,hpp let g:clang_format#auto_format = 1
 let g:clang_format#detect_style_file = 0
 let g:clang_format#style_options = {
@@ -287,6 +289,19 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 set completefunc=emoji#complete
 autocmd BufWritePost /home/beronthecolossus/.config/spicetify/Themes/Default/* :!spicetify update
 nmap <F4> :Goyo<CR>
+" Tabularize
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+" box-shadow style highlighting
+augroup VimCSS3Syntax
+  autocmd!
+
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 " If NerdTree is the  only window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | :bdelete | endif
 let nerdtreequitonopen = 0
@@ -368,4 +383,5 @@ iab teh the
 iab wieght weight
 iab hieght height
 iab tihs this
+iab doubel double
 iab mian main
