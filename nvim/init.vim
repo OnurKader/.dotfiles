@@ -11,6 +11,7 @@ set backspace=indent,start,eol
 set complete-=i
 set directory=~/.config/nvim/tmp
 set encoding=utf-8
+set completefunc=emoji#complete
 set foldmethod=manual
 set hidden
 set ignorecase
@@ -21,8 +22,6 @@ set mouse=a
 set nobackup
 set nocompatible
 set noerrorbells
-set signcolumn=yes
-set shortmess+=c
 set noexpandtab
 set novisualbell
 set nrformats+=alpha
@@ -32,8 +31,10 @@ set ruler
 set scrolloff=4
 set shell=zsh
 set shiftwidth=4
+set shortmess+=c
 set showcmd
 set showmatch
+set signcolumn=yes
 set smartcase
 set smartindent
 set softtabstop=4
@@ -287,7 +288,6 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
-set completefunc=emoji#complete
 nmap <F4> :Goyo<CR>
 " Tabularize
 if exists(":Tabularize")
