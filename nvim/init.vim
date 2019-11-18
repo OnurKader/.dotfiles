@@ -21,6 +21,8 @@ set mouse=a
 set nobackup
 set nocompatible
 set noerrorbells
+set signcolumn=yes
+set shortmess+=c
 set noexpandtab
 set novisualbell
 set nrformats+=alpha
@@ -283,11 +285,9 @@ let g:prettier#quickfix_auto_focus = 0
 let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
 set completefunc=emoji#complete
-autocmd BufWritePost /home/beronthecolossus/.config/spicetify/Themes/Default/* :!spicetify update
 nmap <F4> :Goyo<CR>
 " Tabularize
 if exists(":Tabularize")
@@ -364,14 +364,6 @@ nnoremap <leader>w :w<CR>
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 vnoremap <leader>cout yOstd::cout << <esc>pA << std:endl;
 vnoremap <leader>sys yOSystem.out.println(<esc>pA);
-" YouCompleteMe Stuff
-" let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
-" let g:ycm_auto_trigger = 1
-" let g:ycm_min_num_of_chars_for_completion = 1
-" let g:ycm_complete_in_strings = 0
-" let g:ycm_log_level = 'warning'
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_key_list_select_completion = ['<TAB>']
 " MarkdownPreview Stuff
 let g:mkdp_browser = 'qutebrowser'
 let g:mkdp_refresh_slow = 1
@@ -380,6 +372,7 @@ let g:mkdp_markdown_css = '/home/beronthecolossus/Peki/github-markdown.css'
 iab whit with
 iab wiht with
 iab teh the
+iab hte the
 iab wieght weight
 iab hieght height
 iab tihs this
