@@ -106,8 +106,8 @@ bindsym $mod+Shift+z  gaps outer current minus 4
 bindsym $mod+i $exe alacritty -e htop
 
 # VIFM / File Manager
-bindsym $mod+Shift+n $exe alacritty -e "vifmrun"
-bindsym $mod+Shift+v $exe alacritty -e vifmrun
+bindsym $mod+Shift+n $exe alacritty -e "nvim"
+bindsym $mod+Shift+v $exe alacritty -e "vifmrun"
 
 # Move the Window Around with `vim` keys
 bindsym $mod+Shift+h move left 24

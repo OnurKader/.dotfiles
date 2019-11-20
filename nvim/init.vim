@@ -96,7 +96,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 call plug#end()
 " Color Scheme
 " Make the gutters darker than the background.
@@ -279,7 +278,9 @@ let g:max_diagnostics_to_display=64
 let g:prettier#exec_cmd_async = 1
 let g:prettier#config#use_tabs = 'true'
 let g:prettier#config#tab_width = 4
+let g:prettier#config#trailing_comma = 'none'
 let g:prettier#config#print_width = 99
+let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#bracket_spacing = 'false'
 let g:prettier#config#single_quote = 'false'
 let g:prettier#quickfix_auto_focus = 0
@@ -299,7 +300,6 @@ endif
 " box-shadow style highlighting
 augroup VimCSS3Syntax
   autocmd!
-
   autocmd FileType css setlocal iskeyword+=-
 augroup END
 " If NerdTree is the  only window
@@ -356,7 +356,7 @@ nnoremap ü o<Esc>
 nnoremap ğ ko<Esc>
 noremap <S-Del> <Esc>"_dd
 inoremap <S-Del> <Esc>"_dda
-nnoremap <leader>j :m+<cr>==
+nnoremap <Leader>j :m+<cr>==
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>q :q<CR>
 nnoremap <leader>x :x<CR>
