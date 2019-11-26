@@ -36,6 +36,7 @@ set showcmd
 set showmatch
 set signcolumn=yes
 set smartcase
+set smarttab
 set smartindent
 set softtabstop=4
 set splitbelow

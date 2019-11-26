@@ -1,0 +1,47 @@
+#!/bin/zsh
+export PATH="$PATH:/home/beronthecolossus/bin:/home/beronthecolossus/.local/bin:/usr/local/bin"
+export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:/home/beronthecolossus/.cargo/bin"
+export PATH="$PATH:/home/beronthecolossus/.config/i3"
+export PATH="$PATH:/home/beronthecolossus/Desktop/Code"
+export PATH="$PATH:/home/beronthecolossus/Desktop/Code/OF/libs"
+export PATH="$PATH:/home/beronthecolossus/Desktop/Code/ccls/Release"
+export PATH="$PATH:/home/beronthecolossus/Desktop/Code/clang+llvm-9.0.0/bin"
+export PATH="$PATH:/home/beronthecolossus/Peki/processing-3.5.3"
+export PATH="$PATH:/home/beronthecolossus/env/bin"
+export PATH="$PATH:/home/beronthecolossus/pypy3.6-v7.1.1-linux64/bin"
+export PATH="$PATH:/home/beronthecolossus/scripts"
+export PATH="$PATH:/root/.local/bin"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/home/beronthecolossus/env/bin"
+export PATH="$PATH:/usr/java/jdk-11.0.3+7-jre/bin"
+export PATH="$PATH:/usr/local/gcc-9.1/bin"
+
+export BROWSER="firefox"
+export EDITOR="nvim"
+export FILE="vifm"
+export GOPATH=$HOME/Peki/Go
+export LD_LIBRARY_PATH=/usr/local/gcc-9.1/lib64:$LD_LIBRARY_PATH
+export NNN_DE_FILE_MANAGER=thunar
+export NNN_OPENER=xdg-open
+export NNN_USE_EDITOR=1
+export QT_QMAKE="/usr/bin"
+export QT_SELECT=qt5
+export TASTE_API_KEY="340114-Personal-B4446NE9"
+export TERMINAL="alacritty"
+export UPDATE_ZSH_DAYS=14
+export ZSH="/home/beronthecolossus/.oh-my-zsh"
+
+fpath=(~/cheat-sh/ $fpath)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+checkspell() { echo -n "$1" | aspell -a | cut -d: -f2 | grep -v "#"; }
+
+function run() {
+    number=$1
+    shift
+    for n in $(seq $number); do
+      $@
+    done
+}
+

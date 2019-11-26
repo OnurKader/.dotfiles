@@ -103,7 +103,7 @@ bindsym $mod+z        gaps outer current plus 4
 bindsym $mod+Shift+z  gaps outer current minus 4
 
 # HTOP
-bindsym $mod+i $exe alacritty -e htop
+bindsym $mod+i $exe alacritty -e "htop -d 11"
 
 # VIFM / File Manager
 bindsym $mod+Shift+n $exe alacritty -e "nvim"
