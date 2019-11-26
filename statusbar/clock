@@ -5,7 +5,7 @@ date '+%Y/%m/%d %H:%M:%S (%a)'
 case $BLOCK_BUTTON in
 	# 1) pgrep -x dunst >/dev/null && notify-send "This Month" "$(cal | sed "s/..7m/<b><span color=\"white\">/;s/..27m/<\/span><\/b>/")" && notify-send "Appointments" "$(calcurse -D ~/.calcurse -d4)" ;;
 	# 1) pgrep -x dunst >/dev/null && notify-send "This Month" "$(cal | sed "s/..7m//g" | sed "s/..27m//g" | sed "s/\\033\[[0-9]*m//")" && notify-send "Appointments" "$(calcurse -D ~/.calcurse -d4)" ;;
-	1) pgrep -x dunst > /dev/null && notify-send "This Month" "$(cal | sed "s/\//g" | sed "s/_//g")" && notify-send "Appointments" "$(calcurse -D ~/.calcurse -d4)" ;;
+	1) pgrep -x dunst > /dev/null && notify-send "This Month" "$(ncal -Mbh)" && notify-send "Appointments" "$(calcurse -D ~/.calcurse -d4)" ;;
 	2) alacritty -t "Cal" -e "calcurse" ;;
 	3) pgrep -x dunst >/dev/null && notify-send " Time/date module" "\- Left click to show upcoming appointments for the next four days via \`calcurse -d4\` and show the month via \`cal\`
 - Middle click opens calcurse if installed" ;;
