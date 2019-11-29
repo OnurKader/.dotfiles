@@ -62,7 +62,8 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 for_window [instance="sun-awt-X11-XFramePeer"] floating enable, border pixel 2
 for_window [instance="glfw-application"] floating enable
 for_window [class="X-terminal-emulator"] border pixel 2
-for_window [title="Cal"] floating enable, border pixel 3, move position center
+for_window [title="^Cal$"] floating enable, border pixel 3, move position center
+for_window [title="^todo$"] floating enable, resize set 1150 780, border pixel 3, move position center
 for_window [title="TermStart"] floating enable, border pixel 3, move scratchpad, scratchpad show, resize set 1200 780, move position center
 for_window [instance="hl2_linux"] fullscreen
 
@@ -94,7 +95,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+f $exe alacritty -t "Cal" -e "calcurse"
+bindsym $mod+Shift+f $exe alacritty -t Cal -e calcurse
 
 # Increase-Decrease Gaps
 bindsym $mod+c        gaps inner current plus 4
@@ -103,7 +104,7 @@ bindsym $mod+z        gaps outer current plus 4
 bindsym $mod+Shift+z  gaps outer current minus 4
 
 # HTOP
-bindsym $mod+i $exe alacritty -e "htop -d 11"
+bindsym $mod+i $exe alacritty -e htop -d 11
 
 # VIFM / File Manager
 bindsym $mod+Shift+n $exe alacritty -e "nvim"
@@ -114,6 +115,9 @@ bindsym $mod+Shift+h move left 24
 bindsym $mod+Shift+j move down 22
 bindsym $mod+Shift+k move up 22
 bindsym $mod+Shift+l move right 24
+
+# TODO Stuff
+bindsym $mod+g $exe alacritty -t "todo" -e tudu
 
 # Lock Screen
 bindsym $mod+$alt+l $exe lock
