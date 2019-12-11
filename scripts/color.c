@@ -31,5 +31,7 @@ int main(int argc, char** argv)
 		else
 			printf("%s ", argv[i]);
 
+	printf("\033[m");
+
 	return 0;
 }

@@ -62,8 +62,8 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 for_window [instance="sun-awt-X11-XFramePeer"] floating enable, border pixel 2
 for_window [instance="glfw-application"] floating enable
 for_window [class="X-terminal-emulator"] border pixel 2
-for_window [title="^Cal$"] floating enable, border pixel 3, move position center
-for_window [title="^todo$"] floating enable, resize set 1150 780, border pixel 3, move position center
+for_window [title="^Cal$"] floating enable, border pixel 3, resize set 1280 768, move position center
+for_window [title="^todo$"] floating enable, resize set 1280 832, border pixel 3, move position center
 for_window [title="TermStart"] floating enable, border pixel 3, move scratchpad, scratchpad show, resize set 1200 780, move position center
 for_window [instance="hl2_linux"] fullscreen
 
@@ -74,6 +74,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return $exe alacritty
+bindsym $mod+$alt+t $exe alacritty
 bindsym $mod+Shift+Return $exe cdterm
 
 # bindsym $mod+Shift+a $exe NULL
@@ -121,6 +122,8 @@ bindsym $mod+g $exe alacritty -t "todo" -e tudu
 
 # Lock Screen
 bindsym $mod+$alt+l $exe lock
+# bindsym $mod+$alt+l exec "xset s activate; xset dpms force off"
+# $exe xss-lock -- lock
 
 # Default gaps
 bindsym $mod+Shift+t gaps inner current set 14, gaps outer current set 8
@@ -257,7 +260,7 @@ for_window [class="mpv"] move workspace $workspace4
 for_window [class="vlc"] move workspace $workspace4
 
 # Execs
-# exec_always --no-startup-id compton -b
+exec_always --no-startup-id compton -b
 exec_always --no-startup-id dunst
 exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpaper/background.jpg
 exec_always --no-startup-id gnome-keyring-daemon

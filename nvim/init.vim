@@ -137,14 +137,14 @@ inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 inoremap jk <Esc>
 inoremap jj <Esc>
+" gj gk Arrow Key Functionality in Normal Mode
+nnoremap <Up> gk
+nnoremap <Down> gj
 " Moving to Windows (Split)
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-" gj gk Arrow Key Functionality in Normal Mode
-nnoremap <Up> gk
-nnoremap <Down> gj
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
@@ -154,7 +154,7 @@ let g:pear_tree_repeatable_expand = 0
 let g:pear_tree_smart_openers = 1
 let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_backspace = 1
-" CTRL-P
+" Clang-Format and AG
 nnoremap <Leader>ag :Ag
 autocmd FileType c,cpp,h,hpp let g:clang_format#auto_format = 1
 let g:clang_format#detect_style_file = 0
@@ -231,6 +231,7 @@ let g:clang_format#style_options = {
 			\	"Standard": "Cpp11",
 			\	"TabWidth": '4',
 			\	"UseTab": "Always" }
+" CTRL-P
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_switch_buffer = 'et'
@@ -351,6 +352,8 @@ inoremap <leader>sys <esc>ISystem.out.println(<esc>A);
 inoremap <leader>w <Esc>:w<CR>
 inoremap <leader>x <ESC>:x<CR>
 inoremap <leader>pragma <Esc>ggI#ifndef<Space><++><CR>#define<Space><++><CR><CR>class<Space><++><Enter>{<Enter>};<CR><Esc>GI<CR>#endif<CR><Esc>
+inoremap <Leader>print <Esc>Iprintf(<Esc>A);
+vnoremap <Leader>print yOprintf(<Esc>pA)
 map <leader><leader> <Esc>/<++><Enter>"_c4l
 nnoremap <Enter> meo<Esc>k`e
 nnoremap ü o<Esc>
