@@ -1,3 +1,9 @@
 #!/bin/bash
+mkdir -pv bin src
+touch README.md
+git init
+add-gitignore C
+cd src || exit
+touch main.c
 cp /home/beronthecolossus/scripts/c-makefile ./Makefile
 

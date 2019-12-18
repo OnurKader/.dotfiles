@@ -9,9 +9,9 @@ set autoread
 set background=dark
 set backspace=indent,start,eol
 set complete-=i
+set completefunc=emoji#complete
 set directory=~/.config/nvim/tmp
 set encoding=utf-8
-set completefunc=emoji#complete
 set foldmethod=manual
 set hidden
 set ignorecase
@@ -36,8 +36,8 @@ set showcmd
 set showmatch
 set signcolumn=yes
 set smartcase
-set smarttab
 set smartindent
+set smarttab
 set softtabstop=4
 set splitbelow
 set splitright
@@ -265,6 +265,9 @@ let g:airline#extensions#ale#enabled = 1
 nnoremap Q @@
 nnoremap s "_s
 nnoremap x "_x
+cmap qw wq
+cmap Q q!
+cmap W w
 " devicons
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_unite = 1
@@ -291,7 +294,7 @@ let g:prettier#autoformat = 1
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
-nmap <F4> :Goyo<CR>
+nmap <F4> :Goyo<CR> :set norelativenumber nonumber
 " Tabularize
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>

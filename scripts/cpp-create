@@ -1,3 +1,9 @@
 #!/bin/bash
+mkdir -vp src bin
+git init
+add-gitignore cpp
+touch README.md
+cd src || exit
+touch main.cpp
 cp /home/beronthecolossus/scripts/cpp-makefile ./Makefile
 

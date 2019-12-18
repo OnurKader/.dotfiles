@@ -1,20 +1,20 @@
 CC=gcc
-CFLAGS= -g -std=c11 -Wall -Wextra -Wpedantic -O3
+CFLAGS= -g -std=c11 -Wall -Wextra -Wpedantic -Wshadow -O3
 
 all: clean build
 
 clean:
-	rm -f ../bin/* ./*.o
+	rm -f ../bin/*
 
-%.o : %.c
-	$(CC) -c $(CFLAGS) $<
+../bin/%.o : %.c
+	$(CC) -c $(CFLAGS) $< -o ../bin/$@
 
-build: <++>.o
-	$(CC) -o ../bin/<++> <++>.o
+build: ../bin/main.o
+	$(CC) -o ../bin/main main.o
 
-run: ../bin/<++>
-	clear && ../bin/<++>
+run: ../bin/main
+	clear && ../bin/main
 
-install: <++>
-	sudo ln -sf /home/beronthecolossus/Peki/C/Projects/<++> /usr/local/bin/<++>
+install: ../bin/main
+	sudo ln -sf /home/beronthecolossus/Peki/C/Projects/<++>/bin/main /usr/local/bin/<++>
 

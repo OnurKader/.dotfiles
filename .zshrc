@@ -4,7 +4,7 @@ source ~/.exports
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=( z git fast-syntax-highlighting tmux zsh-autosuggestions extract
-		 colored-man-pages zsh-completions vi-mode )
+		 colored-man-pages zsh-completions vi-mode k )
 
 bindkey -v
 
@@ -35,3 +35,5 @@ POWERLEVEL9K_OS_ICON_FOREGROUND="red"
 POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
 POWERLEVEL9K_VIRTUALENV_FOREGROUND=032
 DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+eval $(thefuck --alias)
