@@ -83,6 +83,9 @@ bindsym $mod+Shift+Return $exe cdterm
 bindsym $mod+b split h
 bindsym $mod+v split v
 
+# Go to center and click
+bindsym Ctrl+$alt+Delete $exe ~/Peki/C\+\+/Gists/mouse 960 540
+
 # Rofi
 # bindsym $mod+d $exe "rofi -hide-scrollbar -show run -display-run 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489' -show-icons"
 bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd:' -display-drun 'App:' -display-combi 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489'"
@@ -127,6 +130,9 @@ bindsym $mod+$alt+l $exe lock
 
 # Default gaps
 bindsym $mod+Shift+t gaps inner current set 14, gaps outer current set 8
+
+# Launch Spotify, if running switch to workspace
+bindsym $mod+Shift+s $exe sw_spotify
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking

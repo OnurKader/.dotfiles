@@ -75,7 +75,6 @@ Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'kana/vim-operator-user'
-Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
@@ -290,8 +289,8 @@ let g:prettier#config#bracket_spacing = 'false'
 let g:prettier#config#single_quote = 'false'
 let g:prettier#quickfix_auto_focus = 0
 let g:prettier#quickfix_enabled = 0
-let g:prettier#autoformat = 1
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
 nmap <F4> :Goyo<CR> :set norelativenumber nonumber

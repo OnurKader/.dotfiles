@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir -vp src bin
 git init
-add-gitignore cpp
+add-gitignore c++
 touch README.md
 cd src || exit
 touch main.cpp

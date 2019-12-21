@@ -45,3 +45,10 @@ function run() {
     done
 }
 
+function lower(){
+	echo -n $@ | tr '[:upper:]' '[:lower:]'
+}
+
+function upper(){
+	echo -n $@ | tr '[:lower:]' '[:upper:]'
+}

@@ -1,0 +1,4 @@
+#!/bin/zsh
+RES=$(pgrep "spotify")
+[[ $RES ]] || launch "spotify"
+[[ $RES ]] && i3-msg workspace number 10
