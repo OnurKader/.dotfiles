@@ -11,11 +11,8 @@ bindkey -v
 source $ZSH/oh-my-zsh.sh
 
 export MANPATH="/usr/local/man:$MANPATH"
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Aliases
 source ~/.aliases
