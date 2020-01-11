@@ -3,7 +3,7 @@
 # Shows the selected character in dunst if running.
 
 if [ -e ~/scripts/fontawesome ]; then
-    chosen=$(grep -v "#" -h ~/scripts/Emoji ~/scripts/fontawesome | rofi -dmenu -p 'Emoji:' -i -l 18 -fn "NotoEmoji Nerd Font Complete Monospace-16")
+    chosen=$(grep -v "#" -h ~/scripts/Emoji ~/scripts/fontawesome | rofi -dmenu -p 'Emoji' -i -l 18 -fn "NotoEmoji Nerd Font Complete Monospace-16")
 fi
 
 [ "$chosen" != "" ] || exit

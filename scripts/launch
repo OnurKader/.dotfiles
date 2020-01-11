@@ -1,2 +1,2 @@
 #!/bin/bash
-sh -c "$@ &">/dev/null
+bash -c "$@ & disown" &>/dev/null

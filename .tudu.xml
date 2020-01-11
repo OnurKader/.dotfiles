@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<!DOCTYPE tudu SYSTEM "/usr/local/share/tudu/tudu.dtd">
+<todo>
+	<todo done="no" collapse="no">
+		<title>Programming</title>
+		<text>My Personal Projects for Programming and other learning resources about computers
+
+</text>
+		<todo done="no" collapse="no">
+			<title>Gradient</title>
+			<deadline>
+				<day>17</day>
+				<month>12</month>
+				<year>2019</year>
+			</deadline>
+			<priority>2</priority>
+			<category> TUI</category>
+			<category>C</category>
+			<text>HSV interpolation and moving alongside the HUE Color Wheel
+
+</text>
+			<scheduled>
+				<day>4</day>
+				<month>12</month>
+				<year>2019</year>
+				<position>1</position>
+			</scheduled>
+			<todo done="no" collapse="no">
+				<title>Add an input system</title>
+				<priority>2</priority>
+				<category> TUI</category>
+				<category>C</category>
+				<text>#FF0022
+128 52 200
+maybe rgb(123, 44, 22)???
+
+</text>
+			</todo>
+			<todo done="yes" collapse="no">
+				<title>Add noecho() Functionality</title>
+				<category> TUI</category>
+				<category>C</category>
+				<text>
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Fix the animation</title>
+				<priority>1</priority>
+				<category> TUI</category>
+				<category>C</category>
+				<text>Fix the weird interp and fmod jumps
+
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Decrement after it reaches 360</title>
+				<category> TUI</category>
+				<category>C</category>
+				<text>
+</text>
+			</todo>
+			<todo done="yes" collapse="no">
+				<title>IInstant char input</title>
+				<priority>4</priority>
+				<category> TUI</category>
+				<category>C</category>
+				<text>ICANON needs to be unset from termios, term.h or termios.h, probably former
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Make it multi-threaded</title>
+				<priority>1</priority>
+				<category> TUI</category>
+				<category>C</category>
+				<text>
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Add a draw buffer</title>
+				<priority>2</priority>
+				<category> TUI</category>
+				<category>C</category>
+				<text>
+</text>
+			</todo>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>Make a Wheel</title>
+			<text>Selector, add classes to it.
+It spins when clicked and has a random speed
+
+</text>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>NC_-Gradient</title>
+			<priority>2</priority>
+			<category>C</category>
+			<category>TUI</category>
+			<text>
+</text>
+			<todo done="no" collapse="no">
+				<title>Benchmark the RGB color initing</title>
+				<category>C</category>
+				<category>TUI</category>
+				<text>WHY IS IT OUT OF A HUNDRED???
+</text>
+			</todo>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>AWS CW</title>
+			<priority>2</priority>
+			<category>JS</category>
+			<category>Web</category>
+			<text>JavaScript Timetable Website
+</text>
+			<scheduled>
+				<day>6</day>
+				<month>12</month>
+				<year>2019</year>
+				<position>1</position>
+			</scheduled>
+			<todo done="no" collapse="no">
+				<title>Regular Cleanup, Refactor</title>
+				<text>
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Finish Section Selector for collision, add the existing one to the array, remove the cyan check thing.</title>
+				<text>
+</text>
+				<todo done="no" collapse="no">
+					<title>Make it so when you select an alternate time</title>
+					<text>It checks if there are any other times already selected from the same cell, Monday 13:00
+If a cell already has, (maybe make the cells into objects), an alternate time selected;
+Remove it and choose the newly selected one instead
+
+</text>
+				</todo>
+			</todo>
+			<todo done="yes" collapse="no">
+				<title>Add a Legend for the colors and their meanings</title>
+				<text>
+</text>
+				<todo done="yes" collapse="no">
+					<title>Fix the layout</title>
+					<text>Add an overall grid for Timetable/Student/Legend so they are fixed nicely
+------------------
+|    TIMETABLE   |
+|----------------|
+|Student| Legend |
+------------------
+
+</text>
+				</todo>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Utilize the class and the array</title>
+				<text>
+</text>
+				<todo done="no" collapse="no">
+					<title>WIP</title>
+					<text>
+</text>
+				</todo>
+			</todo>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>primg</title>
+			<priority>5</priority>
+			<text>
+</text>
+			<todo done="no" collapse="no">
+				<title>Start it, graphics magick or just a very small library to iterate over pixels</title>
+				<text>
+</text>
+			</todo>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>Make a note player in SFML, Maybe mMIDI reader?</title>
+			<priority>5</priority>
+			<text>
+</text>
+			<todo done="no" collapse="no">
+				<title>Megalovania</title>
+				<priority>1</priority>
+				<text>
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Add 8-bit sounding conversion, maybe?</title>
+				<priority>2</priority>
+				<text>
+</text>
+			</todo>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>Make that triangulation thing</title>
+			<priority>5</priority>
+			<category> Graphics</category>
+			<category>C++</category>
+			<text>
+</text>
+			<todo done="no" collapse="no">
+				<title>Learn the name of it</title>
+				<category> Graphics</category>
+				<category>C++</category>
+				<text>
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Do the basics of it in sSFML</title>
+				<category> Graphics</category>
+				<category>C++</category>
+				<text>Create a bunch of random points, circles, and connect the closest ones.
+
+
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Make a quadtree and check the neighbouring cells, children nodes, for the points that are close</title>
+				<category> Graphics</category>
+				<category>C++</category>
+				<text>
+</text>
+			</todo>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>Make a python/js app that graphs (graph.js)(matplotlib) SponsorBlock data</title>
+			<priority>1</priority>
+			<category>Fun</category>
+			<category>Web</category>
+			<text>
+</text>
+			<todo done="yes" collapse="no">
+				<title>Look at JS first, update it every 3 hours perhaps?</title>
+				<category>Fun</category>
+				<category>Web</category>
+				<text>
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Learn Node for updating every hour, setInterval(3600)</title>
+				<category>Fun</category>
+				<category>Web</category>
+				<text>
+</text>
+			</todo>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>list</title>
+			<priority>1</priority>
+			<category> C++</category>
+			<category>Utils</category>
+			<text>
+</text>
+			<todo done="no" collapse="no">
+				<title>Check if it's piped somewhere</title>
+				<priority>2</priority>
+				<category> C++</category>
+				<category>Utils</category>
+				<text>If it's piped, remove color and icons
+
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>FRefactor the code, use more functions</title>
+				<priority>1</priority>
+				<category> C++</category>
+				<category>Utils</category>
+				<text>It's a shitshow honestly
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Maybe look into a better grep system</title>
+				<priority>3</priority>
+				<category> C++</category>
+				<category>Utils</category>
+				<text>Maybe even internal, search in given directory (Might be done recursively in the future)
+like list -s for search? But I'd need to use getopts for that, current argument class won't work
+</text>
+			</todo>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>Make A Maze-like game without NCURSES</title>
+			<priority>5</priority>
+			<category>C</category>
+			<category>TUI</category>
+			<text>Use ~ICANON ~ECHO and other nice terminal settings to get the input instantly
+Make a game loop, an a render loop on different threads
+30 FPS is enough honestly
+
+</text>
+		</todo>
+		<todo done="no" collapse="no">
+			<title>cls</title>
+			<priority>1</priority>
+			<category> Utils</category>
+			<category>C</category>
+			<text>
+</text>
+			<todo done="no" collapse="no">
+				<title>Check if it's piped somewhere</title>
+				<priority>1</priority>
+				<category> Utils</category>
+				<category>C</category>
+				<text>If it's piped, remove custom stuff, icons and color and total size perhaps in -l
+
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Calculate the number of columns and seperate them.</title>
+				<priority>1</priority>
+				<category> Utils</category>
+				<category>C</category>
+				<text>Divide it better than `list` does
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Add -l option.</title>
+				<priority>2</priority>
+				<category> Utils</category>
+				<category>C</category>
+				<text>
+</text>
+			</todo>
+		</todo>
+	</todo>
+	<todo done="no" collapse="no">
+		<title>IRL</title>
+		<text>IRL School/Appointment Stuff
+
+</text>
+		<todo done="no" collapse="no">
+			<title>Mobile Computing</title>
+			<category>IOS</category>
+			<category>Swift</category>
+			<text>Angry Birds Clone in XCode/Swift
+
+</text>
+			<scheduled>
+				<day>10</day>
+				<month>1</month>
+				<year>2020</year>
+				<position>1</position>
+			</scheduled>
+			<todo done="yes" collapse="no">
+				<title>Finish the bird spawning and add collision</title>
+				<text>
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Add a timer to levels</title>
+				<text>20 Seconds maybe?
+</text>
+			</todo>
+			<todo done="no" collapse="no">
+				<title>Add Multiple Levels with different designs</title>
+				<text>Like an obstacle or birds are more seperated and smaller kind of deal
+
+</text>
+			</todo>
+		</todo>
+	</todo>
+	<todo done="no" collapse="no">
+		<title>MISC.</title>
+		<text>Things that don't fit in either of those categories
+</text>
+		<todo done="yes" collapse="no">
+			<title>Check VIM/NeoVIM's Source</title>
+			<text>
+</text>
+		</todo>
+	</todo>
+</todo>

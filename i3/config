@@ -88,7 +88,7 @@ bindsym Ctrl+$alt+Delete $exe ~/Peki/C\+\+/Gists/mouse 960 540
 
 # Rofi
 # bindsym $mod+d $exe "rofi -hide-scrollbar -show run -display-run 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489' -show-icons"
-bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd:' -display-drun 'App:' -display-combi 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489'"
+bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489'"
 # Disable Gaps
 bindsym $mod+Shift+d gaps inner current set 0, gaps outer current set 0
 
@@ -220,12 +220,12 @@ bar {
 	mode dock
 	position top
 	colors {
-			background			#071115
-			separator			#757972
-			# Workspace			Border		Background	Text
-			focused_workspace	#133224		#121924		#F9FBFA
-			inactive_workspace	#172431		#091314		#879292
-			urgent_workspace	#7D3238		#322025		#F9FFFE
+		background			#071115
+		separator			#757972
+		# Workspace			Border		Background	Text
+		focused_workspace	#133224		#121924		#F9FBFA
+		inactive_workspace	#172431		#091314		#879292
+		urgent_workspace	#7D3238		#322025		#F9FFFE
 	}
 }
 

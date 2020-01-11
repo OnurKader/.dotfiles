@@ -10,7 +10,7 @@ DT="#7042B4FE"
 W="#A3CE0AEF"
 V="#666666FF"
 
-i3lock -mni ~/Pictures/Wallpaper/Lock.png -p default\
+i3lock -ni ~/Pictures/Wallpaper/Lock.png -p default\
 	--insidevercolor=$C			\
 	--ringvercolor=$V			\
 	--insidewrongcolor=$C		\

@@ -4,11 +4,11 @@ NAME="$(sp eval | grep -i "TITLE" | cut -d= -f2)"
 ARTIST="$(sp eval | grep -i "_ARTIST" | cut -d= -f2)"
 SONG="$ARTIST - $NAME"
 SONG="${SONG//\"/}"
-STR_LEN=$(echo "$SONG" | wc -c)
-if [ $STR_LEN -gt 28 ] ; then
-	echo "$(echo "$SONG" | cut -b-28)..."
+STR_LEN=${#SONG}
+if [ "$STR_LEN" -gt 28 ] ; then
+	echo -n "$(echo "$SONG" | cut -b-28)..." | iconv -f utf8 -t ascii//TRANSLIT//IGNORE
 else
-	echo "$SONG "
+	echo -n "$SONG" | iconv -f utf8 -t ascii//TRANSLIT//IGNORE
 fi
 
 case $BLOCK_BUTTON in
