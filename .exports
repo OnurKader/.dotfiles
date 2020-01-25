@@ -31,6 +31,7 @@ export TASTE_API_KEY="340114-Personal-B4446NE9"
 export TERMINAL="alacritty"
 export UPDATE_ZSH_DAYS=14
 export ZSH="/home/beronthecolossus/.oh-my-zsh"
+export XDG_CONFIG_HOME="/home/beronthecolossus/.config"
 
 fpath=(~/cheat-sh/ $fpath)
 

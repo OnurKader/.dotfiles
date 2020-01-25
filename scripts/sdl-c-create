@@ -1,0 +1,3 @@
+#!/bin/bash
+cp "$HOME/scripts/sdl-template.c" ./main.c
+cp "$HOME/scripts/sdl-c-makefile" ./Makefile

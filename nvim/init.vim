@@ -56,7 +56,7 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost   * set norelativenumber
 augroup END
 " Plugins
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('/home/beronthecolossus/.local/share/nvim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -313,6 +313,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 " Git keybinds
 let g:gitgutter_grep=''
+let g:gitgutter_max_signs = 512
 " Git status
 nnoremap  <Leader>gs  :Gstatus<CR>
 " Git diff in split window

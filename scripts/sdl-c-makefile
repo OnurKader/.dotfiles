@@ -1,0 +1,10 @@
+CC=gcc
+
+all: clean build
+
+clean:
+	rm -f main
+
+build: main.c
+	$(CC) -o main main.c -g -std=c11 -Wall -Wextra -Wshadow -Wpedantic -Wno-unused-variable -lm `sdl2-config --libs --cflags` -lSDL2_gfx
+
