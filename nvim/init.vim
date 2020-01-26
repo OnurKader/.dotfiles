@@ -293,7 +293,7 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
-nmap <F4> :Goyo<CR> :set norelativenumber nonumber
+nmap <F4> :Goyo<CR>
 " Tabularize
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>

@@ -61,7 +61,9 @@ alias gcc-9="gcc-9.1"
 alias ghist="cat ~/.zsh_history | cut -d\; -f2 | fzf --ansi --tac --no-sort"
 alias give=""
 alias grep='grep --color=auto -i'
-alias l='la'
+alias l="list -a"
+alias catmd="glow -s dark"
+alias mdcat="mdcat --columns 100"
 alias la='list -a'
 alias lag="ls -a | grep"
 alias las="lsa"

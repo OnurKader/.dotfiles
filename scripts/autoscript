@@ -6,6 +6,8 @@ if [[ -f $SCRIPT_FILE ]]; then
 else
 	echo "#!/bin/bash" > "$SCRIPT_FILE"
 	chmod +x "$SCRIPT_FILE"
-	sudo ln -sf "$SCRIPT_FILE" "/usr/bin/$1"
+	sudo ln -sf "$SCRIPT_FILE" "/usr/local/bin/$1"
 fi
+
 nvim "$SCRIPT_FILE"
+
