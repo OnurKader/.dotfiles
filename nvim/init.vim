@@ -59,8 +59,11 @@ augroup END
 call plug#begin('/home/beronthecolossus/.local/share/nvim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Shougo/denite.nvim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'justinmk/vim-syntax-extra'
 Plug 'SirVer/UltiSnips'
+Plug 'calviken/vim-gdscript3'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -68,7 +71,6 @@ Plug 'dense-analysis/ale'
 Plug 'edkolev/tmuxline.vim'
 Plug 'elzr/vim-json'
 Plug 'gko/vim-coloresque'
-Plug 'godlygeek/tabular'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
@@ -79,7 +81,6 @@ Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'plasticboy/vim-markdown'
-Plug 'plytophogy/vim-virtualenv'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format'
 Plug 'rking/ag.vim'
@@ -94,6 +95,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -172,7 +174,7 @@ let g:clang_format#style_options = {
 			\	"AllowAllParametersOfDeclarationOnNextLine": 'true',
 			\	"AllowShortBlocksOnASingleLine": 'true',
 			\	"AllowShortCaseLabelsOnASingleLine": 'true',
-			\	"AllowShortFunctionsOnASingleLine": "All",
+			\	"AllowShortFunctionsOnASingleLine": 'false',
 			\	"AllowShortIfStatementsOnASingleLine": "Never",
 			\	"AllowShortLambdasOnASingleLine": "All",
 			\	"AllowShortLoopsOnASingleLine": 'false',
@@ -265,6 +267,7 @@ nnoremap Q @@
 nnoremap s "_s
 nnoremap x "_x
 cmap qw wq
+cmap wwq wq
 cmap Q q!
 cmap W w
 " devicons
@@ -294,13 +297,10 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
 nmap <F4> :Goyo<CR>
-" Tabularize
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_scope_highlight = 1
+let g:cpp_posix_standard = 1
+let c_no_curly_error=1
 " box-shadow style highlighting
 augroup VimCSS3Syntax
   autocmd!

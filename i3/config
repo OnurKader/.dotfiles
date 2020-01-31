@@ -247,6 +247,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Move workspaces
 assign [class="Atom"] $workspace3
 assign [class="Code"] $workspace3
+assign [class="VSCodium"] $workspace3
 assign [class="Firefox"] $workspace1
 assign [class="Processing"] $workspace3
 assign [class="Spotify"] $workspace10
@@ -257,6 +258,7 @@ assign [class="vlc"] $workspace4
 
 for_window [class="Atom"] move workspace $workspace3
 for_window [class="Code"] move workspace $workspace3
+for_window [class="VSCodium"] move workspace $workspace3
 for_window [class="Firefox"] move workspace $workspace1
 for_window [class="Processing"] move workspace $workspace3
 for_window [class="Spotify"] move workspace $workspace10
