@@ -1,3 +1,3 @@
 #!/bin/bash
 pgrep -i "redshift-gtk" >/dev/null && exit
-redshift-gtk -l 52.763717:-0.250134 & disown
+redshift-gtk -l 41.008240:28.978359 & disown

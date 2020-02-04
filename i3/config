@@ -66,6 +66,8 @@ for_window [title="^Cal$"] floating enable, border pixel 3, resize set 1280 768,
 for_window [title="^todo$"] floating enable, resize set 1280 832, border pixel 3, move position center
 for_window [title="TermStart"] floating enable, border pixel 3, move scratchpad, scratchpad show, resize set 1200 780, move position center
 for_window [instance="hl2_linux"] fullscreen
+for_window [class="Godot_Engine$"] floating enable, move position center, border pixel 3
+for_window [instance="Godot_Engine$"] floating enable, move position center, border pixel 3
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -73,8 +75,8 @@ floating_modifier $mod
 ## Key Bindings
 
 # start a terminal
-bindsym $mod+Return $exe alacritty
-bindsym $mod+$alt+t $exe alacritty
+bindsym $mod+Return $exe terminator
+bindsym $mod+$alt+t $exe terminator
 bindsym $mod+Shift+Return $exe cdterm
 
 # bindsym $mod+Shift+a $exe NULL
@@ -99,7 +101,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+f $exe alacritty -t Cal -e calcurse
+bindsym $mod+Shift+f $exe terminator -T Cal -e calcurse
 
 # Increase-Decrease Gaps
 bindsym $mod+c        gaps inner current plus 4
@@ -108,11 +110,11 @@ bindsym $mod+z        gaps outer current plus 4
 bindsym $mod+Shift+z  gaps outer current minus 4
 
 # HTOP
-bindsym $mod+i $exe alacritty -e htop -d 11
+bindsym $mod+i $exe terminator -e htop -d 11
 
 # VIFM / File Manager
-bindsym $mod+Shift+n $exe alacritty -e "nvim"
-bindsym $mod+Shift+v $exe alacritty -e "vifmrun"
+bindsym $mod+Shift+n $exe terminator -e "nvim"
+bindsym $mod+Shift+v $exe terminator -e "vifmrun"
 
 # Move the Window Around with `vim` keys
 bindsym $mod+Shift+h move left 24
@@ -121,7 +123,7 @@ bindsym $mod+Shift+k move up 22
 bindsym $mod+Shift+l move right 24
 
 # TODO Stuff
-bindsym $mod+g $exe alacritty -t "todo" -e tudu
+bindsym $mod+g $exe terminator -T "todo" -e tudu
 
 # Lock Screen
 bindsym $mod+$alt+l $exe lock
@@ -148,7 +150,7 @@ bindsym $mod+$alt+u $exe enter_unicode
 bindsym $mod+Shift+w $exe $BROWSER
 
 # bindsym $mod+m exec $term -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym $mod+m $exe alacritty -e "neomutt"
+bindsym $mod+m $exe terminator -e "neomutt"
 
 # Shutdown
 bindsym $mod+Shift+x $exe shut "Shutdown Now?" "turnoff"
@@ -250,6 +252,8 @@ assign [class="Code"] $workspace3
 assign [class="VSCodium"] $workspace3
 assign [class="Firefox"] $workspace1
 assign [class="Processing"] $workspace3
+assign [class="Godot_Engine"] $workspace3
+assign [instance="Godot_Engine$"] $workspace3
 assign [class="Spotify"] $workspace10
 assign [class="Steam"] $workspace9
 assign [class="jetbrains-pycharm-ce"] $workspace3
@@ -261,6 +265,8 @@ for_window [class="Code"] move workspace $workspace3
 for_window [class="VSCodium"] move workspace $workspace3
 for_window [class="Firefox"] move workspace $workspace1
 for_window [class="Processing"] move workspace $workspace3
+for_window [class="Godot_Engine"] move workspace $workspace3
+for_window [instance="Godot_Engine$"] move workspace $workspace3
 for_window [class="Spotify"] move workspace $workspace10
 for_window [class="Steam"] move workspace $workspace9
 for_window [class="jetbrains-pycharm-ce"] move workspace $workspace3
@@ -278,5 +284,5 @@ exec_always --no-startup-id unity-settings-daemon
 exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Disable While Typing Enabled" 0
 exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id exec alacritty -t "TermStart"
+exec --no-startup-id exec terminator -T "TermStart"
 

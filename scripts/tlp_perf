@@ -1,4 +1,4 @@
 #!/bin/bash
-sudo cp /etc/default/tlp /etc/default/.tlp.bak
-sudo cp /home/beronthecolossus/Code/_tlp_perf /etc/default/tlp -f
+sudo cp /etc/tlp.conf /etc/.tlp.conf.bak
+sudo cp /home/beronthecolossus/Code/_tlp_perf /etc/tlp.conf -f
 sudo tlp start
