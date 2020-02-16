@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -g -std=c11 -Wall -Wextra -Wpedantic -Wshadow -O3
+CFLAGS= -g -std=c18 -Wall -Wextra -Wpedantic -Wshadow -O3
 
 all: build
 

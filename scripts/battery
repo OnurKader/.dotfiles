@@ -57,8 +57,8 @@ case $BLOCK_BUTTON in
 			notify-send "Time Until Charged" "$TIME" &
 			DISC=" "
 		fi ;;
-	2) ;;
-	3) ;;
+	2) notify-send "Why Middle Click?" "Weird Situation";;
+	3) notify-send "No Right Click!" "Useless Shit";;
 esac
 
 if [ "$(acpi -b | grep "Discharging")" ] ; then
