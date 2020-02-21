@@ -59,12 +59,10 @@ augroup END
 call plug#begin('/home/beronthecolossus/.local/share/nvim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Shougo/denite.nvim'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'justinmk/vim-syntax-extra'
 Plug 'SirVer/UltiSnips'
-Plug 'calviken/vim-gdscript3'
 Plug 'airblade/vim-gitgutter'
+Plug 'calviken/vim-gdscript3'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
@@ -76,10 +74,12 @@ Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-emoji'
+Plug 'justinmk/vim-syntax-extra'
 Plug 'kana/vim-operator-user'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'plasticboy/vim-markdown'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format'
@@ -292,8 +292,8 @@ let g:prettier#config#bracket_spacing = 'false'
 let g:prettier#config#single_quote = 'false'
 let g:prettier#quickfix_auto_focus = 0
 let g:prettier#quickfix_enabled = 0
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
+let g:prettier#autoformat = 1
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
 nmap <F4> :Goyo<CR>

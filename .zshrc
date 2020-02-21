@@ -1,12 +1,14 @@
 # Exports
 source ~/.exports
+source ~/.aliases
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=( z git fast-syntax-highlighting tmux zsh-autosuggestions extract
-		 colored-man-pages zsh-completions vi-mode k )
+		 colored-man-pages zsh-completions vi-mode )
 
 bindkey -v
+bindkey "^?" backward-delete-char
 
 source $ZSH/oh-my-zsh.sh
 
@@ -15,7 +17,6 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 # Aliases
-source ~/.aliases
 mkcd () { mkdir -p "$*"; cd "$*"; }
 altercd(){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
 
@@ -33,4 +34,10 @@ POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
 POWERLEVEL9K_VIRTUALENV_FOREGROUND=032
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-eval $(thefuck --alias)
+# NNN CONFIG
+export NNN_BMS='d:~/Desktop/;P:~/Pictures/;p:~/Peki/;D:~/Downloads/'
+export NNN_USE_EDITOR=1
+# export NNN_CONTEXT_COLORS="2136"
+export NNN_TRASH=1
+
+
