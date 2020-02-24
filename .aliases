@@ -68,6 +68,7 @@ alias give=""
 alias grep='grep --color=auto -i'
 alias l1="list -a1"
 alias l="list -a"
+alias ls="list"
 alias la='list -a'
 alias lag="ls -a | grep"
 alias las="lsa"
