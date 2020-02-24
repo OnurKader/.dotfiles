@@ -345,14 +345,12 @@ autocmd BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 :noremap <leader>v :vsp<cr>
 inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 inoremap <leader>cout <Esc>Istd::cout << <Esc>A << std::endl;
-inoremap <leader>for <Esc>Ifor (int i = 0; i < <Esc>A; ++i)<Enter>{<Enter>}<Esc>O
-inoremap <leader>if <esc>Iif (<esc>A) {<enter>}<esc>O<tab>
+inoremap <leader>for <Esc>Ifor (uint16_t i = 0U; i < <Esc>A; ++i)<Enter>{<Enter>}<Esc>O
 inoremap <leader>opge <Esc>:w<CR><Esc>:!g++ % -o %< -lX11 -lGL -lpthread -O3 -lpng `pkg-config --cflags --libs opencv` && vblank_mode=0 ./%< <CR>
 inoremap <leader>pge <Esc>:w<CR><Esc>:!g++ % -o %< -lX11 -lGL -lpng -lpthread -O3 && vblank_mode=0 ./%< <CR>
-inoremap <leader>q <ESC>:q<CR>
 inoremap <leader>sfml <Esc>:w<CR><Esc>:!g++ % -o %< -lsfml-graphics -lsfml-window -O3 -lsfml-system && ./%< <CR>
-inoremap <leader>sys <esc>ISystem.out.println(<esc>A);
 inoremap <leader>w <Esc>:w<CR>
+inoremap <leader>q <ESC>:q<CR>
 inoremap <leader>x <ESC>:x<CR>
 inoremap <leader>pragma <Esc>ggI#ifndef<Space><++><CR>#define<Space><++><CR><CR>class<Space><++><Enter>{<Enter>};<CR><Esc>GI<CR>#endif<CR><Esc>
 inoremap <Leader>print <Esc>Iprintf(<Esc>A);
@@ -366,11 +364,12 @@ inoremap <S-Del> <Esc>"_dda
 nnoremap <Leader>j :m+<cr>==
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>W :w<CR>
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 vnoremap <leader>cout yOstd::cout << <esc>pA << std:endl;
-vnoremap <leader>sys yOSystem.out.println(<esc>pA);
 " MarkdownPreview Stuff
 let g:mkdp_browser = 'qutebrowser'
 let g:mkdp_refresh_slow = 1

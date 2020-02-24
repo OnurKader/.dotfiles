@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case $1 in
+	"left")  xdotool mousemove_relative -- -30 0;;
+	"right") xdotool mousemove_relative -- 30 0;;
+	"up")    xdotool mousemove_relative -- 0 -18;;
+	"down")  xdotool mousemove_relative -- 0 18;;
+	"LEFT")  xdotool mousemove_relative -- -128 0;;
+	"RIGHT") xdotool mousemove_relative -- 128 0;;
+	"UP")    xdotool mousemove_relative -- 0 -101;;
+	"DOWN")  xdotool mousemove_relative -- 0 101;;
+esac
