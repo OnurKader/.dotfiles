@@ -1,6 +1,5 @@
 # Exports
 source ~/.exports
-source ~/.aliases
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -17,6 +16,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 # Aliases
+source ~/.aliases
 mkcd () { mkdir -p "$*"; cd "$*"; }
 altercd(){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
 

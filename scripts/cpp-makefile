@@ -16,4 +16,4 @@ run: ../bin/main
 	clear && ../bin/main
 
 install: ../bin/main
-	sudo ln -sf /home/beronthecolossus/Peki/C++/Projects/<++>/bin/main /usr/local/bin/<++>
+	sp ../bin/main /usr/local/bin/<++>
