@@ -86,7 +86,8 @@ bindsym $mod+b split h
 bindsym $mod+v split v
 
 # Go to center and click
-bindsym Ctrl+$alt+Delete $exe ~/Peki/C\+\+/Gists/mouse 960 540
+bindsym $mod+$alt+Delete $exe ~/Peki/C\+\+/Gists/mouse 960 540
+bindsym Ctrl+$alt+Delete $exe mouseclick
 
 # Rofi
 # bindsym $mod+d $exe "rofi -hide-scrollbar -show run -display-run 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489' -show-icons"

@@ -52,7 +52,7 @@ syntax on
 augroup numbertoggle
   autocmd!
   " InsertLeave & InsertEnter
-  autocmd BufEnter,FocusGained * set relativenumber
+  autocmd BufEnter,FocusGained * set relativenumber number
   autocmd BufLeave,FocusLost   * set norelativenumber
 augroup END
 " Plugins
@@ -236,9 +236,10 @@ let g:clang_format#style_options = {
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_switch_buffer = 'et'
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_match_window = 'bottom,order:ttb,min:2,max:12'
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_show_hidden = 1
 " Coc.nvim
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
