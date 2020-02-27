@@ -278,6 +278,8 @@ cmap qw wq
 cmap wwq wq
 cmap Q q!
 cmap W w
+nnoremap <S-J><S-J> i<CR><Esc>k$
+inoremap <S-J><S-J> <Esc>i<CR><Esc>kA
 " devicons
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_unite = 1
