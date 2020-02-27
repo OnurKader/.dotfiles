@@ -63,7 +63,7 @@ alias egrep='egrep --color=auto -iE'
 alias exi="exit"
 alias find="fd"
 alias gcc-9="gcc-9.1"
-alias ghist="cat ~/.zsh_history | cut -d\; -f2 | fzf --ansi --tac --no-sort"
+alias ghist="cut -d\; -f2 ~/.zsh_history | fzf --ansi --tac --no-sort"
 alias give=""
 alias grep='grep --color=auto -i'
 alias l1="list -a1"
