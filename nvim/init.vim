@@ -157,8 +157,15 @@ let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_backspace = 1
 " Clang-Format and AG
 nnoremap <Leader>ag :Ag
-autocmd FileType c,cpp,h,hpp let g:clang_format#auto_format = 1
+autocmd FileType c,cpp,h,hpp let g:clang_format#auto_format = 0
 let g:clang_format#detect_style_file = 0
+augroup ClangFormatSettings
+	autocmd!
+	" map to <Leader>cf in C++ code
+	autocmd FileType c,cpp,h,hpp,cc,hh nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+	autocmd FileType c,cpp,h,hpp,cc,hh inoremap <buffer><Leader>cf <Esc>:ClangFormat<CR>
+	autocmd FileType c,cpp,h,hpp,cc,hh vnoremap <buffer><Leader>cf :ClangFormat<CR>
+augroup END
 let g:clang_format#style_options = {
 			\	"BasedOnStyle": "Mozilla",
 			\	"AccessModifierOffset": '0',
@@ -339,7 +346,7 @@ map <F5> :w! \| !compiler <C-r>%<CR>
 let hlstate=0
 nnoremap <C-c> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1 <Esc> <CR>
 " Remove Whitespace
-autocmd BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge | endif
 " Leader bindings for some snippets and Write/Quit
 :noremap <leader>c :wincmd w<cr>
 :noremap <leader>h :split<cr>
