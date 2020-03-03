@@ -44,7 +44,7 @@ set splitright
 set t_Co=256
 set tabstop=4
 set termguicolors
-set updatetime=420
+set updatetime=300
 set wildmenu
 set wildmode=list,longest,full
 set wrap
@@ -67,7 +67,6 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
 Plug 'edkolev/tmuxline.vim'
-Plug 'elzr/vim-json'
 Plug 'gko/vim-coloresque'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'honza/vim-snippets'

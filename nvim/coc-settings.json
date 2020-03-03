@@ -10,7 +10,7 @@
 		"ccls": {
 			"command": "ccls",
 			"filetypes": ["c", "cpp", "cc", "h", "hh", "hpp"],
-			"rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+			"rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/"],
 			"initializationOptions": {
 				"cache": {
 					"directory": "/tmp/ccls"

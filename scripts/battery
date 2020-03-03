@@ -44,8 +44,6 @@ function getColor {
 	color=$(printf "#%02X%02X%02X" "$r" "$g" "$b")
 }
 
-getColor "$PERC_INT" "$START_COL" "$END_COL"
-
 
 TIME="$(acpi -b | cut -d, -f3 | cut -b1-9)"
 
@@ -56,6 +54,8 @@ case $BLOCK_BUTTON in
 		else
 			notify-send "Time Until Charged" "$TIME" &
 			DISC=" "
+			# START_COL="#D106FF"
+			# END_COL="#06FAFF"
 		fi ;;
 	2) notify-send "Why Middle Click?" "Weird Situation";;
 	3) notify-send "No Right Click!" "Useless Shit";;
@@ -65,6 +65,7 @@ if [ "$(acpi -b | grep "Discharging")" ] ; then
 	[ "$PERC_INT" -le 12 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!  $PERC"
 fi
 
+getColor "$PERC_INT" "$START_COL" "$END_COL"
 
 if [[ "$PERC_INT" -eq 69 ]]; then
 	SYMBOL="Nice 👌";

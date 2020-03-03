@@ -18,6 +18,7 @@ export PATH="$PATH:/usr/java/jdk-11.0.3+7-jre/bin"
 export PATH="$PATH:/home/beronthecolossus/Code/clion-2019.3.4/bin"
 
 export BROWSER="firefox"
+export CC="/usr/bin/gcc"
 export EDITOR="nvim"
 export FILE="vifm"
 export GOPATH=$HOME/Peki/Go
@@ -40,7 +41,6 @@ export XDG_CONFIG_HOME="/home/beronthecolossus/.config"
 
 fpath=(~/cheat-sh/ $fpath)
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 checkspell() { echo -n "$1" | aspell -a | cut -d: -f2 | grep -v "#"; }
 
 function run() {
@@ -58,3 +58,4 @@ function lower(){
 function upper(){
 	echo -n $@ | tr '[:lower:]' '[:upper:]'
 }
+

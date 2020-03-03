@@ -91,7 +91,7 @@ bindsym Ctrl+$alt+Delete $exe mouseclick
 
 # Rofi
 # bindsym $mod+d $exe "rofi -hide-scrollbar -show run -display-run 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489' -show-icons"
-bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489'"
+bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 12 -width 41 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489'"
 # Disable Gaps
 bindsym $mod+Shift+d gaps inner current set 0, gaps outer current set 0
 
