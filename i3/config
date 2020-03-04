@@ -285,7 +285,8 @@ for_window [class="mpv"] move workspace $workspace4
 for_window [class="vlc"] move workspace $workspace4
 
 # Execs
-exec_always --no-startup-id compton -b
+# exec_always --no-startup-id compton -b
+exec_always --no-startup-id picom -b
 exec_always --no-startup-id dunst
 exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpaper/background.jpg
 exec_always --no-startup-id gnome-keyring-daemon
