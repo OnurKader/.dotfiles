@@ -243,7 +243,7 @@ let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_switch_buffer = 'et'
 let g:ctrlp_match_window = 'bottom,order:ttb,min:2,max:12'
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_show_hidden = 1
 " Coc.nvim
