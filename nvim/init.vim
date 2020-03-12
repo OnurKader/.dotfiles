@@ -360,6 +360,7 @@ inoremap <leader>opge <Esc>:w<CR><Esc>:!g++ % -o %< -lX11 -lGL -lpthread -O3 -lp
 inoremap <leader>pge <Esc>:w<CR><Esc>:!g++ % -o %< -lX11 -lGL -lpng -lpthread -O3 && vblank_mode=0 ./%< <CR>
 inoremap <leader>sfml <Esc>:w<CR><Esc>:!g++ % -o %< -lsfml-graphics -lsfml-window -O3 -lsfml-system && ./%< <CR>
 inoremap <leader>w <Esc>:w<CR>
+inoremap ,w <Esc>:w<CR>
 inoremap <leader>q <ESC>:q<CR>
 inoremap <leader>x <ESC>:x<CR>
 inoremap <leader>pragma <Esc>ggI#ifndef<Space><++><CR>#define<Space><++><CR><CR>class<Space><++><Enter>{<Enter>};<CR><Esc>GI<CR>#endif<CR><Esc>
@@ -377,6 +378,7 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>w :w<CR>
+nnoremap ,w :w<CR>
 nnoremap <leader>W :w<CR>
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 vnoremap <leader>cout yOstd::cout << <esc>pA << std:endl;
