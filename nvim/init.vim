@@ -200,7 +200,7 @@ let g:clang_format#style_options = {
 			\	"ConstructorInitializerAllOnOneLineOrOnePerLine": 'true',
 			\	"ConstructorInitializerIndentWidth": '4',
 			\	"ContinuationIndentWidth": '4',
-			\	"ColumnLimit": '92',
+			\	"ColumnLimit": '100',
 			\	"Cpp11BracedListStyle": 'true',
 			\	"DerivePointerAlignment": 'true',
 			\	"DisableFormat": 'false',
