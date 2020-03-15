@@ -7,7 +7,7 @@ plugins=( z git fast-syntax-highlighting tmux zsh-autosuggestions extract
 		 colored-man-pages zsh-completions vi-mode )
 
 bindkey -v
-bindkey "^?" backward-delete-char
+bindkey "^?" backward-delete-word
 
 source $ZSH/oh-my-zsh.sh
 
