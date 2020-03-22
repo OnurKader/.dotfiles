@@ -33,6 +33,7 @@ alias -s py=nvim
 alias -s ts=nvim
 alias -s txt=nvim
 alias IP="ip addr show wlp2s0 | grep inet | awk '{ print \$2 }' | sed 's/\/.*$//'"
+alias Pgrep="grep -P"
 alias R="R --quiet"
 alias ZQ="exit"
 alias ZZ="exit"

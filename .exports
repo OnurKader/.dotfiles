@@ -41,6 +41,8 @@ export SERENITY_ROOT="/home/beronthecolossus/Desktop/Code/serenity"
 export ZSH="/home/beronthecolossus/.oh-my-zsh"
 export XDG_CONFIG_HOME="/home/beronthecolossus/.config"
 
+export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
+
 fpath=(~/cheat-sh/ $fpath)
 
 checkspell() { echo -n "$1" | aspell -a | cut -d: -f2 | grep -v "#"; }

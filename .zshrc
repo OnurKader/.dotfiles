@@ -3,7 +3,7 @@ source ~/.exports
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=( z git fast-syntax-highlighting tmux zsh-autosuggestions extract
+plugins=( git fast-syntax-highlighting tmux zsh-autosuggestions extract
 		 colored-man-pages zsh-completions vi-mode )
 
 bindkey -v
@@ -19,6 +19,9 @@ export VISUAL="nvim"
 source ~/.aliases
 mkcd () { mkdir -p "$*"; cd "$*"; }
 altercd(){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
+
+eval "$(lua /home/beronthecolossus/Code/z.lua/z.lua --init zsh enhanced)"
+source /home/beronthecolossus/Code/czmod/czmod.zsh
 
 # CONFIG STUFF
 POWERLEVEL9K_MODE='nerdfont-complete'

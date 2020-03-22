@@ -169,6 +169,10 @@ bindsym $mod+Shift+y  $exe i3resize left
 bindsym $mod+Shift+u  $exe i3resize down
 bindsym $mod+Shift+o  $exe i3resize up
 bindsym $mod+Shift+p  $exe i3resize right
+bindsym $mod+Ctrl+y  $exe i3resize left 48
+bindsym $mod+Ctrl+u  $exe i3resize down 48
+bindsym $mod+Ctrl+o  $exe i3resize up 48
+bindsym $mod+Ctrl+p  $exe i3resize right 48
 
 # Some Workspace
 bindsym $mod+Home workspace $workspace1

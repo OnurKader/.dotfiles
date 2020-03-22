@@ -374,6 +374,8 @@ noremap <S-Del> <Esc>"_dd
 inoremap <S-Del> <Esc>"_dda
 nnoremap <Leader>j :m+<cr>==
 nnoremap <leader>k :m-2<cr>==
+nnoremap ,j :m+<cr>==
+nnoremap ,k :m-2<cr>==
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q<CR>
 nnoremap <leader>x :x<CR>
