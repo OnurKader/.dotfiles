@@ -7,12 +7,13 @@ export PATH="$PATH:/home/beronthecolossus/Desktop/Code"
 export PATH="$PATH:/home/beronthecolossus/Desktop/Code/OF/libs"
 export PATH="$PATH:/home/beronthecolossus/Desktop/Code/ccls/Release"
 export PATH="$PATH:/home/beronthecolossus/Desktop/Code/clang+llvm-9.0.0/bin"
-export PATH="$PATH:/home/beronthecolossus/Peki/processing-3.5.3"
+export PATH="$PATH:/home/beronthecolossus/Peki/processing-4.0a1"
 export PATH="$PATH:/home/beronthecolossus/env/bin"
 export PATH="$PATH:/home/beronthecolossus/pypy3.6-v7.1.1-linux64/bin"
 export PATH="$PATH:/home/beronthecolossus/scripts"
 export PATH="$PATH:/root/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/home/beronthecolossus/Peki/Go/bin"
 export PATH="$PATH:/home/beronthecolossus/env/bin"
 export PATH="$PATH:/usr/java/jdk-11.0.3+7-jre/bin"
 export PATH="$PATH:/home/beronthecolossus/Code/clion-2019.3.4/bin"
@@ -22,7 +23,8 @@ export EDITOR="nvim"
 export PISTOL_CHROMA_FORMATTER=terminal256
 # export PISTOL_CHROMA_STYLE=monokai
 export FILE="vifm"
-export GOPATH=$HOME/Peki/Go
+export LESSHISTFILE="-"
+export GOPATH="$HOME/Peki/Go"
 # NNN CONFIG
 export NNN_BMS="d:~/Desktop/;P:~/Pictures/;p:~/Peki/;D:~/Downloads/"
 export NNN_USE_EDITOR=1
@@ -61,6 +63,14 @@ function lower(){
 
 function upper(){
 	echo -n $@ | tr '[:lower:]' '[:upper:]'
+}
+
+function findsubdomains(){
+	subfinder -d $@ -t 100 -silent |
+	httprobe -c 40                 |
+	sort -u	                       |
+	while read line; do
+	firefox "$line"; sleep 10; done
 }
 
 export LF_ICONS="\

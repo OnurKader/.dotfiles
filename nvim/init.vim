@@ -103,6 +103,8 @@ call plug#end()
 let g:badwolf_darkgutter = 1
 " Make the tab line lighter than the background.
 let g:badwolf_tabline = 2
+" Enable CSS Properties
+let g:badwolf_css_props_highlight = 1
 colorscheme badwolf
 " Airline Stuff
 let g:airline_powerline_fonts = 1
@@ -367,6 +369,7 @@ inoremap <leader>pragma <Esc>ggI#ifndef<Space><++><CR>#define<Space><++><CR><CR>
 inoremap <Leader>print <Esc>Iprintf(<Esc>A);
 vnoremap <Leader>print yOprintf(<Esc>pA)
 map <leader><leader> <Esc>/<++><Enter>"_c4l
+map ,, <Esc>/<++><Enter>"_c4l
 nnoremap <Enter> meo<Esc>k`e
 nnoremap ü o<Esc>
 nnoremap ğ ko<Esc>
