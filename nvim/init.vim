@@ -17,6 +17,7 @@ set hidden
 set ignorecase
 set inccommand=nosplit
 set incsearch
+" set iskeyword-=_
 set lazyredraw
 set mouse=a
 set nobackup
@@ -47,6 +48,7 @@ set termguicolors
 set updatetime=300
 set wildmenu
 set wildmode=list,longest,full
+set wildignore+=*/.git,*/.ccls-cache
 set wrap
 syntax on
 augroup numbertoggle
@@ -62,7 +64,6 @@ Plug 'Shougo/denite.nvim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'SirVer/UltiSnips'
 Plug 'airblade/vim-gitgutter'
-Plug 'calviken/vim-gdscript3'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
