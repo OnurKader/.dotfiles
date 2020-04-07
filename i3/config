@@ -68,6 +68,8 @@ for_window [title="TermStart"] floating enable, border pixel 3, move scratchpad,
 for_window [instance="hl2_linux"] fullscreen
 for_window [class="Godot_Engine$"] floating enable, move position center, border pixel 3
 for_window [instance="Godot_Engine$"] floating enable, move position center, border pixel 3
+for_window [instance="OkTerminal$"] floating enable, move position center
+for_window [class="^Term$"] floating enable, move position center
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
