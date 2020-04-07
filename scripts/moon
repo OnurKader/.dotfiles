@@ -1,2 +1,2 @@
 #!/bin/bash
-curl wttr.in/Moon
+curl -s wttr.in/Moon | head -n -2
