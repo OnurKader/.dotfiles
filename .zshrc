@@ -23,6 +23,9 @@ altercd(){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
 eval "$(lua /home/beronthecolossus/Code/z.lua/z.lua --init zsh enhanced)"
 source /home/beronthecolossus/Code/czmod/czmod.zsh
 
+# Don't really know how to change terminfo for Alacritty or XTERM so I'm calling tabs -4
+tabs -4
+
 # CONFIG STUFF
 POWERLEVEL9K_MODE='nerdfont-complete'
 PURE_POWER_MODE=fancy
