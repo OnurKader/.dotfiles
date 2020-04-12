@@ -107,6 +107,9 @@ let g:badwolf_tabline = 2
 " Enable CSS Properties
 let g:badwolf_css_props_highlight = 1
 colorscheme badwolf
+" Transparent Background
+" highlight Normal guibg=NONE ctermbg=NONE
+" highlight LineNr guibg=NONE ctermbg=NONE
 " Airline Stuff
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
