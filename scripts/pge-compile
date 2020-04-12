@@ -1,4 +1,5 @@
 #!/bin/bash
-Name=$(echo $1 | cut -d'.' -f1)
-g++ "$1" -o "$Name" -O3 -lX11 -lGL -lpthread -lpng && vblank_mode=0 ./"$Name"
+NAME=$(echo "$1" | cut -d'.' -f1)
+
+g++ "$1" -o "$NAME" -O3 -lX11 -lGL -lpthread -lpng -lsrdc++fs -std=c++17 && vblank_mode=0 ./"$NAME"
 
