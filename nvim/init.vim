@@ -186,7 +186,7 @@ let g:clang_format#style_options = {
 			\	"AllowAllParametersOfDeclarationOnNextLine": 'true',
 			\	"AllowShortBlocksOnASingleLine": 'true',
 			\	"AllowShortCaseLabelsOnASingleLine": 'true',
-			\	"AllowShortFunctionsOnASingleLine": 'false',
+			\	"AllowShortFunctionsOnASingleLine": 'true',
 			\	"AllowShortIfStatementsOnASingleLine": "Never",
 			\	"AllowShortLambdasOnASingleLine": "All",
 			\	"AllowShortLoopsOnASingleLine": 'false',

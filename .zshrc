@@ -8,6 +8,7 @@ plugins=( git fast-syntax-highlighting tmux zsh-autosuggestions extract
 
 bindkey -v
 bindkey "^?" backward-delete-word
+bindkey "^H" backward-delete-word
 
 source $ZSH/oh-my-zsh.sh
 
