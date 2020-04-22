@@ -126,7 +126,7 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 " Views
 au BufWritePost,BufLeave,WinLeave ?* mkview
-au BufWinEnter ?* silent loadview
+au BufWinEnter ?* silent! loadview
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 " Clipboard & Statusline
 set clipboard=unnamedplus
