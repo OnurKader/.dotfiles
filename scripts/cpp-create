@@ -1,7 +1,8 @@
 #!/bin/bash
 mkdir -vp src bin
 git init
-add-gitignore c++
+add-gitignore c++ qtcreator
+echo -e ".ccls-cache/\ntags\nbin/\n" >> .gitignore
 touch README.md
 cd src || exit
 touch main.cpp

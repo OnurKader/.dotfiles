@@ -1,7 +1,7 @@
 CC=g++
-CFLAGS= -g -std=c++17 -Wall -Wextra -Wshadow -Wpedantic -O3
+CFLAGS= -g -std=c++2a -Wall -Wextra -Wshadow -Wpedantic -O3
 
-all: clean build
+all: build
 
 clean:
 	rm -f ../bin/*
@@ -13,7 +13,7 @@ build: ../bin/main.o
 	$(CC) -o ../bin/main ../bin/main.o
 
 run: ../bin/main
-	clear && ../bin/main
+	../bin/main
 
 install: ../bin/main
-	sp ../bin/main /usr/local/bin/<++>
+	sudo cp ../bin/main /usr/local/bin/<++>
