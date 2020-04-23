@@ -71,7 +71,9 @@ if [[ "$PERC_INT" -eq 69 ]]; then
 	SYMBOL="Nice 👌";
 	PERC="";
 	color='#426969';
+elif [[ "$PERC_INT" -ge 98 ]]; then
+	notify-send --urgency=normal "FULLY CHARGED" "BATTERY PERCENTAGE AT $PERC"
 fi
 
-
 echo -n "<span foreground='$color'>$SYMBOL $PERC</span><span foreground='#FCFC12'>$DISC</span>"
+
