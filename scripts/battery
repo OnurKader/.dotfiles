@@ -14,7 +14,7 @@ elif [ "$PERC_INT" -ge 25 ]; then SYMBOL="";
 else SYMBOL=""
 fi
 
-# Arguments => "Current Percentage, Zero Percent Color ('#ABCDEF' format), Full Percentage Color"
+# Arguments => "Current Percentage, Zero Percent Color ('#ABCDEF' hex format), Full Percentage Color"
 function getColor {
 	local r;
 	local g;
@@ -44,7 +44,6 @@ function getColor {
 	color=$(printf "#%02X%02X%02X" "$r" "$g" "$b")
 }
 
-
 TIME="$(acpi -b | cut -d, -f3 | cut -b1-9)"
 
 case $BLOCK_BUTTON in
@@ -71,7 +70,7 @@ if [[ "$PERC_INT" -eq 69 ]]; then
 	SYMBOL="Nice 👌";
 	PERC="";
 	color='#426969';
-elif [[ "$PERC_INT" -ge 98 ]]; then
+elif [[ "$PERC_INT" -ge 99 &&  "$(acpi -b | grep -v "Discharging")" ]]; then
 	notify-send --urgency=normal "FULLY CHARGED" "BATTERY PERCENTAGE AT $PERC"
 fi
 

@@ -489,7 +489,6 @@ debug:
 #   - ~AppKeypad
 #   - AppKeypad
 
-# TODO check these out
 key_bindings:
   # (Windows/Linux only)
   #- { key: V,        mods: Control|Shift, action: Paste            }
@@ -524,6 +523,9 @@ key_bindings:
   - { key: Copy,                    action: Copy                             }
   - { key: C,        mods: Alt,     action: Copy                             }
   - { key: V,        mods: Alt,     action: Paste                            }
+  - { key: L,        mods: Control|Shift, action: ClearHistory               }
+  - { key: L,        mods: Control|Shift, action: ClearLogNotice             }
+  - { key: L,        mods: Control|Shift, chars: "\x0c"                      }
   - { key: L,        mods: Control, action: ClearLogNotice                   }
   - { key: L,        mods: Control, chars: "\x0c"                            }
   - { key: Home,     mods: Alt,     chars: "\x1b[1;3H"                       }

@@ -267,6 +267,7 @@ bindsym $alt+$mod+l exec --no-startup-id mousemove_relative RIGHT
 assign [class="Atom"] $workspace3
 assign [class="Code"] $workspace3
 assign [class="Firefox"] $workspace1
+assign [class="Brave-browser"] $workspace1
 assign [class="Godot_Engine"] $workspace3
 assign [class="Processing"] $workspace3
 assign [class="QtCreator"] $workspace3
@@ -281,6 +282,7 @@ assign [instance="Godot_Engine$"] $workspace3
 for_window [class="Atom"] move workspace $workspace3
 for_window [class="Code"] move workspace $workspace3
 for_window [class="Firefox"] move workspace $workspace1
+for_window [class="Brave-browser"] move workspace $workspace1
 for_window [class="Godot_Engine"] move workspace $workspace3
 for_window [class="Processing"] move workspace $workspace3
 for_window [class="QtCreator"] move workspace $workspace3
