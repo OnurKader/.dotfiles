@@ -1,0 +1,8 @@
+#!/bin/bash
+
+add-gitignore c++ qtcreator
+
+echo -e "\n.ccls-cache/\ntags\n*.cflags\n*.cxxflags\n.tup/" >> .gitignore
+
+[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ] && git add .gitignore
+

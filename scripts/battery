@@ -74,5 +74,5 @@ elif [[ "$PERC_INT" -ge 99 &&  "$(acpi -b | grep -v "Discharging")" ]]; then
 	notify-send --urgency=normal "FULLY CHARGED" "BATTERY PERCENTAGE AT $PERC"
 fi
 
-echo -n "<span foreground='$color'>$SYMBOL $PERC</span><span foreground='#FCFC12'>$DISC</span>"
+echo -n "<span foreground='$color'>$SYMBOL $PERC</span><span foreground='#FDFD16'>$DISC</span>"
 

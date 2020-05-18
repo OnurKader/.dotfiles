@@ -13,9 +13,9 @@ fi
 
 case $BLOCK_BUTTON in
 	1) notify-send " ${NAME//\"/}" "${ARTIST//\"/}" ;;
-	2) notify-send "???" "Why would you Middle-Click on this?!";;
+	2) sp play;;
 	3) notify-send "Usage:" "Just Left Click To Get The Whole Song Name";;
-	5) sp next;;
-	4) sp prev;;
+	5) sp next && sleep 0.666 && notify-send "Playing Next Song" "$(spot-get)";;
+	4) sp prev && sleep 0.666 && notify-send "Playing Previous Song" "$(spot-get)";;
 esac
 

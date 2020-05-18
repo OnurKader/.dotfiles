@@ -6,6 +6,7 @@ markup=pango
 command=getsong
 interval=30
 color=#3BFFB5
+signal=10
 label=
 
 [memory]

@@ -18,9 +18,9 @@ export PATH="$PATH:/home/beronthecolossus/env/bin"
 export PATH="$PATH:/usr/java/jdk-12/bin"
 export PATH="$PATH:/home/beronthecolossus/Code/clion-2019.3.4/bin"
 export PATH="$PATH:/home/beronthecolossus/.nimble/bin"
-export PATH="$PATH:/usr/local/gcc-10/bin"
+export PATH="$PATH:/usr/local/gcc-10.1/bin"
 
-export BROWSER="firefox"
+export BROWSER="brave-browser"
 export EDITOR="nvim"
 export PISTOL_CHROMA_FORMATTER=terminal256
 # export PISTOL_CHROMA_STYLE=monokai

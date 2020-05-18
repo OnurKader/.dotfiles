@@ -214,7 +214,7 @@ let g:clang_format#style_options = {
 			\	"FixNamespaceComments": 'true',
 			\	"IncludeBlocks": "Regroup",
 			\	"IndentCaseLabels": 'true',
-			\	"IndentPPDirectives": "AfterHash",
+			\	"IndentPPDirectives": "None",
 			\	"IndentWidth": '4',
 			\	"IndentWrappedFunctionNames": 'false',
 			\	"KeepEmptyLinesAtTheStartOfBlocks": 'false',

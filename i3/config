@@ -10,7 +10,7 @@ set $left h
 set $right l
 
 set $term --no-startup-id $TERMINAL
-set $browser firefox
+set $browser brave-browser
 set $exe exec --no-startup-id
 
 gaps inner 14
