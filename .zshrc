@@ -21,7 +21,7 @@ source ~/.aliases
 mkcd () { mkdir -p "$*"; cd "$*"; }
 altercd(){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
 
-eval "$(lua /home/beronthecolossus/Code/z.lua/z.lua --init zsh enhanced)"
+eval "$(lua /home/beronthecolossus/Code/z.lua/z.lua --init zsh enhanced once)"
 source /home/beronthecolossus/Code/czmod/czmod.zsh
 
 # Don't really know how to change terminfo for Alacritty or XTERM so I'm calling tabs -4

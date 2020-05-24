@@ -46,6 +46,9 @@ export ZSH="/home/beronthecolossus/.oh-my-zsh"
 export XDG_CONFIG_HOME="/home/beronthecolossus/.config"
 
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
+export _ZL_MAXAGE=50000
+
+export HISTSIZE=64000
 
 fpath=(~/cheat-sh/ $fpath)
 
@@ -72,7 +75,7 @@ function findsubdomains(){
 	httprobe -c 40                 |
 	sort -u	                       |
 	while read line; do
-	firefox "$line"; sleep 10; done
+	$BROWSER "$line"; sleep 10; done
 }
 
 export LF_ICONS="\

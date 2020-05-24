@@ -71,6 +71,7 @@ alias give=""
 alias glg1="git lg1"
 alias glg2="git lg2"
 alias glg3="git lg3"
+alias gci="git commit -am 'Initial Commit'"
 alias grep='grep --color=auto -i'
 alias gs="git status"
 alias l1="list -a1"
