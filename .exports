@@ -14,7 +14,6 @@ export PATH="$PATH:/home/beronthecolossus/scripts"
 export PATH="$PATH:/root/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/home/beronthecolossus/Peki/Go/bin"
-export PATH="$PATH:/home/beronthecolossus/env/bin"
 export PATH="$PATH:/usr/java/jdk-12/bin"
 export PATH="$PATH:/home/beronthecolossus/Code/clion-2019.3.4/bin"
 export PATH="$PATH:/home/beronthecolossus/.nimble/bin"
@@ -52,7 +51,7 @@ export HISTSIZE=64000
 
 fpath=(~/cheat-sh/ $fpath)
 
-checkspell() { echo -n "$1" | aspell -a | cut -d: -f2 | grep -v "#"; }
+checkspell() { echo -n "$@" | aspell -a | cut -d: -f2 | grep -v "#"; }
 
 function run() {
     number=$1

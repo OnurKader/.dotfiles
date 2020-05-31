@@ -173,7 +173,7 @@ augroup ClangFormatSettings
 augroup END
 let g:clang_format#style_options = {
 			\	"BasedOnStyle": "Mozilla",
-			\	"AccessModifierOffset": '0',
+			\	"AccessModifierOffset": '-4',
 			\	"AlignAfterOpenBracket": "Align",
 			\	"AlignConsecutiveMacros": 'true',
 			\	"AlignConsecutiveAssignments": 'false',
@@ -376,7 +376,7 @@ map <leader><leader> <Esc>/<++><Enter>"_c4l
 map ,, <Esc>/<++><Enter>"_c4l
 nnoremap <Enter> meo<Esc>k`e
 nnoremap ü o<Esc>
-nnoremap ğ ko<Esc>
+nnoremap ğ mmO<Esc>`m
 noremap <S-Del> <Esc>"_dd
 inoremap <S-Del> <Esc>"_dda
 nnoremap <Leader>j :m+<cr>==
