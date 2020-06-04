@@ -18,7 +18,7 @@ export VISUAL="nvim"
 
 # Aliases
 source ~/.aliases
-mkcd () { mkdir -p "$*"; cd "$*"; }
+mkcd () { mkdir -p "$@"; cd "$@"; }
 altercd(){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
 
 eval "$(lua /home/beronthecolossus/Code/z.lua/z.lua --init zsh enhanced once)"

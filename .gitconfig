@@ -3,6 +3,8 @@
 	email = onurkader@protonmail.com
 [core]
 	editor = nvim
+[pull]
+	rebase = false
 [github]
 	user = OnurKader
 [filter "lfs"]
