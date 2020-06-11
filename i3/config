@@ -257,6 +257,11 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+bindsym $mod+Shift+b $exe playerctl previous
+bindsym $mod+Shift+m $exe playerctl next
+bindsym $mod+n $exe playerctl play-pause
+
+
 # Move the mouse using the keyboard
 bindsym Ctrl+$mod+h exec --no-startup-id mousemove_relative left
 bindsym Ctrl+$mod+j exec --no-startup-id mousemove_relative down
