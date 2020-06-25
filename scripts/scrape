@@ -1,5 +1,0 @@
-#!/bin/bash
-
-source /home/beronthecolossus/Code/insta_scraper/venv/bin/activate
-/home/beronthecolossus/Code/insta_scraper/venv/bin/instagram-scraper --latest -n -d /home/beronthecolossus/Code/tor-browser_en-US/Browser/Downloads/Images -u owouwu55 -p pekidedionuranan "$*" && notify-send "Scraped Successfully" "$* Scraped" || notify-send -u critical "SCRAPE FAILED" "Problem with $*"
-deactivate
