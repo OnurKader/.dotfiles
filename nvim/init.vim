@@ -226,7 +226,7 @@ let g:clang_format#style_options = {
 			\	"SpaceAfterLogicalNot": 'false',
 			\	"SpaceAfterTemplateKeyword": 'false',
 			\	"SpaceBeforeAssignmentOperators": 'true',
-			\	"SpaceBeforeCpp11BracedList": 'false',
+			\	"SpaceBeforeCpp11BracedList": 'true',
 			\	"SpaceBeforeCtorInitializerColon": 'true',
 			\	"SpaceBeforeInheritanceColon": 'true',
 			\	"SpaceBeforeParens": "Never",
