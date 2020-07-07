@@ -1,0 +1,17 @@
+#!/bin/bash
+
+git init
+add-gitignore c++ qtcreator
+mkdir src bin include
+
+echo -e "\n.ccls-cache/\ntags\n.tup/\nbin/" >> .gitignore
+
+cp ~/scripts/Tupfile ~/scripts/Tuprules.tup .
+mv Tupfile src
+tup init
+
+touch README.md
+
+git add .gitignore src Tuprules.tup README.md
+git commit -am "Initial Commit"
+
