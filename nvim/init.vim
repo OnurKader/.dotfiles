@@ -280,6 +280,8 @@ cmap qw wq
 cmap wwq wq
 cmap Q q!
 cmap W w
+vnoremap < <gv
+vnoremap > >gv
 nnoremap Y y$
 nnoremap <S-J><S-J> i<CR><Esc>k$
 inoremap <S-J><S-J> <Esc>i<CR><Esc>kA

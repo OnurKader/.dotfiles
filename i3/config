@@ -151,8 +151,11 @@ bindsym $mod+w layout toggle split
 bindsym $mod+u $exe dmenuunicode
 bindsym $mod+$alt+u $exe enter_unicode
 
-# Firefox / Browser
+# Brave / Browser
 bindsym $mod+Shift+w $exe $BROWSER
+
+# QtCreator / IDE
+bindsym $mod+Shift+i $exe qtcreator
 
 # bindsym $mod+m exec $term -e neomutt && pkill -RTMIN+12 i3blocks
 bindsym $mod+m $exe alacritty -e "neomutt"

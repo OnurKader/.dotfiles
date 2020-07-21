@@ -1,6 +1,7 @@
 include_rules
 
 EXE := ../bin/<++>
+CXX_LIBS += -I../include
 
 : foreach *.cpp |> !cxx |> {objs}
 : {objs} |> !exe |> $(EXE)
