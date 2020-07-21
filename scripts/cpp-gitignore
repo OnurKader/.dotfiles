@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/c++,qtcreator
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++,qtcreator
 
@@ -68,3 +67,7 @@
 *.cxxflags
 *.cflags
 # End of https://www.toptal.com/developers/gitignore/api/c++,qtcreator
+.ccls-cache/
+.tup/
+bin/
+tags

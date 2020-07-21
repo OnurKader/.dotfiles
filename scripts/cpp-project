@@ -1,13 +1,11 @@
 #!/bin/bash
 
 git init
-add-gitignore c++ qtcreator
+cp ~/scripts/cpp-gitignore .gitignore
 mkdir src bin include
 
-echo -e "\n.ccls-cache/\ntags\n.tup/\nbin/" >> .gitignore
-
-cp ~/scripts/Tupfile ~/scripts/Tuprules.tup .
-mv Tupfile src
+cp ~/scripts/Tuprules.tup .
+cp ~/scripts/Tupfile src
 tup init
 
 touch README.md
