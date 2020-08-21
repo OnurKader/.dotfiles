@@ -52,6 +52,8 @@ export _ZL_MAXAGE=50000
 
 export HISTSIZE=64000
 
+export CMAKE_GENERATOR="Ninja"
+
 fpath=(~/cheat-sh/ $fpath)
 
 checkspell() { echo -n "$@" | aspell -a | cut -d: -f2 | grep -v "#"; }

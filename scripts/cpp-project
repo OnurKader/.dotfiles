@@ -7,9 +7,10 @@ mkdir src bin include
 cp ~/scripts/Tuprules.tup .
 cp ~/scripts/Tupfile src
 tup init
+cp ~/scripts/meson.build .
 
 touch README.md
 
-git add .gitignore src Tuprules.tup README.md
+git add .gitignore src Tuprules.tup README.md meson.build
 git commit -am "Initial Commit"
 
