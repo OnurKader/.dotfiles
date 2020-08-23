@@ -238,7 +238,7 @@ let g:clang_format#style_options = {
 			\	"SpacesInContainerLiterals": 'false',
 			\	"SpacesInParentheses": 'false',
 			\	"SpacesInSquareBrackets": 'false',
-			\	"Standard": "Cpp11",
+			\	"Standard": "Latest",
 			\	"TabWidth": '4',
 			\	"UseTab": "Always" }
 " CTRL-P
