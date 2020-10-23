@@ -72,6 +72,9 @@ for_window [instance="Godot_Engine$"] floating enable, move position center, bor
 for_window [instance="OkTerminal$"] floating enable, move position center
 for_window [class="^Term$"] floating enable, move position center
 for_window [class="^Timer$"] floating enable
+for_window [class="^Sloppy"] floating enable
+for_window [class="Webcam"] floating enable, move position center
+for_window [title="\[Float\]"] floating enable, move position center
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -83,7 +86,7 @@ bindsym $mod+Return $exe alacritty
 bindsym $mod+$alt+t $exe alacritty
 bindsym $mod+Shift+Return $exe cdterm
 
-# bindsym $mod+Shift+a $exe NULL
+bindsym $mod++a $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 12 -width 41 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325487'"
 
 # split orientation
 bindsym $mod+b split h

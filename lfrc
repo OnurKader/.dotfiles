@@ -6,7 +6,6 @@ set icons true
 set ignorecase true
 set drawbox true
 set scrolloff 4
-set color256 true
 set preview true
 set previewer ~/Code/pistol/cmd/pistol/pistol
 
