@@ -6,7 +6,6 @@ export PATH="$PATH:/home/beronthecolossus/.config/i3"
 export PATH="$PATH:/home/beronthecolossus/Desktop/Code"
 export PATH="$PATH:/home/beronthecolossus/Desktop/Code/OF/libs"
 export PATH="$PATH:/home/beronthecolossus/Desktop/Code/ccls/Release"
-export PATH="$PATH:/home/beronthecolossus/Desktop/Code/clang+llvm-10.0.0/bin"
 export PATH="$PATH:/home/beronthecolossus/Peki/processing-4.0a1"
 export PATH="$PATH:/home/beronthecolossus/env/bin"
 export PATH="$PATH:/home/beronthecolossus/pypy3.6-v7.1.1-linux64/bin"
@@ -14,12 +13,11 @@ export PATH="$PATH:/home/beronthecolossus/scripts"
 export PATH="$PATH:/usr/local/gcc-10/bin"
 export PATH="$PATH:/usr/local/gcc-11/bin"
 export PATH="$PATH:/usr/local/bin/aseprite"
-export PATH="$PATH:/root/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/home/beronthecolossus/Peki/Go/bin"
 export PATH="$PATH:/usr/java/jdk-12/bin"
-export PATH="$PATH:/home/beronthecolossus/Code/clion-2019.3.4/bin"
 export PATH="$PATH:/home/beronthecolossus/.nimble/bin"
+export PATH="$PATH:/home/beronthecolossus/Code/Qt/6.0.0/gcc_64/bin"
 
 export BROWSER="brave-browser"
 export EDITOR="nvim"
@@ -36,9 +34,10 @@ export NNN_DE_FILE_MANAGER=$FILE
 export NNN_OPENER="~/Code/nnn/plugins/nuke"
 export NNN_TRASH=1
 # export NNN_OPENER=xdg-open
-export QT_QMAKE="/usr/bin"
-export QT_SELECT=qt5
-export TASTE_API_KEY="340114-Personal-B4446NE9"
+export QTTOOLDIR="/home/beronthecolossus/Code/Qt/6.0.0/gcc_64/bin"
+export QTLIBDIR="/home/beronthecolossus/Code/Qt/6.0.0/gcc_64/lib"
+export QT_QMAKE="/home/beronthecolossus/Code/Qt/6.0.0/gcc_64/bin"
+# export QT_SELECT=qt6
 export TERMINAL="alacritty"
 export PAGER="less -RF -x4"
 export BAT_PAGER="less -RF -x4"
@@ -50,21 +49,14 @@ export XDG_CONFIG_HOME="/home/beronthecolossus/.config"
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
 export _ZL_MAXAGE=50000
 
-export HISTSIZE=64000
+export HISTSIZE=72000
+export SAVEHIST=72000
 
 export CMAKE_GENERATOR="Ninja"
 
 fpath=(~/cheat-sh/ $fpath)
 
 checkspell() { echo -n "$@" | aspell -a | cut -d: -f2 | grep -v "#"; }
-
-function run() {
-    number=$1
-    shift
-    for n in $(seq $number); do
-      $@
-    done
-}
 
 function lower(){
 	echo -n $@ | tr '[:upper:]' '[:lower:]'
