@@ -79,7 +79,7 @@ function previewepub() {
         > "$FIFO_UEBERZUG"
 }
 
-function  previewaudio() {
+function previewaudio() {
   if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
     ffmpeg -i "$6" "/tmp${PWD}/$6.png" -y &> /dev/null
   fi
