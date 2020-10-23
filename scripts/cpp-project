@@ -7,7 +7,9 @@ mkdir src bin include
 cp ~/scripts/meson.build .
 
 echo "# <++>" >> README.md
+touch src/Main.cpp include/Dummy.hpp
+cp ~/scripts/MIT LICENSE
 
-git add .gitignore src README.md meson.build
+git add .gitignore src include README.md meson.build LICENSE
 git commit -am "Initial Commit"
 

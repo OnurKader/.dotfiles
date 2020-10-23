@@ -6,7 +6,7 @@ SONG="$ARTIST - $NAME"
 SONG="${SONG//\"/}"
 STR_LEN=${#SONG}
 if [ "$STR_LEN" -gt 26 ] ; then
-	echo -n "$(echo "$SONG" | cut -b-26)..." | iconv -f utf8 -t ascii//TRANSLIT//IGNORE | sed 's/\&/and/g'
+	echo -n "$(echo "$SONG" | cut -b-27)..." | iconv -f utf8 -t ascii//TRANSLIT//IGNORE | sed 's/\&/and/g'
 else
 	echo -n "$SONG" | iconv -f utf8 -t ascii//TRANSLIT//IGNORE | sed 's/\&/and/g'
 fi
