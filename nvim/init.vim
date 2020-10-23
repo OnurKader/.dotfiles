@@ -274,12 +274,10 @@ let g:ale_linters = {
 let g:airline#extensions#ale#enabled = 1
 " Mappings
 nnoremap Q @@
-nnoremap s "_s
-nnoremap x "_x
+noremap s "_s
+noremap x "_x
 cmap qw wq
 cmap wwq wq
-cmap Q q!
-cmap W w
 vnoremap < <gv
 vnoremap > >gv
 nnoremap Y y$
