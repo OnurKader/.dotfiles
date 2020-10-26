@@ -6,10 +6,9 @@ project('<++>', 'cpp',
 
 srcs = ['src/Main.cpp']
 
-compiler_args = ['-Wformat-overflow=2', '-Wpedantic', '-Wshadow',
-'-Wmissing-include-dirs', '-Wuninitialized', '-Wduplicated-branches', '-Wduplicated-cond',
-'-Wfloat-equal', '-Wconversion', '-Wcast-qual', '-Wmissing-declarations', '-fno-rtti',
-'-fno-exceptions']
+compiler_args = ['-Wformat-overflow=2', '-Wpedantic', '-Wshadow', '-Wmissing-include-dirs',
+'-Wuninitialized', '-Wduplicated-branches', '-Wduplicated-cond', '-Wfloat-equal',
+'-Wconversion', '-Wcast-qual', '-Wmissing-declarations']
 
 includes = include_directories('include')
 

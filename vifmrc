@@ -1,36 +1,37 @@
-" vim: filetype=vim :
+" vim: filetype=vim:
 
-set vicmd=$EDITOR
-set syscalls
-set trash
-set history=512
-set nofollowlinks
-set fastrun
-set sortnumbers
-set undolevels=512
-set vimhelp
-set norunexec
-set timefmt=%Y/%m/%d-%H:%M:%S
-set wildmenu
-set wildstyle=popup
-set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-set scrolloff=4
 set cpoptions-=fst
-set nowrap
 set dotdirs=
 set dotfiles
+set fastrun
+set grepprg='rg --line-number %i %a %s'
+set history=1024
+set hlsearch
+set ignorecase
+set incsearch
+set nofollowlinks
+set norunexec
+set nowrap
+set scrolloff=4
+set slowfs=curlftpfs
+set smartcase
+set sortnumbers
+set statusline="  Hint: %z%= %A %10u:%-7g %15E %20d  "
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+set syscalls
+set tabstop=4
+set timefmt=%Y/%m/%d-%T
+set trash
+set undolevels=1024
+set vicmd=$EDITOR
+set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks
+set vimhelp
+set wildmenu
+set wildstyle=popup
 
 colorscheme Molokai Default-256 Default
 
-if !has('win')
-    set slowfs=curlftpfs
-endif
 
-set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " ------------------------------------------------------------------------------
 
@@ -106,23 +107,23 @@ filter! /^.*\.(lo|so|a|o|d|class|py[co]|meta)$/
 " Pdf
 filextype {*.pdf},<application/pdf> zathura %c %i &, apvlv %c, xpdf %c
 fileviewer {*.pdf},<application/pdf>
-		\ vifmimg pdfpreview %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+			\ vifmimg pdfpreview %px %py %pw %ph %c
+			\ %pc
+			\ vifmimg clear
 
 " PostScript
 filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
-        \ {View in zathura}
-        \ zathura %f,
-        \ {View in gv}
-        \ gv %c %i &,
+			\ {View in zathura}
+			\ zathura %f,
+			\ {View in gv}
+			\ gv %c %i &,
 
 " Djvu
 filextype {*.djvu},<image/vnd.djvu>
-        \ {View in zathura}
-        \ zathura %f,
-        \ {View in apvlv}
-        \ apvlv %f,
+			\ {View in zathura}
+			\ zathura %f,
+			\ {View in apvlv}
+			\ apvlv %f,
 
 " Audio
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
@@ -146,10 +147,10 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 
 " Web
 filextype {*.html,*.htm},<text/html>
-        \ {Open with Brave}
-        \ brave-browser %f &,
-        \ {Open with firefox}
-        \ firefox %f &,
+			\ {Open with Brave}
+			\ brave-browser %f &,
+			\ {Open with firefox}
+			\ firefox %f &,
 filetype {*.html,*.htm},<text/html> links, lynx
 
 " Man page
@@ -294,7 +295,18 @@ filextype *.pro qtcreator %f &
 " Directories
 filextype */
 			\ {View in thunar}
-			\ Thunar %f &,
+			\ Thunar %f &
+
+filextype .*/
+			\ {View in thunar}
+			\ Thunar %f &
+
+" fileviewer */ exa --time-style=long-iso --color=always --group-directories-first --icons --group -1a
+fileviewer */  /home/beronthecolossus/scripts/lsdir
+fileviewer .*/ /home/beronthecolossus/scripts/lsdir
+
+" fileviewer .*/
+" 			\ /home/beronthecolossus/Peki/C++/Projects/OK/List/bin/List-meson -a1
 
 " Syntax highlighting in preview
 "
@@ -311,16 +323,16 @@ filextype */
 "
 " fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
 
-" Open all other files with default system programs (you can also remove all
-" :file[x]type commands above to ensure they don't interfere with system-wide
-" settings).  By default all unknown files are opened with 'vi[x]cmd'
-" uncommenting one of lines below will result in ignoring 'vi[x]cmd' option
-" for unknown file types.
+" C/C++
+fileviewer {*.[ch],*.[ch]pp,*.[ch]xx,*.C,*.H,*.[ch]++}
+			\ pistol %f
+
+" JS/HTML/CSS
+fileviewer {*.js,*.htm,*.html,*.css,*.scss,*.less}
+			\ pistol %f
 
 " What should be saved automatically between vifm sessions.  Drop "savedirs"
 " value if you don't want vifm to remember last visited directories for you.
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
-    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " Examples of configuring both panels
 
@@ -401,7 +413,6 @@ nnoremap <c-u> <c-w>x
 map > :!vifmimg inc<CR>
 map < :!vifmimg dec<CR>
 
-set grepprg='rg --line-number %i %a %s'
 
 " Filetypes
 set classify=' :dir:/, :exe:, :reg:, :link:,? :?:, ::../::'
