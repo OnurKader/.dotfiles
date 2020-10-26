@@ -133,6 +133,7 @@ set statusline+=%*
 au BufNewFile,BufRead *.py set textwidth=80
 autocmd FileType python set colorcolumn=80
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType gitcommit set tabstop=4
 " Some Movement Stuff
 nnoremap j gj
 nnoremap k gk
