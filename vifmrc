@@ -32,7 +32,6 @@ set wildstyle=popup
 colorscheme Molokai Default-256 Default
 
 
-
 " ------------------------------------------------------------------------------
 
 " :mark mark /full/directory/path [filename]
@@ -291,6 +290,15 @@ filetype *.tudu tudu -f %c
 
 " Qt projects
 filextype *.pro qtcreator %f &
+
+" Comics
+filextype *.cb[rz] zathura %f &
+filetype *.cb[rz] zathura %f &
+
+fileviewer *.cb[rz]
+			\ vifmimg comicpreview %px %py %pw %ph %c
+			\ %pc
+			\ vifmimg clear
 
 " Directories
 filextype */
