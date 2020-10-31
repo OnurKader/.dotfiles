@@ -6,7 +6,7 @@ mkdir src bin include
 
 cp ~/scripts/meson.build .
 
-echo "# <++>" >> README.md
+echo -e "# <++>\n" >> README.md
 touch src/Main.cpp include/Dummy.hpp
 cp ~/scripts/MIT LICENSE
 

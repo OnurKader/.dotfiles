@@ -77,6 +77,7 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format'
@@ -403,3 +404,12 @@ iab hieght height
 iab tihs this
 iab doubel double
 iab mian main
+
+" require'nvim-treesitter.configs'.setup {
+"   ensure_installed = "maintained",
+"   highlight = {
+"     enable = true,
+"     disable = { "rust" },
+"   },
+" }
+
