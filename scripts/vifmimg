@@ -167,18 +167,18 @@ function previewcomic() {
 	shopt -s extglob
 
 	case $6 in
-		*.cbz) echo ZIPs aren\'t supported yet ;;
+		*.cbz) echo -e "\t\033[1;31mZIPs aren't supported yet" ;;
 		*.cbr)
-			PAGE_PATH="$(unrar l "$6" | awk 'BEGIN {ORS=" "} /-000?.jpg/{ i=5; while(1){ if($i == "") {break} print $i; i++ } }' | head -n1)"
+			LISTING="$(unrar l "$6")"
+			PAGE_PATH="$(echo "$LISTING" | awk '/-000.{,3}jpg$/{ i=5; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
+			[ -z "$PAGE_PATH" ] && PAGE_PATH="$(echo "$LISTING" | awk '/-001.{,3}jpg$/{ i=5; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
 			PAGE_PATH="${PAGE_PATH%%*( )}"
 			IMAGE_NAME="${PAGE_PATH/*\//}"
-			echo "$PAGE_PATH"
 			unrar e -o- "$6" "$PAGE_PATH" /tmp 2>&1 > /dev/null ;;
 		*) echo "How did you get here?" ;;
 	esac
 
 	shopt -u extglob
-
 
 	declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
 	[x]="$2" [y]="$3" [width]="$4" [height]="$5" \
