@@ -155,34 +155,36 @@ function previewmagick() {
 }
 
 function previewcomic() {
-	# case $6 in
-	# 	*.cbz) echo ZIPs aren\'t supported yet ;;
-	# 	*.cbr)
-	# 		PAGE_PATH="$(unrar l "$6" | grep "000.jpg$" | cut -d' ' -f14-)"
-	# 		IMAGE_NAME=${PAGE_PATH/*\//}
-	# 		unrar e -o- "$6" "$PAGE_PATH" /tmp >/dev/null ;;
-	# 	*) echo "How did you get here?" ;;
-	# esac
+	if [[ ! -f "/tmp$PWD/$6.jpg" ]]; then
+		shopt -s extglob
 
-	shopt -s extglob
+		case "$6" in
+			*.cbz)
+				LISTING="$(unzip -l "$6")"
+				PAGE_PATH="$(echo "$LISTING" | awk '/000.{,3}jpg$/{ i=4; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
+				[ -z "$PAGE_PATH" ] && PAGE_PATH="$(echo "$LISTING" | awk '/001.{,3}jpg$/{ i=4; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
+				PAGE_PATH="${PAGE_PATH%%*( )}"
+				IMAGE_NAME="${PAGE_PATH/*\//}"
+				unzip -jn -qq "$6" "*000*.jpg" -d /tmp || unzip -jn -qq "$6" "*001.jpg" -d /tmp
+				mv "/tmp/$IMAGE_NAME" "/tmp$PWD/$6.jpg"
+				;;
+			*.cbr)
+				LISTING="$(unrar l "$6")"
+				PAGE_PATH="$(echo "$LISTING" | awk '/000.{,3}jpg$/{ i=5; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
+				[ -z "$PAGE_PATH" ] && PAGE_PATH="$(echo "$LISTING" | awk '/001.{,3}jpg$/{ i=5; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
+				PAGE_PATH="${PAGE_PATH%%*( )}"
+				IMAGE_NAME="${PAGE_PATH/*\//}"
+				unrar e -o- "$6" "$PAGE_PATH" /tmp > /dev/null
+				mv "/tmp/$IMAGE_NAME" "/tmp$PWD/$6.jpg" ;;
+			*) echo "How did you get here?" ;;
+		esac
 
-	case $6 in
-		*.cbz) echo -e "\t\033[1;31mZIPs aren't supported yet" ;;
-		*.cbr)
-			LISTING="$(unrar l "$6")"
-			PAGE_PATH="$(echo "$LISTING" | awk '/-000.{,3}jpg$/{ i=5; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
-			[ -z "$PAGE_PATH" ] && PAGE_PATH="$(echo "$LISTING" | awk '/-001.{,3}jpg$/{ i=5; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
-			PAGE_PATH="${PAGE_PATH%%*( )}"
-			IMAGE_NAME="${PAGE_PATH/*\//}"
-			unrar e -o- "$6" "$PAGE_PATH" /tmp 2>&1 > /dev/null ;;
-		*) echo "How did you get here?" ;;
-	esac
-
-	shopt -u extglob
+		shopt -u extglob
+	fi
 
 	declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
 	[x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-		[path]="/tmp/$IMAGE_NAME") \
+		[path]="/tmp$PWD/$6.jpg") \
 		> "$FIFO_UEBERZUG"
 }
 
