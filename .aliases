@@ -125,7 +125,7 @@ alias watch="watch -ce"
 alias quit="exit"
 alias vi="nvim"
 alias vifm="vifmrun"
-alias leet="clear && ninja -C ../bin && clear && timeout 2s ../bin/$(basename $PWD)/main"
+alias leet="clear && ninja -C ../bin && clear && timeout 2s ../bin/$(date +%d)/main"
 alias wc="/home/beronthecolossus/Desktop/Code/fastlwc/bin/fastlwc-mt"
 alias ytdl="youtube-dl --add-metadata -ciwo '%(title)s.%(ext)s'"
 

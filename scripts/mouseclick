@@ -1,2 +1,4 @@
-#!/bin/bash
-xdotool click --clearmodifiers 1
+#!/bin/sh
+
+xdotool click --clearmodifiers "$1"
+

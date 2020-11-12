@@ -21,6 +21,7 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 set syscalls
 set tabstop=4
 set timefmt=%Y/%m/%d-%T
+set timeoutlen=300
 set trash
 set undolevels=1024
 set vicmd=$EDITOR

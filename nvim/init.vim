@@ -45,6 +45,7 @@ set splitright
 set t_Co=256
 set tabstop=4
 set termguicolors
+set timeoutlen=300
 set updatetime=300
 set wildmenu
 set wildmode=list,longest,full

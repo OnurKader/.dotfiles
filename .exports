@@ -4,7 +4,6 @@ export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//
 export PATH="$PATH:/home/beronthecolossus/.cargo/bin"
 export PATH="$PATH:/home/beronthecolossus/.config/i3"
 export PATH="$PATH:/home/beronthecolossus/Desktop/Code"
-export PATH="$PATH:/home/beronthecolossus/Desktop/Code/OF/libs"
 export PATH="$PATH:/home/beronthecolossus/Desktop/Code/ccls/Release"
 export PATH="$PATH:/home/beronthecolossus/Peki/processing-4.0a1"
 export PATH="$PATH:/home/beronthecolossus/env/bin"
