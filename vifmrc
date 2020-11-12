@@ -1,6 +1,6 @@
 " vim: filetype=vim:
 
-set cpoptions-=fst
+" set cpoptions-=fst
 set dotdirs=
 set dotfiles
 set fastrun
@@ -74,7 +74,7 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep nvim "+grep %a"
 command! reload :write | restart full
 
-filter! /^.*\.(lo|so|a|o|d|class|py[co]|meta)$/
+" filter! /^.*\.(lo|so|a|o|d|class|py[co]|meta)$/
 
 " ------------------------------------------------------------------------------
 
