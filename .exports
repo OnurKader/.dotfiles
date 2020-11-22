@@ -18,6 +18,8 @@ export PATH="$PATH:/usr/java/jdk-12/bin"
 export PATH="$PATH:/home/beronthecolossus/.nimble/bin"
 export PATH="$PATH:/home/beronthecolossus/Code/Qt/6.0.0/gcc_64/bin"
 
+export LD_LIBRARY_PATH="/usr/local/gcc-11/lib64:$LD_LIBRARY_PATH"
+
 export BROWSER="brave-browser"
 export EDITOR="nvim"
 export PISTOL_CHROMA_FORMATTER=terminal256
