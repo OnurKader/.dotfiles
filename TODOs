@@ -1,0 +1,34 @@
+* Setup SSH and GitHub / Git
+* Steam
+* Mesa Drivers
+* NeoVIM
+* GCC (master)
+* ninja (master)
+* LLVM (Latest Binaries)
+* CMake
+* coreutils
+* binutils
+* GNU Make-Sed-Awk
+* ZSH
+  - powerlevel10k
+  - git
+  - colored
+  - fast-syntax-highlighting
+  - tmux
+  - zsh-autosuggestions
+  - extract
+  - colored-man-pages
+  - zsh-completions
+  - vi-mode
+* MS Teams
+* Brave
+* QtCreator
+* Meson
+* Python3.9
+* Pip3
+  - conan
+  - youtube-dl
+  - ueberzug
+* VIFM
+* BitWarden
+* z.lua / czmod
