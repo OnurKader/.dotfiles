@@ -3,7 +3,12 @@
 * Alacritty
 * Mesa Drivers
 * NeoVIM
+* NerdFonts
+* Build my programs as well (list / List)
 * GCC (master)
+  - fmt
+  - CTRE
+  - Go through my GitHub stars and see...
 * ninja (master)
 * LLVM (Latest Binaries)
 * CMake
@@ -31,6 +36,7 @@
   - youtube-dl
   - ueberzug
 * VIFM
+* nnn
 * BitWarden
 * z.lua / czmod
 * instagram-scraper
@@ -40,3 +46,22 @@
 * PyCharm
 * Eclipse (?)
 * ProtonVPN
+* Rust / Cargo
+  - bat
+  - dust
+  - exa
+  - fd
+  - gping
+  - grex
+  - hyperfine
+  - lfs
+  - loc
+  - lsd
+  - procs
+  - spotifyd
+  - spt
+  - tldr
+* Go
+  - lf
+* Hotspot
+* Qbitttorrent
