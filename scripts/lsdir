@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -en " \b"
+/home/beronthecolossus/.cargo/bin/exa --time-style=long-iso --color=always --group-directories-first --icons --group -1a "$@"
+
