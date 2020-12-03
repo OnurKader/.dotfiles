@@ -78,8 +78,8 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'octol/vim-cpp-enhanced-highlight'
+" Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'bfrg/vim-cpp-modern'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format'
 Plug 'rking/ag.vim'
@@ -313,9 +313,8 @@ let g:prettier#autoformat = 1
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
 nmap <F4> :Goyo<CR>
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_scope_highlight = 1
-let g:cpp_posix_standard = 1
+let g:cpp_member_highlight = 1
+let g:cpp_attributes_highlight = 1
 let c_no_curly_error=1
 " box-shadow style highlighting
 augroup VimCSS3Syntax
