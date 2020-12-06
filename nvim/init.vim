@@ -1,7 +1,7 @@
 " Setting Stuff
 filetype off
 filetype plugin indent on
-let g:python3_host_prog = '/usr/bin/python3.7'
+let g:python3_host_prog = '/usr/bin/python3.9'
 let g:python_host_prog = '/usr/bin/python'
 let mapleader =","
 nnoremap <space> za
@@ -59,7 +59,7 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost   * set norelativenumber
 augroup END
 " Plugins
-call plug#begin('/home/beronthecolossus/.local/share/nvim/plugged')
+call plug#begin('/home/beron/.local/share/nvim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}

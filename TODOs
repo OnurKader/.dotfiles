@@ -1,67 +1,19 @@
-* Setup SSH and GitHub / Git
 * Steam
-* Alacritty
 * Mesa Drivers
-* NeoVIM
-* NerdFonts
-* Build my programs as well (list / List)
 * GCC (master)
-  - fmt
   - CTRE
   - Go through my GitHub stars and see...
-* ninja (master)
 * LLVM (Latest Binaries)
-* CMake
-* coreutils
-* binutils
-* GNU Make-Sed-Awk
-* ZSH
-  - powerlevel10k
-  - git
-  - colored
-  - fast-syntax-highlighting
-  - tmux
-  - zsh-autosuggestions
-  - extract
-  - colored-man-pages
-  - zsh-completions
-  - vi-mode
-* MS Teams
-* Brave
 * QtCreator
-* Meson
-* Python3.9
-* Pip3
-  - conan
-  - youtube-dl
-  - ueberzug
 * VIFM
 * nnn
 * BitWarden
-* z.lua / czmod
 * instagram-scraper
-* Thunar
 * Android stuff maybe
 * Processing
 * PyCharm
 * Eclipse (?)
 * ProtonVPN
-* Rust / Cargo
-  - bat
-  - dust
-  - exa
-  - fd
-  - gping
-  - grex
-  - hyperfine
-  - lfs
-  - loc
-  - lsd
-  - procs
-  - spotifyd
-  - spt
-  - tldr
 * Go
   - lf
 * Hotspot
-* Qbitttorrent

@@ -1,2 +1,0 @@
-#!/bin/bash
-exec "$HOME/Downloads/sesame_x64" &

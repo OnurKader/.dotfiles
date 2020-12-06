@@ -1,26 +1,9 @@
 #!/bin/zsh
-export PATH="$PATH:/home/beronthecolossus/bin:/home/beronthecolossus/.local/bin:/usr/local/bin"
-export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$PATH:/home/beronthecolossus/.cargo/bin"
-export PATH="$PATH:/home/beronthecolossus/.config/i3"
-export PATH="$PATH:/home/beronthecolossus/Desktop/Code"
-export PATH="$PATH:/home/beronthecolossus/Desktop/Code/ccls/Release"
-export PATH="$PATH:/home/beronthecolossus/Peki/processing-4.0a1"
-export PATH="$PATH:/home/beronthecolossus/env/bin"
-export PATH="$PATH:/home/beronthecolossus/pypy3.6-v7.1.1-linux64/bin"
-export PATH="$PATH:/home/beronthecolossus/scripts"
-export PATH="$PATH:/usr/local/gcc-10/bin"
-export PATH="$PATH:/usr/local/gcc-11/bin"
-export PATH="$PATH:/usr/local/bin/aseprite"
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:/home/beronthecolossus/Peki/Go/bin"
-export PATH="$PATH:/usr/java/jdk-12/bin"
-export PATH="$PATH:/home/beronthecolossus/.nimble/bin"
-export PATH="$PATH:/home/beronthecolossus/Code/Qt/6.0.0/gcc_64/bin"
+export PATH="$PATH:/home/beron/bin:/home/beron/.local/bin:/usr/local/bin"
+export PATH="$PATH:/home/beron/Desktop/Code"
+export PATH="$PATH:/home/beron/.config/scripts"
 
-export LD_LIBRARY_PATH="/usr/local/gcc-11/lib64:$LD_LIBRARY_PATH"
-
-export BROWSER="brave-browser"
+export BROWSER="firefox"
 export EDITOR="nvim"
 export PISTOL_CHROMA_FORMATTER=terminal256
 export PISTOL_CHROMA_STYLE=vim
@@ -34,18 +17,14 @@ export NNN_CONTEXT_COLORS="2136"
 export NNN_DE_FILE_MANAGER=$FILE
 export NNN_OPENER="~/Code/nnn/plugins/nuke"
 export NNN_TRASH=1
-# export NNN_OPENER=xdg-open
-export QTTOOLDIR="/home/beronthecolossus/Code/Qt/6.0.0/gcc_64/bin"
-export QTLIBDIR="/home/beronthecolossus/Code/Qt/6.0.0/gcc_64/lib"
-export QT_QMAKE="/home/beronthecolossus/Code/Qt/6.0.0/gcc_64/bin"
-# export QT_SELECT=qt6
 export TERMINAL="alacritty"
 export PAGER="less -RF -x4"
 export BAT_PAGER="less -RF -x4"
 export UPDATE_ZSH_DAYS=14
-export SERENITY_ROOT="/home/beronthecolossus/Desktop/Code/serenity"
-export ZSH="/home/beronthecolossus/.oh-my-zsh"
-export XDG_CONFIG_HOME="/home/beronthecolossus/.config"
+export SERENITY_ROOT="/home/beron/Desktop/Code/serenity"
+export ZSH="/usr/share/oh-my-zsh"
+export ZSH_AUTOSUGGEST_USE_ASYNC="true"
+export XDG_CONFIG_HOME="/home/beron/.config"
 
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
 export _ZL_MAXAGE=50000
@@ -55,24 +34,33 @@ export SAVEHIST=72000
 
 export CMAKE_GENERATOR="Ninja"
 
-fpath=(~/cheat-sh/ $fpath)
+export MANPATH="/usr/local/man:$MANPATH"
+export VISUAL="nvim"
 
 checkspell() { echo -n "$@" | aspell -a | cut -d: -f2 | grep -v "#"; }
 
-function lower(){
-	echo -n $@ | tr '[:upper:]' '[:lower:]'
-}
-
-function upper(){
-	echo -n $@ | tr '[:lower:]' '[:upper:]'
-}
-
-function findsubdomains(){
-	subfinder -d $@ -t 100 -silent |
-	httprobe -c 40                 |
-	sort -u	                       |
-	while read line; do
-	$BROWSER "$line"; sleep 10; done
+x ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via x()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
 }
 
 export LF_ICONS="\
