@@ -29,6 +29,13 @@ altercd(){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
 eval "$(lua /home/beron/Code/z.lua/z.lua --init zsh enhanced once)"
 source /home/beron/Code/czmod/czmod.zsh
 
+# Setopts
+setopt complete_in_word
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+
 # Don't really know how to change terminfo for Alacritty or XTERM so I'm calling tabs -4
 tabs -4
 

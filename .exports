@@ -27,15 +27,21 @@ export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export XDG_CONFIG_HOME="/home/beron/.config"
 
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
-export _ZL_MAXAGE=50000
+export _ZL_MAXAGE=128000
 
-export HISTSIZE=72000
-export SAVEHIST=72000
+export HISTSIZE=123456
+export SAVEHIST=123456
 
 export CMAKE_GENERATOR="Ninja"
 
 export MANPATH="/usr/local/man:$MANPATH"
 export VISUAL="nvim"
+
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
 
 checkspell() { echo -n "$@" | aspell -a | cut -d: -f2 | grep -v "#"; }
 
@@ -61,6 +67,11 @@ x ()
   else
     echo "'$1' is not a valid file"
   fi
+}
+
+search ()
+{
+	pacman -Ss $1 --color=always | less
 }
 
 export LF_ICONS="\
