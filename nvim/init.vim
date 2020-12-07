@@ -61,32 +61,17 @@ augroup END
 " Plugins
 call plug#begin('/home/beron/.local/share/nvim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'Shougo/denite.nvim'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'SirVer/UltiSnips'
 Plug 'airblade/vim-gitgutter'
+Plug 'bfrg/vim-cpp-modern'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dense-analysis/ale'
 Plug 'edkolev/tmuxline.vim'
 Plug 'gko/vim-coloresque'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
-Plug 'junegunn/goyo.vim'
-Plug 'justinmk/vim-syntax-extra'
 Plug 'mhinz/vim-startify'
-Plug 'mileszs/ack.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'bfrg/vim-cpp-modern'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format'
-Plug 'rking/ag.vim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
 Plug 'sjl/badwolf'
 Plug 'sophacles/vim-processing'
 Plug 'tmsvg/pear-tree'
@@ -160,8 +145,7 @@ let g:pear_tree_repeatable_expand = 0
 let g:pear_tree_smart_openers = 1
 let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_backspace = 1
-" Clang-Format and AG
-nnoremap <Leader>ag :Ag
+" Clang-Format
 autocmd FileType c,cpp,h,hpp let g:clang_format#auto_format = 0
 let g:clang_format#detect_style_file = 0
 augroup ClangFormatSettings
@@ -252,29 +236,6 @@ let g:ctrlp_match_window = 'bottom,order:ttb,min:2,max:12'
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_show_hidden = 1
-" Coc.nvim
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-	  \ pumvisible() ? "\<C-n>" :
-	  \ <SID>check_back_space() ? "\<TAB>" :
-	  \ coc#refresh()
-let g:UltiSnipsExpandTrigger="<CR>"
-" ALE
-let g:ale_linters = {
-			\	'cpp': ['ccls'],
-			\	'hpp': ['ccls'],
-			\	'h': ['ccls'],
-			\	'c': ['ccls'],
-			\	'javascript': ['eslint'],
-			\}
-let g:airline#extensions#ale#enabled = 1
 " Mappings
 nnoremap Q @@
 noremap s "_s
