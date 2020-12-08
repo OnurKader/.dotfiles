@@ -269,7 +269,7 @@ let g:prettier#config#bracket_spacing = 'false'
 let g:prettier#config#single_quote = 'false'
 let g:prettier#quickfix_auto_focus = 0
 let g:prettier#quickfix_enabled = 0
-let g:prettier#autoformat = 1
+let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif

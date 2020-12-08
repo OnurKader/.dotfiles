@@ -2,6 +2,7 @@
 export PATH="$PATH:/home/beron/bin:/home/beron/.local/bin:/usr/local/bin"
 export PATH="$PATH:/home/beron/Desktop/Code"
 export PATH="$PATH:/home/beron/.config/scripts"
+export PATH="$PATH:/home/beron/Code/spicetify-cli"
 
 export BROWSER="firefox"
 export EDITOR="nvim"
@@ -10,6 +11,7 @@ export PISTOL_CHROMA_STYLE=vim
 export FILE="vifm"
 export LESSHISTFILE="-"
 export GOPATH="$HOME/Peki/Go"
+
 # NNN CONFIG
 export NNN_BMS="d:~/Desktop/;P:~/Pictures/;p:~/Peki/;D:~/Downloads/"
 export NNN_USE_EDITOR=1
