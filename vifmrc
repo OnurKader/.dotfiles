@@ -311,8 +311,8 @@ filextype .*/
 			\ Thunar %f &
 
 " fileviewer */ exa --time-style=long-iso --color=always --group-directories-first --icons --group -1a
-fileviewer */  /home/beronthecolossus/scripts/lsdir
-fileviewer .*/ /home/beronthecolossus/scripts/lsdir
+fileviewer */  /home/beron/.config/scripts/lsdir
+fileviewer .*/ /home/beron/.config/scripts/lsdir
 
 " fileviewer .*/
 " 			\ /home/beronthecolossus/Peki/C++/Projects/OK/List/bin/List-meson -a1
