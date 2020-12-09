@@ -42,14 +42,13 @@ mark D ~/Downloads/
 mark H ~/
 mark M ~/Movies/
 mark P ~/Pictures/
-mark T ~/.local/share/vifm/Trash/
+mark t ~/.local/share/vifm/Trash/
 mark c ~/.config/
 mark d ~/Desktop/
 mark h ~/
 mark m ~/Music/
 mark p ~/Peki/
 mark r /
-mark t ~/.local/share/Trash/files/
 
 " ------------------------------------------------------------------------------
 
