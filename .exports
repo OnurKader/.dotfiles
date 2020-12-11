@@ -4,6 +4,8 @@ export PATH="$PATH:/home/beron/Desktop/Code"
 export PATH="$PATH:/home/beron/.config/scripts"
 export PATH="$PATH:/home/beron/Code/spicetify-cli"
 
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64"
+
 export BROWSER="firefox"
 export EDITOR="nvim"
 export PISTOL_CHROMA_FORMATTER=terminal256
