@@ -98,6 +98,7 @@ alias lsa='list -lah'
 alias lset="xbacklight -set"
 alias lt="colorls -l --tree --sd --group-directories-first"
 alias lta="lat"
+alias magick="/usr/bin/gm"
 alias mdcat="mdcat --columns 100"
 alias mpva="mpv --no-audio-display"
 alias mutt="neomutt"
