@@ -7,7 +7,7 @@ set ignorecase true
 set drawbox true
 set scrolloff 4
 set preview true
-set previewer ~/Code/pistol/cmd/pistol/pistol
+# set previewer ~/Code/pistol/cmd/pistol/pistol
 
 # Mappings
 # use enter for shell commands
