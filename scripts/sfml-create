@@ -1,4 +1,4 @@
-#!/bin/bash
-cp ~/scripts/sfml-template.cpp ./Main.cpp
-cp ~/scripts/sfml-makefile ./Makefile
-nvim Main.cpp
+#!/bin/sh
+
+cp ~/.config/scripts/sfml-template.cpp ./Main.cpp
+cp ~/.config/scripts/sfml-makefile ./Makefile
