@@ -6,7 +6,7 @@ project('<++>', 'cpp',
 
 srcs = ['src/Main.cpp']
 
-compiler_args = ['-Wformat-overflow=2', '-Wpedantic', '-Wshadow', '-Wuninitialized',
+compiler_args = ['-Wformat-overflow=2', '-Wshadow', '-Wuninitialized',
 				 '-Wduplicated-branches', '-Wduplicated-cond', '-Wfloat-equal',
 				 '-Wconversion', '-Wcast-qual']
 
