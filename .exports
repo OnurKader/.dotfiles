@@ -2,8 +2,8 @@
 
 export BROWSER="firefox"
 export EDITOR="nvim"
-# export PISTOL_CHROMA_FORMATTER=terminal256
-# export PISTOL_CHROMA_STYLE=vim
+export PISTOL_CHROMA_FORMATTER=terminal256
+export PISTOL_CHROMA_STYLE=vim
 export FILE="vifm"
 export LESSHISTFILE="-"
 export GOROOT="$HOME/Code/Go"

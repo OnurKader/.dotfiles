@@ -1,5 +1,5 @@
 command=/home/beron/.config/scripts/$BLOCK_NAME
-separator_block_width=21
+separator_block_width=20
 markup=pango
 
 [spotify]
@@ -37,9 +37,9 @@ command=battery
 interval=1
 label=
 
-[cpufreq]
-command=cpufreq
-interval=once
+# [cpufreq]
+# command=cpufreq
+# interval=once
 
 [nightlight]
 command=nightlight

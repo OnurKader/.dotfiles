@@ -22,5 +22,5 @@ else
 	icon=""
 fi
 
-printf "%s%s%%" "$icon " "$vol"
+echo "$icon $vol%"
 

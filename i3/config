@@ -3,7 +3,7 @@
 set $mod Mod4
 set $alt Mod1
 
-font pango:Hack Nerd Font 12
+font pango:Hack Nerd Font 14
 set $up k
 set $down j
 set $left h
@@ -25,16 +25,16 @@ focus_follows_mouse no
 default_orientation horizontal
 
 # Define Workspaces
-set $workspace1 "1: Web "
-set $workspace2 "2: Term "
-set $workspace3 "3: Code ﭱ"
-set $workspace4 "4: Media 嗢"
+set $workspace1 "1: Web  "
+set $workspace2 "2: Term  "
+set $workspace3 "3: Code ﭱ "
+set $workspace4 "4: Media 嗢 "
 set $workspace5 "5:"
 set $workspace6 "6:"
 set $workspace7 "7:"
-set $workspace8 "8: Game "
-set $workspace9 "9: Game "
-set $workspace10 "10: Music "
+set $workspace8 "8: Game  "
+set $workspace9 "9: Game  "
+set $workspace10 "10: Music  "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -166,7 +166,7 @@ bindsym $mod+Shift+i $exe qtcreator
 bindsym $mod+m $exe alacritty -e "neomutt"
 
 # Shutdown
-bindsym $mod+Shift+x $exe shut "Shutdown Now?" "~/.config/i3/scripts/i3exit.sh shutdown, mode 'default'"
+bindsym $mod+Shift+x $exe shut "Shutdown Now?" "shutdown -h now"
 
 # Open Floating Centered Terminal?
 bindsym $mod+x $exe $term -t "FloatTerm"
@@ -180,10 +180,10 @@ bindsym $mod+r reload
 bindsym $mod+Shift+r restart
 
 # Resize Window
-bindsym $mod+Shift+y  $exe i3resize left
-bindsym $mod+Shift+u  $exe i3resize down
-bindsym $mod+Shift+o  $exe i3resize up
-bindsym $mod+Shift+p  $exe i3resize right
+bindsym $mod+Shift+y $exe i3resize left 5
+bindsym $mod+Shift+u $exe i3resize down 5
+bindsym $mod+Shift+o $exe i3resize up 5
+bindsym $mod+Shift+p $exe i3resize right 5
 bindsym $mod+Ctrl+y  $exe i3resize left 48
 bindsym $mod+Ctrl+u  $exe i3resize down 48
 bindsym $mod+Ctrl+o  $exe i3resize up 48
@@ -238,7 +238,7 @@ client.urgent				#E83637		#E54034			#F7F8F9		#92A4FC
 
 
 bar {
-	font pango:Hack Nerd Font 11
+	font pango:Hack Nerd Font 13
 	status_command i3blocks
 	mode dock
 	position top
@@ -286,6 +286,7 @@ bindsym $alt+$mod+l exec --no-startup-id mousemove_relative RIGHT
 assign [class="Atom"] $workspace3
 assign [class="Code"] $workspace3
 assign [class="Firefox"] $workspace1
+assign [class="firefox"] $workspace1
 assign [class="Brave-browser"] $workspace1
 assign [class="Godot_Engine"] $workspace3
 assign [class="Processing"] $workspace3
@@ -301,6 +302,7 @@ assign [instance="Godot_Engine$"] $workspace3
 for_window [class="Atom"] move workspace $workspace3
 for_window [class="Code"] move workspace $workspace3
 for_window [class="Firefox"] move workspace $workspace1
+for_window [class="firefox"] move workspace $workspace1
 for_window [class="Brave-browser"] move workspace $workspace1
 for_window [class="Godot_Engine"] move workspace $workspace3
 for_window [class="Processing"] move workspace $workspace3
@@ -326,5 +328,5 @@ exec_always --no-startup-id libinput-gestures
 exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Disable While Typing Enabled" 0
 exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id exec alacritty -t "TermStart"
+$exe exec $term -t "TermStart"
 
