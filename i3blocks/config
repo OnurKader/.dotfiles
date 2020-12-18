@@ -1,4 +1,4 @@
-command=/home/beron/.config/scripts/statusbar/$BLOCK_NAME
+command=/home/beron/.config/scripts/$BLOCK_NAME
 separator_block_width=21
 markup=pango
 
