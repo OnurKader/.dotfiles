@@ -1,3 +1,0 @@
-#!/bin/bash
-RES="$(sdcv -u 'Moby Thesaurus II' "$1")"
-(echo "$RES" | sed -n '5,103p')

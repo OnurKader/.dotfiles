@@ -1,4 +1,0 @@
-#!/bin/bash
-clear && sudo apt-get update 2>&1 | lolcat -ftp 1.9 -F 0.07 && sudo apt-fast upgrade -y 2>&1 | lolcat -ftp 1.9 -F 0.07
-notify-send "Update Done" "Returned $?"
-

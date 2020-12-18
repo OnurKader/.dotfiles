@@ -99,7 +99,7 @@ bindsym control+$alt+k $exe arcolinux-logout
 bindsym control+$alt+l $exe arcolinux-logout
 
 # Go to center and click
-bindsym $mod+$alt+Delete $exe ~/Peki/C\+\+/Gists/mouse 960 540
+bindsym $mod+$alt+Delete $exe mousemove
 bindsym Ctrl+$alt+Delete $exe mouseclick 1
 bindsym Shift+$alt+Delete $exe mouseclick 3
 
@@ -125,7 +125,7 @@ bindsym $mod+z        gaps outer current plus 4
 bindsym $mod+Shift+z  gaps outer current minus 4
 
 # HTOP
-bindsym $mod+i $exe $term -e htop -d 11
+bindsym $mod+i $exe $term -e htop
 
 # VIFM / File Manager
 bindsym $mod+Shift+n $exe $term -e "nvim"
