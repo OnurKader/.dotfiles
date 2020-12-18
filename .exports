@@ -1,17 +1,9 @@
 #!/bin/zsh
-export PATH="$PATH:/home/beron/bin:/home/beron/.local/bin:/usr/local/bin"
-export PATH="$PATH:/home/beron/Desktop/Code"
-export PATH="$PATH:/home/beron/.config/scripts"
-export PATH="$PATH:/home/beron/Code/spicetify-cli"
-export PATH="$PATH:/home/beron/Code/Go/bin"
-export PATH="$PATH:/home/beron/Code/Go/go/bin"
-
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64"
 
 export BROWSER="firefox"
 export EDITOR="nvim"
-export PISTOL_CHROMA_FORMATTER=terminal256
-export PISTOL_CHROMA_STYLE=vim
+# export PISTOL_CHROMA_FORMATTER=terminal256
+# export PISTOL_CHROMA_STYLE=vim
 export FILE="vifm"
 export LESSHISTFILE="-"
 export GOROOT="$HOME/Code/Go"
@@ -78,7 +70,7 @@ x ()
 
 search ()
 {
-	pacman -Ss $1 --color=always | less
+	pacman -Ss "$1" --color=always | less
 }
 
 export LF_ICONS="\
