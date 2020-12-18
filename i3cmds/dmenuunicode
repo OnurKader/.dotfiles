@@ -2,8 +2,8 @@
 # Give dmenu list of all unicode characters to copy.
 # Shows the selected character in dunst if running.
 
-if [ -e ~/scripts/fontawesome ]; then
-    chosen=$(grep -v "#" -h ~/scripts/Emoji ~/scripts/fontawesome | rofi -dmenu -p 'Emoji' -i -l 18 -fn "NotoEmoji Nerd Font Complete Monospace-16")
+if [ -e ~/.config/scripts/fontawesome ]; then
+    chosen=$(grep -v "#" -h ~/.config/scripts/Emoji ~/.config/scripts/fontawesome | rofi -dmenu -p 'Emoji' -i -l 18 -fn "NotoEmoji Nerd Font Complete Monospace-16")
 fi
 
 [ "$chosen" != "" ] || exit

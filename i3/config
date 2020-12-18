@@ -22,6 +22,7 @@ smart_gaps on
 hide_edge_borders smart
 popup_during_fullscreen smart
 focus_follows_mouse no
+default_orientation horizontal
 
 # Define Workspaces
 set $workspace1 "1: Web "
@@ -82,15 +83,20 @@ floating_modifier $mod
 ## Key Bindings
 
 # start a terminal
-bindsym $mod+Return $exe alacritty
-bindsym $mod+$alt+t $exe alacritty
-bindsym $mod+Shift+Return $exe cdterm
+bindsym $mod+Return $exe alacritty; focus
+bindsym $mod+KP_Enter $exe $term; focus
+bindsym $mod+$alt+t $exe alacritty; focus
+bindsym $mod+Shift+Return $exe $term; focus
 
 bindsym $mod+a $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 12 -width 41 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325487'"
 
 # split orientation
 bindsym $mod+b split h
 bindsym $mod+v split v
+
+# Logout screen
+bindsym control+$alt+k $exe arcolinux-logout
+bindsym control+$alt+l $exe arcolinux-logout
 
 # Go to center and click
 bindsym $mod+$alt+Delete $exe ~/Peki/C\+\+/Gists/mouse 960 540
@@ -106,11 +112,11 @@ bindsym $mod+Shift+d gaps inner current set 0, gaps outer current set 0
 # Thunar / FILE
 bindsym $mod+e $exe thunar
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, Exit' 'i3-msg exit'"
+bindsym $mod+Shift+e $exe arcolinux-logout
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+f $exe alacritty -t Cal -e calcurse
+bindsym $mod+Shift+f $exe $term -t Cal -e calcurse
 
 # Increase-Decrease Gaps
 bindsym $mod+c        gaps inner current plus 4
@@ -119,11 +125,11 @@ bindsym $mod+z        gaps outer current plus 4
 bindsym $mod+Shift+z  gaps outer current minus 4
 
 # HTOP
-bindsym $mod+i $exe alacritty -e htop -d 11
+bindsym $mod+i $exe $term -e htop -d 11
 
 # VIFM / File Manager
-bindsym $mod+Shift+n $exe alacritty -e "nvim"
-bindsym $mod+Shift+v $exe alacritty -e "vifmrun"
+bindsym $mod+Shift+n $exe $term -e "nvim"
+bindsym $mod+Shift+v $exe $term -e "vifmrun"
 
 # Move the Window Around with `vim` keys
 bindsym $mod+Shift+h move left 24
@@ -132,17 +138,15 @@ bindsym $mod+Shift+k move up 22
 bindsym $mod+Shift+l move right 24
 
 # TODO Stuff
-bindsym $mod+g $exe alacritty -t "todo" -e tudu
+bindsym $mod+g $exe $term -t "todo" -e tudu
 
 # Lock Screen
-bindsym $mod+Ctrl+$alt+l $exe lock
-# bindsym $mod+$alt+l exec "xset s activate; xset dpms force off"
-# $exe xss-lock -- lock
+bindsym $mod+Ctrl+$alt+l $exe ~/.config/i3/scripts/i3exit.sh lock, mode "default"
 
 # Default gaps
 bindsym $mod+Shift+t gaps inner current set 14, gaps outer current set 8
 
-# Launch Spotify, if running switch to workspace
+# Launch Spotify
 bindsym $mod+Shift+s $exe spotify
 
 # change container layout (stacked, tabbed, toggle split)
@@ -150,8 +154,6 @@ bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+w layout toggle split
 
-# ddspawn Doesn't Work
-# bindsym $mod+u $exe ddspawn tmuxdd
 bindsym $mod+u $exe dmenuunicode
 bindsym $mod+$alt+u $exe enter_unicode
 
@@ -161,11 +163,10 @@ bindsym $mod+Shift+w $exe $BROWSER
 # QtCreator / IDE
 bindsym $mod+Shift+i $exe qtcreator
 
-# bindsym $mod+m exec $term -e neomutt && pkill -RTMIN+12 i3blocks
 bindsym $mod+m $exe alacritty -e "neomutt"
 
 # Shutdown
-bindsym $mod+Shift+x $exe shut "Shutdown Now?" "turnoff"
+bindsym $mod+Shift+x $exe shut "Shutdown Now?" "~/.config/i3/scripts/i3exit.sh shutdown, mode 'default'"
 
 # Open Floating Centered Terminal?
 bindsym $mod+x $exe $term -t "FloatTerm"
@@ -207,11 +208,10 @@ bindsym $mod+Down	focus down
 bindsym $mod+Up		focus up
 bindsym $mod+Right	focus right
 
-# Change to scrot
-bindsym $mod+Insert exec --no-startup-id showclip
-bindsym Print $exe screen
-bindsym $mod+Print $exe screen
-bindsym Shift+Print $exe screen
+# bindsym $mod+Insert exec --no-startup-id showclip
+bindsym Print $exe screenshot
+bindsym $mod+Print $exe screenshot
+bindsym Shift+Print $exe screenshot
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -314,13 +314,15 @@ for_window [class="vlc"] move workspace $workspace4
 for_window [instance="Godot_Engine$"] move workspace $workspace3
 
 # Execs
-exec --no-startup-id picom -b
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+$exe picom -b
+$exe nm-applet &
+$exe /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# $exe pamac-tray
+exec_always --no-startup-id autotiling
 exec_always --no-startup-id numlockx on
-exec_always --no-startup-id dunst
+exec_always --no-startup-id dunst &
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
 exec_always --no-startup-id libinput-gestures
-exec --no-startup-id nm-applet
 exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Disable While Typing Enabled" 0
 exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
