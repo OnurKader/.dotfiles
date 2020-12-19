@@ -1,5 +1,5 @@
 #!/bin/bash
-pgrep -i "spotify" >/dev/null || echo ""
+pgrep -i "spotify" >/dev/null || echo -n ""
 NAME="$(sp eval | grep -i "TITLE" | cut -d= -f2)"
 ARTIST="$(sp eval | grep -i "_ARTIST" | cut -d= -f2)"
 SONG="$ARTIST - $NAME"

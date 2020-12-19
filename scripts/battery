@@ -7,11 +7,11 @@ PERC="$(acpi -b | awk '{print $4}' | sed s/,//)"
 PERC_INT=${PERC//\%/}
 [ "$(acpi -b | grep -i 'Discharging')" ] || DISC=" "
 
-if   [ "$PERC_INT" -ge 90 ]; then SYMBOL="";
-elif [ "$PERC_INT" -ge 75 ]; then SYMBOL="";
-elif [ "$PERC_INT" -ge 50 ]; then SYMBOL="";
-elif [ "$PERC_INT" -ge 25 ]; then SYMBOL="";
-else SYMBOL=""
+if   [ "$PERC_INT" -ge 90 ]; then SYMBOL=" ";
+elif [ "$PERC_INT" -ge 75 ]; then SYMBOL=" ";
+elif [ "$PERC_INT" -ge 50 ]; then SYMBOL=" ";
+elif [ "$PERC_INT" -ge 25 ]; then SYMBOL=" ";
+else SYMBOL=" "
 fi
 
 # Arguments => "Current Percentage, Zero Percent Color ('#ABCDEF' hex format), Full Percentage Color"
@@ -59,7 +59,7 @@ case $BLOCK_BUTTON in
 esac
 
 if [ "$(acpi -b | grep "Discharging")" ] ; then
-	[ "$PERC_INT" -lt 27 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!  $PERC"
+	[ "$PERC_INT" -lt 27 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!   $PERC"
 fi
 
 getColor "$PERC_INT" "$START_COL" "$END_COL"

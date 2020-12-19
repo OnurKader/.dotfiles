@@ -7,8 +7,8 @@ mkdir src bin include
 cp ~/.config/scripts/meson.build .
 
 echo -e "# <++>\n" >> README.md
-echo -e "#pragma once\n" > include/Dummy.hpp
-echo -e "int main(){return 0;}\n" > src/Main.cpp
+echo -e "#pragma once" > include/Dummy.hpp
+echo -e "int main()\n{\nreturn 0;\n}\n" > src/Main.cpp
 cp ~/.config/scripts/MIT LICENSE
 
 git add .gitignore src include README.md meson.build LICENSE
