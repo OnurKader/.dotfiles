@@ -73,6 +73,11 @@ search ()
 	pacman -Ss "$1" --color=always | less
 }
 
+nrun ()
+{
+	clear && ninja && clear && ./$1
+}
+
 export LF_ICONS="\
 di=:\
 fi=:\

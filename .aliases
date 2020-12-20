@@ -67,7 +67,7 @@ alias cvim="nvim ~/.config/nvim/init.vim"
 alias czsh="nvim ~/.zshrc"
 alias cşear="clear"
 alias e="nvim"
-alias egrep='egrep --color=always -iE'
+alias egrep="egrep --color=always -iE"
 alias exi="exit"
 alias find="fd -iI"
 alias speedtest="speedtest --secure 2>&1 | lolcat"

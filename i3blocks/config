@@ -7,18 +7,18 @@ command=getsong
 interval=30
 color=#3BFFB5
 signal=10
-label=" "
+label= 
 
 [memory]
 interval=30
 color=#EEEFF2
-label=" "
+label= 
 
 [disk]
 interval=180
 command=echo "$(df -h / | awk '/dev/ {print $4"/"$2}')"
 color=#EEEFF2
-label=" "
+label= 
 
 [volume]
 interval=30
@@ -35,7 +35,7 @@ command=battery
 
 [clock]
 interval=1
-label=" "
+label= 
 
 # [cpufreq]
 # command=cpufreq
