@@ -75,7 +75,7 @@ search ()
 
 nrun ()
 {
-	clear && ninja && clear && ./$1
+	clear && ninja && clear && ./$@
 }
 
 export LF_ICONS="\
