@@ -2,13 +2,13 @@
 
 git init
 cp ~/.config/scripts/cpp-gitignore .gitignore
-mkdir src bin include
+mkdir src include
 
 cp ~/.config/scripts/meson.build .
 
 echo -e "# <++>\n" >> README.md
 echo -e "#pragma once" > include/Dummy.hpp
-echo -e "int main()\n{\nreturn 0;\n}\n" > src/Main.cpp
+echo -e "int main()\n{\n\treturn 0;\n}\n" > src/Main.cpp
 cp ~/.config/scripts/MIT LICENSE
 
 git add .gitignore src include README.md meson.build LICENSE

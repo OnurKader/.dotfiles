@@ -2,7 +2,7 @@ project('<++>', 'cpp',
 	version : '0.1',
 	license : 'MIT',
 	default_options : ['cpp_std=c++2a', 'buildtype=debugoptimized', 'warning_level=3',
-					   'b_lto=true', 'cpp_rtti=false', 'cpp_eh=none'])
+					   'b_lto=false', 'cpp_rtti=false', 'cpp_eh=none'])
 
 srcs = ['src/Main.cpp']
 
