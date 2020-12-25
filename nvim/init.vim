@@ -69,7 +69,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'gko/vim-coloresque'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'mhinz/vim-startify'
-Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format'
 Plug 'sjl/badwolf'
