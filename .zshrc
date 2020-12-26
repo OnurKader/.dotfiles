@@ -35,16 +35,15 @@ setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
+# setopt glob_dots
+# setopt correctall
+setopt auto_continue
 
 # Don't really know how to change terminfo for Alacritty or XTERM so I'm calling tabs -4
 tabs -4
 
-# POWERLEVEL9K_VIRTUAL_ENV_BACKGROUND=none
-# POWERLEVEL9K_OS_ICON_BACKGROUND=none
-# POWERLEVEL9K_OS_ICON_FOREGROUND="red"
-# POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
-# POWERLEVEL9K_VIRTUALENV_FOREGROUND=032
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
