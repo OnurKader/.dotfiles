@@ -13,12 +13,12 @@ export GOPATH="$HOME/Code/Go/go"
 export NNN_BMS="d:~/Desktop/;P:~/Pictures/;p:~/Peki/;D:~/Downloads/"
 export NNN_USE_EDITOR=1
 export NNN_CONTEXT_COLORS="2136"
-export NNN_DE_FILE_MANAGER=$FILE
+export NNN_DE_FILE_MANAGER="$FILE"
 export NNN_OPENER="~/Code/nnn/plugins/nuke"
 export NNN_TRASH=1
 export TERMINAL="alacritty"
 export PAGER="less -RF -x4"
-export BAT_PAGER="less -RF -x4"
+export BAT_PAGER="$PAGER"
 export UPDATE_ZSH_DAYS=14
 export SERENITY_ROOT="/home/beron/Desktop/Code/serenity"
 export ZSH="/usr/share/oh-my-zsh"
@@ -37,9 +37,9 @@ export MANPATH="/usr/local/man:$MANPATH"
 export VISUAL="nvim"
 
 autoload -U compinit
+compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
 _comp_options+=(globdots)		# Include hidden files.
 
 checkspell() { echo -n "$@" | aspell -a | cut -d: -f2 | grep -v "#"; }
