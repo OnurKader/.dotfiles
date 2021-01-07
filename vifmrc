@@ -191,6 +191,22 @@ fileviewer <font/*>
 			\ %pc
 			\ vifmimg clear
 
+" Comics
+filextype *.cbr zathura %f &
+filetype *.cbr  zathura %f &
+filextype *.cbz zathura %f &
+filetype *.cbz  zathura %f &
+
+fileviewer *.cbr
+			\ vifmimg comicpreview %px %py %pw %ph %c
+			\ %pc
+			\ vifmimg clear
+
+fileviewer *.cbz
+			\ vifmimg comicpreview %px %py %pw %ph %c
+			\ %pc
+			\ vifmimg clear
+
 " OpenRaster
 filextype *.ora
 			\ {Edit in MyPaint}
@@ -290,15 +306,6 @@ filetype *.tudu tudu -f %c
 
 " Qt projects
 filextype *.pro qtcreator %f &
-
-" Comics
-filextype *.cb[rz] zathura %f &
-filetype *.cb[rz] zathura %f &
-
-fileviewer *.cb[rz]
-			\ vifmimg comicpreview %px %py %pw %ph %c
-			\ %pc
-			\ vifmimg clear
 
 " Directories
 filextype */

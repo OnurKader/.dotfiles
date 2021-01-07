@@ -4,6 +4,7 @@ set shellopts '-eu'
 set ifs "\n"
 set icons true
 set ignorecase true
+set hidden on
 set drawbox true
 set scrolloff 4
 set preview true
