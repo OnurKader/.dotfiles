@@ -1,5 +1,7 @@
 #!/bin/bash
 
-SONG="$(sp eval | grep -i "TITLE" | cut -d= -f2 | sed s/\"//g)"
-ARTIST="$(sp eval | grep -i "_ARTIST" | cut -d= -f2 | sed s/\"//g)"
+EVAL="$(sp eval)"
+SONG="$(echo $EVAL | grep -i "TITLE" | cut -d= -f2 | sed s/\"//g)"
+ARTIST="$(echo $EVAL | grep -i "_ARTIST" | cut -d= -f2 | sed s/\"//g)"
 echo "$ARTIST - $SONG"
+

@@ -1,14 +1,15 @@
 #!/bin/bash
 pgrep -i "spotify" >/dev/null || exit 0
+# This is literraly spot-get
 NAME="$(sp eval | grep -i "TITLE" | cut -d= -f2)"
 ARTIST="$(sp eval | grep -i "_ARTIST" | cut -d= -f2)"
 SONG="$ARTIST - $NAME"
 SONG="${SONG//\"/}"
 STR_LEN="${#SONG}"
 if [ "$STR_LEN" -gt 28 ] ; then
-	echo "$(echo "$SONG" | cut -b-28)..." | iconv -f utf8 -t ascii//TRANSLIT//IGNORE | sed 's/\&/and/g'
+	echo " $(echo "$SONG" | cut -b-28)..." | iconv -f utf8 -t ascii//TRANSLIT//IGNORE | sed 's/\&/and/g'
 else
-	echo "$SONG" | iconv -f utf8 -t ascii//TRANSLIT//IGNORE | sed 's/\&/and/g'
+	echo " $SONG" | iconv -f utf8 -t ascii//TRANSLIT//IGNORE | sed 's/\&/and/g'
 fi
 
 case $BLOCK_BUTTON in

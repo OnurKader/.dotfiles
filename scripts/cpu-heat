@@ -1,2 +1,4 @@
 #!/bin/sh
+
 echo " $(sensors | awk '/CPU:/ {print $2}')"
+
