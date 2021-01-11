@@ -1,7 +1,7 @@
 #!/bin/bash
 pgrep -i "spotify" >/dev/null || exit 0
 # This is literraly spot-get
-NAME="$(sp eval | grep -i "TITLE" | cut -d= -f2)"
+NAME="$(sp eval | grep -i "_TITLE" | cut -d= -f2)"
 ARTIST="$(sp eval | grep -i "_ARTIST" | cut -d= -f2)"
 SONG="$ARTIST - $NAME"
 SONG="${SONG//\"/}"
