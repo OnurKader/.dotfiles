@@ -601,6 +601,7 @@ key_bindings:
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                      }
   - { key: NumpadEnter,             chars: "\n"                              }
   - { key: Return,   mods: Shift,   chars: "\n"                              }
+  - { key: Return,   mods: Control, action: SpawnNewInstance                 }
   #  Vi Mode
   - { key: Space,  mods: Shift|Control, mode: Vi, action: ScrollToBottom          }
   - { key: Space,  mods: Shift|Control,           action: ToggleViMode            }
@@ -650,3 +651,4 @@ key_bindings:
   - { key: Slash,  mods: Shift,         mode: Vi, action: SearchBackward          }
   - { key: N,                           mode: Vi, action: SearchNext              }
   - { key: N,      mods: Shift,         mode: Vi, action: SearchPrevious          }
+
