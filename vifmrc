@@ -193,9 +193,9 @@ fileviewer <font/*>
 
 " Comics
 filextype *.cbr zathura %f &
-filetype *.cbr  zathura %f &
+filetype  *.cbr zathura %f &
 filextype *.cbz zathura %f &
-filetype *.cbz  zathura %f &
+filetype  *.cbz zathura %f &
 
 fileviewer *.cbr
 			\ vifmimg comicpreview %px %py %pw %ph %c
@@ -365,10 +365,10 @@ nnoremap S :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
-nnoremap o :write | edit %f<CR>
+nnoremap o :write | !nvim %f<CR>
 nnoremap O :write | !xdg-open %f<CR>
 
-nnoremap e :write | edit %f<CR>
+nnoremap e :write | !nvim %f<CR>
 nnoremap E :write | !xdg-open %f<CR>
 
 " Open file in the background using its default program
