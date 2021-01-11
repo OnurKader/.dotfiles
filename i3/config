@@ -95,8 +95,8 @@ bindsym $mod+b split h
 bindsym $mod+v split v
 
 # Logout screen
-bindsym control+$alt+k $exe arcolinux-logout
-bindsym control+$alt+l $exe arcolinux-logout
+bindsym Ctrl+$alt+k $exe arcolinux-logout
+bindsym Ctrl+$alt+l $exe arcolinux-logout
 
 # Go to center and click
 bindsym $mod+$alt+Delete $exe mousemove
@@ -144,6 +144,7 @@ bindsym $mod+g $exe $term -t "todo" -e tudu
 
 # Lock Screen
 # bindsym $mod+Ctrl+$alt+l $exe ~/.config/i3/scripts/i3exit.sh lock, mode "default"
+bindsym $mod+Ctrl+$alt+l $exe arcolinux-logout
 
 # Default gaps
 bindsym $mod+Shift+t gaps inner current set 14, gaps outer current set 8
