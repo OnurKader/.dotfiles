@@ -1,2 +1,4 @@
-#!/bin/bash
-bash -c "$* & disown" >/dev/null
+#!/bin/sh
+
+bash -c "$* & disown" 2>&1 >/dev/null
+
