@@ -8,5 +8,3 @@ export PATH="$PATH:$HOME/.gem/ruby/2.7.0/bin"
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64"
 
-source "$HOME/.cargo/env"
-
