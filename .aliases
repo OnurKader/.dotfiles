@@ -130,7 +130,7 @@ alias v="nvim"
 alias vi="nvim"
 alias vifm="vifmrun"
 alias watch="watch -ce"
-alias wc="/home/beron/Code/fastlwc/bin/fastlwc-mt"
+alias wc="/home/beron/Code/fastlwc/fastlwc-mt"
 alias wget="wget -c"
 alias ytdl="youtube-dl --add-metadata -ciwo '%(title)s.%(ext)s'"
 

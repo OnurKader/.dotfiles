@@ -190,7 +190,7 @@ let g:clang_format#style_options = {
 			\	"ConstructorInitializerAllOnOneLineOrOnePerLine": 'true',
 			\	"ConstructorInitializerIndentWidth": '4',
 			\	"ContinuationIndentWidth": '4',
-			\	"ColumnLimit": '100',
+			\	"ColumnLimit": '101',
 			\	"Cpp11BracedListStyle": 'true',
 			\	"DerivePointerAlignment": 'false',
 			\	"DisableFormat": 'false',

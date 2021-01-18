@@ -8,7 +8,7 @@ set hidden on
 set drawbox true
 set scrolloff 4
 set preview true
-# set previewer ~/Code/pistol/cmd/pistol/pistol
+set previewer ~/go/bin/pistol
 
 # Mappings
 # use enter for shell commands
