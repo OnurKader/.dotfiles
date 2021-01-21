@@ -1,4 +1,40 @@
-#!/bin/sh
+#!/bin/bash
 
-echo " $(sensors | awk '/CPU:/ {print $2}')"
+START_COL="#08FF08" # 0%
+END_COL="#FF0808"	# 100%
+
+function getColor {
+	local r;
+	local g;
+	local b;
+	local temp;
+	local ratio;
+	ratio=$(bc -ql <<< "scale=2; ($1-26)/73")
+	# Extract zero rgb and full rgb and convert to hex
+	local rz=$(( 16#$(echo "$2" | cut -b2-3) ))
+	local gz=$(( 16#$(echo "$2" | cut -b4-5) ))
+	local bz=$(( 16#$(echo "$2" | cut -b6-7) ))
+	local rf=$(( 16#$(echo "$3" | cut -b2-3) ))
+	local gf=$(( 16#$(echo "$3" | cut -b4-5) ))
+	local bf=$(( 16#$(echo "$3" | cut -b6-7) ))
+	temp=$((rf+rz))
+	r=$(bc -l <<< "scale=2; $temp*$ratio")
+	temp=$((gf+gz))
+	g=$(bc -l <<< "scale=2; $temp*$ratio")
+	temp=$((bf+bz))
+	b=$(bc -l <<< "scale=2; $temp*$ratio")
+	r=$(echo "$r" | cut -f1 -d.)
+	g=$(echo "$g" | cut -f1 -d.)
+	b=$(echo "$b" | cut -f1 -d.)
+	r=$((r-rz)); r=${r#-}
+	g=$((g-gz)); g=${g#-}
+	b=$((b-bz)); b=${b#-}
+	color=$(printf "#%02X%02X%02X" "$r" "$g" "$b")
+}
+
+HEAT="$(sensors | awk '/CPU:/ {print $2}')"
+
+getColor "$HEAT" "$START_COL" "$END_COL"
+
+echo "<span foreground='$color'> $HEAT</span>"
 
