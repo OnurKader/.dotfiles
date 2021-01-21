@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# A small script for yay, don't know if it will work or not,
+# it just checks to see if there is a valid
+# Makefile (makefile, and other filenames) in the specified, or not, directory.
+# If not, looks for ninja.build, and calls the appropriate command
+
+# nmake -j4 -C build all
+
+# TODO: Add support for -f to get the build file's name, custom MakeFile and whatnot
+
+CUR_DIR="$PWD"
+
+while getopts C:j: option
+do
+	case "${option}"
+		in
+		C) cd "${OPTARG}" ;;
+		j) JOB_COUNT=${OPTARG} ;;
+		*) ARGUMENTS="${OPTARG}" ;;
+	esac
+done
+
+if [[ -f "Makefile" || -f "makefile" || -f "GNUmakefile" ]]; then
+	make -j ${JOB_COUNT-4} "${ARGUMENTS-all}"
+elif [[ -f "build.ninja" ]]; then
+	ninja "${ARGUMENTS-all}"
+fi
+
+cd "$CUR_DIR"
+
+echo "Done"
+
