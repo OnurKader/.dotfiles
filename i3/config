@@ -16,7 +16,7 @@ set $exe exec --no-startup-id
 gaps inner 14
 gaps outer 8
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 
 smart_gaps on
 hide_edge_borders smart
