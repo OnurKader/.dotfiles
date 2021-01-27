@@ -18,6 +18,7 @@ autoload -U compinit && compinit
 bindkey -v
 bindkey "^?" backward-delete-word
 bindkey "^H" backward-delete-word
+bindkey "\C-k" vi-kill-eol
 
 source $ZSH/oh-my-zsh.sh
 
