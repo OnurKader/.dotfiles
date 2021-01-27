@@ -66,23 +66,6 @@ x ()
   fi
 }
 
-search ()
-{
-	pacman -Ss "$1" --color=always | less
-}
-
-# TODO: Add a yay searcher as well
-
-nrun ()
-{
-	clear && ninja && clear && ./$@
-}
-
-gcl ()
-{
-	git clone $1 && cd $1
-}
-
 export LF_ICONS="\
 di=:\
 fi=:\

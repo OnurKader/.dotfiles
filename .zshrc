@@ -25,7 +25,24 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 source ~/.aliases
 mkcd () { mkdir -p "$@"; cd "$@"; }
-altercd(){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
+altercd (){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
+
+search ()
+{
+	pacman -Ss "$1" --color=always | less
+}
+
+# TODO: Add a yay searcher as well
+
+nrun ()
+{
+	clear && ninja && clear && ./$@
+}
+
+gcl ()
+{
+	git clone $1 && cd $1
+}
 
 eval "$(lua /home/beron/Code/z.lua/z.lua --init zsh enhanced once)"
 source /home/beron/Code/czmod/czmod.zsh
