@@ -39,9 +39,14 @@ nrun ()
 	clear && ninja && clear && ./$@
 }
 
-gcl ()
+strlen ()
 {
-	git clone $1 && cd $1
+	echo ${#1}
+}
+
+function gcl ()
+{
+	git clone $1 && cd ${${1%%.git}##*/}
 }
 
 eval "$(lua /home/beron/Code/z.lua/z.lua --init zsh enhanced once)"
