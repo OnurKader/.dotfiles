@@ -23,6 +23,9 @@ export ZSH="/usr/share/oh-my-zsh"
 export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export XDG_CONFIG_HOME="/home/beron/.config"
 
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_FUZZY=true
+
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
 export _ZL_MAXAGE=128000
 
