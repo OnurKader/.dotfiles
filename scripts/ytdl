@@ -1,0 +1,4 @@
+#!/bin/sh
+
+youtube-dl --add-metadata -ciwo '%(title)s.%(ext)s' -f 'bestvideo[height<=?1080]+bestaudio/best' $@
+
