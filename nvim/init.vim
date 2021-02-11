@@ -10,6 +10,7 @@ set background=dark
 set backspace=indent,start,eol
 set complete-=i
 set completefunc=emoji#complete
+set completeopt=menuone,noinsert,noselect
 set directory=~/.config/nvim/tmp
 set encoding=utf-8
 set foldmethod=manual
@@ -69,7 +70,9 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'gko/vim-coloresque'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'mhinz/vim-startify'
-" Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format'
 Plug 'sjl/badwolf'
@@ -373,4 +376,37 @@ iab mian main
 "     disable = { "rust" },
 "   },
 " }
+
+" Rust & LSP Stuff
+lua <<EOF
+
+-- nvim_lsp object
+local nvim_lsp = require'lspconfig'
+
+-- function to attach completion when setting up lsp
+local on_attach = function(client)
+    require'completion'.on_attach(client)
+end
+
+-- Enable rust_analyzer
+nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+
+-- Enable diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+  }
+)
+EOF
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" use <Tab> as trigger keys
+" imap <Tab> <Plug>(completion_smart_tab)
+" imap <S-Tab> <Plug>(completion_smart_s_tab)
+" nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
