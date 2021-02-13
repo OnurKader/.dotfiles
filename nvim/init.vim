@@ -68,6 +68,7 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'gko/vim-coloresque'
+Plug 'cespare/vim-toml'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'mhinz/vim-startify'
 Plug 'neovim/nvim-lspconfig'
