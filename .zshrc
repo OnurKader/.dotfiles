@@ -48,9 +48,14 @@ strlen ()
 	echo ${#1}
 }
 
-function gcl ()
+gcl ()
 {
-	git clone $1 && cd ${${1%%.git}##*/}
+	git clone $@ &&
+	if [[ -z "$2" ]]; then;
+		cd ${${1%%.git}##*/}
+	else
+		cd "$2"
+	fi
 }
 
 eval "$(lua /home/beron/Code/z.lua/z.lua --init zsh enhanced once)"
