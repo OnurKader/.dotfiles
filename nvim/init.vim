@@ -403,11 +403,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 EOF
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " use <Tab> as trigger keys
-" imap <Tab> <Plug>(completion_smart_tab)
-" imap <S-Tab> <Plug>(completion_smart_s_tab)
-" nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+imap <Tab> <Plug>(completion_smart_tab)
+imap <S-Tab> <Plug>(completion_smart_s_tab)
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
