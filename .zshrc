@@ -22,8 +22,12 @@ bindkey "\C-k" vi-kill-eol
 
 source $ZSH/oh-my-zsh.sh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # Aliases
 source ~/.aliases
+
 mkcd () { mkdir -p "$@"; cd "$@"; }
 altercd (){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
 
@@ -67,6 +71,4 @@ tabs -4
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
