@@ -29,9 +29,9 @@ signal=10
 interval=30
 color=#EEEFF2
 
-# [battery]
-# interval=21
-# command=battery
+[battery]
+interval=30
+command=battery
 
 [clock]
 interval=1

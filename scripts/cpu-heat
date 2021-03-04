@@ -4,7 +4,7 @@ START_COL="#08FF08" # 0%
 END_COL="#FF0808"	# 100%
 
 function getColor {
-	ratio="$((($1 - 26.0) / 74.0 ))";
+	ratio="$((($1 - 24.0) / 80.0 ))";
 	# Extract zero rgb and full rgb and convert to hex
 	rz=$(( 16#$(echo "$2" | cut -b2-3) ))
 	gz=$(( 16#$(echo "$2" | cut -b4-5) ))
@@ -28,7 +28,7 @@ function getColor {
 	color=$(printf "#%02X%02X%02X" "$r" "$g" "$b")
 }
 
-HEAT="$(sensors | awk '/CPU:/ {print $2}')"
+HEAT="$(sensors | awk '/temp1:/ {print $2}' | head -n1)"
 
 getColor "$(echo $HEAT | cut -b2-5)" "$START_COL" "$END_COL"
 

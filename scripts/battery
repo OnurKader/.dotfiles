@@ -59,7 +59,7 @@ case $BLOCK_BUTTON in
 esac
 
 if [ "$(acpi -b | grep "Discharging")" ] ; then
-	[ "$PERC_INT" -lt 27 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!   $PERC"
+	[ "$PERC_INT" -lt 25 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!   $PERC"
 fi
 
 getColor "$PERC_INT" "$START_COL" "$END_COL"
@@ -68,8 +68,8 @@ if [[ "$PERC_INT" -eq 69 ]]; then
 	SYMBOL="Nice 👌";
 	PERC="";
 	color='#426969';
-# elif [[ "$PERC_INT" -ge 99 &&  "$(acpi -b | grep -v "Discharging")" ]]; then
-# 	notify-send --urgency=normal "FULLY CHARGED" "BATTERY PERCENTAGE AT $PERC"
+elif [[ "$PERC_INT" -ge 99 &&  "$(acpi -b | grep -v "Discharging")" ]]; then
+	notify-send --urgency=normal "FULLY CHARGED" "BATTERY PERCENTAGE AT $PERC"
 fi
 
 echo "<span foreground='$color'>$SYMBOL $PERC</span><span foreground='#FDFD16'>$DISC</span>"
