@@ -146,8 +146,6 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 
 " Web
 filextype {*.html,*.htm},<text/html>
-			\ {Open with Brave}
-			\ brave-browser %f &,
 			\ {Open with firefox}
 			\ firefox %f &,
 filetype {*.html,*.htm},<text/html> links, lynx
