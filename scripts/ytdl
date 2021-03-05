@@ -1,4 +1,4 @@
 #!/bin/sh
 
-youtube-dl --add-metadata -ciwo '%(title)s.%(ext)s' $@
+youtube-dl --add-metadata -ciwo '%(title)s.%(ext)s' -f 'bestvideo[fps<=?31]+bestaudio/best[fps<=?31]' $@
 
