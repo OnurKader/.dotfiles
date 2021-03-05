@@ -59,7 +59,7 @@ case $BLOCK_BUTTON in
 esac
 
 if [ "$(acpi -b | grep "Discharging")" ] ; then
-	[ "$PERC_INT" -lt 25 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!   $PERC"
+	[ "$PERC_INT" -lt 20 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!   $PERC"
 fi
 
 getColor "$PERC_INT" "$START_COL" "$END_COL"
