@@ -67,8 +67,8 @@ getColor "$PERC_INT" "$START_COL" "$END_COL"
 if [[ "$PERC_INT" -eq 69 ]]; then
 	SYMBOL="Nice 👌";
 	PERC="";
-	color='#426969';
-elif [[ "$PERC_INT" -ge 99 &&  "$(acpi -b | grep -v "Discharging")" ]]; then
+	color='#1AFFFE';
+elif [[ "$PERC_INT" -eq 100 &&  "$(acpi -b | grep -v "Discharging")" ]]; then
 	notify-send --urgency=normal "FULLY CHARGED" "BATTERY PERCENTAGE AT $PERC"
 fi
 
