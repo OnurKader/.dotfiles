@@ -8,7 +8,7 @@ srcs = ['src/Main.cpp']
 
 compiler_args = ['-Wformat-overflow=2', '-Wshadow', '-Wuninitialized',
 				 '-Wduplicated-branches', '-Wduplicated-cond', '-Wfloat-equal',
-				 '-Wconversion', '-Wcast-qual', '-fmax-errors=5', '-march=native',
+				 '-Wconversion', '-Wcast-qual', '-fmax-errors=4', '-march=native',
 				 '-mtune=native']
 
 includes = include_directories('include')
