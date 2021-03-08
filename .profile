@@ -11,5 +11,7 @@ export PATH="$PATH:$HOME/Code/Jarvis"
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64:/usr/local/lib32"
 
-alias nano=nvim
+export TERM=alacritty
+export BROWSER=firefox
+export EDITOR=nvim
 

@@ -370,23 +370,25 @@ iab tihs this
 iab doubel double
 iab mian main
 
-" require'nvim-treesitter.configs'.setup {
-"   ensure_installed = "maintained",
-"   highlight = {
-"     enable = true,
-"     disable = { "rust" },
-"   },
-" }
+if(!exists('g:vscode'))
 
-" Rust & LSP Stuff
-lua <<EOF
+	" require'nvim-treesitter.configs'.setup {
+	"   ensure_installed = "maintained",
+	"   highlight = {
+	"     enable = true,
+	"     disable = { "rust" },
+	"   },
+	" }
 
--- nvim_lsp object
-local nvim_lsp = require'lspconfig'
+	" Rust & LSP Stuff
+	lua <<EOF
 
--- function to attach completion when setting up lsp
-local on_attach = function(client)
-    require'completion'.on_attach(client)
+	-- nvim_lsp object
+	local nvim_lsp = require'lspconfig'
+
+	-- function to attach completion when setting up lsp
+	local on_attach = function(client)
+	require'completion'.on_attach(client)
 end
 
 -- Enable rust_analyzer
@@ -394,11 +396,11 @@ nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
 
 -- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = true,
-    signs = true,
-    update_in_insert = true,
-  }
+vim.lsp.diagnostic.on_publish_diagnostics, {
+virtual_text = true,
+signs = true,
+update_in_insert = true,
+}
 )
 EOF
 
@@ -410,4 +412,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 imap <Tab> <Plug>(completion_smart_tab)
 imap <S-Tab> <Plug>(completion_smart_s_tab)
 nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+
+endif
 
