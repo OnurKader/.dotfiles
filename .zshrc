@@ -13,7 +13,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=( git fast-syntax-highlighting zsh-autosuggestions
 		 colored-man-pages zsh-completions vi-mode )
 
-autoload -U compinit && compinit
+fpath=(~/.zsh/completion $fpath)
+autoload -U compinit && compinit -i
 
 bindkey -v
 bindkey "^?" backward-delete-word
