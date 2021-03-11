@@ -370,7 +370,7 @@ iab tihs this
 iab doubel double
 iab mian main
 
-if(!exists('g:vscode'))
+if !exists('g:vscode')
 
 	" require'nvim-treesitter.configs'.setup {
 	"   ensure_installed = "maintained",
@@ -391,27 +391,27 @@ if(!exists('g:vscode'))
 	require'completion'.on_attach(client)
 end
 
--- Enable rust_analyzer
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+	-- Enable rust_analyzer
+	nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
 
--- Enable diagnostics
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-vim.lsp.diagnostic.on_publish_diagnostics, {
-virtual_text = true,
-signs = true,
-update_in_insert = true,
-}
-)
+	-- Enable diagnostics
+	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+	vim.lsp.diagnostic.on_publish_diagnostics, {
+	virtual_text = true,
+	signs = true,
+	update_in_insert = true,
+	}
+	)
 EOF
 
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+	" Use <Tab> and <S-Tab> to navigate through popup menu
+	inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" use <Tab> as trigger keys
-imap <Tab> <Plug>(completion_smart_tab)
-imap <S-Tab> <Plug>(completion_smart_s_tab)
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+	" Use <Tab> as trigger keys
+	imap <Tab> <Plug>(completion_smart_tab)
+	imap <S-Tab> <Plug>(completion_smart_s_tab)
+	nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
 endif
 
