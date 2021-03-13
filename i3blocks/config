@@ -16,7 +16,7 @@ label=
 
 [disk]
 interval=180
-command=echo " $(df -h / | awk '/dev/ {print $4"/"$2}')"
+command=echo " $(df -H / | awk '/dev/ {print $4"/"$2}')"
 color=#EEEFF2
 label=
 
