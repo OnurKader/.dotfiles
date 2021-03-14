@@ -3,7 +3,7 @@ filetype off
 filetype plugin indent on
 let g:python3_host_prog = '/usr/bin/python3.9'
 let g:python_host_prog = '/usr/bin/python'
-let mapleader =","
+let mapleader = ','
 nnoremap <space> za
 set autoread
 set background=dark
@@ -277,7 +277,6 @@ let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
-nmap <F4> :Goyo<CR>
 let g:cpp_member_highlight = 1
 let g:cpp_attributes_highlight = 1
 let c_no_curly_error=1
@@ -286,11 +285,6 @@ augroup VimCSS3Syntax
   autocmd!
   autocmd FileType css setlocal iskeyword+=-
 augroup END
-" If NerdTree is the  only window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | :bdelete | endif
-let nerdtreequitonopen = 0
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
 " Git keybinds
 let g:gitgutter_grep=''
 let g:gitgutter_max_signs = 512
@@ -306,14 +300,6 @@ nnoremap  <Leader>gP  :Gpush<CR>
 nnoremap  <Leader>gp  :Gpull<CR>
 " Git merge
 nnoremap  <Leader>gm  :Gmerge<CR>
-" Compile Stuff
-" olcPixelGameEngine
-autocmd FileType cpp noremap <F6> <Esc>:w <CR> :!g++ % -o %< -lX11 -O3 -lGL -lpthread -lpng && vblank_mode=0 ./%< <CR>
-" SFML
-autocmd FileType cpp noremap <F7> <Esc>:w <CR> :!g++ % -o %< -O3 `pkg-config --libs --cflags sfml-all` && ./% &< <CR>
-" OpenCV
-autocmd FileType cpp noremap <F8> <Esc>:w <CR> :!g++ % -o %< -O3 `pkg-config --libs --cflags opencv` && ./%< <CR>
-map <F5> :w! \| !compiler <C-r>%<CR>
 " CTRL-C to toggle highlight.
 let hlstate=0
 nnoremap <C-c> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1 <Esc> <CR>
@@ -324,18 +310,10 @@ autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge 
 :noremap <leader>h :split<cr>
 :noremap <leader>v :vsp<cr>
 inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-inoremap <leader>cout <Esc>Istd::cout << <Esc>A << std::endl;
-inoremap <leader>for <Esc>Ifor (uint16_t i = 0U; i < <Esc>A; ++i)<Enter>{<Enter>}<Esc>O
-inoremap <leader>opge <Esc>:w<CR><Esc>:!g++ % -o %< -lX11 -lGL -lpthread -O3 -lpng `pkg-config --cflags --libs opencv` && vblank_mode=0 ./%< <CR>
-inoremap <leader>pge <Esc>:w<CR><Esc>:!g++ % -o %< -lX11 -lGL -lpng -lpthread -O3 && vblank_mode=0 ./%< <CR>
-inoremap <leader>sfml <Esc>:w<CR><Esc>:!g++ % -o %< -lsfml-graphics -lsfml-window -O3 -lsfml-system && ./%< <CR>
 inoremap <leader>w <Esc>:w<CR>
 inoremap ,w <Esc>:w<CR>
 inoremap <leader>q <ESC>:q<CR>
 inoremap <leader>x <ESC>:x<CR>
-inoremap <leader>pragma <Esc>ggI#ifndef<Space><++><CR>#define<Space><++><CR><CR>class<Space><++><Enter>{<Enter>};<CR><Esc>GI<CR>#endif<CR><Esc>
-inoremap <Leader>print <Esc>Iprintf(<Esc>A);
-vnoremap <Leader>print yOprintf(<Esc>pA)
 map <leader><leader> <Esc>/<++><Enter>"_c4l
 map ,, <Esc>/<++><Enter>"_c4l
 nnoremap <Enter> meo<Esc>k`e
@@ -354,7 +332,6 @@ nnoremap <leader>w :w<CR>
 nnoremap ,w :w<CR>
 nnoremap <leader>W :w<CR>
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-vnoremap <leader>cout yOstd::cout << <esc>pA << std:endl;
 " MarkdownPreview Stuff
 let g:mkdp_browser = 'qutebrowser'
 let g:mkdp_refresh_slow = 1
