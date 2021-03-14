@@ -31,6 +31,8 @@ export SAVEHIST=128000
 
 export CMAKE_GENERATOR="Ninja"
 
+export RUST_BACKTRACE=1 # Maybe full?
+
 export MANPATH="/usr/local/man:$MANPATH"
 export VISUAL="nvim"
 
