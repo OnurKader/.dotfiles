@@ -287,7 +287,6 @@ bindsym $alt+$mod+k exec --no-startup-id mousemove_relative UP
 bindsym $alt+$mod+l exec --no-startup-id mousemove_relative RIGHT
 
 # Move workspaces
-assign [class="Atom"] $workspace3
 assign [class="Code"] $workspace3
 assign [class="Firefox"] $workspace1
 assign [class="firefox"] $workspace1
@@ -303,8 +302,8 @@ assign [class="jetbrains-pycharm-ce"] $workspace3
 assign [class="mpv"] $workspace4
 assign [class="vlc"] $workspace4
 assign [instance="Godot_Engine$"] $workspace3
+assign [class="jetbrains-clion"] $workspace3
 
-for_window [class="Atom"] move workspace $workspace3
 for_window [class="Code"] move workspace $workspace3
 for_window [class="Firefox"] move workspace $workspace1
 for_window [class="firefox"] move workspace $workspace1
@@ -320,6 +319,8 @@ for_window [class="jetbrains-pycharm-ce"] move workspace $workspace3
 for_window [class="mpv"] move workspace $workspace4
 for_window [class="vlc"] move workspace $workspace4
 for_window [instance="Godot_Engine$"] move workspace $workspace3
+for_window [class="jetbrains-clion"] move workspace $workspace3
+
 
 # Execs
 $exe picom -b
