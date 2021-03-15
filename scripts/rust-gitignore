@@ -1,0 +1,28 @@
+*.files
+*.includes
+*.config
+*.creator
+*.creator.user*
+*.autosave
+
+/subprojects/*
+!/subprojects/*.wrap
+meson-logs
+meson-private
+meson_benchmark_setup.dat
+meson_test_setup.dat
+build.ninja
+.ninja_deps
+.ninja_logs
+
+# Misc
+compile_commands.json
+# End of https://www.toptal.com/developers/gitignore/api/meson
+
+.ccls-cache/
+tags
+bin/
+build/
+/target
+.idea/
+
