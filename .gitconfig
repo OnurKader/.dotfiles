@@ -1,6 +1,6 @@
 [user]
 	name = OnurKader
-	email = onurkader@protonmail.com
+	email = onurorkunkader1999@gmail.com
 [core]
 	editor = nvim
 [pull]
@@ -26,3 +26,4 @@
 	hooksPath="/home/beron/.config/.hooks"
 [init]
 	defaultBranch = master
+
