@@ -14,6 +14,7 @@ export NNN_CONTEXT_COLORS="2136"
 export NNN_DE_FILE_MANAGER="$FILE"
 export NNN_OPENER="~/Code/nnn/plugins/nuke"
 export NNN_TRASH=1
+
 export TERMINAL="alacritty"
 export PAGER="less -RF -x4"
 export BAT_PAGER="$PAGER"
@@ -31,6 +32,7 @@ export SAVEHIST=128000
 
 export CMAKE_GENERATOR="Ninja"
 
+export RUSTC_WRAPPER="sccache"
 export RUST_BACKTRACE=1 # Maybe full?
 
 export MANPATH="/usr/local/man:$MANPATH"
