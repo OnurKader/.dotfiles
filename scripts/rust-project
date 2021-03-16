@@ -3,4 +3,5 @@
 [ -z $1 ] && cargo init && exit 0
 
 cargo new "$1" && cd "$1" && cp ~/.config/scripts/rust-gitignore ./.gitignore
+cp ~/.config/scripts/MIT ./LICENSE
 
