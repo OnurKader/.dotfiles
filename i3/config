@@ -262,6 +262,7 @@ bindsym XF86AudioLowerVolume $exe pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute        $exe pactl set-sink-mute 0 toggle
 
 # Sreen brightness controls
+# Hmm, fix this, but how I'm in the video group but the light program requires sudo
 bindsym XF86MonBrightnessUp   exec xbacklight -inc 9
 bindsym XF86MonBrightnessDown exec xbacklight -dec 9
 
