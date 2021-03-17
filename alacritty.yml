@@ -603,6 +603,7 @@ key_bindings:
   - { key: NumpadEnter,   mods: Shift,   chars: "\n"                         }
   - { key: Return,   mods: Shift,   chars: "\n"                              }
   - { key: Return,   mods: Control, action: SpawnNewInstance                 }
+
   #  Vi Mode
   - { key: Space,  mods: Shift|Control, mode: Vi, action: ScrollToBottom          }
   - { key: Space,  mods: Shift|Control,           action: ToggleViMode            }
