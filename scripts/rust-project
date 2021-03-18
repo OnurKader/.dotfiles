@@ -5,3 +5,5 @@
 cargo new "$1" && cd "$1" && cp ~/.config/scripts/rust-gitignore ./.gitignore
 cp ~/.config/scripts/MIT ./LICENSE
 
+git add LICENSE Cargo.toml .gitignore src/
+
