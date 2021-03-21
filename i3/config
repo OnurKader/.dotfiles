@@ -64,7 +64,7 @@ for_window [instance="sun-awt-X11-XFramePeer"] floating enable, border pixel 2
 for_window [instance="glfw-application"] floating enable
 for_window [class="X-terminal-emulator"] border pixel 2
 for_window [title="^Cal$"] floating enable, border pixel 3, resize set 1280 768, move position center
-for_window [title="^todo$"] floating enable, resize set 1280 832, border pixel 3, move position center
+for_window [title="^dijo$"] floating enable, resize set 1280 832, border pixel 3, move position center
 for_window [title="TermStart"] floating enable, border pixel 3, move scratchpad, scratchpad show, resize set 1200 780, move position center
 for_window [title="FloatTerm"] floating enable, border pixel 3, resize set 1200 780, move position center
 for_window [instance="hl2_linux"] fullscreen
@@ -139,8 +139,8 @@ bindsym $mod+Shift+j move down 22
 bindsym $mod+Shift+k move up 22
 bindsym $mod+Shift+l move right 24
 
-# TODO Stuff
-bindsym $mod+g $exe $term -t "todo" -e tudu
+# Dijo Stuff
+bindsym $mod+g $exe $term -t "Dijo" -e dijo
 
 # Lock Screen
 # bindsym $mod+Ctrl+$alt+l $exe ~/.config/i3/scripts/i3exit.sh lock, mode "default"
@@ -166,8 +166,8 @@ bindsym $mod+Shift+w $exe $BROWSER
 # QtCreator / IDE
 bindsym $mod+Shift+i $exe qtcreator
 
-# Mail, not implemented
-bindsym $mod+m $exe $term -e "neomutt"
+# WIP Movie dir
+bindsym $mod+m $exe $term --working-directory "Movies"
 
 # Shutdown
 bindsym $mod+Shift+x $exe shut "Shutdown Now?" "shutdown -h now"
@@ -261,10 +261,9 @@ bindsym XF86AudioRaiseVolume $exe pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume $exe pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute        $exe pactl set-sink-mute 0 toggle
 
-# Sreen brightness controls
-# Hmm, fix this, but how I'm in the video group but the light program requires sudo
-bindsym XF86MonBrightnessUp   exec xbacklight -inc 9
-bindsym XF86MonBrightnessDown exec xbacklight -dec 9
+# Screen brightness controls
+bindsym XF86MonBrightnessUp   exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
 
 # Media player controls
 bindsym XF86AudioPlay  exec playerctl play-pause
