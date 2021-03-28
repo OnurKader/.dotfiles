@@ -29,7 +29,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 
 mkcd () { mkdir -p "$@"; cd "$@"; }
-altercd (){ cd(){ unset -f cd ; cd $*; la ; altercd; } } ; altercd
+altercd (){ cd(){ unset -f cd ; cd $* && la ; altercd; } } ; altercd
 
 search ()
 {
