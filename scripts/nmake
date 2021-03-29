@@ -22,7 +22,7 @@ do
 done
 
 if [[ -f "Makefile" || -f "makefile" || -f "GNUmakefile" ]]; then
-	make -j ${JOB_COUNT-4} "${ARGUMENTS-all}"
+	make -j ${JOB_COUNT-14} "${ARGUMENTS-all}"
 elif [[ -f "build.ninja" ]]; then
 	ninja "${ARGUMENTS-all}"
 fi

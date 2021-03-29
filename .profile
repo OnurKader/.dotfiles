@@ -14,3 +14,5 @@ export TERM=alacritty
 export BROWSER=firefox
 export EDITOR=nvim
 
+export MAKEFLAGS="$MAKEFLAGS -j14"
+
