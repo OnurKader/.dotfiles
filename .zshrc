@@ -1,14 +1,14 @@
 # Exports
 source ~/.exports
 
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=( git fast-syntax-highlighting zsh-autosuggestions
 		 colored-man-pages zsh-completions vi-mode )
@@ -35,8 +35,6 @@ search ()
 {
 	pacman -Ss "$1" --color=always | less
 }
-
-# TODO: Add a yay searcher as well
 
 nrun ()
 {
