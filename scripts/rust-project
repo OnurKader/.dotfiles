@@ -12,7 +12,7 @@ cat > README.md <<EOF
 
 EOF
 
-printf "\n[profile.release]\nlto = true\n" >> Cargo.toml
+printf "\n[profile.release]\nlto = true\ncodegen-units = 1\n" >> Cargo.toml
 
 git add LICENSE Cargo.toml .gitignore src/ README.md
 git commit -am "Initial Commit"
