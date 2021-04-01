@@ -331,9 +331,9 @@ exec_always --no-startup-id numlockx on
 exec_always --no-startup-id dunst
 exec_always --no-startup-id kdeconnect-indicator
 exec_always --no-startup-id libinput-gestures
-exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Disable While Typing Enabled" 0
-exec_always --no-startup-id xinput set-prop "DELL0767:00 06CB:7E92 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Middle Emulation Enabled" 1
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Disable While Typing Enabled" 0
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
 $exe exec $term -t "TermStart"
 
