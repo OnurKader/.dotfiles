@@ -34,9 +34,10 @@ export CMAKE_GENERATOR="Ninja"
 
 export RUSTC_WRAPPER="sccache"
 # export RUST_BACKTRACE=1
+export RUSTFLAGS+=" -C target-cpu=native "
 
-export MANPATH="/usr/local/man:$MANPATH"
 export VISUAL="nvim"
+export MANPATH="/usr/local/man:$MANPATH"
 
 autoload -U compinit
 compinit
