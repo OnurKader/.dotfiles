@@ -158,6 +158,9 @@ augroup ClangFormatSettings
 	autocmd FileType c,cpp,h,hpp,cc,hh nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 	autocmd FileType c,cpp,h,hpp,cc,hh inoremap <buffer><Leader>cf <Esc>:ClangFormat<CR>
 	autocmd FileType c,cpp,h,hpp,cc,hh vnoremap <buffer><Leader>cf :ClangFormat<CR>
+	autocmd FileType rust nnoremap <buffer><Leader>cf :!rustfmt %<CR>
+	autocmd FileType rust inoremap <buffer><Leader>cf <Esc>:!rustfmt %<CR>
+	autocmd FileType rust vnoremap <buffer><Leader>cf :!rustfmt %<CR>
 augroup END
 let g:clang_format#style_options = {
 			\	"BasedOnStyle": "Mozilla",
@@ -306,7 +309,7 @@ nnoremap <C-c> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| end
 " Remove Whitespace
 autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge | endif
 " Leader bindings for some snippets and Write/Quit
-:noremap <leader>c :wincmd w<cr>
+" :noremap <leader>c :wincmd w<cr>
 :noremap <leader>h :split<cr>
 :noremap <leader>v :vsp<cr>
 inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
