@@ -41,6 +41,11 @@ nrun ()
 	clear && ninja && clear && ./$@
 }
 
+crun ()
+{
+	clear; cargo run -q --bin day_$1
+}
+
 strlen ()
 {
 	echo "${#1}: '$1'"
