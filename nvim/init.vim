@@ -50,7 +50,7 @@ set timeoutlen=333
 set updatetime=300
 set wildmenu
 set wildmode=list,longest,full
-set wildignore+=*/.git,*/.ccls-cache
+set wildignore+=*/.git,*/.ccls-cache,*/.idea
 set wrap
 syntax on
 augroup numbertoggle
