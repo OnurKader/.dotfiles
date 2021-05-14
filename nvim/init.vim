@@ -46,6 +46,7 @@ set splitright
 set t_Co=256
 set tabstop=4
 set termguicolors
+set textwidth=100
 set timeoutlen=333
 set updatetime=300
 set wildmenu
