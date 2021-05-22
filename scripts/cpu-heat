@@ -28,7 +28,7 @@ function getColor {
 	color=$(printf "#%02X%02X%02X" "$r" "$g" "$b")
 }
 
-HEAT="$(sensors | awk '/temp1:/ {print $2}' | head -n1)"
+HEAT="$(sensors | awk '/temp1:/ {print $2}' | sed -n '2p')"
 
 getColor "$(echo $HEAT | cut -b2-5)" "$START_COL" "$END_COL"
 
