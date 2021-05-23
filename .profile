@@ -7,7 +7,6 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.local/share/.npm_global/bin"
 export PATH="$PATH:$HOME/Code/Jarvis"
-export PATH="$PATH:$HOME/Code/oni2/_release/linux/bin"
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:/usr/local/lib64:/usr/local/lib32"
 
