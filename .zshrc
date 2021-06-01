@@ -48,7 +48,9 @@ crun ()
 
 strlen ()
 {
-	echo "${#1}: '$1'"
+	for i in $@; do
+		printf "%2d: %s\n" "${#i}" "$i"
+	done
 }
 
 gcl ()
