@@ -65,23 +65,20 @@ call plug#begin('/home/beron/.local/share/nvim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'airblade/vim-gitgutter'
 Plug 'bfrg/vim-cpp-modern'
+Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'gko/vim-coloresque'
-Plug 'cespare/vim-toml'
-Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'mhinz/vim-startify'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format'
 Plug 'sjl/badwolf'
 Plug 'sophacles/vim-processing'
 Plug 'tmsvg/pear-tree'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tweekmonster/startuptime.vim'
@@ -144,7 +141,7 @@ nnoremap <C-l> <C-w>l
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-autocmd BufRead,BufNewFile /home/beronthecolossus/.config/i3/* set filetype=i3
+autocmd BufRead,BufNewFile /home/beron/.config/i3/* set filetype=i3
 " Pear Tree
 let g:pear_tree_repeatable_expand = 0
 let g:pear_tree_smart_openers = 1
@@ -159,9 +156,9 @@ augroup ClangFormatSettings
 	autocmd FileType c,cpp,h,hpp,cc,hh nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 	autocmd FileType c,cpp,h,hpp,cc,hh inoremap <buffer><Leader>cf <Esc>:ClangFormat<CR>
 	autocmd FileType c,cpp,h,hpp,cc,hh vnoremap <buffer><Leader>cf :ClangFormat<CR>
-	autocmd FileType rust nnoremap <buffer><Leader>cf :!rustfmt %<CR>
-	autocmd FileType rust inoremap <buffer><Leader>cf <Esc>:!rustfmt %<CR>
-	autocmd FileType rust vnoremap <buffer><Leader>cf :!rustfmt %<CR>
+	autocmd FileType rust,rs nnoremap <buffer><Leader>cf :!rustfmt %<CR>
+	autocmd FileType rust,rs inoremap <buffer><Leader>cf <Esc>:!rustfmt %<CR>
+	autocmd FileType rust,rs vnoremap <buffer><Leader>cf :!rustfmt %<CR>
 augroup END
 let g:clang_format#style_options = {
 			\	"BasedOnStyle": "Mozilla",
@@ -266,19 +263,6 @@ let g:WebDevIconsUnicodeDecorateFileNodes = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:max_diagnostics_to_display=64
-" Prettier
-let g:prettier#exec_cmd_async = 1
-let g:prettier#config#use_tabs = 'true'
-let g:prettier#config#tab_width = 4
-let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#print_width = 99
-let g:prettier#config#arrow_parens = 'always'
-let g:prettier#config#bracket_spacing = 'false'
-let g:prettier#config#single_quote = 'false'
-let g:prettier#quickfix_auto_focus = 0
-let g:prettier#quickfix_enabled = 0
-let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
 let g:cpp_member_highlight = 1
@@ -292,27 +276,15 @@ augroup END
 " Git keybinds
 let g:gitgutter_grep=''
 let g:gitgutter_max_signs = 512
-" Git status
-nnoremap  <Leader>gs  :Gstatus<CR>
-" Git diff in split window
-nnoremap  <Leader>gd  :Gdiffsplit<CR>
-" Git commit
-nnoremap  <Leader>gc  :Gcommit<CR>
-" Git push
-nnoremap  <Leader>gP  :Gpush<CR>
-" Git pull
-nnoremap  <Leader>gp  :Gpull<CR>
-" Git merge
-nnoremap  <Leader>gm  :Gmerge<CR>
 " CTRL-C to toggle highlight.
 let hlstate=0
-nnoremap <C-c> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1 <Esc> <CR>
+nnoremap <C-c> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1 <Esc>
 " Remove Whitespace
 autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge | endif
 " Leader bindings for some snippets and Write/Quit
 " :noremap <leader>c :wincmd w<cr>
-:noremap <leader>h :split<cr>
-:noremap <leader>v :vsp<cr>
+:noremap <leader>h :sp<CR>
+:noremap <leader>v :vsp<CR>
 inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 inoremap <leader>w <Esc>:w<CR>
 inoremap ,w <Esc>:w<CR>
@@ -326,20 +298,13 @@ nnoremap ğ mmO<Esc>`m
 noremap <S-Del> <Esc>"_dd
 inoremap <S-Del> <Esc>"_dda
 nnoremap <Leader>j :m+<cr>==
-nnoremap <leader>k :m-2<cr>==
-nnoremap ,j :m+<cr>==
-nnoremap ,k :m-2<cr>==
+nnoremap <Leader>k :m-2<cr>==
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>w :w<CR>
-nnoremap ,w :w<CR>
 nnoremap <leader>W :w<CR>
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-" MarkdownPreview Stuff
-let g:mkdp_browser = 'qutebrowser'
-let g:mkdp_refresh_slow = 1
-let g:mkdp_markdown_css = '/home/beronthecolossus/Peki/github-markdown.css'
 " Abbreviations
 iab whit with
 iab wiht with
