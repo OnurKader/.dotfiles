@@ -2,7 +2,7 @@
 filetype off
 filetype plugin indent on
 let g:python3_host_prog = '/usr/bin/python3.9'
-let g:python_host_prog = '/usr/bin/python'
+let g:python_host_prog = '/usr/bin/python2.7'
 let mapleader = ','
 nnoremap <space> za
 set autoread
@@ -46,7 +46,7 @@ set splitright
 set t_Co=256
 set tabstop=4
 set termguicolors
-set textwidth=100
+set textwidth=101
 set timeoutlen=333
 set updatetime=300
 set wildmenu
