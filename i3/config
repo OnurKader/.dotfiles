@@ -65,9 +65,9 @@ for_window [instance="glfw-application"] floating enable
 for_window [class="X-terminal-emulator"] border pixel 2
 for_window [title="^Cal$"] floating enable, border pixel 3, resize set 1280 768, move position center
 for_window [title="^dijo$"] floating enable, resize set 1280 832, border pixel 3, move position center
-for_window [title="TermStart"] floating enable, border pixel 3, move scratchpad, scratchpad show, resize set 1200 780, move position center
-for_window [title="FloatTerm"] floating enable, border pixel 3, resize set 1200 780, move position center
-for_window [instance="hl2_linux"] fullscreen
+for_window [title="TermStart"] floating enable, border pixel 3, move scratchpad, scratchpad show, resize set 1210 782, move position center
+for_window [title="FloatTerm"] floating enable, border pixel 3, resize set 1250 800, move position center
+for_window [instance="hl2_linux"] floating disable, fullscreen
 for_window [class="Godot_Engine$"] floating enable, move position center, border pixel 3
 for_window [instance="Godot_Engine$"] floating enable, move position center, border pixel 3
 for_window [instance="OkTerminal$"] floating enable, move position center
@@ -335,5 +335,6 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Middle Emulation Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Disable While Typing Enabled" 0
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
+exec_always --no-startup-id aw-qt
 $exe exec $term -t "TermStart"
 

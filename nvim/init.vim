@@ -62,6 +62,7 @@ augroup numbertoggle
 augroup END
 " Plugins
 call plug#begin('/home/beron/.local/share/nvim/plugged')
+Plug 'ActivityWatch/aw-watcher-vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'airblade/vim-gitgutter'
 Plug 'bfrg/vim-cpp-modern'
