@@ -1,0 +1,66 @@
+format = """
+[ ](#87D7FF)\
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$python\
+$custom\
+$cmd_duration\
+$status\
+ $time\
+$line_break\
+$jobs\
+$character"""
+
+add_newline = false
+
+[cmd_duration]
+min_time = 10
+show_milliseconds = true
+style = "yellow"
+
+[directory]
+truncation_length = 7
+truncate_to_repo = false
+truncation_symbol = ".../"
+fish_style_pwd_dir_length = 2
+style = "#00AFFF"
+format = "[ ]($style) [$path]($style) [$read_only]($read_only_style)"
+
+[git_branch]
+symbol = "   "
+style = "#5FD700"
+
+[git_status]
+style = "#5FD700"
+ahead = "⇡$count "
+behind = "⇣$count "
+modified = "!$count "
+staged = "+$count "
+untracked = "?$count "
+format = "[$ahead_behind]($style)[$staged$modified](#D7AF00)[$untracked](#00AFFF)"
+
+[python]
+symbol = " "
+style = "#00AFAF"
+
+[shlvl]
+disabled = false
+format = "[$shlvl levels ](bold #808080)"
+threshold = 2
+
+[status]
+disabled = false
+symbol = "✘ "
+format = "[$symbol$common_meaning$signal_name$maybe_int]($style) "
+
+[time]
+disabled = false
+format = "$SHELL [ $time]($style)"
+style = "#5F8787"
+
