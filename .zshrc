@@ -81,3 +81,5 @@ tabs -4
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 
+eval "$(starship init zsh)"
+
