@@ -1,0 +1,6 @@
+#!/bin/sh
+
+PID=$(pidof aw-qt)
+
+[ -z "$PID" ] && aw-qt & disown || exit 0
+
