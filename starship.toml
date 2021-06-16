@@ -21,7 +21,7 @@ add_newline = false
 
 [cmd_duration]
 min_time = 10
-show_milliseconds = true
+show_milliseconds = false
 style = "yellow"
 
 [directory]
