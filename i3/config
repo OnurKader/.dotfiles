@@ -13,8 +13,8 @@ set $term alacritty
 set $browser firefox
 set $exe exec --no-startup-id
 
-gaps inner 14
-gaps outer 8
+gaps inner 1
+gaps outer 1
 
 for_window [class="^.*"] border pixel 3
 

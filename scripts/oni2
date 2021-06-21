@@ -1,4 +1,0 @@
-#!/bin/sh
-
-~/Code/oni2/_release/linux/bin/Oni2 $@
-

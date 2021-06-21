@@ -12,7 +12,7 @@ cat > README.md <<EOF
 
 EOF
 
-printf "\n# [profile.release]\n# lto = true\n# codegen-units = 1\n" >> Cargo.toml
+# printf "\n# [profile.release]\n# lto = true\n# codegen-units = 1\n" >> Cargo.toml
 
 cargo build
 cargo build --release
