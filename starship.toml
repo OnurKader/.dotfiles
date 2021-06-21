@@ -20,7 +20,7 @@ $character"""
 add_newline = false
 
 [cmd_duration]
-min_time = 10
+min_time = 16
 show_milliseconds = false
 style = "yellow"
 
