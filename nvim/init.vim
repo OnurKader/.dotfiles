@@ -47,8 +47,8 @@ set t_Co=256
 set tabstop=4
 set termguicolors
 set textwidth=101
-set timeoutlen=333
-set updatetime=300
+set timeoutlen=400
+set updatetime=333
 set wildmenu
 set wildmode=list,longest,full
 set wildignore+=*/.git,*/.ccls-cache,*/.idea

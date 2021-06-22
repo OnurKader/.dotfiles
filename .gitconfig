@@ -24,6 +24,7 @@
 
 [core]
 	hooksPath="/home/beron/.config/.hooks"
+
 [init]
 	defaultBranch = master
 
