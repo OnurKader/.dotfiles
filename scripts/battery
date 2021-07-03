@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 START_COL="#FF0808" # 0%
 END_COL="#08FF08"	# 100%
