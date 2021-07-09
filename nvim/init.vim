@@ -252,16 +252,6 @@ vnoremap > >gv
 nnoremap Y y$
 nnoremap <S-J><S-J> i<CR><Esc>k$
 inoremap <S-J><S-J> <Esc>i<CR><Esc>kA
-" devicons
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_unite = 1
-let g:webdevicons_enable_denite = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_enable_airline_tabline = 1
-let g:webdevicons_enable_vimfiler = 1
-let g:WebDevIconsUnicodeDecorateFileNodes = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:max_diagnostics_to_display=64
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 			\| exe "normal! g'\"" | endif
@@ -316,6 +306,7 @@ iab hieght height
 iab tihs this
 iab doubel double
 iab mian main
+iab flaot float
 
 if !exists('g:vscode')
 
