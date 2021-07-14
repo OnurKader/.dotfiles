@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/env zsh
 
-colored man $(apropos --long . | rofi -dmenu -i -l 30 | awk '{print $2, $1}' | tr -d '()')
+man $(apropos --long . | rofi -dmenu -i -l 30 | awk '{print $2, $1}' | tr -d '()')
 
