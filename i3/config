@@ -322,6 +322,7 @@ for_window [class="mpv"] move workspace $workspace4
 for_window [class="vlc"] move workspace $workspace4
 for_window [instance="Godot_Engine$"] move workspace $workspace3
 for_window [class="jetbrains-clion"] move workspace $workspace3
+for_window [title="(Mm)industry"] move workspace $workspace8
 for_window [class="(Mm)industry"] move workspace $workspace8
 for_window [instance="(Mm)industry"] move workspace $workspace8
 

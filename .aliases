@@ -76,7 +76,7 @@ alias gmv="git mv"
 alias grep='grep --color=always -i'
 alias gs="git status"
 alias highlight="source-highlight -oSTDOUT -fesc256 -i"
-alias htop="htop -d 11"
+alias htop="htop -d 7"
 alias l1="list -a1"
 alias l="list -a"
 alias la='list -a'
