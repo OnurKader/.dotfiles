@@ -52,7 +52,7 @@ style = "#00AFAF"
 [shlvl]
 disabled = false
 format = "[$shlvl levels ](bold #808080)"
-threshold = 2
+threshold = 4
 
 [status]
 disabled = false

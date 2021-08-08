@@ -18,9 +18,7 @@ export NNN_TRASH=1
 export TERMINAL="alacritty"
 export PAGER="less -RF -x4"
 export BAT_PAGER="$PAGER"
-export UPDATE_ZSH_DAYS=14
 export SERENITY_ROOT="/home/beron/Desktop/Code/serenity"
-export ZSH="/usr/share/oh-my-zsh"
 export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export XDG_CONFIG_HOME="/home/beron/.config"
 
@@ -39,8 +37,6 @@ export RUSTFLAGS="$RUSTFLAGS -C target-cpu=native "
 export VISUAL="nvim"
 export MANPATH="/usr/local/man:$MANPATH"
 
-autoload -U compinit
-compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.

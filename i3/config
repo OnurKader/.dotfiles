@@ -23,6 +23,7 @@ hide_edge_borders smart
 popup_during_fullscreen smart
 focus_follows_mouse no
 default_orientation horizontal
+workspace_layout tabbed
 
 # Define Workspaces
 set $workspace1  "1: Web  "
@@ -88,15 +89,15 @@ bindsym $mod+KP_Enter $exe $term; focus
 bindsym $mod+$alt+t $exe $term; focus
 bindsym $mod+Shift+Return $exe $term; focus
 
-bindsym $mod+a $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 18 -width 42 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325487'"
+bindsym $mod+a $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 21 -width 46"
 
 # split orientation
 bindsym $mod+b split h
 bindsym $mod+v split v
 
 # Logout screen
-bindsym Ctrl+$alt+k $exe arcolinux-logout
-bindsym Ctrl+$alt+l $exe arcolinux-logout
+#bindsym Ctrl+$alt+k $exe arcolinux-logout
+#bindsym Ctrl+$alt+l $exe arcolinux-logout
 
 # Go to center and click
 bindsym $mod+$alt+Delete $exe mousemove
@@ -105,7 +106,7 @@ bindsym Shift+$alt+Delete $exe mouseclick 3
 
 # Rofi
 # bindsym $mod+d $exe "rofi -hide-scrollbar -show run -display-run 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489' -show-icons"
-bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 18 -width 42 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489'"
+bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 21 -width 46"
 
 # Disable Gaps
 bindsym $mod+Shift+d gaps inner current set 0, gaps outer current set 0
@@ -114,7 +115,7 @@ bindsym $mod+Shift+d gaps inner current set 0, gaps outer current set 0
 bindsym $mod+e $exe thunar
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e $exe arcolinux-logout
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -144,7 +145,7 @@ bindsym $mod+g $exe $term -t "Dijo" -e dijo
 
 # Lock Screen
 # bindsym $mod+Ctrl+$alt+l $exe ~/.config/i3/scripts/i3exit.sh lock, mode "default"
-bindsym $mod+Ctrl+$alt+l $exe arcolinux-logout
+#bindsym $mod+Ctrl+$alt+l $exe arcolinux-logout
 
 # Default gaps
 bindsym $mod+Shift+t gaps inner current set 14, gaps outer current set 8
@@ -329,8 +330,7 @@ for_window [instance="(Mm)industry"] move workspace $workspace8
 # Execs
 $exe picom -b
 $exe nm-applet &
-exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec_always --no-startup-id autotiling
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id dunst
 exec_always --no-startup-id kdeconnect-indicator
