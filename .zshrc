@@ -19,6 +19,10 @@ bindkey "\C-k" vi-kill-eol
 # Aliases
 source ~/.aliases
 
+for plugin in /home/beron/Code/.dotfiles/zsh-plugins/*; do
+	source $plugin
+done
+
 mkcd () { mkdir -p "$@"; cd "$@"; }
 altercd (){ cd(){ unset -f cd ; cd $* && la ; altercd; } } ; altercd
 
