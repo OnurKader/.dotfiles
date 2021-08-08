@@ -11,7 +11,8 @@ compinit
 # Aliases
 source ~/.aliases
 
-for plugin in /home/beron/Code/.dotfiles/zsh-plugins/*; do
+source ~/Code/.dotfiles/zsh-plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+for plugin in /home/beron/Code/.dotfiles/zsh-plugins/*.zsh; do
 	source $plugin
 done
 
