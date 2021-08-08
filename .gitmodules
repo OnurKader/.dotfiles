@@ -1,3 +1,6 @@
 [submodule "zsh-plugins/fast-syntax-highlighting"]
 	path = zsh-plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting
+[submodule "zsh-plugins/zsh-completions"]
+	path = zsh-plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
