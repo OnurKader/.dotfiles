@@ -42,8 +42,9 @@ ahead = "⇡$count "
 behind = "⇣$count "
 modified = "!$count "
 staged = "+$count "
+deleted = "-$count "
 untracked = "?$count "
-format = "[$ahead_behind]($style)[$staged$modified](#D7AF00)[$untracked](#00AFFF)"
+format = "[$ahead_behind]($style)[$deleted](#F10C0C)[$staged$modified](#D7AF00)[$untracked](#00AFFF)"
 
 [python]
 symbol = " "
