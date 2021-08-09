@@ -19,7 +19,7 @@ export TERMINAL="alacritty"
 export PAGER="less -RF -x4"
 export BAT_PAGER="$PAGER"
 export SERENITY_ROOT="/home/beron/Desktop/Code/serenity"
-export ZSH_AUTOSUGGEST_USE_ASYNC="true"
+# export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export XDG_CONFIG_HOME="/home/beron/.config"
 
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"

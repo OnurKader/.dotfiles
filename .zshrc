@@ -5,7 +5,6 @@ source ~/.exports
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=**' 'l:|=* r:|=*'
 zstyle :compinstall filename '/home/beron/.zshrc'
 
-
 # Aliases
 source ~/.aliases
 
@@ -44,7 +43,7 @@ strlen ()
 	done
 }
 
-man()
+man ()
 {
     LESS_TERMCAP_md=$'\e[01;31m' \
     LESS_TERMCAP_me=$'\e[0m' \
