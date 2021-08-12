@@ -12,11 +12,18 @@ else
 	echo " $SONG" | iconv -f utf8 -t ascii//TRANSLIT//IGNORE | sed 's/\&/and/g'
 fi
 
+# Come up with something smarter, at least get the album name and cache the files
+# Or only download when the song changes or store the URL in the filename and compare
+update_album_art() {
+	curl "$(sp art)" -so /tmp/album_art.jpg
+	sleep 0.125
+}
+
 case $BLOCK_BUTTON in
-	1) notify-send " ${NAME//\"/}" "${ARTIST//\"/}" ;;
+	1) notify-send -i /tmp/album_art.jpg " ${NAME//\"/}" "${ARTIST//\"/}";;
 	2) sp play;;
 	3) notify-send "Usage:" "Just Left Click To Get The Whole Song Name";;
-	5) sp next && sleep 0.75 && notify-send "Playing Next Song" "$(spot-get)";;
-	4) sp prev && sleep 0.75 && notify-send "Playing Previous Song" "$(spot-get)";;
+	5) sp next && sleep 0.333 && update_album_art && notify-send -i /tmp/album_art.jpg "Playing Next Song" "$(spot-get)";;
+	4) sp prev && sleep 0.333 && update_album_art && notify-send -i /tmp/album_art.jpg "Playing Previous Song" "$(spot-get)";;
 esac
 
