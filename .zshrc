@@ -4,6 +4,14 @@ source ~/.exports
 # Completion stuff
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=**' 'l:|=* r:|=*'
 zstyle :compinstall filename '/home/beron/.zshrc'
+setopt interactive_comments
+
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+autoload -U select-word-style
+select-word-style bash
 
 # Aliases
 source ~/.aliases
@@ -76,6 +84,7 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt glob_dots
+setopt interactive_comments
 # setopt correctall
 setopt auto_continue
 
