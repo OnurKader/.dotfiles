@@ -18,6 +18,8 @@ export EDITOR=nvim
 
 export MAKEFLAGS="$MAKEFLAGS -j14"
 
+xset b off
+
 # if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 #     exec startx
 # fi
