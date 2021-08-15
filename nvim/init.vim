@@ -27,6 +27,7 @@ set noerrorbells
 set noexpandtab
 set novisualbell
 set nrformats+=alpha
+set nrformats-=octal
 set number
 set path+=**
 set ruler
