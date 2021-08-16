@@ -71,7 +71,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'gko/vim-coloresque'
 Plug 'neovim/nvim-lspconfig'
+" TODO: Replace this with compe
 Plug 'nvim-lua/completion-nvim'
+" TODO: Check this out
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'rhysd/vim-clang-format'
