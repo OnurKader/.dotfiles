@@ -9,7 +9,6 @@ set autoread
 set background=dark
 set backspace=indent,start,eol
 set complete-=i
-set completefunc=emoji#complete
 set completeopt=menuone,noinsert,noselect
 set directory=~/.config/nvim/tmp
 set encoding=utf-8
@@ -66,7 +65,6 @@ call plug#begin('/home/beron/.local/share/nvim/plugged')
 Plug 'ActivityWatch/aw-watcher-vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'airblade/vim-gitgutter'
-Plug 'bfrg/vim-cpp-modern'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -75,7 +73,9 @@ Plug 'gko/vim-coloresque'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'rhysd/vim-clang-format'
+" Plug 'sirver/UltiSnips'
 Plug 'sjl/badwolf'
 Plug 'sophacles/vim-processing'
 Plug 'tmsvg/pear-tree'
@@ -309,6 +309,7 @@ iab doubel double
 iab mian main
 iab flaot float
 
+" LSPConfig
 lua << EOF
 local nvim_lsp = require('lspconfig')
 
@@ -341,8 +342,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap('n', '<leader>cf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
+  ---buf_set_keymap('n', '<leader>cf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
