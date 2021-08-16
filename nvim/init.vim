@@ -361,8 +361,24 @@ EOF
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
 " Use <Tab> as trigger keys
 imap <Tab> <Plug>(completion_smart_tab)
 imap <S-Tab> <Plug>(completion_smart_s_tab)
 nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+
+" Tree-Sitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+ensure_installed = { "bash", "c", "cmake", "cpp", "css", "gdscript", "javascript", "json", "latex", "python", "regex", "rust", "toml", "typescript", "yaml"} ,
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+"" https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
