@@ -63,7 +63,7 @@ alias cşear="clear"
 alias dust="dust -srn $(($(tput lines) - 3))"
 alias e="nvim"
 alias egrep="egrep --color=always -iE"
-alias exa="exa --icons -aFl --time-style=long-iso --group --group-directories-first "
+alias exa="exa --icons -@maFl --time-style=long-iso --group --group-directories-first --color-scale"
 alias exi="exit"
 alias find="fd -iIH"
 alias grep='grep --color=always -i'
