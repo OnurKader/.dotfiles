@@ -393,7 +393,7 @@ require'compe'.setup {
   source = {
 	buffer = true;
 	vsnip = true;
-	spell = true;
+	-- spell = true;
     nvim_lsp = true;
 	nvim_lua = true;
     path = true;
