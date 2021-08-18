@@ -69,20 +69,21 @@ Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'rafamadriz/friendly-snippets'
 Plug 'gko/vim-coloresque'
 Plug 'neovim/nvim-lspconfig'
-" TODO: Replace this with compe
-Plug 'nvim-lua/completion-nvim'
-" TODO: Check this out
 Plug 'nvim-lua/lsp_extensions.nvim'
+Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'rhysd/vim-clang-format'
-" Plug 'sirver/UltiSnips'
 Plug 'sjl/badwolf'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'honza/vim-snippets'
 Plug 'sophacles/vim-processing'
 Plug 'tmsvg/pear-tree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'tpope/vim-surround'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
@@ -345,33 +346,121 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   ---buf_set_keymap('n', '<leader>cf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', '<leader>T', '<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>', opts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'clangd', 'rust_analyzer' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls' }
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
+	capabilities = capabilities,
     flags = {
-      debounce_text_changes = 150,
+      debounce_text_changes = 300,
     }
   }
 end
 EOF
 
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" Use <Tab> as trigger keys
-imap <Tab> <Plug>(completion_smart_tab)
-imap <S-Tab> <Plug>(completion_smart_s_tab)
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+lua << EOF
+-- Compe setup
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 2;
+  preselect = 'enable';
+  throttle_time = 80;
+  source_timeout = 200;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = true;
+
+  source = {
+	buffer = true;
+	vsnip = true;
+	spell = true;
+    nvim_lsp = true;
+	nvim_lua = true;
+    path = true;
+	-- treesitter = true;
+	tags = true;
+  };
+}
+
+-- Utility functions for compe and luasnip
+local t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+local check_back_space = function()
+  local col = vim.fn.col '.' - 1
+  if col == 0 or vim.fn.getline('.'):sub(col, col):match '%s' then
+    return true
+  else
+    return false
+  end
+end
+
+-- Use (s-)tab to:
+--- move to prev/next item in completion menuone
+--- jump to prev/next snippet's placeholder
+_G.tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t '<C-n>'
+  elseif vim.fn['vsnip#available'](1) == 1 then
+    return t "<Plug>(vsnip-expand-or-jump)"
+  elseif check_back_space() then
+    return t '<Tab>'
+  else
+    return vim.fn['compe#complete']()
+  end
+end
+
+_G.s_tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t '<C-p>'
+  elseif vim.fn['vsnip#jumpable'](-1) == 1 then
+    return t "<Plug>(vsnip-jump-prev)"
+  else
+    return t '<S-Tab>'
+  end
+end
+
+-- Map tab to the above tab complete functiones
+vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.tab_complete()', { expr = true })
+vim.api.nvim_set_keymap('s', '<Tab>', 'v:lua.tab_complete()', { expr = true })
+vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.s_tab_complete()', { expr = true })
+vim.api.nvim_set_keymap('s', '<S-Tab>', 'v:lua.s_tab_complete()', { expr = true })
+
+-- Map compe confirm and complete functions
+vim.api.nvim_set_keymap('i', '<CR>', 'compe#confirm("<CR>")', { expr = true })
+vim.api.nvim_set_keymap('i', '<C-Space>', 'compe#confirm()', { expr = true })
+vim.api.nvim_set_keymap('s', '<C-Space>', 'compe#confirm()', { expr = true })
+vim.api.nvim_set_keymap('i', '<C-Y>', 'compe#confirm()', { expr = true })
+EOF
+
+" Show hints on file enter
+autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 
 " Tree-Sitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-ensure_installed = { "bash", "c", "cmake", "cpp", "css", "gdscript", "javascript", "json", "latex", "python", "regex", "rust", "toml", "typescript", "yaml"} ,
+ensure_installed = { "bash", "c", "cmake", "cpp", "css", "javascript", "json", "latex", "python", "rust", "toml", "typescript", "yaml"} ,
   highlight = {
     enable = true,
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
