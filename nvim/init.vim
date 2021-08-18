@@ -9,7 +9,7 @@ set autoread
 set background=dark
 set backspace=indent,start,eol
 set complete-=i
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,noselect
 set directory=~/.config/nvim/tmp
 set encoding=utf-8
 set foldmethod=manual

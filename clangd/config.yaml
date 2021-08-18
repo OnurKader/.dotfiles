@@ -1,3 +1,11 @@
-CompileFlags:                     # Tweak the parse settings
+---
+If:
+  PathMatch: .*\.[ch]pp
+CompileFlags:
   Add: [-xc++, -Wall, -Wextra, -Wshadow -Wconversion, -Wpedantic, -std=c++20]
 
+---
+If:
+  PathMatch: .*\.[ch]
+CompileFlags:
+  Add: [-xc, -Wall, -Wextra, -Wshadow -Wconversion, -Wpedantic, -std=c18]
