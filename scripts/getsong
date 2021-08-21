@@ -18,10 +18,8 @@ update_album_art() {
 	curl "$(sp art)" -so /tmp/album_art.jpg
 }
 
-update_album_art
-
 case $BLOCK_BUTTON in
-	1) notify-send -i /tmp/album_art.jpg " ${NAME//\"/}" "${ARTIST//\"/}";;
+	1) update_album_art; notify-send -i /tmp/album_art.jpg " ${NAME//\"/}" "${ARTIST//\"/}";;
 	2) sp play;;
 	3) notify-send "Usage:" "Just Left Click To Get The Whole Song Name";;
 	5) sp next && sleep 0.25 && update_album_art && notify-send -i /tmp/album_art.jpg "Playing Next Song" "$(spot-get)";;
