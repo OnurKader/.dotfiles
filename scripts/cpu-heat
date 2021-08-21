@@ -28,7 +28,9 @@ function getColor {
 	color=$(printf "#%02X%02X%02X" "$r" "$g" "$b")
 }
 
-HEAT="$(sensors | awk '/temp1:/ {print $2}' | sed -n '1p')"
+# Take a look at this, did something change?
+# It used to be temp1, but now it's CPU heat?
+HEAT="$(sensors | awk '/CPU:/ {print $2}' | sed -n '1p')"
 
 getColor "$(echo $HEAT | cut -b2-5)" "$START_COL" "$END_COL"
 
