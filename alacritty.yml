@@ -601,6 +601,7 @@ key_bindings:
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                      }
   - { key: NumpadEnter,             chars: "\n"                              }
   - { key: NumpadEnter,   mods: Shift,   chars: "\n"                         }
+  - { key: NumpadEnter,   mods: Control, action: SpawnNewInstance            }
   - { key: Return,   mods: Shift,   chars: "\n"                              }
   - { key: Return,   mods: Control, action: SpawnNewInstance                 }
 
