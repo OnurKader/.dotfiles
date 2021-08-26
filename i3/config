@@ -330,7 +330,7 @@ for_window [class="(Mm)industry"] move workspace $workspace8
 for_window [instance="(Mm)industry"] move workspace $workspace8
 
 # Execs
-$exe picom -b
+# $exe picom -b
 $exe nm-applet &
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id numlockx on&
@@ -342,6 +342,7 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Disable While Typing Enabled" 0
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
+exec_always --no-startup-id florence&
 exec_always --no-startup-id activitywatcher&
-$exe exec $term -t "TermStart"
+$exe exec $term -t "TermStart"&
 
