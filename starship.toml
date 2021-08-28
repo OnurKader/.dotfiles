@@ -58,10 +58,12 @@ threshold = 4
 [status]
 disabled = false
 symbol = "✘ "
+pipestatus = true
 format = "[$symbol$common_meaning$signal_name$maybe_int]($style) "
+pipestatus_format = "\\[$pipestatus\\] -> [$symbol$common_meaning$signal_name$maybe_int]($style)"
 
 [time]
 disabled = false
-format = "$SHELL [ $time]($style)"
+format = " [ $time]($style)"
 style = "#5F8787"
 
