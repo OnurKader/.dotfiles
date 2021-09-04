@@ -27,7 +27,7 @@ autoload -Uz compinit
 compinit
 
 mkcd () { mkdir -p "$@"; cd "$@"; }
-altercd (){ cd(){ unset -f cd ; cd $* && l; altercd; } } ; altercd
+altercd (){ cd(){ unset -f cd ; cd $* && ll; altercd; } } ; altercd
 
 search ()
 {
