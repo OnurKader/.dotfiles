@@ -4,7 +4,7 @@ START_COL="#08FF08" # 0%
 END_COL="#FF0808"	# 100%
 
 function getColor {
-	ratio="$((($1 - 24.0) / 80.0 ))";
+	ratio="$((($1 - 24.0) / 82.0 ))";
 	# Extract zero rgb and full rgb and convert to hex
 	rz=$(( 16#$(echo "$2" | cut -b2-3) ))
 	gz=$(( 16#$(echo "$2" | cut -b4-5) ))

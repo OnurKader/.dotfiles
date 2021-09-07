@@ -28,6 +28,7 @@ export _ZL_MAXAGE=128000
 export HISTSIZE=128000
 export SAVEHIST=128000
 export HISTFILE=~/.zsh_history
+export INC_APPEND_HISTORY
 
 export CMAKE_GENERATOR="Ninja"
 

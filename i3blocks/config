@@ -4,18 +4,18 @@ markup=pango
 
 [spotify]
 command=getsong
-interval=20
+interval=16
 color=#3BFFB5
 signal=10
 label=
 
 [memory]
-interval=25
+interval=24
 color=#EEEFF2
 label=
 
 [disk]
-interval=185
+interval=196
 command=echo " $(df -H / | awk '/dev/ {print $4"/"$2}')"
 color=#EEEFF2
 label=
@@ -26,11 +26,11 @@ color=#EEEFF2
 signal=10
 
 [cpu-heat]
-interval=16
+interval=13
 color=#EEEFF2
 
 [battery]
-interval=25
+interval=20
 command=battery
 
 [clock]
