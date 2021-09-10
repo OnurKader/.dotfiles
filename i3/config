@@ -89,7 +89,7 @@ bindsym $mod+KP_Enter $exe $term; focus
 bindsym $mod+$alt+t $exe $term; focus
 bindsym $mod+Shift+Return $exe $term; focus
 
-bindsym $mod+a $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 23 -width 46"
+bindsym $mod+a $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 27 -width 46"
 
 # split orientation
 bindsym $mod+b split h
@@ -106,7 +106,7 @@ bindsym Shift+$alt+Delete $exe mouseclick 3
 
 # Rofi
 # bindsym $mod+d $exe "rofi -hide-scrollbar -show run -display-run 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489' -show-icons"
-bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 23 -width 46"
+bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 27 -width 46"
 
 # Disable Gaps
 bindsym $mod+Shift+d gaps inner current set 0, gaps outer current set 0
