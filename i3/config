@@ -77,6 +77,7 @@ for_window [class="^Timer$"] floating enable
 for_window [class="^Sloppy"] floating enable
 for_window [class="Webcam"] floating enable, move position center
 for_window [title="\[Float\]"] floating enable, move position center
+for_window [title="Dijo"] floating enable, border pixel 2, resize set 1250 800, move position center
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
