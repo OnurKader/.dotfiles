@@ -4,7 +4,7 @@ markup=pango
 
 [spotify]
 command=getsong
-interval=16
+interval=15
 color=#3BFFB5
 signal=10
 label=
@@ -21,16 +21,16 @@ color=#EEEFF2
 label=
 
 [volume]
-interval=36
+interval=30
 color=#EEEFF2
 signal=10
 
 [cpu-heat]
-interval=13
+interval=12
 color=#EEEFF2
 
 [battery]
-interval=20
+interval=19
 command=battery
 
 [clock]

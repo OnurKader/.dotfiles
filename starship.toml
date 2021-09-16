@@ -17,6 +17,8 @@ $line_break\
 $jobs\
 $character"""
 
+# format_right = "$time"
+
 add_newline = false
 
 [cmd_duration]

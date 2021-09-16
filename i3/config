@@ -335,7 +335,7 @@ $exe nm-applet &
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id numlockx on&
 exec_always --no-startup-id dunst&
-exec_always --no-startup-id kdeconnect-indicator&
+# exec_always --no-startup-id kdeconnect-indicator
 # exec_always --no-startup-id libinput-gestures
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Middle Emulation Enabled" 1
