@@ -12,14 +12,15 @@ $python\
 $custom\
 $cmd_duration\
 $status\
- $time\
-$line_break\
+$fill\
+$time
 $jobs\
 $character"""
 
-# format_right = "$time"
-
 add_newline = false
+
+[fill]
+symbol = " "
 
 [cmd_duration]
 min_time = 16
