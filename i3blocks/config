@@ -10,27 +10,27 @@ signal=10
 label=
 
 [memory]
-interval=24
+interval=20
 color=#EEEFF2
 label=
 
 [disk]
-interval=196
+interval=200
 command=echo " $(df -H / | awk '/dev/ {print $4"/"$2}')"
 color=#EEEFF2
 label=
 
 [volume]
-interval=30
+interval=25
 color=#EEEFF2
 signal=10
 
 [cpu-heat]
-interval=12
+interval=10
 color=#EEEFF2
 
 [battery]
-interval=19
+interval=15
 command=battery
 
 [clock]
