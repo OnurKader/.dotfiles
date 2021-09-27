@@ -146,6 +146,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 autocmd BufRead,BufNewFile /home/beron/.config/i3/* set filetype=i3
+autocmd BufRead COMMIT_EDITMSG set spell
 " Pear Tree
 let g:pear_tree_repeatable_expand = 0
 let g:pear_tree_smart_openers = 1
