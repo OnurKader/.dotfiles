@@ -333,7 +333,7 @@ for_window [instance="(Mm)industry"] move workspace $workspace8
 # Execs
 # $exe picom -b
 $exe nm-applet &
-exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec_always --no-startup-id gnome-keyring-daemon -s
 exec_always --no-startup-id numlockx on&
 exec_always --no-startup-id dunst&
 # exec_always --no-startup-id kdeconnect-indicator
