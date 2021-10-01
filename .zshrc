@@ -64,7 +64,7 @@ man ()
 
 gcl ()
 {
-	git clone $@ &&
+	git clone --recursive $@ &&
 	if [[ -z "$2" ]]; then;
 		cd ${${1%%.git}##*/}
 	else
