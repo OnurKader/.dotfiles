@@ -87,6 +87,7 @@ setopt glob_dots
 setopt interactive_comments
 # setopt correctall
 setopt auto_continue
+setopt auto_pushd
 
 bindkey -v
 # [Backspace] - delete backward
@@ -155,6 +156,7 @@ if [[ -n "${terminfo[kcbt]}" ]]; then
   bindkey -M vicmd "${terminfo[kcbt]}" reverse-menu-complete
 fi
 
+bindkey "^[[3;5~" delete-word
 bindkey "^H" backward-delete-word
 bindkey "\C-k" vi-kill-eol
 bindkey '^r' history-incremental-search-backward
