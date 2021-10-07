@@ -99,6 +99,7 @@ alias n='nnn -aEgHR'
 alias nano="nvim"
 alias open="xdg-open"
 alias p="/bin/cat"
+alias paru="paru --bottomup"
 alias pingg="ping -c 48 -i 0.275"
 alias pypy="pypy3"
 alias python3="python3 -q"
