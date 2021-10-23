@@ -290,6 +290,11 @@ bindsym $alt+$mod+j exec --no-startup-id mousemove_relative DOWN
 bindsym $alt+$mod+k exec --no-startup-id mousemove_relative UP
 bindsym $alt+$mod+l exec --no-startup-id mousemove_relative RIGHT
 
+# dunst keys
+bindsym Ctrl+Space $exe dunstctl close
+bindsym Ctrl+Shift+Space $exe dunstctl close-all
+bindsym Ctrl+$alt+Space $exe dunstctl history-pop
+
 # Move workspaces
 assign [class="Code"] $workspace3
 assign [class="Firefox"] $workspace1
