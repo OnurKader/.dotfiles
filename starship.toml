@@ -2,7 +2,6 @@ format = """
 [ ](#87D7FF)\
 $username\
 $hostname\
-$shlvl\
 $directory\
 $git_branch\
 $git_commit\
@@ -52,11 +51,6 @@ format = "[$ahead_behind]($style)[$deleted](#F10C0C)[$staged$modified](#D7AF00)[
 [python]
 symbol = " "
 style = "#00AFAF"
-
-[shlvl]
-disabled = false
-format = "[$shlvl levels ](bold #808080)"
-threshold = 4
 
 [status]
 disabled = false
