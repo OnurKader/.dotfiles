@@ -1,4 +1,6 @@
 #!/bin/sh
 
-yt-dlp --add-metadata --sponsorblock-mark all --write-subs --sub-langs=en.* -N3 -ciwo '%(title)s.%(ext)s' -f 'bestvideo[height<=1080]+bestaudio/best' $@
+yt-dlp --add-metadata --sponsorblock-mark all \
+--download-archive="$HOME/.cache/youtube-dl/download-archive.txt" --embed-subs --write-auto-sub \
+--sub-langs='en.*' -N3 -ciwo '%(title)s.%(ext)s' -f 'bestvideo[height<=1080]+bestaudio/best' $@ \
 
