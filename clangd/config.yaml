@@ -2,7 +2,7 @@
 If:
   PathMatch: .*\.[ch]pp
 CompileFlags:
-  Add: [-xc++, -Wall, -Wextra, -Wshadow -Wconversion, -Wpedantic, -std=c++20]
+  Add: [-xc++, -Wall, -Wextra, -Wshadow -Wconversion, -Wpedantic, -std=c++2b]
 
 ---
 If:

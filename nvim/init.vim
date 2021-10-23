@@ -1,8 +1,8 @@
 " Setting Stuff
 filetype off
 filetype plugin indent on
-let g:python3_host_prog = '/usr/bin/python3.9'
-let g:python_host_prog = '/usr/bin/python2.7'
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python2'
 let mapleader = ','
 nnoremap <space> za
 set autoread
