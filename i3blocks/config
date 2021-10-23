@@ -10,7 +10,7 @@ signal=10
 label=
 
 [memory]
-interval=20
+interval=18
 color=#EEEFF2
 label=
 
@@ -26,7 +26,7 @@ color=#EEEFF2
 signal=10
 
 [cpu-heat]
-interval=10
+interval=9
 color=#EEEFF2
 
 [battery]
