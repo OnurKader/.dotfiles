@@ -308,6 +308,7 @@ alias gci="git commit -am 'Initial Commit'"
 alias gcm='git checkout $(git_main_branch)'
 alias gco='git checkout'
 alias gd='git diff'
+alias gf='git fetch'
 alias ggpull='git pull origin "$(git_current_branch)"'
 alias ggpush='git push origin "$(git_current_branch)"'
 alias ghist="cut -d\; -f2 ~/.zsh_history | fzf --ansi --tac --no-sort --print0 | xargs --null --delim='\n' xdotool type"
