@@ -71,7 +71,7 @@ alias egrep="egrep --color=always -iE"
 alias exa="exa --icons -@maFl --time-style=long-iso --group --group-directories-first --color-scale"
 alias exi="exit"
 alias find="fd -iIH"
-alias grep='grep --color=always -i'
+alias grep='grep -i --color=auto'
 alias highlight="source-highlight -oSTDOUT -fesc256 -i"
 alias htop="htop -d 7"
 alias l1="ls -A1"
@@ -99,7 +99,6 @@ alias n='nnn -aEgHR'
 alias nano="nvim"
 alias open="xdg-open"
 alias p="/bin/cat"
-alias paru="paru --bottomup"
 alias pingg="ping -c 48 -i 0.275"
 alias pypy="pypy3"
 alias python3="python3 -q"
