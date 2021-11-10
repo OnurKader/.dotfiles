@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo -en " \b"
-/home/beron/.cargo/bin/exa --time-style=long-iso --color=always --group-directories-first --icons --group -1a "$@"
+exa --time-style=long-iso --color=always --group-directories-first --icons --group -1a "$@"
 
