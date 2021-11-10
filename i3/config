@@ -350,5 +350,6 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
 exec_always --no-startup-id florence&
 exec_always --no-startup-id activitywatcher&
+exec_always --no-startup-id copyq&
 $exe exec $term -t "TermStart"&
 
