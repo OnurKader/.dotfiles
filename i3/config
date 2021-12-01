@@ -342,7 +342,8 @@ $exe nm-applet &
 exec_always --no-startup-id gnome-keyring-daemon --start
 exec_always --no-startup-id numlockx on&
 exec_always --no-startup-id dunst&
-# exec_always --no-startup-id kdeconnect-indicator
+exec_always --no-startup-id /usr/lib/kdeconnectd
+exec_always --no-startup-id kdeconnect-indicator
 # exec_always --no-startup-id libinput-gestures
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Middle Emulation Enabled" 1
