@@ -10,8 +10,6 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 export PATH="$PATH:$HOME/.local/share/.npm_global/bin"
 
-#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:/usr/local/lib64:/usr/local/lib32"
-
 export TERM=alacritty
 export BROWSER=firefox
 export EDITOR=nvim

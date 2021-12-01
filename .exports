@@ -32,7 +32,7 @@ export INC_APPEND_HISTORY
 
 export CMAKE_GENERATOR="Ninja"
 
-export RUSTC_WRAPPER="/home/beron/.cargo/bin/sccache"
+export RUSTC_WRAPPER="sccache"
 # export RUST_BACKTRACE=1
 export RUSTFLAGS="$RUSTFLAGS -C target-cpu=native "
 
