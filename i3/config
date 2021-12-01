@@ -169,7 +169,7 @@ bindsym $mod+Shift+w $exe $BROWSER
 bindsym $mod+Shift+i $exe qtcreator
 
 # WIP Movie dir
-bindsym $mod+m $exe $term --working-directory "Movies"
+bindsym $mod+m $exe $term --working-directory "MicroSD"
 
 # Shutdown
 bindsym $mod+Shift+x $exe shut "Shutdown Now?" "shutdown -h now"
@@ -201,8 +201,8 @@ bindsym $mod+End workspace $workspace10
 bindsym $mod+Shift+Home move container to workspace $workspace1
 bindsym $mod+Shift+End move container to workspace $workspace10
 bindsym $mod+Tab workspace back_and_forth
-bindsym Mod1+Tab workspace next
-bindsym Mod1+Shift+Tab workspace prev
+bindsym $alt+Tab workspace next
+bindsym $alt+Shift+Tab workspace prev
 
 # change focus
 bindsym $mod+$left	focus left
@@ -218,6 +218,7 @@ bindsym $mod+Right	focus right
 bindsym Print $exe screenshot
 bindsym $mod+Print $exe screenshot
 bindsym Shift+Print $exe screenshot
+bindsym Ctrl+Print $exe screenshot
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -291,7 +292,7 @@ bindsym $alt+$mod+k exec --no-startup-id mousemove_relative UP
 bindsym $alt+$mod+l exec --no-startup-id mousemove_relative RIGHT
 
 # dunst keys
-bindsym Ctrl+space $exe dunstctl close
+# bindsym Ctrl+space $exe dunstctl close
 bindsym Ctrl+Shift+space $exe dunstctl close-all
 bindsym Ctrl+$alt+space $exe dunstctl history-pop
 
