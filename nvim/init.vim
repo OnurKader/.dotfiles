@@ -21,7 +21,6 @@ set incsearch
 set lazyredraw
 set mouse=a
 set nobackup
-set nocompatible
 set noerrorbells
 set noexpandtab
 set novisualbell
@@ -138,10 +137,10 @@ inoremap jj <Esc>
 nnoremap <Up> gk
 nnoremap <Down> gj
 " Moving to Windows (Split)
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
@@ -254,7 +253,6 @@ cmap qw wq
 cmap wwq wq
 vnoremap < <gv
 vnoremap > >gv
-nnoremap Y y$
 nnoremap <S-J><S-J> i<CR><Esc>k$
 inoremap <S-J><S-J> <Esc>i<CR><Esc>kA
 let g:max_diagnostics_to_display=64
