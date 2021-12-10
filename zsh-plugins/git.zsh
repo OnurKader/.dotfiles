@@ -281,29 +281,19 @@ function git_repo_name() {
 
 alias g='git'
 alias ga='git add'
-alias gaa='git add --all'
-alias gapa='git add --patch'
+alias gaa='git add -a'
+alias gapa='git add -p'
 alias gb='git branch'
 alias gbD='git branch -D'
-alias gr='git remote'
-alias gra='git remote add'
-alias grv='git remote -v'
-alias gsh='git show --pretty=fuller'
 alias gba='git branch -a'
 alias gbd='git branch -d'
 alias gbl='git blame -b -w'
 alias gbnm='git branch --no-merged'
 alias gbr='git branch --remote'
-alias gbs='git bisect'
-alias gbsb='git bisect bad'
-alias gbsg='git bisect good'
-alias gbsr='git bisect reset'
-alias gbss='git bisect start'
-alias gc="git commit"
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gcb='git checkout -b'
-alias gcd='git checkout develop'
+alias gcd='git checkout dev'
 alias gci="git commit -am 'Initial Commit'"
 alias gcm='git checkout $(git_main_branch)'
 alias gco='git checkout'
@@ -316,4 +306,9 @@ alias glg1="git lg1"
 alias glg2="git lg2"
 alias glg3="git lg3"
 alias gmv="git mv"
+alias gr='git remote'
+alias gra='git remote add'
+alias grm="git rm"
+alias grv='git remote -v'
 alias gs='git status'
+alias gsh='git show --pretty=fuller'
