@@ -87,7 +87,7 @@ alias less='less --RAW-CONTROL-CHARS -x4'
 alias lget="xbacklight -get"
 alias ll="exa"
 alias llg="exa | grep"
-alias lll="\ls -lAFh --color=always --group-directories-first"
+alias lll="\ls -lAFh --si --color=always --group-directories-first"
 alias locate="plocate -ei --regex"
 alias lolcat="lolcat -ftp 1.9 -F 0.07"
 alias lta="lat"
