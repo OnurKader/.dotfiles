@@ -1,11 +1,12 @@
 ---
 If:
-  PathMatch: .*\.[ch]pp
+  PathMatch: .*\.([hc]pp|h)
 CompileFlags:
   Add: [-xc++, -Wall, -Wextra, -Wshadow -Wconversion, -Wpedantic, -std=c++2b]
 
 ---
 If:
-  PathMatch: .*\.[ch]
+  PathMatch: .*\.c
 CompileFlags:
   Add: [-xc, -Wall, -Wextra, -Wshadow -Wconversion, -Wpedantic, -std=c18]
+
