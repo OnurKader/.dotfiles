@@ -85,6 +85,7 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt glob_dots
 setopt interactive_comments
+setopt nobeep
 # setopt correctall
 setopt auto_continue
 setopt auto_pushd
