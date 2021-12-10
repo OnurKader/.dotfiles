@@ -92,6 +92,7 @@ build.ninja
 compile_commands.json
 # End of https://www.toptal.com/developers/gitignore/api/meson
 
+.cache/
 .ccls-cache/
 tags
 bin/
