@@ -1,5 +1,3 @@
-#!/bin/sh
-
 export LC_NUMERIC="en_GB.utf8"
 export LC_TIME="en_GB.utf8"
 
@@ -16,9 +14,7 @@ export EDITOR=nvim
 
 export MAKEFLAGS="$MAKEFLAGS -j14"
 
-xset b off
-
-# if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-#     exec startx
-# fi
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	exec startx
+fi
 
