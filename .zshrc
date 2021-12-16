@@ -170,3 +170,5 @@ DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 eval "$(starship init zsh)"
 
+xset b off
+
