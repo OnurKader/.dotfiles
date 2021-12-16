@@ -281,7 +281,7 @@ function git_repo_name() {
 
 alias g='git'
 alias ga='git add'
-alias gaa='git add -a'
+alias gaa='git add -A'
 alias gapa='git add -p'
 alias gb='git branch'
 alias gbD='git branch -D'
