@@ -97,6 +97,7 @@ alias mpva="mpv --no-audio-display"
 alias mv="mv -vi"
 alias n='nnn -aEgHR'
 alias nano="nvim"
+alias ncdu="ncdu --si --color=dark"
 alias open="xdg-open"
 alias p="/bin/cat"
 alias pingg="ping -c 48 -i 0.275"
