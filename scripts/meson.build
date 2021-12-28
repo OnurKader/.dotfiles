@@ -3,7 +3,7 @@ project('<++>', 'cpp',
 	license : 'MIT',
 	default_options : ['cpp_std=c++20', 'buildtype=debugoptimized', 'warning_level=3'])
 
-srcs = ['src/Main.cpp']
+srcs = ['src/main.cpp']
 
 compiler_args = ['-Wformat-overflow=2', '-Wshadow', '-Wuninitialized',
 				 '-Wduplicated-branches', '-Wduplicated-cond', '-Wfloat-equal',
