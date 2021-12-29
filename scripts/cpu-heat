@@ -34,5 +34,7 @@ HEAT="$(sensors | awk '/CPU:/ {print $2}' | sed -n '1p')"
 
 getColor "$(echo $HEAT | cut -b2-5)" "$START_COL" "$END_COL"
 
-echo "<span foreground='$color'> $HEAT</span>"
+FAN_SPEED="$(sensors | awk '/fan1/ {print $2}')"
+
+echo "<span foreground='$color'> $HEAT ${FAN_SPEED} RPM</span>"
 
