@@ -17,7 +17,6 @@ set hidden
 set ignorecase
 set inccommand=nosplit
 set incsearch
-" set iskeyword-=_
 set lazyredraw
 set mouse=a
 set nobackup
@@ -42,7 +41,6 @@ set smarttab
 set softtabstop=4
 set splitbelow
 set splitright
-set t_Co=256
 set tabstop=4
 set termguicolors
 set textwidth=101
@@ -50,7 +48,7 @@ set timeoutlen=450
 set updatetime=333
 set wildmenu
 set wildmode=list,longest,full
-set wildignore+=*/.git,*/.ccls-cache,*/.idea
+set wildignore+=*/.git,*/.ccls-cache,*/.idea,*/.cache
 set wrap
 syntax on
 augroup numbertoggle
@@ -63,26 +61,32 @@ augroup END
 call plug#begin('/home/beron/.local/share/nvim/plugged')
 Plug 'ActivityWatch/aw-watcher-vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'Saecki/crates.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'edkolev/tmuxline.vim'
-Plug 'rafamadriz/friendly-snippets'
 Plug 'gko/vim-coloresque'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
-Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'onsails/lspkind-nvim'
+Plug 'rafamadriz/friendly-snippets'
+Plug 'ray-x/cmp-treesitter'
 Plug 'rhysd/vim-clang-format'
 Plug 'sjl/badwolf'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'honza/vim-snippets'
 Plug 'sophacles/vim-processing'
-Plug 'tmsvg/pear-tree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'tpope/vim-surround'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
@@ -146,11 +150,6 @@ if executable('ag')
 endif
 autocmd BufRead,BufNewFile /home/beron/.config/i3/* set filetype=i3
 autocmd BufRead COMMIT_EDITMSG set spell
-" Pear Tree
-let g:pear_tree_repeatable_expand = 0
-let g:pear_tree_smart_openers = 1
-let g:pear_tree_smart_closers = 1
-let g:pear_tree_smart_backspace = 1
 " Clang-Format
 autocmd FileType c,cpp,h,hpp let g:clang_format#auto_format = 0
 let g:clang_format#detect_style_file = 0
@@ -261,11 +260,6 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 let g:cpp_member_highlight = 1
 let g:cpp_attributes_highlight = 1
 let c_no_curly_error=1
-" box-shadow style highlighting
-augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType css setlocal iskeyword+=-
-augroup END
 " Git keybinds
 let g:gitgutter_grep=''
 let g:gitgutter_max_signs = 512
@@ -311,165 +305,8 @@ iab doubel double
 iab mian main
 iab flaot float
 
-" LSPConfig
-lua << EOF
-local nvim_lsp = require('lspconfig')
+" LSP Stuff
+source ~/.config/scripts/nvim_lsp.lua
+" TreeSitter Stuff
+source ~/.config/scripts/nvim_treesitter.lua
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-  --Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
-
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  ---buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  ---buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  buf_set_keymap('n', '<leader>T', '<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>', opts)
-end
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls' }
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
-
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-	capabilities = capabilities,
-    flags = {
-      debounce_text_changes = 300,
-    }
-  }
-end
-EOF
-
-lua << EOF
--- Compe setup
-require'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 2;
-  preselect = 'enable';
-  throttle_time = 80;
-  source_timeout = 200;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
-  documentation = true;
-
-  source = {
-	buffer = true;
-	vsnip = true;
-	-- spell = true;
-    nvim_lsp = true;
-	nvim_lua = true;
-    path = true;
-	-- treesitter = true;
-	tags = true;
-  };
-}
-
--- Utility functions for compe and luasnip
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local check_back_space = function()
-  local col = vim.fn.col '.' - 1
-  if col == 0 or vim.fn.getline('.'):sub(col, col):match '%s' then
-    return true
-  else
-    return false
-  end
-end
-
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
-_G.tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t '<C-n>'
-  elseif vim.fn['vsnip#available'](1) == 1 then
-    return t "<Plug>(vsnip-expand-or-jump)"
-  elseif check_back_space() then
-    return t '<Tab>'
-  else
-    return vim.fn['compe#complete']()
-  end
-end
-
-_G.s_tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t '<C-p>'
-  elseif vim.fn['vsnip#jumpable'](-1) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
-  else
-    return t '<S-Tab>'
-  end
-end
-
--- Map tab to the above tab complete functiones
-vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.tab_complete()', { expr = true })
-vim.api.nvim_set_keymap('s', '<Tab>', 'v:lua.tab_complete()', { expr = true })
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.s_tab_complete()', { expr = true })
-vim.api.nvim_set_keymap('s', '<S-Tab>', 'v:lua.s_tab_complete()', { expr = true })
-
--- Map compe confirm and complete functions
-vim.api.nvim_set_keymap('i', '<Escape>', 'compe#close()', { expr = true })
-vim.api.nvim_set_keymap('i', '<CR>', 'compe#complete("<CR>")', { expr = true })
-vim.api.nvim_set_keymap('i', '<C-Space>', 'compe#confirm()', { expr = true })
-vim.api.nvim_set_keymap('s', '<C-Space>', 'compe#confirm()', { expr = true })
-vim.api.nvim_set_keymap('i', '<C-Y>', 'compe#confirm()', { expr = true })
-EOF
-
-" Show hints on file enter
-" autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
-
-" Tree-Sitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-ensure_installed = { "bash", "c", "cmake", "cpp", "css", "javascript", "json", "latex", "python", "rust", "toml", "typescript", "yaml"} ,
-  highlight = {
-    enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
-}
-EOF
-
-"" https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
