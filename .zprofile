@@ -13,4 +13,4 @@ export BROWSER=firefox
 export EDITOR=nvim
 
 export MAKEFLAGS="$MAKEFLAGS -j14"
-
+export AMD_VULKAN_ICD="RADV"
