@@ -18,6 +18,9 @@ cmp.setup({
 			vim.fn["vsnip#anonymous"](args.body)
 		end,
 	},
+	completion = {
+		keyword_length = 2,
+	},
 	formatting = {
 		format = lspkind.cmp_format({
 			with_text = false, -- do not show text alongside icons
@@ -31,6 +34,26 @@ cmp.setup({
 		})
 	},
 	mapping = {
+		--[[
+			buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+			buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+			buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+			buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+			buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+			buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+			buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+			buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+			buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+			buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+			buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+			buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+			buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+			buf_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+			buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+			buf_set_keymap('n', '<leader>T', '<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>', opts)
+		--]]
+		['gd'] = cmp.mapping(vim.lsp.buf.definition(), {'n'}),
+		['gD'] = cmp.mapping(vim.lsp.buf.declaration(), {'n'}),
 		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
 		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
 		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -39,7 +62,7 @@ cmp.setup({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-		["<Tab>"] = cmp.mapping(function(fallback)
+		['<Tab>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif vim.fn["vsnip#available"](1) == 1 then
@@ -51,7 +74,7 @@ cmp.setup({
 			end
 		end, { "i", "s" }),
 
-		["<S-Tab>"] = cmp.mapping(function()
+		['<S-Tab>'] = cmp.mapping(function()
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif vim.fn["vsnip#jumpable"](-1) == 1 then
@@ -65,7 +88,7 @@ cmp.setup({
 		{ name = 'vsnip' },
 		{ name = 'buffer' },
 		{ name = 'path' },
-		{ name = 'treesitter' },
+		-- { name = 'treesitter' },
 		{ name = 'crates' },
 	})
 })
@@ -98,6 +121,12 @@ require('lspconfig')['clangd'].setup {
 
 require('lspconfig')['rust_analyzer'].setup {
 	capabilities = capabilities,
+	settings = {
+		["rust-analyzer"] = {
+			cargo = { allFeatures = true, autoReload = true },
+			checkOnSave = { enable = true, command = "clippy" },
+		},
+	}
 }
 
 require('lspconfig')['pyright'].setup {
