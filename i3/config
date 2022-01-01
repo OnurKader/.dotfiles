@@ -353,5 +353,6 @@ exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/backg
 exec_always --no-startup-id florence&
 exec_always --no-startup-id activitywatcher&
 exec_always --no-startup-id copyq&
+exec_always --no-startup-id cpupower-gui&
 $exe exec $term -t "TermStart"&
 
