@@ -1,0 +1,4 @@
+#!/bin/bash
+
+upower -d | grep -i 'Device:.*wacom' -A12
+
