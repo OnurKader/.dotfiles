@@ -1,76 +1,111 @@
 #!/usr/bin/env bash
 
 START_COL="#FF0808" # 0%
-END_COL="#08FF08"	# 100%
+END_COL="#08FF08"   # 100%
 
 PERC="$(acpi -b | awk '{print $4}' | sed s/,//)"
 PERC_INT=${PERC//\%/}
 [ "$(acpi -b | grep -i 'Discharging')" ] || DISC=" "
 
-if   [ "$PERC_INT" -ge 90 ]; then SYMBOL=" ";
-elif [ "$PERC_INT" -ge 75 ]; then SYMBOL=" ";
-elif [ "$PERC_INT" -ge 50 ]; then SYMBOL=" ";
-elif [ "$PERC_INT" -ge 25 ]; then SYMBOL=" ";
-else SYMBOL=" "
+if [ "$PERC_INT" -ge 90 ]; then
+	SYMBOL=" "
+elif [ "$PERC_INT" -ge 75 ]; then
+	SYMBOL=" "
+elif [ "$PERC_INT" -ge 50 ]; then
+	SYMBOL=" "
+elif [ "$PERC_INT" -ge 25 ]; then
+	SYMBOL=" "
+else
+	SYMBOL=" "
 fi
 
 # Arguments => "Current Percentage, Zero Percent Color ('#ABCDEF' hex format), Full Percentage Color"
 function getColor {
-	local r;
-	local g;
-	local b;
-	local temp;
-	local ratio;
-	ratio=$(bc -l <<< "scale=2; $1/100")
+	local r
+	local g
+	local b
+	local temp
+	local ratio
+	ratio=$(bc -l <<<"scale=2; $1/100")
 	# Extract zero rgb and full rgb and convert to hex
-	local rz=$(( 16#$(echo "$2" | cut -b2-3) ))
-	local gz=$(( 16#$(echo "$2" | cut -b4-5) ))
-	local bz=$(( 16#$(echo "$2" | cut -b6-7) ))
-	local rf=$(( 16#$(echo "$3" | cut -b2-3) ))
-	local gf=$(( 16#$(echo "$3" | cut -b4-5) ))
-	local bf=$(( 16#$(echo "$3" | cut -b6-7) ))
-	temp=$((rf+rz))
-	r=$(bc -l <<< "scale=2; $temp*$ratio")
-	temp=$((gf+gz))
-	g=$(bc -l <<< "scale=2; $temp*$ratio")
-	temp=$((bf+bz))
-	b=$(bc -l <<< "scale=2; $temp*$ratio")
+	local rz=$((16#$(echo "$2" | cut -b2-3)))
+	local gz=$((16#$(echo "$2" | cut -b4-5)))
+	local bz=$((16#$(echo "$2" | cut -b6-7)))
+	local rf=$((16#$(echo "$3" | cut -b2-3)))
+	local gf=$((16#$(echo "$3" | cut -b4-5)))
+	local bf=$((16#$(echo "$3" | cut -b6-7)))
+	temp=$((rf + rz))
+	r=$(bc -l <<<"scale=2; $temp*$ratio")
+	temp=$((gf + gz))
+	g=$(bc -l <<<"scale=2; $temp*$ratio")
+	temp=$((bf + bz))
+	b=$(bc -l <<<"scale=2; $temp*$ratio")
 	r=$(echo "$r" | cut -f1 -d.)
 	g=$(echo "$g" | cut -f1 -d.)
 	b=$(echo "$b" | cut -f1 -d.)
-	r=$((r-rz)); r=${r#-}
-	g=$((g-gz)); g=${g#-}
-	b=$((b-bz)); b=${b#-}
+	r=$((r - rz))
+	r=${r#-}
+	g=$((g - gz))
+	g=${g#-}
+	b=$((b - bz))
+	b=${b#-}
 	color=$(printf "#%02X%02X%02X" "$r" "$g" "$b")
 }
 
 TIME="$(acpi -b | cut -d, -f3 | cut -b1-9)"
 
 case $BLOCK_BUTTON in
-	1)  if [ "$(acpi -b | grep "Discharging")" ] ; then
-			notify-send "Remaining Time" "$TIME" &
-			DISC=""
-		else
-			notify-send "Time Until Charged" "$TIME" &
-			DISC=" "
-		fi ;;
-	2) notify-send "Why Middle Click?" "Weird Situation";;
-	3) notify-send "No Right Click!" "Useless Shit";;
+1) if [ "$(acpi -b | grep "Discharging")" ]; then
+	notify-send "Remaining Time" "$TIME" &
+	DISC=""
+else
+	notify-send "Time Until Charged" "$TIME" &
+	DISC=" "
+fi ;;
+2) notify-send "Why Middle Click?" "Weird Situation" ;;
+3) notify-send "No Right Click!" "Useless Shit" ;;
 esac
 
-if [ "$(acpi -b | grep "Discharging")" ] ; then
+if [ "$(acpi -b | grep "Discharging")" ]; then
 	[ "$PERC_INT" -lt 8 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!   $PERC"
 fi
 
 getColor "$PERC_INT" "$START_COL" "$END_COL"
 
 if [[ "$PERC_INT" -eq 69 ]]; then
-	SYMBOL="Nice 👌";
-	PERC="";
-	color='#1AFFFE';
-elif [[ "$PERC_INT" -eq 100 &&  "$(acpi -b | grep -v "Discharging")" ]]; then
+	SYMBOL="Nice 👌"
+	PERC=""
+	color='#1AFFFE'
+elif [[ "$PERC_INT" -eq 100 && "$(acpi -b | grep -v "Discharging")" ]]; then
 	notify-send --urgency=normal "FULLY CHARGED" "BATTERY PERCENTAGE AT $PERC"
 fi
 
-echo "<span foreground='$color'>$SYMBOL $PERC</span><span foreground='#FDFD16'>$DISC</span>"
+echo -n "<span foreground='$color'>$SYMBOL $PERC</span><span foreground='#FDFD16'>$DISC</span>"
+
+# The Tablet
+PERC="$(battery_wacom | awk '/percentage/ {print $2}')"
+PERC_INT=${PERC//\%/}
+
+if [[ -z $PERC ]]; then
+	echo
+	exit 0
+else
+
+	if [ "$PERC_INT" -ge 90 ]; then
+		TABLET_SYMBOL=""
+	elif [ "$PERC_INT" -ge 75 ]; then
+		TABLET_SYMBOL=""
+	elif [ "$PERC_INT" -ge 50 ]; then
+		TABLET_SYMBOL=""
+	elif [ "$PERC_INT" -ge 25 ]; then
+		TABLET_SYMBOL=""
+	else
+		TABLET_SYMBOL=""
+	fi
+
+	getColor "$PERC_INT" "$START_COL" "$END_COL"
+
+	echo " <span foreground='$color'>$TABLET_SYMBOL $PERC</span>"
+
+fi
 
