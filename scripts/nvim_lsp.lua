@@ -114,9 +114,9 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 require('lspconfig')['clangd'].setup {
 	capabilities = capabilities,
-	-- flags = {
-	-- 	debounce_text_changes = 300,
-	-- }
+	flags = {
+		debounce_text_changes = 300,
+	}
 }
 
 require('lspconfig')['rust_analyzer'].setup {
