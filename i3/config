@@ -90,7 +90,7 @@ bindsym $mod+KP_Enter $exe $term; focus
 bindsym $mod+$alt+t $exe $term; focus
 bindsym $mod+Shift+Return $exe $term; focus
 
-bindsym $mod+a $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 27 -width 46"
+bindsym $mod+a $exe "rofi -matching fuzzy -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 27 -width 46"
 
 # split orientation
 bindsym $mod+b split h
@@ -107,7 +107,7 @@ bindsym Shift+$alt+Delete $exe mouseclick 3
 
 # Rofi
 # bindsym $mod+d $exe "rofi -hide-scrollbar -show run -display-run 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489' -show-icons"
-bindsym $mod+d $exe "rofi -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 27 -width 46"
+bindsym $mod+d $exe "rofi -matching fuzzy -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 27 -width 46"
 
 # Disable Gaps
 bindsym $mod+Shift+d gaps inner current set 0, gaps outer current set 0
@@ -344,7 +344,6 @@ exec_always --no-startup-id numlockx on&
 exec_always --no-startup-id dunst&
 exec_always --no-startup-id /usr/lib/kdeconnectd
 exec_always --no-startup-id kdeconnect-indicator
-# exec_always --no-startup-id libinput-gestures
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Middle Emulation Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Disable While Typing Enabled" 0
@@ -353,6 +352,6 @@ exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/backg
 exec_always --no-startup-id florence&
 exec_always --no-startup-id activitywatcher&
 exec_always --no-startup-id copyq&
-exec_always --no-startup-id cpupower-gui&
+exec_always --no-startup-id setup_wacom_pad&
 $exe exec $term -t "TermStart"&
 
