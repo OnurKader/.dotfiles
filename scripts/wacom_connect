@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 bluetoothctl power on
 bluetoothctl connect E0:9F:2A:11:33:23
 
-wacom_battery | awk '/percentage/ {print $2}'
+sleep 1.25
+
+setup_wacom_pad
 
