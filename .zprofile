@@ -14,3 +14,5 @@ export EDITOR=nvim
 
 export MAKEFLAGS="$MAKEFLAGS -j14"
 export AMD_VULKAN_ICD="RADV"
+export MOZ_USE_XINPUT2=1
+
