@@ -361,8 +361,6 @@ fileviewer {*.js,*.htm,*.html,*.css,*.scss,*.less}
 "
 " set viewcolumns=-{name}..,6{}.
 
-" ------------------------------------------------------------------------------
-
 nnoremap s :shell<cr>
 
 nnoremap S :sort<cr>
@@ -371,7 +369,7 @@ nnoremap S :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
-nnoremap o :write | !nvim %f<CR>
+nnoremap o :write | !xdg-open %f<CR>
 nnoremap O :write | !xdg-open %f<CR>
 
 nnoremap e :write | !nvim %f<CR>
@@ -401,7 +399,7 @@ nnoremap cc cw<c-u>
 nnoremap A cw
 
 " Open console in current directory
-nnoremap ,t :!xterm &<cr>
+nnoremap ,t :!alacritty &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 " nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>
