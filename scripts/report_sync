@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# From https://unix.stackexchange.com/a/683668
+
+# Output the `Dirty` section of `/proc/meminfo`
+report() {
+	local dirty="$(grep -w Dirty: /proc/meminfo | cut -d ':' -f 2 | tr -d ' ')"
+	# Remove the kB suffix
+	dirty=${dirty%kB}
+	# Multiply by a thousand
+	dirty=$((dirty*1000))
+	echo -n -e "\e[2K\rSyncing $(echo $dirty | numfmt --to=si --suffix=B)... "
+}
+
+report
+# Start syncing
+sync &
+SYNC_PID=$!
+# Give a short sleep in case there's not much
+sleep 0.125
+# While sync is running, report
+while ps -p $SYNC_PID >/dev/null 2>&1; do
+	report
+	sleep 1
+done
+
+echo "Done!"
+
