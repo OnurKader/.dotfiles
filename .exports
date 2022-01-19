@@ -39,6 +39,8 @@ export RUSTFLAGS="$RUSTFLAGS -C target-cpu=native "
 export VISUAL="nvim"
 export MANPATH="/usr/local/man:$MANPATH"
 
+export DIFFPROG="nvim -d"
+
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
