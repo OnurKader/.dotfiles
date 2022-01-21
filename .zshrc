@@ -1,6 +1,3 @@
-# Exports
-source ~/.exports
-
 # Completion stuff
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=**' 'l:|=* r:|=*'
 zstyle :compinstall filename '/home/beron/.zshrc'
@@ -13,6 +10,9 @@ zle -N self-insert url-quote-magic
 autoload -U select-word-style
 select-word-style bash
 
+# Exports
+source ~/.exports
+
 # Aliases
 source ~/.aliases
 
@@ -21,7 +21,7 @@ for plugin in /home/beron/Code/.dotfiles/zsh-plugins/*.zsh; do
 	source $plugin
 done
 
-fpath=(/home/beron/Code/.dotfiles/zsh-plugins/zsh-completions/src $fpath)
+fpath=(~/Code/.dotfiles/zsh-plugins/zsh-completions/src $fpath)
 
 autoload -Uz compinit
 compinit
@@ -72,8 +72,8 @@ gcl ()
 	fi
 }
 
-eval "$(lua /home/beron/Code/z.lua/z.lua --init zsh enhanced once)"
-source /home/beron/Code/czmod/czmod.zsh
+# zoxide
+eval "$(zoxide init zsh)"
 
 # Setopts
 setopt complete_in_word
