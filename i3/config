@@ -315,6 +315,7 @@ assign [instance="Godot_Engine$"] $workspace3
 assign [class="jetbrains-clion"] $workspace3
 assign [class="(Mm)industry"] $workspace8
 assign [instance="(Mm)industry"] $workspace8
+assign [class="krita"] $workspace4
 
 for_window [class="Code"] move workspace $workspace3
 for_window [class="Firefox"] move workspace $workspace1
@@ -335,6 +336,7 @@ for_window [class="jetbrains-clion"] move workspace $workspace3
 for_window [title="(Mm)industry"] move workspace $workspace8
 for_window [class="(Mm)industry"] move workspace $workspace8
 for_window [instance="(Mm)industry"] move workspace $workspace8
+for_window [title="krita"] move workspace $workspace4
 
 # Execs
 # $exe picom -b
