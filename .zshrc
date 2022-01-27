@@ -72,6 +72,12 @@ gcl ()
 	fi
 }
 
+get_total_video_length ()
+{
+	for f in *; do mediainfo "$f" | awk -F: '/Duration/{print $2}' | head -n1 \
+	| xargs -I '{}' qalc '{} to seconds' | awk '{print $9}'; done | paste -sd+ | bc | xargs -I '{}' qalc '{} seconds'
+}
+
 # zoxide
 eval "$(zoxide init zsh)"
 
