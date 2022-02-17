@@ -17,6 +17,7 @@ $jobs\
 $character"""
 
 add_newline = false
+continuation_prompt = "[❯](bold yellow) "
 
 [fill]
 symbol = " "
