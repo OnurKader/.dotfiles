@@ -218,9 +218,9 @@ bindsym $mod+Right	focus right
 
 # bindsym $mod+Insert exec --no-startup-id showclip
 bindsym Print $exe screenshot
-bindsym $mod+Print $exe screenshot
-bindsym Shift+Print $exe screenshot
-bindsym Ctrl+Print $exe screenshot
+bindsym $mod+Print $exe screenshot-clip
+bindsym Shift+Print $exe screenshot-clip
+bindsym Ctrl+Print $exe screenshot-clip
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
