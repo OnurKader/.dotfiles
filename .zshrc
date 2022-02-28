@@ -25,6 +25,7 @@ fpath=(~/Code/.dotfiles/zsh-plugins/zsh-completions/src $fpath)
 
 autoload -Uz compinit
 compinit
+compdef ytdl=yt-dlp
 
 mkcd () { mkdir -p "$@"; cd "$@"; }
 altercd (){ cd(){ unset -f cd ; cd $* && ll; altercd; } } ; altercd
