@@ -9,5 +9,5 @@ fi
 
 yt-dlp --add-metadata --sponsorblock-mark all \
 --download-archive="$HOME/.cache/youtube-dl/download-archive.txt" --embed-subs --write-auto-sub \
---sub-langs='en.*' -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' $@
+--sub-langs='en.*' -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' "$@"
 
