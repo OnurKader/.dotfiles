@@ -10,32 +10,31 @@ DT="#7042B4FE"
 W="#A3CE0AEF"
 V="#666666FF"
 
-i3lock -ni ~/Pictures/Wallpaper/Lock.png -p default\
-	--insidevercolor=$C			\
-	--ringvercolor=$V			\
-	--insidewrongcolor=$C		\
-	--ringwrongcolor=$W			\
-	--insidecolor=$B			\
-	--ringcolor=$D				\
-	--linecolor=$B				\
-	--separatorcolor=$D			\
-	--verifcolor=$T				\
-	--wrongcolor=$T				\
-	--timecolor=$T				\
-	--datecolor=$DT				\
-	--layoutcolor=$T			\
-	--keyhlcolor=$W				\
-	--bshlcolor=$W				\
-	--indicator					\
-	--clock						\
-	--timestr="%H:%M:%S"		\
-	--datestr="%a, %m/%Y"		\
-	--greetertext="Peki..."		\
-	--greeterpos="118:1068"		\
-	--greetersize=72			\
-	--greetercolor="#C986207A"	\
-	--timesize=39				\
-	--datesize=25				\
-	--radius=120				\
+i3lock -ni ~/Pictures/Wallpaper/Lock.png -p default \
+	--insidever-color=$C				\
+	--ringver-color=$V					\
+	--insidewrong-color=$C				\
+	--ringwrong-color=$W				\
+	--inside-color=$B					\
+	--ring-color=$D						\
+	--line-color=$B						\
+	--separator-color=$D				\
+	--verif-color=$T					\
+	--wrong-color=$T					\
+	--time-color=$T						\
+	--date-color=$DT					\
+	--layout-color=$T					\
+	--keyhl-color=$W					\
+	--bshl-color=$W						\
+	--indicator							\
+	--clock								\
+	--time-str="%H:%M:%S"				\
+	--date-str="%a, %m/%Y"				\
+	--greeter-text="Peki..."			\
+	--greeter-pos="118:1068"			\
+	--greeter-size=72					\
+	--greeter-color="#C986207A"			\
+	--time-size=39						\
+	--date-size=25						\
+	--radius=120						\
 	--ring-width=12.0
-
