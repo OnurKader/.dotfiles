@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 case "$(printf "Selected Area\nCurrent Window\nFullscreen" | dmenu -l 3 -i -p "Screenshot which area to clipboard?")" in
-	"Selected Area") scrot -f -z -s -q 85 - | xclip -sel clip;;
-	"Current Window") scrot -u -z -q 95 - | xclip -sel clip;;
-	"Fullscreen") scrot -b -z -q 100 - | xclip -sel clip;;
+	"Selected Area") scrot -f -z -s -q 85 - | xclip -sel clip -t image/png;;
+	"Current Window") scrot -u -z -q 95 - | xclip -sel clip -t image/png;;
+	"Fullscreen") scrot -b -z -q 100 - | xclip -sel clip -t image/png;;
 esac
 
