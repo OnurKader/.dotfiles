@@ -79,6 +79,13 @@ get_total_video_length ()
 	| xargs -I '{}' qalc '{} to seconds' | awk '{print $9}'; done | paste -sd+ | bc | xargs -I '{}' qalc '{} seconds'
 }
 
+play ()
+{
+	mpv $@ ; exit
+	# TODO: The format is different, extract the id and append with that
+	# echo $@ >> ~/.cache/youtube-dl/download-archive.txt
+}
+
 # zoxide
 eval "$(zoxide init zsh)"
 
