@@ -1,13 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# TODO: Just yoink the common format from the output and put it in a variable
 
 # This can be simplified, but if it's a playlist put it in a subdir
 if [[ "$@" == *".com/playlist"* ]]; then
-	OUTPUT='%(playlist)s/%(playlist_index)s - [%(upload_date,release_date)s] %(title)s.%(ext)s'
+	OUTPUT='%(playlist)s/%(playlist_index)s-%(upload_date,release_date)s_%(title)s(%(id)s).%(ext)s'
 else
-	OUTPUT='[%(upload_date,release_date)s] %(title)s.%(ext)s'
+	OUTPUT='%(upload_date,release_date)s_%(title)s(%(id)s).%(ext)s'
 fi
 
-yt-dlp --add-metadata --sponsorblock-mark all \
+yt-dlp --restrict-filenames --add-metadata --sponsorblock-mark all \
 --download-archive="$HOME/.cache/youtube-dl/download-archive.txt" --embed-subs --write-auto-sub \
---sub-langs='en.*' -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' "$@"
+--sub-langs='en.*' -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' "$@" && report_sync
 
