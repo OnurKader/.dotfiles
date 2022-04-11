@@ -1,4386 +1,494 @@
-abiword-common
-abiword-plugin-grammar
-abiword
-accountsservice-ubuntu-schemas
-accountsservice
-ack-grep
-ack
-acl
-acpi-support
-acpi
-acpid
-adduser
-adium-theme-ubuntu
-adwaita-icon-theme
-aglfn
-alsa-base
-alsa-utils
-amd64-microcode
-anacron
-ant-optional
-ant
-antlr
-apache2-bin
-apache2-data
-apache2-utils
-apache2
-apg
-app-install-data-partner
-apparmor
-apport-gtk
-apport-symptoms
-apport
-appstream
-apt-config-icons
-apt-fast
-apt-file
-apt-transport-https
-apt-transport-tor
-apt-utils
-apt-xapian-index
-apt
-aptdaemon-data
-aptdaemon
-aptitude-common
-aptitude
-apturl-common
-apturl
-arandr
-aria2
-aspell-en
-aspell
-aspnetcore-runtime-2.2
-at-spi2-core
-at
-atool
-attr
-audacity-data
-audacity
-autoconf
-autocutsel
-automake
-autopoint
-autotools-dev
-avahi-autoipd
-avahi-daemon
-avahi-utils
-axel
-baobab
-base-files
-base-passwd
-bash-completion
-bash
-battery-monitor
-bc
-bcal
-bind9-host
-binfmt-support
-binutils-common
-binutils-dev
-binutils-mingw-w64-x86-64
-binutils-x86-64-linux-gnu
-binutils
-bison
-bleachbit
-blt-dev
-blt
-bluez-obexd
-bluez
-bnd
-bolt
-branding-ubuntu
-brandy
-brave-browser
-brave-keyring
-breeze-icon-theme
-bridge-utils
-brltty
-bsdmainutils
-bsdutils
-bubblewrap
-build-essential
-busybox-initramfs
-busybox-static
-bwbasic
-bzip2-doc
-bzip2
-ca-certificates-java
-ca-certificates
-cabextract
-caca-utils
-calcurse
-calibre-bin
-calibre
-catdoc
-catimg
-ccache
-cflow
-cgroupfs-mount
-chafa
-checkinstall
-cheese-common
-cheese
-chrome-gnome-shell
-chromium-codecs-ffmpeg-extra
-clementine
-cmatrix
-cmus-plugin-ffmpeg
-cmus
-code
-codium
-colord-data
-colord
-command-not-found-data
-command-not-found
-compton
-console-setup-linux
-console-setup
-containerd
-corectrl
-coreutils
-cowsay
-cpio
-cpp-7
-cpp-8
-cpp-9
-cpp
-cppreference-doc-en-html
-cpu-checker
-cracklib-runtime
-crda
-cron
-cups-browsed
-cups-bsd
-cups-client
-cups-common
-cups-core-drivers
-cups-daemon
-cups-filters-core-drivers
-cups-ipp-utils
-cups-pk-helper
-cups-ppdc
-cups-server-common
-curl
-dash
-dbus-user-session
-dbus-x11
-dbus
-dc
-dconf-cli
-dconf-editor
-dconf-gsettings-backend
-dconf-service
-dctrl-tools
-ddgr
-debconf-i18n
-debconf
-debhelper
-debian-keyring
-debianutils
-debootstrap
-debsig-verify
-debugedit
-default-jre-headless
-default-jre
-default-libmysqlclient-dev
-deja-dup
-desktop-file-utils
-devscripts
-dh-autoreconf
-dh-python
-dh-strip-nondeterminism
-dialog
-dict-moby-thesaurus
-dict
-dictionaries-common
-diffstat
-diffutils
-dirmngr
-discord
-distro-info-data
-dmeventd
-dmidecode
-dmsetup
-dmz-cursor-theme
-dns-root-data
-dnsmasq-base
-dnsutils
-docker-compose
-docker.io
-docker
-docutils-common
-docutils-doc
-dos2unix
-dosfstools
-dotnet-host
-dotnet-hostfxr-2.2
-dotnet-runtime-2.2
-dotnet-runtime-deps-2.2
-dotnet-sdk-2.2
-doxygen
-dpkg-dev
-dpkg
-dput
-draw.io
-dunst
-duplicity
-dvdauthor
-dvgrab
-dwz
-e2fsprogs
-ebtables
-ed
-efibootmgr
-eject
-elpa-notmuch
-emacsen-common
-emscripten-doc
-enchant
-entr
-eog
-epstool
-espeak-ng-data
-ethtool
-evince-common
-evince
-evolution-data-server-common
-evolution-data-server
-example-content
-exif
-exo-utils
-exuberant-ctags
-fakeroot
-fdisk
-feh
-festival
-festlex-cmu
-festlex-poslex
-festvox-kallpc16k
-ffmpeg
-ffmpegthumbnailer
-fig2dev
-figlet
-file-roller
-file
-findutils
-finger
-firefox-locale-en
-flac
-flashplugin-installer
-flat-remix
-flatpak
-flex
-fluid-soundfont-gm
-fluid-soundfont-gs
-font-manager
-fontconfig-config
-fontconfig
-fonts-beng-extra
-fonts-beng
-fonts-dejavu-core
-fonts-dejavu-extra
-fonts-dejavu
-fonts-deva-extra
-fonts-deva
-fonts-droid-fallback
-fonts-font-awesome
-fonts-freefont-otf
-fonts-freefont-ttf
-fonts-gargi
-fonts-gubbi
-fonts-gujr-extra
-fonts-gujr
-fonts-guru-extra
-fonts-guru
-fonts-indic
-fonts-kacst-one
-fonts-kacst
-fonts-kalapi
-fonts-khmeros-core
-fonts-knda
-fonts-lao
-fonts-lato
-fonts-liberation2
-fonts-liberation
-fonts-lklug-sinhala
-fonts-lmodern
-fonts-lohit-beng-assamese
-fonts-lohit-beng-bengali
-fonts-lohit-deva
-fonts-lohit-gujr
-fonts-lohit-guru
-fonts-lohit-knda
-fonts-lohit-mlym
-fonts-lohit-orya
-fonts-lohit-taml-classical
-fonts-lohit-taml
-fonts-lohit-telu
-fonts-lyx
-fonts-mathjax
-fonts-mlym
-fonts-nakula
-fonts-navilu
-fonts-noto-cjk
-fonts-noto-color-emoji
-fonts-noto-mono
-fonts-open-sans
-fonts-opensymbol
-fonts-orya-extra
-fonts-orya
-fonts-pagul
-fonts-roboto-unhinted
-fonts-sahadeva
-fonts-samyak-deva
-fonts-samyak-gujr
-fonts-samyak-mlym
-fonts-samyak-taml
-fonts-sarai
-fonts-sil-abyssinica
-fonts-sil-padauk
-fonts-smc-anjalioldlipi
-fonts-smc-chilanka
-fonts-smc-dyuthi
-fonts-smc-karumbi
-fonts-smc-keraleeyam
-fonts-smc-manjari
-fonts-smc-meera
-fonts-smc-rachana
-fonts-smc-raghumalayalamsans
-fonts-smc-suruma
-fonts-smc-uroob
-fonts-smc
-fonts-taml
-fonts-telu-extra
-fonts-telu
-fonts-texgyre
-fonts-thai-tlwg
-fonts-tibetan-machine
-fonts-tlwg-garuda-ttf
-fonts-tlwg-garuda
-fonts-tlwg-kinnari-ttf
-fonts-tlwg-kinnari
-fonts-tlwg-laksaman-ttf
-fonts-tlwg-laksaman
-fonts-tlwg-loma-ttf
-fonts-tlwg-loma
-fonts-tlwg-mono-ttf
-fonts-tlwg-mono
-fonts-tlwg-norasi-ttf
-fonts-tlwg-norasi
-fonts-tlwg-purisa-ttf
-fonts-tlwg-purisa
-fonts-tlwg-sawasdee-ttf
-fonts-tlwg-sawasdee
-fonts-tlwg-typewriter-ttf
-fonts-tlwg-typewriter
-fonts-tlwg-typist-ttf
-fonts-tlwg-typist
-fonts-tlwg-typo-ttf
-fonts-tlwg-typo
-fonts-tlwg-umpush-ttf
-fonts-tlwg-umpush
-fonts-tlwg-waree-ttf
-fonts-tlwg-waree
-fonts-ubuntu
-fonts-vlgothic
-fonts-yrsa-rasa
-foomatic-db-compressed-ppds
-foomatic-filters
-fortune-mod
-fortunes-min
-freeglut3-dev
-freeglut3
-freepats
-frei0r-plugins
-friendly-recovery
-ftp
-fuse-emulator-common
-fuse-emulator-gtk
-fuse
-fwupd-signed
-fwupd
-fwupdate
-fzf
-fzy
-g++-8
-g++-9-multilib
-g++-9
-g++-mingw-w64-x86-64
-g++-multilib
-g++
-gameconqueror
-gawk
-gcc-7-base
-gcc-8-base
-gcc-8-cross-base-ports
-gcc-8-cross-base
-gcc-8
-gcc-9-base
-gcc-9-base
-gcc-9-multilib
-gcc-9
-gcc-mingw-w64-base
-gcc-mingw-w64-x86-64
-gcc-multilib
-gcc
-gconf-service-backend
-gconf-service
-gconf2-common
-gconf2
-gcr
-gdal-data
-gdb
-gdbserver
-gddrescue
-gdisk
-gdm3
-gedit-common
-gedit
-genisoimage
-geoclue-2.0
-geogebra
-geoip-bin
-geoip-database
-gettext-base
-gettext
-gfortran-9
-gfortran
-ghostscript
-giblib1
-gifsicle
-gimp-data
-gimp
-gir1.2-accountsservice-1.0
-gir1.2-appindicator-0.1
-gir1.2-appindicator3-0.1
-gir1.2-atk-1.0
-gir1.2-atspi-2.0
-gir1.2-caribou-1.0
-gir1.2-dbusmenu-glib-0.4
-gir1.2-dee-1.0
-gir1.2-freedesktop
-gir1.2-gck-1
-gir1.2-gcr-3
-gir1.2-gdesktopenums-3.0
-gir1.2-gdkpixbuf-2.0
-gir1.2-gdm-1.0
-gir1.2-geoclue-2.0
-gir1.2-geocodeglib-1.0
-gir1.2-glib-2.0
-gir1.2-gmenu-3.0
-gir1.2-gnomebluetooth-1.0
-gir1.2-gnomedesktop-3.0
-gir1.2-goa-1.0
-gir1.2-gst-plugins-base-1.0
-gir1.2-gstreamer-1.0
-gir1.2-gtk-2.0
-gir1.2-gtk-3.0
-gir1.2-gtksource-3.0
-gir1.2-gtksource-4
-gir1.2-gudev-1.0
-gir1.2-gweather-3.0
-gir1.2-handy-0.0
-gir1.2-harfbuzz-0.0
-gir1.2-ibus-1.0
-gir1.2-javascriptcoregtk-3.0
-gir1.2-javascriptcoregtk-4.0
-gir1.2-json-1.0
-gir1.2-keybinder-3.0
-gir1.2-mutter-2
-gir1.2-mutter-5
-gir1.2-nautilus-3.0
-gir1.2-nm-1.0
-gir1.2-nma-1.0
-gir1.2-notify-0.7
-gir1.2-packagekitglib-1.0
-gir1.2-pango-1.0
-gir1.2-peas-1.0
-gir1.2-playerctl-1.0
-gir1.2-polkit-1.0
-gir1.2-rb-3.0
-gir1.2-rsvg-2.0
-gir1.2-secret-1
-gir1.2-snapd-1
-gir1.2-soup-2.4
-gir1.2-totem-1.0
-gir1.2-totemplparser-1.0
-gir1.2-udisks-2.0
-gir1.2-unity-5.0
-gir1.2-upowerglib-1.0
-gir1.2-vte-2.91
-gir1.2-webkit-3.0
-gir1.2-webkit2-4.0
-gir1.2-wnck-3.0
-git-flow
-git-lfs
-git-man
-git
-gjs
-gkbd-capplet
-glib-networking-common
-glib-networking-services
-glib-networking
-glslang-dev
-glslang-tools
-gnome-accessibility-themes
-gnome-alsamixer
-gnome-bluetooth
-gnome-calendar
-gnome-control-center-data
-gnome-control-center-faces
-gnome-control-center
-gnome-desktop3-data
-gnome-disk-utility
-gnome-font-viewer
-gnome-getting-started-docs
-gnome-initial-setup
-gnome-keyring-pkcs11
-gnome-keyring
-gnome-menus
-gnome-online-accounts
-gnome-panel-data
-gnome-panel
-gnome-power-manager
-gnome-screensaver
-gnome-screenshot
-gnome-session-bin
-gnome-session-canberra
-gnome-session-common
-gnome-settings-daemon-common
-gnome-settings-daemon
-gnome-shell-common
-gnome-shell-extension-appindicator
-gnome-shell-extension-desktop-icons
-gnome-shell-extension-ubuntu-dock
-gnome-shell
-gnome-software-common
-gnome-software-plugin-flatpak
-gnome-software-plugin-snap
-gnome-software
-gnome-startup-applications
-gnome-sudoku
-gnome-system-monitor
-gnome-terminal-data
-gnome-terminal
-gnome-themes-extra-data
-gnome-themes-extra
-gnome-todo-common
-gnome-todo
-gnome-tweaks
-gnome-user-docs
-gnome-user-guide
-gnome-video-effects
-gnome-weather
-gnupg-l10n
-gnupg-utils
-gnupg
-gnuplot-data
-gnuplot-x11
-gobject-introspection
-golang-docker-credential-helpers
-gparted
-gperf
-gpg-agent
-gpg-wks-client
-gpg-wks-server
-gpg
-gpgconf
-gpgsm
-gpgv
-gpick
-gradle
-graphviz-doc
-graphviz
-grep
-grilo-plugins-0.3-base
-groff-base
-groovy
-grub-common
-grub-efi-amd64-bin
-grub-efi-amd64-signed
-grub-gfxpayload-lists
-grub-pc-bin
-grub-pc
-grub2-common
-gsettings-desktop-schemas
-gsettings-ubuntu-schemas
-gsfonts
-gstreamer1.0-alsa
-gstreamer1.0-clutter-3.0
-gstreamer1.0-fluendo-mp3
-gstreamer1.0-gl
-gstreamer1.0-gtk3
-gstreamer1.0-libav
-gstreamer1.0-packagekit
-gstreamer1.0-plugins-base-apps
-gstreamer1.0-plugins-base
-gstreamer1.0-plugins-base
-gstreamer1.0-plugins-good
-gstreamer1.0-plugins-ugly
-gstreamer1.0-pulseaudio
-gstreamer1.0-tools
-gstreamer1.0-vaapi
-gstreamer1.0-x
-gtk-update-icon-cache
-gtk2-engines-murrine
-gtk2-engines-pixbuf
-gtk2-engines
-guile-2.0-libs
-guile-2.2-libs
-guvcview
-gvfs-backends
-gvfs-bin
-gvfs-common
-gvfs-daemons
-gvfs-fuse
-gvfs-libs
-gvfs
-gzip
-haguichi
-hardinfo
-hasciicam
-hddtemp
-hdf5-helpers
-hdparm
-hicolor-icon-theme
-hostname
-hplip-data
-humanity-icon-theme
-hunspell-en-gb
-hunspell-en-us
-hwdata
-hyphen-en-us
-i3-gaps-session
-i3-gaps-wm
-i3-gaps
-i3blocks
-i3status
-i7z
-i965-va-driver
-ibus-data
-ibus-gtk3
-ibus-gtk
-ibus-table
-ibus
-ibverbs-providers
-icu-devtools
-ifupdown
-iio-sensor-proxy
-im-config
-imagemagick-6-common
-imagemagick-6.q16
-imagemagick
-indicator-applet-complete
-indicator-applet
-indicator-application
-indicator-bluetooth
-indicator-common
-indicator-cpufreq
-indicator-datetime
-indicator-keyboard
-indicator-messages
-indicator-multiload
-indicator-power
-indicator-session
-indicator-sound
-info
-init-system-helpers
-init
-initramfs-tools-bin
-initramfs-tools-core
-initramfs-tools
-inkscape
-inputattach
-install-info
-intel-microcode
-intltool-debian
-inxi
-iotop
-ippusbxd
-iproute2
-iptables
-iputils-arping
-iputils-ping
-iputils-tracepath
-ipxe-qemu-256k-compat-efi-roms
-ipxe-qemu
-ipython
-irqbalance
-isc-dhcp-client
-isc-dhcp-common
-iso-codes
-isync
-itop
-iucode-tool
-ivy
-iw
-jackd2-firewire
-jackd2
-jackd
-java-common
-java-wrappers
-javascript-common
-jp2a
-junit4
-junit
-kaccounts-providers
-kactivities-bin
-kactivitymanagerd
-kbd
-kded5
-kdenlive-data
-kdenlive
-keditbookmarks
-kerneloops
-keyboard-configuration
-kinit
-kio
-klibc-utils
-kmod
-kpackagelauncherqml
-kpackagetool5
-kpartx
-krb5-locales
-kwayland-data
-kwayland-integration
-language-pack-en-base
-language-pack-en
-language-pack-gnome-en-base
-language-pack-gnome-en
-language-selector-common
-language-selector-gnome
-laptop-detect
-lbzip2
-less
-lib32asan5
-lib32atomic1
-lib32gcc-9-dev
-lib32gcc1
-lib32gomp1
-lib32itm1
-lib32quadmath0
-lib32stdc++-9-dev
-lib32stdc++6
-lib32ubsan1
-lib32z1
-liba52-0.7.4
-libaa1-dev
-libaa1
-libaacs0
-libabiword-3.0
-libabw-0.1-1
-libaccounts-glib0
-libaccounts-qt5-1
-libaccountsservice0
-libacl1
-libactivation-java
-libadplug-2.2.1-0v5
-libaec-dev
-libaec0
-libaio1
-libalgorithm-diff-perl
-libalgorithm-diff-xs-perl
-libalgorithm-merge-perl
-liballegro4.4
-libamd2
-libann0
-libantlr-java
-libanyevent-i3-perl
-libanyevent-perl
-libao-common
-libao4
-libaom0
-libaopalliance-java
-libapache-poi-java
-libapache-pom-java
-libapache2-mod-php7.2
-libapache2-mod-php7.3
-libapache2-mod-php
-libapparmor1
-libappindicator-dev
-libappindicator1
-libappindicator3-1
-libappstream-glib8
-libappstream4
-libapr1
-libaprutil1-dbd-sqlite3
-libaprutil1-ldap
-libaprutil1
-libapt-pkg-perl
-libapt-pkg5.90
-libarchive-cpio-perl
-libarchive-dev
-libarchive-zip-perl
-libarchive13
-libargon2-0
-libargon2-1
-libargs4j-java
-libaria2-0
-libaribb24-0
-libarmadillo-dev
-libarmadillo8
-libarmadillo9
-libarpack2-dev
-libarpack2
-libart-2.0-2
-libasan4
-libasan5
-libasm-java
-libasn1-8-heimdal
-libasn1-8-heimdal
-libasound2-data
-libasound2-dev
-libasound2-plugins
-libasound2-plugins
-libasound2
-libasound2
-libaspell15
-libass9
-libassimp-dev
-libassimp4
-libassuan0
-libasync-interrupt-perl
-libasync-mergepoint-perl
-libasyncns0
-libasyncns0
-libatasmart4
-libatinject-jsr330-api-java
-libatk-adaptor
-libatk-bridge2.0-0
-libatk-bridge2.0-dev
-libatk-wrapper-java-jni
-libatk-wrapper-java
-libatk1.0-0
-libatk1.0-data
-libatk1.0-dev
-libatkmm-1.6-1v5
-libatkmm-1.6-dev
-libatm1
-libatomic1
-libatomic1
-libatspi2.0-0
-libatspi2.0-dev
-libattr1
-libaudio2
-libaudiofile1
-libaudit-common
-libaudit-dev
-libaudit1
-libauthen-sasl-perl
-libavahi-client3
-libavahi-client3
-libavahi-common-data
-libavahi-common-data
-libavahi-common3
-libavahi-common3
-libavahi-core7
-libavahi-glib1
-libavahi-ui-gtk3-0
-libavc1394-0
-libavcodec-dev
-libavcodec-extra58
-libavcodec-extra
-libavdevice58
-libavfilter-dev
-libavfilter7
-libavformat-dev
-libavformat58
-libavresample4
-libavutil-dev
-libavutil56
-libb-hooks-endofscope-perl
-libb-hooks-op-check-perl
-libbabeltrace1
-libbabl-0.1-0
-libbasicusageenvironment1
-libbcel-java
-libbcpg-java
-libbcprov-java
-libbdplus0
-libbibutils6
-libbind9-160
-libbind9-161
-libbindex-java
-libbinio1v5
-libbinutils
-libblas-dev
-libblas3
-libblkid-dev
-libblkid1
-libblkid1
-libblockdev-crypto2
-libblockdev-fs2
-libblockdev-loop2
-libblockdev-part-err2
-libblockdev-part2
-libblockdev-swap2
-libblockdev-utils2
-libblockdev2
-libblosc1
-libbluetooth-dev
-libbluetooth3
-libbluray2
-libbonobo2-0
-libbonobo2-common
-libbonoboui2-0
-libbonoboui2-common
-libboost-all-dev
-libboost-atomic-dev
-libboost-atomic1.67-dev
-libboost-atomic1.67.0
-libboost-chrono-dev
-libboost-chrono1.67-dev
-libboost-chrono1.67.0
-libboost-container-dev
-libboost-container1.67-dev
-libboost-container1.67.0
-libboost-context-dev
-libboost-context1.67-dev
-libboost-context1.67.0
-libboost-coroutine-dev
-libboost-coroutine1.67-dev
-libboost-coroutine1.67.0
-libboost-date-time-dev
-libboost-date-time1.65.1
-libboost-date-time1.67-dev
-libboost-date-time1.67.0
-libboost-dev
-libboost-exception-dev
-libboost-exception1.67-dev
-libboost-fiber-dev
-libboost-fiber1.67-dev
-libboost-fiber1.67.0
-libboost-filesystem-dev
-libboost-filesystem1.65.1
-libboost-filesystem1.67-dev
-libboost-filesystem1.67.0
-libboost-graph-dev
-libboost-graph-parallel-dev
-libboost-graph-parallel1.67-dev
-libboost-graph-parallel1.67.0
-libboost-graph1.67-dev
-libboost-graph1.67.0
-libboost-iostreams-dev
-libboost-iostreams1.65.1
-libboost-iostreams1.67-dev
-libboost-iostreams1.67.0
-libboost-locale-dev
-libboost-locale1.65.1
-libboost-locale1.67-dev
-libboost-locale1.67.0
-libboost-log-dev
-libboost-log1.67-dev
-libboost-log1.67.0
-libboost-math-dev
-libboost-math1.67-dev
-libboost-math1.67.0
-libboost-mpi-dev
-libboost-mpi-python-dev
-libboost-mpi-python1.67-dev
-libboost-mpi-python1.67.0
-libboost-mpi1.67-dev
-libboost-mpi1.67.0
-libboost-numpy-dev
-libboost-numpy1.67-dev
-libboost-numpy1.67.0
-libboost-program-options-dev
-libboost-program-options1.67-dev
-libboost-program-options1.67.0
-libboost-python-dev
-libboost-python1.67-dev
-libboost-python1.67.0
-libboost-random-dev
-libboost-random1.67-dev
-libboost-random1.67.0
-libboost-regex-dev
-libboost-regex1.67-dev
-libboost-regex1.67.0
-libboost-serialization-dev
-libboost-serialization1.67-dev
-libboost-serialization1.67.0
-libboost-signals-dev
-libboost-signals1.67-dev
-libboost-signals1.67.0
-libboost-stacktrace-dev
-libboost-stacktrace1.67-dev
-libboost-stacktrace1.67.0
-libboost-system-dev
-libboost-system1.65.1
-libboost-system1.67-dev
-libboost-system1.67.0
-libboost-test-dev
-libboost-test1.67-dev
-libboost-test1.67.0
-libboost-thread-dev
-libboost-thread1.65.1
-libboost-thread1.67-dev
-libboost-thread1.67.0
-libboost-timer-dev
-libboost-timer1.67-dev
-libboost-timer1.67.0
-libboost-tools-dev
-libboost-type-erasure-dev
-libboost-type-erasure1.67-dev
-libboost-type-erasure1.67.0
-libboost-wave-dev
-libboost-wave1.67-dev
-libboost-wave1.67.0
-libboost1.67-all-dev
-libboost1.67-dev
-libboost1.67-tools-dev
-libbotan-2-9
-libbrlapi0.6
-libbrotli1
-libbs2b0
-libbsd-dev
-libbsd0
-libbsd0
-libbsf-java
-libbsh-java
-libbz2-1.0
-libbz2-1.0
-libbz2-dev
-libc++1-9
-libc++1
-libc++abi1-9
-libc-ares2
-libc-bin
-libc-dev-bin
-libc6-dbg
-libc6-dev-i386
-libc6-dev-x32
-libc6-dev
-libc6-i386
-libc6-x32
-libc6
-libc6
-libcaca-dev
-libcaca0
-libcacard0
-libcaf-openmpi-3
-libcairo-gobject-perl
-libcairo-gobject2
-libcairo-perl
-libcairo-script-interpreter2
-libcairo2-dev
-libcairo2
-libcairo2
-libcairomm-1.0-1v5
-libcairomm-1.0-dev
-libcamd2
-libcamel-1.2-61
-libcamel-1.2-62
-libcanberra-gtk-module
-libcanberra-gtk0
-libcanberra-gtk3-0
-libcanberra-gtk3-module
-libcanberra-pulse
-libcanberra0
-libcap-ng-dev
-libcap-ng0
-libcap2-bin
-libcap2
-libcap2
-libcapi20-3
-libcapi20-3
-libcapnp-0.7.0
-libcapture-tiny-perl
-libcaribou-common
-libcaribou0
-libcc1-0
-libccolamd2
-libcddb2
-libcdi-api-java
-libcdio-cdda2
-libcdio-paranoia2
-libcdio17
-libcdio18
-libcdparanoia0
-libcdparanoia0
-libcdr-0.1-1
-libcdt5
-libcfitsio8
-libcgi-fast-perl
-libcgi-pm-perl
-libcglib-java
-libcgraph6
-libchafa0
-libchamplain-0.12-0
-libchamplain-gtk-0.12-0
-libcharls2
-libcheese-gtk25
-libcheese8
-libchm1
-libcholmod3
-libchromaprint1
-libcilkrts5
-libclang1-7
-libclang1-8
-libclang1-9
-libclass-accessor-perl
-libclass-method-modifiers-perl
-libclass-xsaccessor-perl
-libclone-perl
-libclucene-contribs1v5
-libclucene-core1v5
-libclutter-1.0-0
-libclutter-1.0-common
-libclutter-gst-3.0-0
-libclutter-gtk-1.0-0
-libcmis-0.5-5v5
-libcoarrays-dev
-libcoarrays-openmpi-dev
-libcodec2-0.8.1
-libcodemodel-java
-libcogl-common
-libcogl-pango20
-libcogl-path20
-libcogl20
-libcolamd2
-libcolord-gtk1
-libcolord2
-libcolorhug2
-libcom-err2
-libcom-err2
-libcommon-sense-perl
-libcommons-cli-java
-libcommons-codec-java
-libcommons-collections3-java
-libcommons-collections4-java
-libcommons-compress-java
-libcommons-io-java
-libcommons-lang-java
-libcommons-lang3-java
-libcommons-logging-java
-libcommons-math-java
-libcommons-math3-java
-libcommons-parent-java
-libconfig++-dev
-libconfig++9v5
-libconfig-dev
-libconfig-doc
-libconfig9
-libconfuse-common
-libconfuse2
-libconst-fast-perl
-libcontextual-return-perl
-libcpufreq0
-libcrack2
-libcroco3
-libcrypto++6
-libcryptsetup12
-libcsfml-audio2.5
-libcsfml-dev
-libcsfml-doc
-libcsfml-graphics2.5
-libcsfml-network2.5
-libcsfml-system2.5
-libcsfml-window2.5
-libcue2
-libcups2
-libcups2
-libcupsfilters1
-libcupsfilters1
-libcupsimage2
-libcupsimage2
-libcurl3-gnutls
-libcurl4-doc
-libcurl4-openssl-dev
-libcurl4
-libcurlpp-dev
-libcurlpp0
-libcurvesapi-java
-libcwidget3v5
-libcxsparse3
-libdaemon0
-libdap25
-libdapclient6v5
-libdata-dump-perl
-libdata-optlist-perl
-libdatrie1
-libdazzle-1.0-0
-libdb-dev
-libdb5.3-dev
-libdb5.3
-libdb5.3
-libdbus-1-3
-libdbus-1-3
-libdbus-1-dev
-libdbus-glib-1-2
-libdbus-glib-1-dev-bin
-libdbus-glib-1-dev
-libdbusmenu-glib-dev
-libdbusmenu-glib4
-libdbusmenu-gtk3-4
-libdbusmenu-gtk4
-libdbusmenu-qt5-2
-libdc1394-22-dev
-libdc1394-22
-libdca0
-libdconf1
-libdd-plist-java
-libde265-0
-libdebconfclient0
-libdebhelper-perl
-libdee-1.0-4
-libdevel-callchecker-perl
-libdevel-globaldestruction-perl
-libdevil1c2
-libdevmapper-event1.02.1
-libdevmapper1.02.1
-libdigest-bubblebabble-perl
-libdigest-hmac-perl
-libdiscid0
-libdistro-info-perl
-libdjvulibre-text
-libdjvulibre21
-libdmapsharing-3.0-2
-libdmx-dev
-libdmx1
-libdns-export1100
-libdns-export1104
-libdns1100
-libdns1104
-libdom4j-java
-libdotconf0
-libdouble-conversion3
-libdpkg-perl
-libdrm-amdgpu1
-libdrm-amdgpu1
-libdrm-common
-libdrm-dev
-libdrm-intel1
-libdrm-intel1
-libdrm-nouveau2
-libdrm-nouveau2
-libdrm-radeon1
-libdrm-radeon1
-libdrm2
-libdrm2
-libdtd-parser-java
-libdv4
-libdvbpsi10
-libdvdnav4
-libdvdread4
-libdw1
-libdwarf++0
-libdynaloader-functions-perl
-libe-book-0.1-1
-libebackend-1.2-10
-libebml4v5
-libebook-1.2-20
-libebook-contacts-1.2-2
-libebook-contacts-1.2-3
-libebur128-1
-libecal-1.2-19
-libecal-2.0-1
-libedata-book-1.2-26
-libedata-cal-2.0-1
-libedataserver-1.2-23
-libedataserver-1.2-24
-libedataserverui-1.2-2
-libedit-dev
-libedit2
-libedit2
-libefiboot1
-libefivar1
-libegl-dev
-libegl-mesa0
-libegl1-mesa-dev
-libegl1-mesa
-libegl1
-libel-api-java
-libelf++0
-libelf-dev
-libelf1
-libelf1
-libelfin-dev
-libemail-valid-perl
-libemf1
-libenchant1c2a
-libencode-locale-perl
-libeot0
-libepoxy-dev
-libepoxy0
-libepsilon1
-libept1.5.90
-libepub0
-libepubgen-0.1-1
-liberfa1
-liberror-perl
-libespeak-ng1
-libestools2.5
-libestr0
-libetonyek-0.1-1
-libev-dev
-libev-perl
-libev4
-libevdev-dev
-libevdev2
-libevdocument3-4
-libevent-2.1-6
-libevent-core-2.1-6
-libevent-pthreads-2.1-6
-libevview3-3
-libexempi3
-libexempi8
-libexif-dev
-libexif-doc
-libexif12
-libexif12
-libexiv2-14
-libexo-2-0
-libexo-common
-libexo-helpers
-libexpat1-dev
-libexpat1
-libexpat1
-libexporter-tiny-perl
-libext2fs2
-libexttextcat-2.0-0
-libexttextcat-data
-libextutils-depends-perl
-libextutils-pkgconfig-perl
-libfaad2
-libfabric1
-libfakeroot
-libfam0
-libfastinfoset-java
-libfastjson4
-libfcgi-bin
-libfcgi-dev
-libfcgi-perl
-libfcgi0ldbl
-libfcitx-config4
-libfcitx-gclient1
-libfcitx-utils0
-libfdisk1
-libfdk-aac1
-libfdt1
-libfelix-framework-java
-libfelix-gogo-runtime-java
-libfelix-osgi-obr-java
-libfelix-resolver-java
-libffado2
-libffi-dev
-libffi6
-libffi6
-libffmpegthumbnailer4v5
-libfftw3-double3
-libfftw3-single3
-libfile-basedir-perl
-libfile-chdir-perl
-libfile-copy-recursive-perl
-libfile-desktopentry-perl
-libfile-fcntllock-perl
-libfile-find-rule-perl
-libfile-homedir-perl
-libfile-listing-perl
-libfile-mimeinfo-perl
-libfile-next-perl
-libfile-stripnondeterminism-perl
-libfile-which-perl
-libfindbugs-java
-libfl-dev
-libfl2
-libflac++6v5
-libflac-dev
-libflac8
-libflac8
-libflatpak0
-libflite1
-libfltk-gl1.3
-libfltk1.3
-libfluidsynth1
-libfont-afm-perl
-libfontconfig1-dev
-libfontconfig1
-libfontconfig1
-libfontembed1
-libfontenc-dev
-libfontenc1
-libfreehand-0.1-1
-libfreehep-export-java
-libfreehep-graphics2d-java
-libfreehep-graphicsio-emf-java
-libfreehep-graphicsio-java
-libfreehep-graphicsio-pdf-java
-libfreehep-graphicsio-svg-java
-libfreehep-graphicsio-tests-java
-libfreehep-io-java
-libfreehep-swing-java
-libfreehep-util-java
-libfreehep-xml-java
-libfreeimage-dev
-libfreeimage3
-libfreerdp-client2-2
-libfreerdp2-2
-libfreetype6-dev
-libfreetype6
-libfreetype6
-libfreexl1
-libfribidi-dev
-libfribidi0
-libfs-dev
-libfs6
-libftgl-dev
-libftgl2
-libftp4
-libfuse-dev
-libfuse2
-libfuture-perl
-libfwupd2
-libfyba0
-libgail-3-0
-libgail-common
-libgail18
-libgavl1
-libgbm1
-libgc-dev
-libgc1c2
-libgcab-1.0-0
-libgcc-7-dev
-libgcc-8-dev
-libgcc-9-dev
-libgcc1
-libgcc1
-libgck-1-0
-libgconf-2-4
-libgcr-base-3-1
-libgcr-ui-3-1
-libgcrypt20-dev
-libgcrypt20
-libgcrypt20
-libgd3
-libgd3
-libgdal20
-libgdata-common
-libgdata22
-libgdbm-compat4
-libgdbm-compat4
-libgdbm-dev
-libgdbm5
-libgdbm6
-libgdbm6
-libgdcm2.8
-libgdk-pixbuf2.0-0
-libgdk-pixbuf2.0-bin
-libgdk-pixbuf2.0-common
-libgdk-pixbuf2.0-dev
-libgdm1
-libgee-0.8-2
-libgegl-0.4-0
-libgegl-common
-libgeoclue-2-0
-libgeocode-glib0
-libgeoip1
-libgeos-3.7.2
-libgeos-c1v5
-libgeotiff2
-libgeronimo-annotation-1.3-spec-java
-libgeronimo-interceptor-3.0-spec-java
-libgetopt-long-descriptive-perl
-libgexiv2-2
-libgflags-dev
-libgflags2.2
-libgfortran-9-dev
-libgfortran5
-libghc-pandoc-citeproc-data
-libgif7
-libgimp2.0
-libgirara-dev
-libgirara-gtk3-3
-libgirepository-1.0-1
-libgirepository1.0-dev
-libgit-wrapper-perl
-libgitlab-api-v4-perl
-libgjs0g
-libgl-dev
-libgl1-mesa-dev
-libgl1-mesa-dri
-libgl1-mesa-dri
-libgl1-mesa-glx
-libgl1-mesa-glx
-libgl1
-libgl1
-libgl2ps1.4
-libglade2-0
-libglapi-mesa
-libglapi-mesa
-libgles-dev
-libgles1
-libgles2-mesa-dev
-libgles2
-libglew-dev
-libglew2.1
-libglfw3-dev
-libglfw3
-libglib-object-introspection-perl
-libglib-perl
-libglib2.0-0
-libglib2.0-0
-libglib2.0-bin
-libglib2.0-data
-libglib2.0-dev-bin
-libglib2.0-dev
-libglibmm-2.4-1v5
-libglibmm-2.4-dev
-libglm-dev
-libglpk40
-libglu1-mesa-dev
-libglu1-mesa
-libglu1-mesa
-libglvnd0
-libglvnd0
-libglx-dev
-libglx-mesa0
-libglx-mesa0
-libglx0
-libglx0
-libgme0
-libgmime-3.0-0
-libgmp-dev
-libgmp10
-libgmp10
-libgmp3-dev
-libgmpxx4ldbl
-libgnome-2-0
-libgnome-autoar-0-0
-libgnome-bluetooth13
-libgnome-desktop-3-17
-libgnome-desktop-3-18
-libgnome-games-support-1-3
-libgnome-games-support-common
-libgnome-keyring-common
-libgnome-keyring0
-libgnome-menu-3-0
-libgnome-todo
-libgnome2-common
-libgnomecanvas2-0
-libgnomecanvas2-common
-libgnomekbd-common
-libgnomekbd8
-libgnomeui-0
-libgnomeui-common
-libgnomevfs2-0
-libgnomevfs2-common
-libgnutls30
-libgnutls30
-libgoa-1.0-0b
-libgoa-1.0-common
-libgoa-backend-1.0-1
-libgoffice-0.10-10-common
-libgoffice-0.10-10
-libgom-1.0-0
-libgomp1
-libgoogle-glog-dev
-libgoogle-glog0v5
-libgoogle-gson-java
-libgoogle-perftools-dev
-libgoogle-perftools4
-libgpars-groovy-java
-libgpg-error-dev
-libgpg-error0
-libgpg-error0
-libgpgme11
-libgpgmepp6
-libgphoto2-6
-libgphoto2-6
-libgphoto2-l10n
-libgphoto2-port12
-libgphoto2-port12
-libgpm2
-libgpm2
-libgpod-common
-libgpod4
-libgradle-core-java
-libgradle-plugins-java
-libgraphene-1.0-0
-libgraphicsmagick++-q16-12
-libgraphicsmagick-q16-3
-libgraphite2-3
-libgraphite2-dev
-libgrilo-0.3-0
-libgroupsock8
-libgs9-common
-libgs9
-libgs9
-libgsasl7
-libgsf-1-114
-libgsf-1-common
-libgsl23
-libgslcblas0
-libgsm1
-libgsm1
-libgsound0
-libgspell-1-1
-libgspell-1-common
-libgssapi-krb5-2
-libgssapi-krb5-2
-libgssapi3-heimdal
-libgssapi3-heimdal
-libgstreamer-gl1.0-0
-libgstreamer-plugins-bad1.0-0
-libgstreamer-plugins-base1.0-0
-libgstreamer-plugins-base1.0-0
-libgstreamer-plugins-base1.0-dev
-libgstreamer-plugins-good1.0-0
-libgstreamer1.0-0
-libgstreamer1.0-0
-libgstreamer1.0-dev
-libgtk-3-0
-libgtk-3-bin
-libgtk-3-common
-libgtk-3-dev
-libgtk2-perl
-libgtk2.0-0
-libgtk2.0-bin
-libgtk2.0-common
-libgtk2.0-dev
-libgtk3-perl
-libgtkmm-2.4-1v5
-libgtkmm-3.0-1v5
-libgtkmm-3.0-dev
-libgtksourceview-3.0-1
-libgtksourceview-3.0-common
-libgtksourceview-4-0
-libgtksourceview-4-common
-libgtksourceviewmm-3.0-0v5
-libgtkspell0
-libgtop-2.0-11
-libgtop2-common
-libgts-0.7-5
-libgts-bin
-libguard-perl
-libguava-java
-libgucharmap-2-90-7
-libgudev-1.0-0
-libguice-java
-libgusb2
-libgutenprint2
-libguvcview-2.0-2
-libgvc6
-libgvpr2
-libgweather-3-15
-libgweather-common
-libgxps2
-libhamcrest-java
-libhandy-0.0-0
-libharfbuzz-dev
-libharfbuzz-gobject0
-libharfbuzz-icu0
-libharfbuzz0b
-libhawtjni-runtime-java
-libhcrypto4-heimdal
-libhcrypto4-heimdal
-libhdf4-0-alt
-libhdf5-103
-libhdf5-cpp-103
-libhdf5-dev
-libhdf5-openmpi-103
-libheif1
-libheimbase1-heimdal
-libheimbase1-heimdal
-libheimntlm0-heimdal
-libheimntlm0-heimdal
-libhfstospell10
-libhogweed4
-libhogweed4
-libhpmud0
-libhtml-form-perl
-libhtml-format-perl
-libhtml-parser-perl
-libhtml-tagset-perl
-libhtml-template-perl
-libhtml-tree-perl
-libhttp-cookies-perl
-libhttp-daemon-perl
-libhttp-date-perl
-libhttp-message-perl
-libhttp-negotiate-perl
-libhttp-tiny-multipart-perl
-libhttpclient-java
-libhttpcore-java
-libhunspell-1.6-0
-libhunspell-1.7-0
-libhwloc-dev
-libhwloc-plugins
-libhwloc5
-libhx509-5-heimdal
-libhx509-5-heimdal
-libhyphen0
-libiberty-dev
-libibus-1.0-5
-libibus-1.0-dev
-libibverbs-dev
-libibverbs1
-libical3
-libice-dev
-libice6
-libicu-dev
-libicu4j-java
-libicu60
-libicu63
-libicu63
-libid3tag0
-libidn11
-libidn11
-libidn2-0
-libidn2-0
-libido3-0.1-0
-libiec61883-0
-libieee1284-3
-libieee1284-3
-libijs-0.35
-libijs-0.35
-libilmbase12
-libilmbase23
-libimage-magick-perl
-libimage-magick-q16-perl
-libimagequant0
-libimlib2
-libimobiledevice6
-libimport-into-perl
-libindicator3-7
-libinput-bin
-libinput-tools
-libinput10
-libintellij-annotations-java
-libio-async-loop-epoll-perl
-libio-async-perl
-libio-html-perl
-libio-prompter-perl
-libio-pty-perl
-libio-socket-inet6-perl
-libio-socket-ssl-perl
-libio-string-perl
-libio-stringy-perl
-libip4tc0
-libip4tc2
-libip6tc0
-libip6tc2
-libipc-run-perl
-libipc-system-simple-perl
-libiptc0
-libirrlicht-dev
-libirrlicht1.8
-libirs160
-libirs161
-libisc-export1100
-libisc-export169
-libisc1100
-libisc169
-libisccc160
-libisccc161
-libisccfg160
-libisccfg163
-libiscsi7
-libisl-0.18-dev
-libisl15
-libisl19
-libisl21
-libiso9660-11
-libistack-commons-java
-libitm1
-libiw30
-libixml10
-libjack-jackd2-0
-libjack-jackd2-0
-libjack-jackd2-dev
-libjansi-java
-libjansi-native-java
-libjansson4
-libjarjar-java
-libjas-java
-libjas-plotter-java
-libjatl-java
-libjavaewah-java
-libjavascriptcoregtk-3.0-0
-libjavascriptcoregtk-4.0-18
-libjaxb-api-java
-libjaxb-java
-libjaxen-java
-libjaxp1.3-java
-libjbig-dev
-libjbig0
-libjbig0
-libjbig2dec0
-libjbig2dec0
-libjcifs-java
-libjcip-annotations-java
-libjcommander-java
-libjcommon-java
-libjcsp-java
-libjdom1-java
-libjetbrains-annotations-java
-libjexcelapi-java
-libjformatstring-java
-libjfreechart-java
-libjfugue-java
-libjgit-java
-libjlatexmath-java
-libjline2-java
-libjna-java
-libjna-jni
-libjopendocument-java
-libjpeg-dev
-libjpeg-progs
-libjpeg-turbo8-dev
-libjpeg-turbo8
-libjpeg-turbo8
-libjpeg8-dev
-libjpeg8
-libjpeg8
-libjpeg9
-libjs-coffeescript
-libjs-jquery-datatables
-libjs-jquery-ui
-libjs-jquery
-libjs-mathjax
-libjs-sphinxdoc
-libjs-underscore
-libjsch-java
-libjson-c-dev
-libjson-c3
-libjson-c4
-libjson-glib-1.0-0
-libjson-glib-1.0-common
-libjson-perl
-libjson-xs-perl
-libjsoncpp-dev
-libjsoncpp1
-libjsoup-java
-libjsp-api-java
-libjsr166y-java
-libjsr305-java
-libjxr0
-libjzlib-java
-libk5crypto3
-libk5crypto3
-libkaccounts1
-libkate1
-libkeybinder-3.0-0
-libkeyutils1
-libkeyutils1
-libkf5activities5
-libkf5archive5
-libkf5attica5
-libkf5auth-data
-libkf5authcore5
-libkf5bookmarks-data
-libkf5bookmarks5
-libkf5calendarevents5
-libkf5codecs-data
-libkf5codecs5
-libkf5completion-data
-libkf5completion5
-libkf5config-bin
-libkf5config-data
-libkf5configcore5
-libkf5configgui5
-libkf5configwidgets-data
-libkf5configwidgets5
-libkf5coreaddons-data
-libkf5coreaddons5
-libkf5crash5
-libkf5dbusaddons-bin
-libkf5dbusaddons-data
-libkf5dbusaddons5
-libkf5declarative-data
-libkf5declarative5
-libkf5doctools5
-libkf5filemetadata-bin
-libkf5filemetadata-data
-libkf5filemetadata3
-libkf5globalaccel-bin
-libkf5globalaccel-data
-libkf5globalaccel5
-libkf5globalaccelprivate5
-libkf5guiaddons5
-libkf5i18n-data
-libkf5i18n5
-libkf5iconthemes-bin
-libkf5iconthemes-data
-libkf5iconthemes5
-libkf5idletime5
-libkf5itemviews-data
-libkf5itemviews5
-libkf5jobwidgets-data
-libkf5jobwidgets5
-libkf5js5
-libkf5jsapi5
-libkf5kexiv2-15.0.0
-libkf5khtml-bin
-libkf5khtml-data
-libkf5khtml5
-libkf5kiocore5
-libkf5kiofilewidgets5
-libkf5kiogui5
-libkf5kiontlm5
-libkf5kiowidgets5
-libkf5kirigami2-5
-libkf5newstuff-data
-libkf5newstuff5
-libkf5newstuffcore5
-libkf5notifications-data
-libkf5notifications5
-libkf5notifyconfig-data
-libkf5notifyconfig5
-libkf5package-data
-libkf5package5
-libkf5parts-data
-libkf5parts-plugins
-libkf5parts5
-libkf5plasma5
-libkf5plasmaquick5
-libkf5pty-data
-libkf5pty5
-libkf5purpose-bin
-libkf5purpose5
-libkf5quickaddons5
-libkf5service-bin
-libkf5service-data
-libkf5service5
-libkf5solid5-data
-libkf5solid5
-libkf5sonnet5-data
-libkf5sonnetcore5
-libkf5sonnetui5
-libkf5textwidgets-data
-libkf5textwidgets5
-libkf5threadweaver5
-libkf5wallet-bin
-libkf5wallet-data
-libkf5wallet5
-libkf5waylandclient5
-libkf5widgetsaddons-data
-libkf5widgetsaddons5
-libkf5windowsystem-data
-libkf5windowsystem5
-libkf5xmlgui-bin
-libkf5xmlgui-data
-libkf5xmlgui5
-libklibc
-libkmlbase1
-libkmldom1
-libkmlengine1
-libkmod2
-libkpathsea6
-libkrb5-26-heimdal
-libkrb5-26-heimdal
-libkrb5-3
-libkrb5-3
-libkrb5support0
-libkrb5support0
-libkryo-java
-libksba8
-libkwalletbackend5-5
-libkxml2-java
-libkyotocabinet16v5
-liblab-gamut1
-liblangtag-common
-liblangtag1
-liblapack-dev
-liblapack3
-liblastfm5-1
-liblbfgsb0
-liblcms2-2
-liblcms2-2
-liblcms2-dev
-liblcms2-utils
-libldap-2.4-2
-libldap-2.4-2
-libldap-common
-libldb1
-liblept5
-libleveldb-dev
-libleveldb1d
-liblightdm-gobject-1-0
-liblilv-0-0
-liblinear3
-liblink-grammar5
-liblinux-epoll-perl
-liblirc-client0
-liblist-compare-perl
-liblist-moreutils-perl
-liblivemedia64
-libllvm6.0
-libllvm7
-libllvm8
-libllvm9
-libllvm9
-liblmdb-dev
-liblmdb0
-liblo7
-liblocale-gettext-perl
-liblog-any-adapter-screen-perl
-liblog-any-perl
-liblog4j1.2-java
-liblogback-java
-libloudmouth1-0
-liblouis-data
-liblouis14
-liblouis17
-liblouisutdml-bin
-liblouisutdml-data
-liblouisutdml8
-liblouisutdml9
-liblqr-1-0
-liblrdf0
-liblsan0
-libltdl-dev
-libltdl7
-libltdl7
-liblttng-ust-ctl4
-liblttng-ust0
-liblua5.1-0-dev
-liblua5.1-0
-liblua5.2-0
-liblua5.3-0
-liblua50
-libluajit-5.1-2
-libluajit-5.1-common
-libluajit-5.1-dev
-liblualib50
-liblvm2cmd2.03
-liblwp-mediatypes-perl
-liblwp-protocol-https-perl
-liblwres160
-liblwres161
-liblz4-1
-liblz4-1
-liblzma-dev
-liblzma5
-liblzma5
-liblzo2-2
-libmaa4
-libmad0
-libmagic-dev
-libmagic-mgc
-libmagic1
-libmagick++-6.q16-8
-libmagickcore-6.q16-3-extra
-libmagickcore-6.q16-3
-libmagickcore-6.q16-6
-libmagickwand-6.q16-3
-libmagickwand-6.q16-6
-libmail-sendmail-perl
-libmailtools-perl
-libmailutils6
-libmarkdown2
-libmatroska6v5
-libmaven-file-management-java
-libmaven-parent-java
-libmaven-resolver-java
-libmaven-shared-io-java
-libmaven-shared-utils-java
-libmaven3-core-java
-libmaxminddb0
-libmbedcrypto3
-libmbedtls12
-libmbedx509-0
-libmbim-glib4
-libmbim-proxy
-libmcrypt4
-libmecab2
-libmediaart-2.0-0
-libmediainfo0v5
-libmessaging-menu0
-libmetis5
-libmhash2
-libmicrodns0
-libmikmod3
-libminiupnpc10
-libminiupnpc17
-libminizip1
-libminlog-java
-libmirclient-dev
-libmirclient9
-libmircommon-dev
-libmircommon7
-libmircookie-dev
-libmircookie2
-libmircore-dev
-libmircore1
-libmirprotobuf3
-libmlt++3
-libmlt-data
-libmlt6
-libmm-glib0
-libmms0
-libmng-dev
-libmng2
-libmnl0
-libmodplug1
-libmodule-implementation-perl
-libmodule-runtime-perl
-libmoo-perl
-libmount-dev
-libmount1
-libmount1
-libmouse-perl
-libmousex-nativetraits-perl
-libmovit8
-libmozjs-52-0
-libmozjs-60-0
-libmp3lame0
-libmpack0
-libmpc-dev
-libmpc3
-libmpcdec6
-libmpdclient2
-libmpdec-dev
-libmpdec2
-libmpeg2-4
-libmpfr-dev
-libmpfr6
-libmpfrc++-dev
-libmpg123-0
-libmpg123-0
-libmpg123-dev
-libmpx2
-libmsgpack-dev
-libmsgpackc2
-libmspack0
-libmspub-0.1-1
-libmtdev1
-libmtp-common
-libmtp-dev
-libmtp-runtime
-libmtp9
-libmultiverse-core-java
-libmutter-2-0
-libmutter-5-0
-libmwaw-0.3-3
-libmygpo-qt5-1
-libmypaint-1.3-0
-libmypaint-common
-libmysofa0
-libmysqlclient-dev
-libmysqlclient21
-libmysqlclient21
-libmythes-1.2-0
-libnamespace-clean-perl
-libnative-platform-java
-libnative-platform-jni
-libnatpmp1
-libnautilus-extension1a
-libnb-org-openide-util-java
-libnb-org-openide-util-lookup-java
-libncurses-dev
-libncurses5-dev
-libncurses5
-libncurses5
-libncurses6
-libncursesw5-dev
-libncursesw5
-libncursesw6
-libndp0
-libnekohtml-java
-libneon27-gnutls
-libnet-dbus-perl
-libnet-dns-perl
-libnet-dns-sec-perl
-libnet-domain-tld-perl
-libnet-http-perl
-libnet-ip-perl
-libnet-libidn-perl
-libnet-smtp-ssl-perl
-libnet-ssleay-perl
-libnetaddr-ip-perl
-libnetcdf-c++4
-libnetcdf13
-libnetfilter-conntrack3
-libnetpbm10
-libnetplan0
-libnettle6
-libnettle6
-libnewt0.52
-libnfnetlink0
-libnfs12
-libnftnl11
-libnghttp2-14
-libnih1
-libnl-3-200
-libnl-3-dev
-libnl-genl-3-200
-libnl-route-3-200
-libnl-route-3-dev
-libnm0
-libnma0
-libnorm1
-libnotify-bin
-libnotify-dev
-libnotify4
-libnotmuch5
-libnpth0
-libnspr4
-libnss-mdns
-libnss-myhostname
-libnss-systemd
-libnss3
-libntfs-3g883
-libntfs-3g88
-libntlm0
-libnuma-dev
-libnuma1
-libnumber-compare-perl
-libnumber-range-perl
-liboauth0
-libobjenesis-java
-liboctave6
-libodbc1
-libodbc1
-libodfgen-0.1-1
-libogdi4.1
-libogg-dev
-libogg0
-libogg0
-libokular5core9
-libopenal-data
-libopenal-dev
-libopenal1
-libopenal1
-libopenalpr-data
-libopenalpr-dev
-libopenalpr2
-libopenblas-base
-libopenblas-dev
-libopencore-amrnb0
-libopencore-amrwb0
-libopencv-calib3d3.2
-libopencv-contrib3.2
-libopencv-core3.2
-libopencv-features2d3.2
-libopencv-flann3.2
-libopencv-highgui3.2
-libopencv-imgcodecs3.2
-libopencv-imgproc3.2
-libopencv-ml3.2
-libopencv-objdetect3.2
-libopencv-photo3.2
-libopencv-shape3.2
-libopencv-stitching3.2
-libopencv-superres3.2
-libopencv-video3.2
-libopencv-videoio3.2
-libopencv-videostab3.2
-libopencv-viz3.2
-libopenexr22
-libopenexr23
-libopenjp2-7
-libopenmpi-dev
-libopenmpi3
-libopenmpt-modplug1
-libopenmpt0
-libopenraw7
-libopenrawgnome7
-libopus0
-libopus0
-libopusfile0
-liborbit-2-0
-liborc-0.4-0
-liborc-0.4-0
-liborc-0.4-dev-bin
-liborc-0.4-dev
-liborcus-0.13-0
-liborcus-0.14-0
-libosgi-annotation-java
-libosgi-compendium-java
-libosgi-core-java
-libosmesa6
-libosmesa6
-libostree-1-1
-libots0
-libout123-0
-libp11-kit0
-libp11-kit0
-libpackage-stash-perl
-libpackage-stash-xs-perl
-libpackagekit-glib2-18
-libpagemaker-0.0-0
-libpam-cap
-libpam-gnome-keyring
-libpam-modules-bin
-libpam-modules
-libpam-runtime
-libpam-systemd
-libpam0g-dev
-libpam0g
-libpanel-applet3
-libpango-1.0-0
-libpango-perl
-libpango1.0-0
-libpango1.0-dev
-libpangocairo-1.0-0
-libpangoft2-1.0-0
-libpangomm-1.4-1v5
-libpangomm-1.4-dev
-libpangox-1.0-0
-libpangoxft-1.0-0
-libpaper-utils
-libpaper1
-libpaper1
-libpaps0
-libparams-classify-perl
-libparams-util-perl
-libparams-validate-perl
-libparse-debianchangelog-perl
-libparted-fs-resize0
-libparted2
-libpath-iterator-rule-perl
-libpath-tiny-perl
-libpathplan4
-libpcap0.8
-libpcap0.8
-libpcaudio0
-libpci3
-libpci3
-libpciaccess-dev
-libpciaccess0
-libpciaccess0
-libpcre16-3
-libpcre2-16-0
-libpcre2-32-0
-libpcre2-8-0
-libpcre2-8-0
-libpcre2-dev
-libpcre2-posix0
-libpcre3-dev
-libpcre32-3
-libpcre3
-libpcre3
-libpcrecpp0v5
-libpcsclite1
-libpeas-1.0-0
-libpeas-common
-libperl5.26
-libperl5.28
-libperl5.28
-libperlio-gzip-perl
-libpgm-5.2-0
-libphonenumber7
-libphonon4qt5-4
-libphysfs1
-libpipeline1
-libpixman-1-0
-libpixman-1-0
-libpixman-1-dev
-libpkcs11-helper1
-libplacebo7
-libplayerctl-1.0-0
-libplayerctl2
-libplexus-archiver-java
-libplexus-cipher-java
-libplexus-classworlds-java
-libplexus-component-annotations-java
-libplexus-container-default-java
-libplexus-container-default1.5-java
-libplexus-interpolation-java
-libplexus-io-java
-libplexus-sec-dispatcher-java
-libplexus-utils2-java
-libplist3
-libplot2c2
-libplymouth4
-libpmix2
-libpng++-dev
-libpng-dev
-libpng-tools
-libpng12-0
-libpng16-16
-libpng16-16
-libpoco-dev
-libpococrypto62
-libpocodata62
-libpocodatamysql62
-libpocodataodbc62
-libpocodatasqlite62
-libpocoencodings62
-libpocofoundation62
-libpocojson62
-libpocomongodb62
-libpoconet62
-libpoconetssl62
-libpocoredis62
-libpocoutil62
-libpocoxml62
-libpocozip62
-libpod-constants-perl
-libpodofo0.9.6
-libpolkit-agent-1-0
-libpolkit-gobject-1-0
-libpolkit-qt5-1-1
-libpolyglot-maven-java
-libpoppler-cpp0v5
-libpoppler-glib8
-libpoppler-qt5-1
-libpoppler73
-libpoppler90
-libpopt0
-libportaudio2
-libportmidi0
-libportsmf0v5
-libpostproc-dev
-libpostproc55
-libpotrace0
-libpq-dev
-libpq5
-libprocps6
-libprocps7
-libproj13
-libprojectm2v5
-libprotobuf-dev
-libprotobuf-lite17
-libprotobuf10
-libprotobuf17
-libprotoc17
-libproxy-tools
-libproxy1-plugin-gsettings
-libproxy1-plugin-networkmanager
-libproxy1v5
-libpsl5
-libpsm-infinipath1
-libpsm2-2
-libpstoedit0c2a
-libptexenc1
-libpthread-stubs0-dev
-libpugixml-dev
-libpugixml1v5
-libpulse-dev
-libpulse-mainloop-glib0
-libpulse0
-libpulse0
-libpulsedsp
-libpwquality-common
-libpwquality1
-libpython-all-dev
-libpython-dev
-libpython-stdlib
-libpython2-dev
-libpython2-stdlib
-libpython2.7-dev
-libpython2.7-minimal
-libpython2.7-stdlib
-libpython2.7
-libpython3-dev
-libpython3-stdlib
-libpython3.6-dev
-libpython3.6-minimal
-libpython3.6-stdlib
-libpython3.6
-libpython3.7-dev
-libpython3.7-minimal
-libpython3.7-stdlib
-libpython3.7
-libpython3.8-dev
-libpython3.8-minimal
-libpython3.8-stdlib
-libpython3.8
-libqalculate20-data
-libqalculate20
-libqbscore1.13
-libqca-qt5-2-plugins
-libqca-qt5-2
-libqdox-java
-libqhull7
-libqmi-glib5
-libqmi-proxy
-libqmobipocket2
-libqpdf21
-libqqwing2v5
-libqrupdate1
-libqscintilla2-qt5-13
-libqscintilla2-qt5-l10n
-libqt5charts5
-libqt5concurrent5
-libqt5core5a
-libqt5dbus5
-libqt5designer5
-libqt5designercomponents5
-libqt5gui5
-libqt5help5
-libqt5multimedia5-plugins
-libqt5multimedia5
-libqt5multimediagsttools5
-libqt5multimediawidgets5
-libqt5network5
-libqt5opengl5-dev
-libqt5opengl5
-libqt5positioning5
-libqt5printsupport5
-libqt5qml5
-libqt5quick5
-libqt5quickcontrols2-5
-libqt5quickparticles5
-libqt5quickshapes5
-libqt5quicktemplates2-5
-libqt5quicktest5
-libqt5quickwidgets5
-libqt5script5
-libqt5sensors5
-libqt5serialport5
-libqt5sql5-sqlite
-libqt5sql5
-libqt5svg5
-libqt5test5
-libqt5texttospeech5
-libqt5waylandclient5
-libqt5waylandcompositor5
-libqt5webchannel5
-libqt5webengine-data
-libqt5webengine5
-libqt5webenginecore5
-libqt5webenginewidgets5
-libqt5webkit5
-libqt5widgets5
-libqt5x11extras5
-libqt5xml5
-libqt5xmlpatterns5
-libquadmath0
-libquicktime2
-librados2
-libraptor2-0
-librasqal3
-libraw1394-11
-libraw1394-dev
-libraw1394-tools
-libraw16
-libraw19
-librbd1
-librdf0
-librdmacm1
-libre2-5
-libreadline-dev
-libreadline5
-libreadline7
-libreadline8
-libreadonly-perl
-librecode0
-libref-util-perl
-libref-util-xs-perl
-libreflectasm-java
-libregexp-assemble-perl
-libregexp-pattern-license-perl
-librelaxng-datatype-java
-libreoffice-avmedia-backend-gstreamer
-libreoffice-base-core
-libreoffice-calc
-libreoffice-common
-libreoffice-core
-libreoffice-draw
-libreoffice-gnome
-libreoffice-gtk3
-libreoffice-help-common
-libreoffice-help-en-us
-libreoffice-impress
-libreoffice-java-common
-libreoffice-math
-libreoffice-ogltrans
-libreoffice-pdfimport
-libreoffice-style-breeze
-libreoffice-style-colibre
-libreoffice-style-galaxy
-libreoffice-style-tango
-libreoffice-writer
-libresid-builder0c2a
-librest-0.7-0
-librevenge-0.0-0
-librhino-java
-librhythmbox-core10
-librngom-java
-libroar2
-libroken18-heimdal
-libroken18-heimdal
-librole-tiny-perl
-librpm8
-librpmbuild8
-librpmio8
-librpmsign8
-librsvg2-2
-librsvg2-bin
-librsvg2-common
-librsvg2-dev
-librsync2
-librtaudio-dev
-librtaudio6
-librtmp1
-librttr-core0.9.6
-librubberband2
-libruby2.5
-libsamplerate0
-libsamplerate0
-libsane-common
-libsane-hpaio
-libsane1
-libsane1
-libsane
-libsane
-libsasl2-2
-libsasl2-2
-libsasl2-modules-db
-libsasl2-modules-db
-libsasl2-modules
-libsasl2-modules
-libsass1
-libsaxonhe-java
-libsbc1
-libsdl-image1.2
-libsdl-ttf2.0-0
-libsdl1.2-dev
-libsdl1.2debian
-libsdl2-2.0-0
-libsdl2-2.0-0
-libsdl2-dev
-libsdl2-gfx-1.0-0
-libsdl2-gfx-dev
-libsdl2-gfx-doc
-libsdl2-image-2.0-0
-libsdl2-image-dev
-libsdl2-mixer-2.0-0
-libsdl2-mixer-dev
-libsdl2-ttf-2.0-0
-libsdl2-ttf-dev
-libseccomp2
-libsecret-1-0
-libsecret-common
-libselinux1-dev
-libselinux1
-libselinux1
-libsemanage-common
-libsemanage1
-libsensors-config
-libsensors5
-libsensors5
-libsepol1-dev
-libsepol1
-libserd-0-0
-libsereal-decoder-perl
-libsereal-encoder-perl
-libsereal-perl
-libservlet-api-java
-libservlet3.1-java
-libset-scalar-perl
-libsfml-audio2.5
-libsfml-dev
-libsfml-doc
-libsfml-graphics2.4
-libsfml-graphics2.5
-libsfml-network2.5
-libsfml-system2.4
-libsfml-system2.5
-libsfml-window2.4
-libsfml-window2.5
-libsgutils2-2
-libshine3
-libshout3
-libsidplay1v5
-libsidplay2
-libsidplayfp4
-libsigc++-2.0-0v5
-libsigc++-2.0-dev
-libsignon-plugins-common1
-libsignon-qt5-1
-libsigsegv2
-libsimple-http-java
-libsisu-guice-java
-libsisu-inject-java
-libsisu-ioc-java
-libsisu-plexus-java
-libsixel-bin
-libsixel-dev
-libsixel1
-libslang2-dev
-libslang2
-libslf4j-java
-libsm-dev
-libsm6
-libsmartcols1
-libsmbclient
-libsmbios-c2
-libsmi2ldbl
-libsnapd-glib1
-libsnappy-dev
-libsnappy-java
-libsnappy-jni
-libsnappy1v5
-libsndfile1-dev
-libsndfile1
-libsndfile1
-libsndio-dev
-libsndio6.1
-libsndio7.0
-libsndio7.0
-libsnmp-base
-libsnmp30
-libsnmp30
-libsocket++1
-libsocket6-perl
-libsodium23
-libsonic0
-libsord-0-0
-libsort-key-perl
-libsort-versions-perl
-libsoundtouch1
-libsoup-gnome2.4-1
-libsoup2.4-1
-libsox-fmt-alsa
-libsox-fmt-base
-libsox3
-libsoxr0
-libspandsp2
-libspatialaudio0
-libspatialite7
-libspectre1
-libspectrum8
-libspeechd2
-libspeex1
-libspeexdsp1
-libspice-server1
-libsqlite3-0
-libsqlite3-0
-libsqlite3-dev
-libsratom-0-0
-libss2
-libssh-4
-libssh-gcrypt-4
-libssh2-1-dev
-libssh2-1
-libssl-dev
-libssl-doc
-libssl1.0.0
-libssl1.1
-libssl1.1
-libstartup-notification0-dev
-libstartup-notification0
-libstax-ex-java
-libstdc++-7-dev
-libstdc++-8-dev
-libstdc++-8-doc
-libstdc++-9-dev
-libstdc++6
-libstdc++6
-libstemmer0d
-libstreambuffer-java
-libstrictures-perl
-libstring-copyright-perl
-libstring-escape-perl
-libstring-shellquote-perl
-libstruct-dumb-perl
-libsub-exporter-perl
-libsub-exporter-progressive-perl
-libsub-identify-perl
-libsub-install-perl
-libsub-name-perl
-libsub-override-perl
-libsub-quote-perl
-libsuil-0-0
-libsuitesparseconfig5
-libsuperlu-dev
-libsuperlu5
-libswresample-dev
-libswresample3
-libswscale-dev
-libswscale5
-libsynctex2
-libsys-hostname-long-perl
-libsysmetrics1
-libsystemd0
-libsystemd0
-libsz2
-libtablelayout-java
-libtag1v5-vanilla
-libtag1v5
-libtalloc2
-libtasn1-6
-libtasn1-6
-libtbb-dev
-libtbb2
-libtcl8.6
-libtcmalloc-minimal4
-libtdb1
-libteamdctl0
-libteckit0
-libtelepathy-glib0
-libterm-readkey-perl
-libtermkey-dev
-libtermkey1
-libtesseract4
-libtest-fatal-perl
-libtest-refcount-perl
-libtevent0
-libtexlua53
-libtexluajit2
-libtext-charwidth-perl
-libtext-glob-perl
-libtext-iconv-perl
-libtext-levenshtein-perl
-libtext-lorem-perl
-libtext-unidecode-perl
-libtext-wrapi18n-perl
-libthai-data
-libthai0
-libtheora0
-libtheora0
-libthunarx-3-0
-libtidy5
-libtidy5deb1
-libtie-ixhash-perl
-libtiff-dev
-libtiff5
-libtiff5
-libtiffxx5
-libtime-duration-perl
-libtimedate-perl
-libtinfo5
-libtinfo5
-libtinfo6
-libtinfo6
-libtinyxml-dev
-libtinyxml2-6a
-libtinyxml2.6.2v5
-libtk8.6
-libtokyocabinet9
-libtool-bin
-libtool
-libtorrent-rasterbar-dev
-libtorrent-rasterbar10
-libtorrent-rasterbar9
-libtotem-plparser-common
-libtotem-plparser18
-libtotem0
-libtracker-control-2.0-0
-libtracker-miner-2.0-0
-libtracker-sparql-2.0-0
-libtry-tiny-perl
-libtsan0
-libtspi1
-libtumbler-1-0
-libtwolame0
-libtxw2-java
-libtype-tiny-perl
-libtype-tiny-xs-perl
-libtypes-serialiser-perl
-libu2f-udev
-libubsan0
-libubsan1
-libuchardet0
-libudev-dev
-libudev1
-libudev1
-libudisks2-0
-libumfpack5
-libunarr
-libunibilium-dev
-libunibilium4
-libunicode-utf8-perl
-libunistring-dev
-libunistring2
-libunistring2
-libunity-protocol-private0
-libunity-scopes-json-def-desktop
-libunity-settings-daemon1
-libunity9
-libunwind-dev
-libunwind8
-libupnp13
-libupower-glib3
-liburcu6
-liburi-perl
-liburiparser-dev
-liburiparser1
-liburl-dispatcher1
-libusageenvironment3
-libusb-1.0-0-dev
-libusb-1.0-0
-libusb-1.0-0
-libusb-1.0-doc
-libusbmuxd4
-libusbredirparser1
-libutempter0
-libutf8proc-dev
-libutf8proc2
-libutfcpp-dev
-libuuid1
-libuuid1
-libuv1-dev
-libuv1
-libv4l-0
-libv4l-0
-libv4lconvert0
-libv4lconvert0
-libva-drm2
-libva-wayland2
-libva-x11-2
-libva2
-libvamp-hostsdk3v5
-libvariable-magic-perl
-libvdpau1
-libvidstab1.1
-libvirglrenderer0
-libvirt-bin
-libvirt-clients
-libvirt-daemon-driver-storage-rbd
-libvirt-daemon-system
-libvirt-daemon
-libvirt0
-libvisio-0.1-1
-libvisual-0.4-0
-libvisual-0.4-0
-libvlc-bin
-libvlc5
-libvlccore9
-libvncclient1
-libvo-amrwbenc0
-libvoikko1
-libvolume-key1
-libvorbis-dev
-libvorbis0a
-libvorbis0a
-libvorbisenc2
-libvorbisenc2
-libvorbisfile3
-libvpx5
-libvpx6
-libvte-2.91-0
-libvte-2.91-common
-libvterm-dev
-libvterm0
-libvtk6.3
-libvulkan-dev
-libvulkan1
-libvulkan1
-libwacom-bin
-libwacom-common
-libwacom2
-libwagon-file-java
-libwagon-http-java
-libwagon-provider-api-java
-libwant-perl
-libwavpack1
-libwayland-bin
-libwayland-client0
-libwayland-client0
-libwayland-cursor0
-libwayland-cursor0
-libwayland-dev
-libwayland-egl1
-libwayland-egl1
-libwayland-server0
-libwbclient0
-libwcs6
-libwebcam0
-libwebkit2gtk-4.0-37
-libwebkitgtk-3.0-0
-libwebp6
-libwebp6
-libwebpdemux2
-libwebpmux3
-libwebrtc-audio-processing1
-libwebsocket-api-java
-libwhoopsie-preferences0
-libwhoopsie0
-libwildmidi-config
-libwildmidi2
-libwind0-heimdal
-libwind0-heimdal
-libwinpr2-2
-libwireshark-data
-libwireshark12
-libwiretap9
-libwmf-bin
-libwmf0.2-7-gtk
-libwmf0.2-7
-libwnck-3-0
-libwnck-3-common
-libwoff1
-libwpd-0.10-10
-libwpg-0.3-3
-libwps-0.4-4
-libwrap0
-libwrap0
-libwscodecs2
-libwsutil10
-libwv-1.2-4
-libwww-perl
-libwww-robotrules-perl
-libwxbase3.0-0v5
-libwxgtk3.0-0v5
-libwxgtk3.0-gtk3-0v5
-libx11-6
-libx11-6
-libx11-data
-libx11-dev
-libx11-doc
-libx11-protocol-perl
-libx11-xcb-dev
-libx11-xcb-perl
-libx11-xcb1
-libx11-xcb1
-libx264-155
-libx265-176
-libx32asan5
-libx32atomic1
-libx32gcc-9-dev
-libx32gcc1
-libx32gomp1
-libx32itm1
-libx32quadmath0
-libx32stdc++-9-dev
-libx32stdc++6
-libx32ubsan1
-libxalan2-java
-libxapian30
-libxatracker2
-libxau-dev
-libxau6
-libxau6
-libxaw7-dev
-libxaw7
-libxbean-reflect-java
-libxcb-composite0-dev
-libxcb-composite0
-libxcb-cursor-dev
-libxcb-cursor0
-libxcb-damage0-dev
-libxcb-damage0
-libxcb-dri2-0
-libxcb-dri2-0
-libxcb-dri3-0
-libxcb-dri3-0
-libxcb-ewmh2
-libxcb-glx0
-libxcb-glx0
-libxcb-icccm4-dev
-libxcb-icccm4
-libxcb-image0-dev
-libxcb-image0
-libxcb-keysyms1-dev
-libxcb-keysyms1
-libxcb-present-dev
-libxcb-present0
-libxcb-present0
-libxcb-randr0-dev
-libxcb-randr0
-libxcb-randr0
-libxcb-render-util0-dev
-libxcb-render-util0
-libxcb-render0-dev
-libxcb-render0
-libxcb-render0
-libxcb-res0
-libxcb-screensaver0
-libxcb-shape0-dev
-libxcb-shape0
-libxcb-shm0-dev
-libxcb-shm0
-libxcb-shm0
-libxcb-sync-dev
-libxcb-sync1
-libxcb-sync1
-libxcb-util-dev
-libxcb-util0-dev
-libxcb-util1
-libxcb-xfixes0-dev
-libxcb-xfixes0
-libxcb-xinerama0-dev
-libxcb-xinerama0
-libxcb-xinput0
-libxcb-xkb-dev
-libxcb-xkb1
-libxcb-xrm-dev
-libxcb-xrm0
-libxcb-xv0
-libxcb1-dev
-libxcb1
-libxcb1
-libxcomposite-dev
-libxcomposite1
-libxcomposite1
-libxcursor-dev
-libxcursor1
-libxcursor1
-libxdamage-dev
-libxdamage1
-libxdamage1
-libxdg-basedir-dev
-libxdg-basedir1
-libxdmcp-dev
-libxdmcp6
-libxdmcp6
-libxdo3
-libxen-4.9
-libxenstore3.0
-libxerces-c3.2
-libxerces2-java
-libxext-dev
-libxext6
-libxext6
-libxfce4panel-2.0-4
-libxfce4ui-1-0
-libxfce4ui-2-0
-libxfce4ui-common
-libxfce4util-bin
-libxfce4util-common
-libxfce4util7
-libxfconf-0-3
-libxfixes-dev
-libxfixes3
-libxfixes3
-libxfont-dev
-libxfont2
-libxft-dev
-libxft2
-libxi-dev
-libxi6
-libxi6
-libxinerama-dev
-libxinerama1
-libxinerama1
-libxkbcommon-dev
-libxkbcommon-x11-0
-libxkbcommon-x11-dev
-libxkbcommon0
-libxkbcommon0
-libxkbfile-dev
-libxkbfile1
-libxklavier16
-libxml++2.6-2v5
-libxml-commons-external-java
-libxml-commons-resolver1.1-java
-libxml-descent-perl
-libxml-libxml-perl
-libxml-namespacesupport-perl
-libxml-parser-perl
-libxml-sax-base-perl
-libxml-sax-expat-perl
-libxml-sax-perl
-libxml-simple-perl
-libxml-tokeparser-perl
-libxml-twig-perl
-libxml-xpathengine-perl
-libxml2-dev
-libxml2-utils
-libxml2
-libxml2
-libxmlb1
-libxmlbeans-java
-libxmlsec1-nss
-libxmlsec1
-libxmu-dev
-libxmu-headers
-libxmu6
-libxmuu-dev
-libxmuu1
-libxom-java
-libxpm-dev
-libxpm4
-libxpm4
-libxpp3-java
-libxrandr-dev
-libxrandr2
-libxrandr2
-libxrender-dev
-libxrender1
-libxrender1
-libxres-dev
-libxres1
-libxs-object-magic-perl
-libxshmfence1
-libxshmfence1
-libxslt1.1
-libxslt1.1
-libxsom-java
-libxss-dev
-libxss1
-libxss1
-libxstream-java
-libxt-dev
-libxt6
-libxtables12
-libxtst-dev
-libxtst6
-libxv-dev
-libxv1
-libxvidcore4
-libxvmc-dev
-libxvmc1
-libxxf86dga-dev
-libxxf86dga1
-libxxf86vm-dev
-libxxf86vm1
-libxxf86vm1
-libxxhash0
-libxz-java
-libyajl-dev
-libyajl2
-libyaml-0-2
-libyaml-cpp-dev
-libyaml-cpp0.6
-libyaml-dev
-libyaml-libyaml-perl
-libyaml-snake-java
-libyelp0
-libzeitgeist-2.0-0
-libzen0v5
-libzip-dev
-libzip5
-libzmq5
-libzstd1
-libzstd1
-libzvbi-common
-libzvbi0
-libzzip-0-13
-licensecheck
-light-themes
-lightdm
-lilypond-data
-lilypond
-link-grammar-dictionaries-en
-lintian
-linux-base
-linux-cloud-tools-4.15.0-45
-linux-cloud-tools-common
-linux-firmware
-linux-generic
-linux-headers-4.15.0-45-generic
-linux-headers-4.15.0-45
-linux-headers-4.15.0-51-generic
-linux-headers-4.15.0-51
-linux-headers-5.3.0-29-generic
-linux-headers-5.3.0-29
-linux-headers-5.3.0-40-generic
-linux-headers-5.3.0-40
-linux-headers-5.3.0-64-generic
-linux-headers-5.3.0-64
-linux-headers-generic
-linux-image-5.3.0-29-generic
-linux-image-5.3.0-40-generic
-linux-image-5.3.0-64-generic
-linux-image-generic
-linux-libc-dev
-linux-modules-5.3.0-29-generic
-linux-modules-5.3.0-40-generic
-linux-modules-5.3.0-64-generic
-linux-modules-extra-5.3.0-29-generic
-linux-modules-extra-5.3.0-40-generic
-linux-modules-extra-5.3.0-64-generic
-linux-signed-generic
-linux-sound-base
-linux-tools-4.15.0-45
-linux-tools-5.3.0-29-generic
-linux-tools-5.3.0-29
-linux-tools-5.3.0-40-generic
-linux-tools-5.3.0-40
-linux-tools-5.3.0-64-generic
-linux-tools-5.3.0-64
-linux-tools-common
-linux-tools-generic
-lm-sensors
-lmdb-doc
-lmodern
-locales
-login
-logmein-hamachi
-logrotate
-logsave
-lp-solve
-lsb-base
-lsb-release
-lsd
-lshw
-lsof
-ltrace
-lua-any
-lua-coxpcall
-lua-lpeg
-lua-luv
-lua-mpack
-lua-nvim-dev
-lua-nvim
-lua-sec
-lua-socket
-lua5.2
-lua50
-luajit
-luarocks
-lunarg-via
-lunarg-vkconfig
-lunarg-vktrace
-lunarg-vulkan-layers
-lvm2
-lxappearance
-lxde-settings-daemon
-lynx-common
-lynx
-lz4
-lzip
-m4
-mailutils-common
-mailutils
-maim
-make
-man-db
-manpages-dev
-manpages
-mathpiper
-mawk
-mecab-ipadic-utf8
-mecab-ipadic
-mecab-utils
-media-player-info
-mediainfo
-megatools
-melt
-memtest86+
-mercurial-common
-mercurial
-mesa-common-dev
-mesa-utils
-mesa-vdpau-drivers
-mesa-vulkan-drivers
-mesa-vulkan-drivers
-mime-support
-minecraft-launcher
-mingw-w64-common
-mingw-w64-x86-64-dev
-minisat
-mlocate
-mobile-broadband-provider-info
-modemmanager
-mokutil
-moreutils
-mount
-mousetweaks
-mp3info
-mpc
-mpd
-mpi-default-bin
-mpi-default-dev
-mpv
-mscompress
-msmtp
-msr-tools
-mtools
-mtr-tiny
-multiarch-support
-multimc
-mupdf-tools
-mupdf
-musescore-general-soundfont-small
-musescore3-common
-musescore3
-musl-dev
-musl-tools
-musl
-mutter-common
-mutter
-mysql-client-8.0
-mysql-client-core-8.0
-mysql-common
-mysql-server-8.0
-mysql-server-core-8.0
-mysql-server
-mythes-en-us
-nano
-nautilus-data
-nautilus-extension-gnome-terminal
-nautilus-sendto
-nautilus-share
-nautilus
-ncdu
-ncmpcpp
-ncurses-base
-ncurses-bin
-ncurses-doc
-neofetch
-neomutt
-neovim-runtime
-net-tools
-netbase
-netcat-openbsd
-netpbm
-netplan.io
-network-manager-config-connectivity-ubuntu
-network-manager-gnome
-network-manager-openvpn-gnome
-network-manager-openvpn
-network-manager-pptp-gnome
-network-manager-pptp
-network-manager
-networkd-dispatcher
-ninja-build
-nmap-common
-nmap
-nodejs
-notification-daemon
-notify-osd-icons
-notify-osd
-notmuch
-nplan
-ntfs-3g
-obfs4proxy
-obs-studio
-ocl-icd-libopencl1
-ocl-icd-libopencl1
-octave-common
-octave-doc
-octave-geometry
-octave-image
-octave-io
-octave-statistics
-octave
-odbcinst1debian2
-odbcinst
-offlineimap
-okular-extra-backends
-okular
-onionshare
-openjdk-11-jre-headless
-openjdk-11-jre
-openjdk-8-jre-headless
-openjdk-8-jre
-openmpi-bin
-openmpi-common
-openprinting-ppds
-opense-basic
-openssh-client
-openssh-server
-openssh-sftp-server
-openssl
-openvpn
-opera-stable
-optipng
-orca
-os-prober
-ovmf
-oxygen-icon-theme
-p11-kit-modules
-p11-kit
-p7zip-full
-p7zip
-packagekit-tools
-packagekit
-packages-microsoft-prod
-pandoc-citeproc
-pandoc-data
-pandoc
-pango1.0-tools
-paps
-parallel
-parted
-passwd
-patch
-patchutils
-pciutils
-pcmciautils
-pepperflashplugin-nonfree
-perl-base
-perl-modules-5.26
-perl-modules-5.28
-perl-openssl-defaults
-perl
-phonon4qt5-backend-vlc
-phonon4qt5
-php-cli
-php-common
-php-mysql
-php7.2-cli
-php7.2-common
-php7.2-json
-php7.2-opcache
-php7.2-readline
-php7.2
-php7.3-cli
-php7.3-common
-php7.3-json
-php7.3-mysql
-php7.3-opcache
-php7.3-readline
-php7.3
-php
-pigz
-pinentry-curses
-pinentry-gnome3
-pkg-config
-plasma-framework
-playerctl
-plymouth-label
-plymouth-theme-ubuntu-logo
-plymouth-theme-ubuntu-text
-plymouth
-po-debconf
-policykit-1-gnome
-policykit-1
-policykit-desktop-privileges
-poppler-data
-poppler-utils
-popularity-contest
-postfix
-powermgmt-base
-ppa-purge
-ppp
-pppconfig
-pppoeconf
-pptp-linux
-preload
-preview-latex-style
-printer-driver-foo2zjs-common
-printer-driver-foo2zjs
-printer-driver-min12xxw
-printer-driver-pnm2ppa
-printer-driver-ptouch
-printer-driver-pxljr
-procps
-proj-bin
-proj-data
-projectm-data
-protobuf-compiler
-protonmail-bridge
-psmisc
-pstoedit
-publicsuffix
-pulseaudio-module-bluetooth
-pulseaudio-utils
-pulseaudio
-pulsemixer
-python-all-dev
-python-all
-python-appindicator
-python-apsw
-python-apt-common
-python-asn1crypto
-python-attr
-python-babel-localedata
-python-backports-shutil-get-terminal-size
-python-backports.functools-lru-cache
-python-bs4
-python-cairo
-python-cffi-backend
-python-cffi
-python-chardet
-python-cherrypy3
-python-concurrent.futures
-python-configparser
-python-crypto
-python-cryptography
-python-cssselect
-python-cssutils
-python-cycler
-python-dateutil
-python-dbus
-python-decorator
-python-dev
-python-dnspython
-python-docutils
-python-entrypoints
-python-enum34
-python-feedparser
-python-gconf
-python-gi-cairo
-python-gi
-python-glade2
-python-gobject-2
-python-gobject
-python-greenlet
-python-gtk2
-python-html5-parser
-python-html5lib
-python-imaplib2
-python-ipaddress
-python-ipython-genutils
-python-ipython
-python-keyring
-python-keyrings.alt
-python-kiwisolver
-python-libvirt
-python-libxml2
-python-lxml
-python-markdown
-python-matplotlib-data
-python-matplotlib2-data
-python-matplotlib
-python-mechanize
-python-minimal
-python-msgpack
-python-nautilus
-python-neovim
-python-netifaces
-python-numpy
-python-olefile
-python-opencv
-python-openssl
-python-packaging
-python-pathlib2
-python-pexpect
-python-pickleshare
-python-pil
-python-pip-whl
-python-pip
-python-pkg-resources
-python-ply
-python-prompt-toolkit
-python-ptyprocess
-python-pycparser
-python-pygments
-python-pyparsing
-python-pyqt5.qtsvg
-python-pyqt5.qtwebkit
-python-pyqt5
-python-regex
-python-repoze.lru
-python-roman
-python-routes
-python-scandir
-python-scour
-python-secretstorage
-python-setuptools
-python-simplegeneric
-python-simplejson
-python-sip
-python-six
-python-socks
-python-soupsieve
-python-subprocess32
-python-tables-data
-python-talloc
-python-tk
-python-traitlets
-python-trollius
-python-tz
-python-utidylib
-python-wcwidth
-python-webencodings
-python-webob
-python-wheel
-python-wxgtk3.0
-python-wxversion
-python-xdg
-python-xlib
-python-yaml
-python2-dev
-python2-minimal
-python2.7-dev
-python2.7-minimal
-python2.7
-python2
-python3-aalib
-python3-aiohttp
-python3-alabaster
-python3-apport
-python3-apt
-python3-aptdaemon.gtk3widgets
-python3-aptdaemon
-python3-asn1crypto
-python3-astropy
-python3-async-timeout
-python3-atomicwrites
-python3-attr
-python3-babel
-python3-bcrypt
-python3-blinker
-python3-bottleneck
-python3-brlapi
-python3-bs4
-python3-cached-property
-python3-cairo
-python3-certifi
-python3-cffi-backend
-python3-chardet
-python3-click
-python3-cloudpickle
-python3-colorama
-python3-commandnotfound
-python3-configobj
-python3-crypto
-python3-cryptography
-python3-cups
-python3-cupshelpers
-python3-cycler
-python3-dateutil
-python3-dbus
-python3-debconf
-python3-debian
-python3-decorator
-python3-defer
-python3-dev
-python3-distro-info
-python3-distro
-python3-distupgrade
-python3-distutils
-python3-docker
-python3-dockerpty
-python3-dockerpycreds
-python3-docopt
-python3-docutils
-python3-enchant
-python3-entrypoints
-python3-fasteners
-python3-flask-httpauth
-python3-flask
-python3-future
-python3-gdbm
-python3-gi-cairo
-python3-gi
-python3-gpg
-python3-greenlet
-python3-gtkspellcheck
-python3-html5lib
-python3-httplib2
-python3-idna
-python3-imagesize
-python3-importlib-metadata
-python3-itsdangerous
-python3-jinja2
-python3-jsonschema
-python3-jwt
-python3-keyring
-python3-keyrings.alt
-python3-kiwisolver
-python3-launchpadlib
-python3-lazr.restfulclient
-python3-lazr.uri
-python3-lib2to3
-python3-libevdev
-python3-lockfile
-python3-louis
-python3-lxml
-python3-macaroonbakery
-python3-magic
-python3-mako
-python3-markdown
-python3-markupsafe
-python3-matplotlib
-python3-minimal
-python3-monotonic
-python3-more-itertools
-python3-msgpack
-python3-multidict
-python3-nacl
-python3-neovim
-python3-netifaces
-python3-networkx
-python3-nose
-python3-numexpr
-python3-numpy
-python3-oauth
-python3-oauthlib
-python3-olefile
-python3-opencv
-python3-openssl
-python3-packaging
-python3-pandas-lib
-python3-pandas
-python3-paramiko
-python3-parfive
-python3-pexpect
-python3-pil
-python3-pip
-python3-pkg-resources
-python3-pluggy
-python3-ply
-python3-problem-report
-python3-protobuf
-python3-psutil
-python3-ptyprocess
-python3-py
-python3-pyatspi
-python3-pygments
-python3-pyinotify
-python3-pymacaroons
-python3-pyparsing
-python3-pypeg2
-python3-pyqt5.qtopengl
-python3-pyqt5.qtquick
-python3-pyqt5.qtsql
-python3-pyqt5.qtwebchannel
-python3-pyqt5.qtwebengine
-python3-pyqt5
-python3-pystache
-python3-pytest-arraydiff
-python3-pytest-astropy
-python3-pytest-doctestplus
-python3-pytest-openfiles
-python3-pytest-remotedata
-python3-pytest
-python3-pyudev
-python3-pywt
-python3-renderpm
-python3-reportlab-accel
-python3-reportlab
-python3-requests-unixsocket
-python3-requests
-python3-rfc3339
-python3-roman
-python3-ruamel.yaml
-python3-scipy
-python3-scour
-python3-secretstorage
-python3-setuptools
-python3-simplejson
-python3-sip
-python3-six
-python3-skimage-lib
-python3-skimage
-python3-socks
-python3-software-properties
-python3-soupsieve
-python3-speechd
-python3-sphinx
-python3-sqlalchemy-ext
-python3-sqlalchemy
-python3-stem
-python3-suds
-python3-sunpy
-python3-systemd
-python3-tables-lib
-python3-tables
-python3-talloc
-python3-texttable
-python3-tk
-python3-tqdm
-python3-tz
-python3-unidiff
-python3-uno
-python3-update-manager
-python3-urllib3
-python3-venv
-python3-wadllib
-python3-webencodings
-python3-websocket
-python3-werkzeug
-python3-wheel
-python3-xapian
-python3-xdg
-python3-xkit
-python3-yaml
-python3-yarl
-python3-zipp
-python3-zope.interface
-python3.6-dev
-python3.6-minimal
-python3.6-venv
-python3.6
-python3.7-dev
-python3.7-minimal
-python3.7-venv
-python3.7
-python3.8-dev
-python3.8-minimal
-python3.8
-python3
-python
-qalc
-qalculate-gtk
-qbittorrent-nox
-qbittorrent
-qbs-common
-qdoc-qt5
-qemu-block-extra
-qemu-efi-aarch64
-qemu-efi-arm
-qemu-slof
-qemu-system-arm
-qemu-system-common
-qemu-system-data
-qemu-system-gui
-qemu-system-mips
-qemu-system-misc
-qemu-system-ppc
-qemu-system-s390x
-qemu-system-sparc
-qemu-system-x86
-qemu-system
-qemu-utils
-qemu
-qhelpgenerator-qt5
-qjackctl
-qml-module-org-kde-kconfig
-qml-module-org-kde-kirigami2
-qml-module-org-kde-kquickcontrols
-qml-module-org-kde-kquickcontrolsaddons
-qml-module-org-kde-newstuff
-qml-module-org-kde-purpose
-qml-module-qt-labs-platform
-qml-module-qtcharts
-qml-module-qtgraphicaleffects
-qml-module-qtqml-models2
-qml-module-qtquick-controls2
-qml-module-qtquick-controls
-qml-module-qtquick-dialogs
-qml-module-qtquick-layouts
-qml-module-qtquick-privatewidgets
-qml-module-qtquick-templates2
-qml-module-qtquick-window2
-qml-module-qtquick2
-qml-module-ubuntu-onlineaccounts
-qmlscene
-qpdf
-qt3d5-doc
-qt5-assistant
-qt5-default
-qt5-doc
-qt5-gtk-platformtheme
-qt5-qmake-bin
-qt5-qmake
-qt5-qmltooling-plugins
-qtattributionsscanner-qt5
-qtbase5-dev-tools
-qtbase5-dev
-qtbase5-doc
-qtcharts5-doc
-qtchooser
-qtconnectivity5-doc
-qtcreator-data
-qtcreator-doc
-qtcreator
-qtdatavisualization5-doc
-qtdeclarative5-dev-tools
-qtdeclarative5-dev
-qtdeclarative5-doc
-qtgraphicaleffects5-doc
-qtlocation5-doc
-qtmultimedia5-doc
-qtnetworkauth5-doc
-qtquickcontrols2-5-doc
-qtquickcontrols5-doc
-qtscript5-doc
-qtsensors5-doc
-qtserialbus5-doc
-qtserialport5-doc
-qtspeech5-flite-plugin
-qtsvg5-doc
-qttools5-dev-tools
-qttools5-doc
-qttranslations5-l10n
-qtvirtualkeyboard5-doc
-qtwayland5-doc
-qtwayland5
-qtwebchannel5-doc
-qtwebengine5-doc
-qtwebsockets5-doc
-qtwebview5-doc
-qtx11extras5-doc
-qtxmlpatterns5-dev-tools
-qtxmlpatterns5-doc
-qutebrowser-qtwebengine
-qutebrowser
-rake
-rar
-readline-common
-recode
-recordmydesktop
-redshift-gtk
-redshift
-regexxer
-remarkable
-remmina-common
-remmina-plugin-rdp
-remmina-plugin-secret
-remmina-plugin-vnc
-remmina
-reptyr
-resolvconf
-rfkill
-rhythmbox-data
-rhythmbox-plugin-alternative-toolbar
-rhythmbox-plugins
-rhythmbox
-ri
-ripgrep
-rlinux
-rlwrap
-rofi
-rosegarden
-rpm-common
-rpm2cpio
-rpm
-rsync
-rsyslog
-rtkit
-ruby-dev
-ruby-did-you-mean
-ruby-full
-ruby-minitest
-ruby-net-telnet
-ruby-power-assert
-ruby-test-unit
-ruby-xmlrpc
-ruby2.5-dev
-ruby2.5-doc
-ruby2.5
-ruby
-rubygems-integration
-runc
-runit-helper
-samba-common
-samba-libs
-sane-utils
-sassc
-sbsigntool
-scanmem
-scons
-scour
-screenkey
-scrot
-sdcv
-seabios
-seahorse
-secureboot-db
-sed
-sensible-utils
-session-migration
-sgml-base
-shaderc
-shared-mime-info
-sharutils
-shellcheck
-shim-signed
-shim
-shotwell-common
-shotwell
-signon-plugin-oauth2
-silversearcher-ag
-slop
-smartmontools
-smbclient
-snapd
-sndfile-programs
-sndfile-tools
-socat
-software-properties-common
-software-properties-gtk
-sonnet-plugins
-sound-icons
-sound-theme-freedesktop
-sox
-speech-dispatcher-audio-plugins
-speech-dispatcher-espeak-ng
-speech-dispatcher
-speedtest-cli
-sphinx-common
-spice-vdagent
-spirv-cross
-spirv-headers
-spirv-tools
-sqlitebrowser
-squashfs-tools
-ssh-import-id
-sshfs
-ssl-cert
-steam-launcher
-steamcmd
-steghide
-strace
-stress
-suckless-tools
-sudo
-swh-plugins
-switcheroo-control
-sxhkd
-sxiv
-synaptic
-syslinux-common
-syslinux-legacy
-syslinux
-sysstat
-system-config-printer-common
-system-config-printer-udev
-system-config-printer
-systemd-sysv
-systemd
-sysvinit-utils
-t1utils
-tar
-taskell
-tasksel-data
-tasksel
-tcc
-tcl-dev
-tcl8.6-dev
-tcl8.6
-tcl
-tcpdump
-teams
-telnet
-terminator
-testdisk
-testng
-tex-common
-tex-gyre
-texinfo
-texlive-base
-texlive-binaries
-texlive-fonts-recommended
-texlive-latex-base-doc
-texlive-latex-base
-texlive-latex-extra-doc
-texlive-latex-extra
-texlive-latex-recommended
-texlive-pictures
-texlive-plain-generic
-texlive
-thermald
-thin-provisioning-tools
-thunar-data
-thunar-volman
-thunar
-thunderbird-gnome-support
-thunderbird-locale-en-us
-thunderbird-locale-en
-thunderbird
-time
-timgm6mb-soundfont
-tipa
-tk-dev
-tk8.6-blt2.5
-tk8.6-dev
-tk8.6
-tk
-tldr
-tlp-rdw
-tlp
-tmux
-toilet-fonts
-toilet
-tor-geoipdb
-tor
-torsocks
-totem-common
-totem-plugins
-totem
-traceroute
-tracker-extract
-tracker-miner-fs
-tracker
-transfig
-transmission-cli
-transmission-common
-transmission-gtk
-transmission
-trash-cli
-tree
-ttf-bitstream-vera
-ttf-dejavu-core
-ttf-dejavu-extra
-ttf-dejavu
-ttf-mscorefonts-installer
-tty-clock
-tumbler-common
-tumbler-plugins-extra
-tumbler
-tzdata
-ubuntu-advantage-tools
-ubuntu-artwork
-ubuntu-docs
-ubuntu-drivers-common
-ubuntu-fan
-ubuntu-keyring
-ubuntu-minimal
-ubuntu-mono
-ubuntu-release-upgrader-core
-ubuntu-release-upgrader-gtk
-ubuntu-report
-ubuntu-restricted-addons
-ubuntu-restricted-extras
-ubuntu-session
-ubuntu-settings
-ubuntu-software
-ubuntu-sounds
-ubuntu-standard
-ubuntu-system-service
-ubuntu-touch-sounds
-ubuntu-wallpapers-bionic
-ubuntu-wallpapers-eoan
-ubuntu-wallpapers
-ubuntu-web-launchers
-ucf
-udev
-udisks2
-ufw
-unattended-upgrades
-unity-greeter
-unity-settings-daemon-schemas
-unity-settings-daemon
-uno-libs3
-unp
-unrar
-unzip
-update-inetd
-update-manager-core
-update-manager
-update-notifier-common
-update-notifier
-upower
-ure
-ureadahead
-urlview
-usb-creator-common
-usb-creator-gtk
-usb-modeswitch-data
-usb-modeswitch
-usb.ids
-usbmuxd
-usbutils
-uthash-dev
-util-linux
-uuid-dev
-uuid-runtime
-uvcdynctrl-data
-uvcdynctrl
-vdpau-driver-all
-vim-common
-vim-gnome
-vim-gtk3
-vim-gtk
-vim-gui-common
-vim-runtime
-vim-tiny
-vim
-vino
-virtualbox-6.1
-vlc-bin
-vlc-data
-vlc-l10n
-vlc-plugin-base
-vlc-plugin-notify
-vlc-plugin-qt
-vlc-plugin-samba
-vlc-plugin-skins2
-vlc-plugin-video-output
-vlc-plugin-video-splitter
-vlc-plugin-visualization
-vlc
-vlock
-vorbis-tools
-vulkan-headers
-vulkan-sdk
-vulkan-tools
-vulkan-validationlayers-dev
-vulkan-validationlayers
-w3m-img
-w3m
-wamerican
-wavemon
-wavpack
-wayland-protocols
-wbritish
-wdiff
-webp
-wget
-whiptail
-whois
-whoopsie-preferences
-whoopsie
-wine-stable-amd64
-wine-stable-i386
-wine-stable
-winehq-stable
-wireless-regdb
-wireless-tools
-wireshark-common
-wireshark-qt
-wireshark
-wkhtmltopdf
-wmctrl
-wmdocker
-wpasupplicant
-x11-apps
-x11-common
-x11-session-utils
-x11-utils
-x11-xkb-utils
-x11-xserver-utils
-x11proto-composite-dev
-x11proto-core-dev
-x11proto-damage-dev
-x11proto-dev
-x11proto-fixes-dev
-x11proto-fonts-dev
-x11proto-input-dev
-x11proto-randr-dev
-x11proto-record-dev
-x11proto-render-dev
-x11proto-resource-dev
-x11proto-scrnsaver-dev
-x11proto-xext-dev
-x11proto-xf86dga-dev
-x11proto-xf86vidmode-dev
-x11proto-xinerama-dev
-xauth
-xautolock
-xbacklight
-xbindkeys
-xbitmaps
-xbrlapi
-xclip
-xcursor-themes
-xdg-dbus-proxy
-xdg-desktop-portal-gtk
-xdg-desktop-portal
-xdg-user-dirs-gtk
-xdg-user-dirs
-xdg-utils
-xdotool
-xfconf
-xfonts-base
-xfonts-encodings
-xfonts-scalable
-xfonts-utils
-xinit
-xinput
-xkb-data
-xml-core
-xorg-dev
-xorg-docs-core
-xorg-sgml-doctools
-xorg
-xsel
-xserver-common
-xserver-xephyr
-xserver-xorg-core
-xserver-xorg-dev
-xserver-xorg-input-all
-xserver-xorg-input-evdev
-xserver-xorg-input-libinput
-xserver-xorg-input-wacom
-xserver-xorg-legacy
-xserver-xorg-video-fbdev
-xserver-xorg-video-qxl
-xserver-xorg-video-radeon
-xserver-xorg-video-vesa
-xserver-xorg-video-vmware
-xserver-xorg
-xss-lock
-xterm
-xtrans-dev
-xul-ext-ubufox
-xutils-dev
-xvfb
-xwayland
-xxd
-xz-utils
-yacreader
-yarn
-yaru-theme-gnome-shell
-yaru-theme-gtk
-yaru-theme-icon
-yaru-theme-sound
-yasm
-yelp-xsl
-yelp
-yudit-common
-zathura-cb
-zathura-dev
-zathura-djvu
-zathura-pdf-poppler
-zathura
-zeitgeist-core
-zenity-common
-zenity
-zip
-zlib1g-dev
-zlib1g
-zlib1g
-zsh-common
-zsh
+acpi 1.7-3
+acpid 2.0.33-1
+activitywatch-bin 0.11.0-3
+adobe-source-han-sans-jp-fonts 2.004-1
+alacritty-sixel-git 1:0.11.0.1983.gf6f2fe53-1
+alsa-utils 1.2.6-1
+amd-ucode 20220309.cd01f85-1
+amdvlk 2022.Q2.1-1
+arandr 0.1.10-7
+arc-gtk-theme 20220405-1
+arc-icon-theme 20161122-3
+archivetools 3-3
+aria2 1.36.0-1
+asciinema 2.1.0-2
+aseprite-skia-bin 1.2.31-1
+asio 1.20.0-1
+aspell 0.60.8-2
+aspell-en 2020.12.07-1
+aspell-tr 0.50-3
+at 3.2.5-1
+atool 0.39.0-8
+autoconf 2.71-1
+automake 1.16.5-1
+backintime 1.3.2-1
+backintime-cli 1.3.2-1
+bandwhich 0.20.0-1
+base 2-2
+bash-language-server 2.0.0-5
+bat 0.20.0-1
+bc 1.07.1-4
+bear 3.0.19-2
+benchmark 1.6.1-2
+bfs 2.5-1
+bison 3.8.2-3
+bluez 5.64-2
+bluez-utils 5.64-2
+boost 1.78.0-1
+bottom 0.6.8-1
+brave-bin 1:1.36.119-1
+bsdmainutils 12.1.7-1
+btop 1.2.5-1
+calcurse 4.7.1-2
+cargo-flamegraph 0.4.0-1
+caribou 0.4.21+75+g8ad9883-3
+catch2 2.13.8-1
+catimg 2.7.0-1
+ccache 4.6-1
+cgdb 0.8.0-1
+cheese 41.1-2
+circle build_163-1
+clang 13.0.1-2
+clazy 1.11-1
+cling-bin 1:2020.11.05-2
+cmake 3.23.0-1
+cmake-init 0.27.4-1
+cmatrix 2.0-2
+codespell 2.1.0-2
+conan 1.47.0-1
+contour-git 0.3.0.r2525.7949a5eb-1
+copyq 6.1.0-1
+cppcheck 2.7.4-1
+cpupower 5.17-1
+cpupower-gui 1.0.0-5
+csfml 2.5.1-1
+ctags 1:5.9.20210905.0-1
+cxx 3.3.1-1
+debuginfod 0.186-5
+deno 1.20.5-1
+devtools 20220207-2
+dialog 1:1.3_20220117-1
+dict-gcide 0.53-1
+dictd 1.13.1-2
+dijo 0.2.7-1
+discord 0.0.17-1
+diskus 0.7.0-2
+dmd 1:2.099.0-1
+dmenu 5.1-1
+dmidecode 3.3-1
+dosfstools 4.2-2
+downgrade 11.1.0-1
+drawio-desktop-bin 17.2.1-1
+dtools 2.099.0-1
+dua-cli 2.17.1-1
+dub 1.27.0-2
+dunst 1.8.1-1
+dust 0.8.0-1
+efibootmgr 17-2
+eigen 3.4.0-1
+espeak-ng 1.51-1
+espeakup 0.90-1
+eva 0.3.0-1
+evcxr_repl 0.12.0-3
+evhz-git r29.35b7526-1
+exa 0.10.1-5
+exfatprogs 1.1.3-1
+exif 0.6.22-1
+fakeroot 1.28-1
+fd 8.3.2-1
+feh 3.8-2
+ffmpeg 2:5.0-6
+ffmpegthumbnailer 2.2.2-4
+figlet 2.2.5-4
+figlet-fonts 1.0-3
+firefox 99.0-1
+flameshot 11.0.0-4
+flex 2.6.4-3
+flite 2.2-1
+florence 0.6.3-2
+fmt 8.1.1-2
+fontpreview 1.0.6-2
+freealut 1.1.0-8
+freepats-general-midi 20210329-2
+fwupd 1.7.7-1
+fwupd-efi 1.2-1
+fzf 0.30.0-1
+fzy 1.0-2
+gallery-dl 1.21.1-1
+gameconqueror 0.17-6
+gcc 11.2.0-4
+gdb 11.2-1
+gdu 5.13.2-1
+geoclue 2.6.0-2
+gimp 2.10.30-2
+gimp-help-en 2.10.0-5
+gimp-paint-studio 2.0-2
+gimp-plugin-pandora 0.9.3-2
+git 2.35.1-1
+git-delta 0.12.1-1
+git-lfs 3.1.2-1
+gitui 0.20.1-2
+glfw-x11 3.3.7-1
+glm 0.9.9.8-1
+glow 1.4.1-2
+gnome-keyring 1:40.0-1
+gnuplot 5.4.3-5
+go 2:1.18-1
+godot 3.4.4-1
+google-earth-pro 7.3.4.8573-1
+gperf 3.1-3
+gpick 0.2.6-3
+gping 1.3.1-1
+gpu-viewer 1.38-1
+graphicsmagick 1.3.38-1
+grub 2:2.06-5
+gtk4 1:4.6.2-1
+gtkmm-4.0 4.6.1-1
+gvfs 1.50.0-1
+gvfs-mtp 1.50.0-1
+hck 0.7.1-1
+hexyl 0.9.0-1
+hotspot 1.3.0-3
+htop 3.1.2-1
+hunspell 1.7.0-3
+hunspell-en_gb 2020.12.07-4
+hunspell-en_us 2020.12.07-4
+hunspell-tr 0.1-5
+hwinfo 21.80-1
+hyperfine 1.13.0-1
+i3-gaps 4.20.1-2
+i3blocks 1.5-3
+i3lock-color-git r902.d846e7c-1
+i3status 2.14-1
+imagemagick 7.1.0.29-1
+imv 4.3.1-3
+instagram-scraper 1.10.3-1
+instaloader 4.9-1
+jemalloc 1:5.2.1-6
+jq 1.6-4
+kcachegrind 21.12.3-1
+kdeconnect 21.12.3-1
+kernel-modules-hook 0.1.7-2
+kimageformats 5.92.0-1
+kolourpaint 21.12.3-1
+krita 5.0.2-3
+krita-plugin-gmic 3.0.2.1-1
+kseexpr 4.0.4.0-1
+laptop-mode-tools 1.74-1
+lf-bin 27-1
+lfs 2.5.0-1
+lib32-amdvlk 2022.Q2.1-1
+lib32-glew 2.2.0-1
+lib32-gtk2 2.24.33-1
+lib32-gtk3 3.24.31-1
+lib32-libgcrypt15 1.5.6-7
+lib32-libpng12 1.2.59-2
+lib32-libsodium 1.0.18-2
+lib32-libva-mesa-driver 22.0.1-3
+lib32-mesa 22.0.1-3
+lib32-openal 1.21.1-2
+lib32-systemd 250.4-1
+lib32-vulkan-radeon 22.0.1-3
+libc++ 13.0.1-1
+libdeflate 1.8-4
+libertinus-font 7.040-2
+libgcrypt15 1.5.6-6
+libheif 1.12.0-3
+libisoburn 1.5.4-2
+libisofs 1.5.4-1
+libjxl 0.6.1-3
+libnotify 0.7.9-2
+libpng12 1.2.59-2
+libportal-gtk3 0.6-1
+libportal-gtk4 0.6-1
+libraw 0.20.2-1
+libreoffice-still 7.2.6-1
+libreoffice-still-en-gb 7.2.6-1
+libreoffice-still-tr 7.2.6-1
+libsixel 1.10.3-4
+libunrar 1:6.1.6-1
+libva-mesa-driver 22.0.1-3
+libva-utils 2.14.0-1
+libwhich 1.1.0-1
+libzip 1.8.0-1
+light 1.2.2-3
+lightdm 1:1.30.0-4
+lightdm-gtk-greeter 1:2.0.8-2
+lightdm-gtk-greeter-settings 1.2.2-7
+linux 5.17.1.arch1-1
+linux-docs 5.17.1.arch1-1
+linux-firmware 20220309.cd01f85-1
+linux-headers 5.17.1.arch1-1
+linux-lts 5.15.33-1
+linux-lts-headers 5.15.33-1
+lld 13.0.1-1
+lldb 13.0.1-1
+llvm 13.0.1-2
+loc 0.4.1-2
+lolcat 100.0.1-1
+ltrace 0.7.3-4
+lua 5.4.4-1
+lxappearance 0.6.3-4
+lynx 2.8.9-5
+m4 1.4.19-1
+make 4.3-3
+man-db 2.10.2-1
+man-pages 5.13-1
+mcpelauncher-linux-git v0.3.2.r0.g1da5aa2-1
+mcpelauncher-msa-git v0.1.beta.2.r10.ge830ebe-1
+mcpelauncher-msa-ui-qt-git v0.1.beta.2.r10.ge830ebe-1
+mcpelauncher-ui-git v0.3.2.r0.g6039645-1
+mdcat 0.26.1-1
+mediainfo 22.03-1
+mesa-demos 8.4.0-7
+mesa-utils 8.4.0-7
+mesa-vdpau 22.0.1-3
+meson 0.62.0-1
+microsoft-gsl 3.1.0-1
+mindustry 1:7.0_135.2-1
+minecraft-launcher 928-1
+mold 1.1.1-1
+moreutils 0.67-2
+mp3info 0.8.5a-8
+mpv 1:0.34.1-4
+mtools 1:4.0.38-1
+mupdf 1.19.0-2
+mupdf-tools 1.19.0-2
+musl 1.2.3-1
+mythes-tr r77.491563f-1
+namcap 3.2.10-5
+nasm 2.15.05-1
+navi 2.19.0-1
+ncdu 2.1.1-1
+neofetch 7.1.0-2
+neovim-git 0.6.0.r1393.gb81c310d49-1
+nerd-fonts-hack 2.1.0-4
+nerd-fonts-roboto-mono 2.1.0-2
+network-manager-applet 1.26.0-1
+networkmanager 1.36.4-1
+ninja 1.10.2-1
+nlohmann-json 3.10.5-1
+nmap 7.92-1
+nnn 4.4-1
+notcurses 3.0.7-1
+noto-fonts 20201226-2
+noto-fonts-emoji 20211101-1
+npm 8.5.5-1
+nsxiv 29-3
+ntfs-3g 2021.8.22-1
+numlockx 1.2-5
+nushell 0.60.0-1
+obs-studio 27.2.3-1
+octave 7.1.0-2
+onefetch 2.12.0-1
+os-prober 1.79-1
+osu 20220323-1
+osu-handler 0.3.0-4
+p7zip 1:17.04-3
+pandoc-bin 2.18-1
+parallel 20220322-1
+paru-bin 1.10.0-1
+pastel 0.8.1-2
+patch 2.7.6-8
+pavucontrol 1:5.0-1
+perf 5.17-1
+php 8.1.4-1
+pipes-rs-git v1.4.7.r0.g2187012-1
+pistol-git 0.3.2.r6.ga950149-1
+pkgconf 1.8.0-1
+playerctl 2.4.1-2
+plocate 1.1.15-2
+png++ 0.2.10-2
+polymc-bin 1.1.1-2
+prettier 2.6.2-1
+processing4 4.0b7-1
+procs 0.12.1-1
+progress 0.16-1
+pulseaudio 15.0-4
+pulseaudio-alsa 1:1.2.6-3
+pulsemixer 1.5.1-3
+pv 1.6.20-2
+pypy 7.3.9-1
+pypy3 7.3.9-1
+pyright 1.1.235-1
+python 3.10.4-1
+python-numpy 1.22.3-1
+python-pip 21.0-1
+python-pynvim 0.4.3-2
+python2 2.7.18-5
+qalculate-qt 4.1.1-1
+qbittorrent 4.4.2-1
+qcachegrind 21.12.3-1
+qemu 6.2.0-4
+qemu-arch-extra 6.2.0-4
+qoibench-git r192.09d144f-2
+qt6-5compat 6.2.4-1
+qtcreator 7.0.0-1
+qutebrowser 2.5.0-1
+radeontool 1.6.3-4
+radeontop 1.4-1
+raylib 4.0.0-1
+redshift 1.12-5
+reflector 2021.11-3
+ripgrep 13.0.0-2
+rmlint 2.10.1-3
+rnote 0.4.0-1
+rofi 1.7.3-1
+rsync 3.2.3-4
+ruby-colorls 1.4.4-1
+rust-analyzer 20220404-1
+rustup 1.24.3-2
+sccache 0.2.15-2
+scnlib-git r527.ec82a33-1
+scrcpy 1.23-1
+screenkey 1.5-1
+scrot 1.7-1
+sdcv 0.5.3-1
+sdl 1:1.2.15+r406+gf1caf909-1
+sdl2_gfx 1:1.0.4-2
+sdl2_image 2.0.5-2
+sdl2_mixer 2.0.4-7
+sdl2_net 1:2.0.1-3
+sdl2_ttf 2.0.18-1
+sdl_gfx 2.0.26-5
+sdl_image 1.2.12-7
+sdl_mixer 1.2.12-10
+sdl_net 1.2.8-5
+sdl_sound 1.0.3-8
+sdl_ttf 2.0.11-6
+sfml 2.5.1-2
+shadered-bin 1.5.6-1
+shellcheck-bin 0.8.0-3
+shfmt 3.4.3-1
+silicon 0.4.3-1
+simple-mtpfs 0.4.0-1
+speedtest-cli 2.1.3-2
+spicetify-cli 2.9.4-1
+spotify 1:1.1.80.699-1
+stardict 3.0.6.2-1
+starship 1.5.4-1
+stb 20210910-1
+stdman 2020.11.17-1
+steam 1.0.0.74-1
+steam-native-runtime 1.0.0.70-3
+strace 5.17-1
+stress 1.0.5-1
+subliminal-git 2.1.0.r22.g160ea63-5
+sudo 1.9.10-1
+supertux 0.6.3-1
+supertuxkart 1.3-1
+sxiv 26-1
+sysbench 1.0.20-1
+t-rec 0.7.3-1
+tcc 0.9.27-4
+tealdeer 1.5.0-1
+teams 1.4.00.26453-1
+teams-for-linux 1.0.24-1
+tenacity-git 1:r13926.g0665614b8-1
+terminator 2.1.1-3
+tesseract-data-eng 2:4.1.0-3
+tesseract-data-fra 2:4.1.0-3
+tesseract-data-jpn 2:4.1.0-3
+tesseract-data-tur 2:4.1.0-3
+texlive-bibtexextra 2021.62705-1
+texlive-bin 2021.59745-2
+texlive-core 2021.62793-1
+texlive-fontsextra 2021.62623-1
+texlive-formatsextra 2021.62145-1
+texlive-langextra 2021.62109-1
+texlive-pictures 2021.62760-1
+texlive-science 2021.62659-1
+textsnatcher-beron-git r163.7192ac1-1
+the_silver_searcher 2.2.0-2
+thinkfan 1.3.1-1
+thunar 4.16.11-1
+thunar-archive-plugin 0.4.0-3
+thunar-media-tags-plugin 0.3.0-2
+thunar-volman 4.16.0-1
+tk 8.6.12-1
+tl-expected 1.0.0-1
+torbrowser-launcher 0.3.5-4
+torsocks 2.3.0-2
+trash-cli 0.21.10.24-3
+tree 2.0.2-1
+ttf-dejavu 2.37+18+g9b5d1b2f-3
+ttf-liberation 2.1.5-1
+ttf-ms-fonts 2.0-12
+ttf-nerd-fonts-symbols 2.1.0+36+gd0bf73a1-4
+ttf-ubuntu-font-family 0.83-8
+tty-clock 2.3-1
+tumbler 4.16.0-3
+tuxpaint 0.9.27-1
+tuxpaint-stamps 2021.11.25-1
+typescript-language-server 0.9.7-1
+ueberzug 18.1.9-3
+unrar 1:6.1.6-1
+update-grub 0.0.1-7
+upower 0.99.17-1
+uutils-coreutils 0.0.13-1
+v4l2loopback-dkms 0.12.5-2
+valgrind 3.18.1-4
+vc 1.4.2-1
+vdpauinfo 1.4-2
+vifm 0.12-1
+vim 8.2.4651-1
+virtualbox 6.1.32-2
+vkd3d 1.3-1
+vlc 3.0.17.3-1
+vlc-arc-dark-git r8.89fe85c-1
+volumeicon 0.5.1-5
+vscodium-bin 1.66.0-1
+vscodium-bin-marketplace 1.56.0-6
+vulkan-extra-tools 1.3.204.1-1
+vulkan-radeon 22.0.1-3
+wdiff 1.2.2-4
+wezterm 20220319.142410.0fcdea07-1
+wget 1.21.3-1
+whois 5.5.13-1
+wine 7.6-1
+wine-gecko 2.47.2-3
+wine-mono 7.2.0-1
+winetricks 20220328-1
+words 2.1-6
+wqy-zenhei 0.9.45-9
+wtf 20200613-1
+xbindkeys 1.8.7-2
+xclip 0.13-3
+xcursor-bluecurve 0.1.1-7
+xcursor-breeze 1:5.22.5-1
+xcursor-comix 0.9.2-1
+xcursor-flatbed 0.4-3
+xcursor-neutral 1.13a-9
+xcursor-pinux 0.3-13
+xcursor-premium 0.3-10
+xcursor-simpleandsoft 0.2-9
+xcursor-themes 1.0.6-2
+xcursor-vanilla-dmz 0.4.5-2
+xcursor-vanilla-dmz-aa 0.4.5-2
+xdg-user-dirs 0.17-3
+xdotool 3.20211022.1-1
+xf86-input-wacom 1.0.0-1
+xf86-video-amdgpu 22.0.0-1
+xorg-server 21.1.3-6
+xorg-twm 1.0.12-1
+xorg-xev 1.2.4-1
+xorg-xinit 1.4.1-3
+xorg-xinput 1.6.3-2
+xorg-xkbutils 1.0.4-4
+xorg-xkill 1.0.5-2
+xournalpp 1.1.1-1
+xsel 1.2.0.20200527-1
+xsnow-bin 3.4.2-2
+xvkbd 4.1-1
+xzoom 0.3-6
+yacreader 9.8.2-1
+youtube-dl 2021.12.17-1
+yt-dlp 2022.04.08-1
+zathura 0.4.9-1
+zathura-cb 0.1.9-1
+zathura-pdf-mupdf 0.3.8-1
+zellij 0.27.0-1
+zip 3.0-10
+zoxide 0.8.0-1
+zsh 5.8.1-1
+zsh-doc 5.8.1-1
