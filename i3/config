@@ -295,7 +295,7 @@ bindsym $alt+$mod+l exec --no-startup-id mousemove_relative RIGHT
 
 # dunst keys
 # bindsym Ctrl+space $exe dunstctl close
-bindsym Ctrl+Shift+space $exe dunstctl close-all
+bindsym Ctrl+$mod+space $exe dunstctl close-all
 bindsym Ctrl+$alt+space $exe dunstctl history-pop
 
 # Move workspaces
