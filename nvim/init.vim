@@ -17,6 +17,7 @@ set hidden
 set ignorecase
 set inccommand=nosplit
 set incsearch
+set laststatus=3
 set lazyredraw
 set mouse=a
 set nobackup
