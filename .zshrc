@@ -96,7 +96,9 @@ setopt extendedglob
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 setopt hist_ignore_space
+setopt hist_save_no_dups
 setopt glob_dots
 setopt interactive_comments
 setopt nobeep
@@ -174,7 +176,6 @@ fi
 bindkey "^[[3;5~" delete-word
 bindkey "^H" backward-delete-word
 bindkey "\C-k" vi-kill-eol
-bindkey '^r' history-incremental-search-backward
 bindkey ' ' magic-space
 
 # Don't really know how to change terminfo for Alacritty or XTERM so I'm calling tabs -4
@@ -183,6 +184,10 @@ tabs -4
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 eval "$(starship init zsh)"
+
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+bindkey '^r' _atuin_search_widget
 
 xset b off
 
