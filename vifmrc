@@ -198,10 +198,10 @@ fileviewer <font/*>
 			\ vifmimg clear
 
 " Comics
-filextype *.cbr zathura %f &
-filetype  *.cbr zathura %f &
-filextype *.cbz zathura %f &
-filetype  *.cbz zathura %f &
+filextype *.cbr YACReader %f &
+filetype  *.cbr YACReader %f &
+filextype *.cbz YACReader %f &
+filetype  *.cbz YACReader %f &
 
 fileviewer *.cbr
 			\ vifmimg comicpreview %px %py %pw %ph %c
