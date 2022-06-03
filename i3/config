@@ -174,7 +174,7 @@ bindsym $mod+Shift+i $exe qtcreator
 bindsym $mod+m $exe $term --working-directory "MicroSD"
 
 # Shutdown
-bindsym $mod+Shift+x $exe shut "Shutdown Now?" "shutdown -h now"
+bindsym $mod+Shift+x $exe shut "Shutdown Now?" "shutdown --no-wall -h now"
 
 # Open Floating Centered Terminal?
 bindsym $mod+x $exe $term -t "FloatTerm"
