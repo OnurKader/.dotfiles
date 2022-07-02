@@ -11,5 +11,5 @@ fi
 
 yt-dlp -N4 --restrict-filenames --fragment-retries=20 --add-metadata --sponsorblock-mark all \
 --download-archive="$HOME/.cache/youtube-dl/download-archive.txt" --embed-subs --write-auto-sub \
---sub-langs='en.*' -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' "$@" && report_sync
+--sub-langs='en.*' -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' --mark-watched "$@" && report_sync
 
