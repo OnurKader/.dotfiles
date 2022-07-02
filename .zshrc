@@ -16,7 +16,7 @@ source ~/.exports
 # Aliases
 source ~/.aliases
 
-source ~/Code/.dotfiles/zsh-plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/Code/.dotfiles/zsh-plugins/fast-syntax-highlighting/F-Sy-H.plugin.zsh
 for plugin in /home/beron/Code/.dotfiles/zsh-plugins/*.zsh; do
 	source $plugin
 done
