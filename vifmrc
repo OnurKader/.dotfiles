@@ -423,11 +423,15 @@ nnoremap <f8> :delete<cr>
 
 " Midnight commander alike mappings
 " Open current directory in the other pane
-nnoremap <a-i> :sync<cr>
+" nnoremap <a-i> :sync<cr>
 " Open directory under cursor in the other pane
-nnoremap <a-o> :sync %c<cr>
+" nnoremap <a-o> :sync %c<cr>
 " Swap panes
-nnoremap <c-u> <c-w>x
+" nnoremap <c-u> <c-w>x
+
+" dop is taken
+nnoremap dr :!dragon-drop -x %f<CR>
+nnoremap da :!dragon-drop -a -x %f<CR>
 
 map > :!vifmimg inc<CR>
 map < :!vifmimg dec<CR>
