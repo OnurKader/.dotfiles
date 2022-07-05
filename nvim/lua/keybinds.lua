@@ -41,4 +41,5 @@ map('n', "<S-Del>", '<Esc>"_dd')
 map('i', "<S-Del>", '<Esc>"_dda')
 map('n', "<Leader>j", ":m+<cr>==")
 map('n', "<Leader>k", ":m-2<cr>==")
+map('n', "<Space>", "za")
 
