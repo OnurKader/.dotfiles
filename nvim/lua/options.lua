@@ -104,27 +104,58 @@ au BufWinEnter ?* silent! loadview
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 ]]
 
+-- Clipboard & Statusline
+vim.opt.clipboard = "unnamedplus"
+vim.opt.statusline:append("%#warningmsg#")
+vim.opt.statusline:append("%{SyntasticStatuslineFlag()}")
+vim.opt.statusline:append("%*")
 
---[[
-" Clipboard & Statusline
-set clipboard=unnamedplus
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+-- I don't think this actually works
+-- aucmd("BufRead", {pattern = "/home/beron/.config/i3/*", command = "set ft=i3"})
+-- vim.filetype.add({pattern = {["/home/beron/.config/i3*/*"] = "i3"}})
+
+-- CtrlP
+vim.g.ctrlp_map = "<C-p>"
+vim.g.ctrlp_cmd = "CtrlP"
+vim.g.ctrlp_switch_buffer = "et"
+vim.g.ctrlp_match_window = "bottom,order:ttb,min:2,max:15"
+vim.g.ctrlp_working_path_mode = 'a'
+-- vim.g.ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+vim.g.ctrlp_show_hidden = 1
+
+
+vim.cmd [[
+" Python specific stuff
 au BufNewFile,BufRead *.py set textwidth=80
 autocmd FileType python set colorcolumn=80
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd FileType gitcommit set tabstop=4
-" Some Movement Stuff
-nnoremap j gj
-nnoremap k gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
-inoremap jk <Esc>
-inoremap jj <Esc>
-" gj gk Arrow Key Functionality in Normal Mode
-nnoremap <Up> gk
-nnoremap <Down> gj
--]]
+]]
 
+-- Yeah I'm bored, I'll clean this up later
+vim.cmd [[
+let g:max_diagnostics_to_display=64
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+			\| exe "normal! g'\"" | endif
+let g:cpp_member_highlight = 1
+let g:cpp_attributes_highlight = 1
+let c_no_curly_error=1
+" Git keybinds
+let g:gitgutter_grep=''
+let g:gitgutter_max_signs = 512
+" Remove Whitespace
+autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge | endif
+" Abbreviations
+iab whit with
+iab wiht with
+iab teh the
+iab hte the
+iab wieght weight
+iab lenght length
+iab hieght height
+iab tihs this
+iab doubel double
+iab mian main
+iab flaot float
+]]
 
