@@ -49,6 +49,8 @@ vim.opt.wildmode = "list,longest,full"
 vim.opt.wildignore:append("*/.git,*/.ccls-cache,*/.idea,*/.cache")
 vim.opt.wrap = true
 
+vim.g.mapleader = ','
+
 -- Should I change the set *number* stuff to lua versions
 
 -- InsertEnter
@@ -145,6 +147,8 @@ let g:gitgutter_grep=''
 let g:gitgutter_max_signs = 512
 " Remove Whitespace
 autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge | endif
+" Enable spell check for git commits
+autocmd BufRead COMMIT_EDITMSG set spell
 " Abbreviations
 iab whit with
 iab wiht with
