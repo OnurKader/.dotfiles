@@ -1,42 +1,44 @@
--- " Some Movement Stuff
--- nnoremap j gj
--- nnoremap k gk
--- inoremap <Down> <C-o>gj
--- inoremap <Up> <C-o>gk
--- inoremap jk <Esc>
--- inoremap jj <Esc>
--- " gj gk Arrow Key Functionality in Normal Mode
--- nnoremap <Up> gk
--- nnoremap <Down> gj
--- nnoremap Q @@
--- noremap s "_s
--- noremap x "_x
--- cmap qw wq
+local map = vim.keymap.set
+
+map('n', 'j', "gj")
+map('n', 'k', "gk")
+map('i', "<Down>", "<C-o>gj")
+map('i', "<Up>", "<C-o>gk")
+map('n', "<Down>", "gj")
+map('n', "<Up>", "gk")
+map('i', "jk", "<Esc>")
+map('i', "jj", "<Esc>")
+map('n', 'Q', "@@")
+map('n', 's', '"_s')
+map('n', 'x', '"_x')
+-- cmap qw wq -- Unnecessary
 -- cmap wwq wq
--- vnoremap < <gv
--- vnoremap > >gv
--- nnoremap <S-J><S-J> i<CR><Esc>k$
--- inoremap <S-J><S-J> <Esc>i<CR><Esc>kA
--- :noremap <leader>h :sp<CR>
--- :noremap <leader>v :vsp<CR>
--- inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
--- inoremap <leader>w <Esc>:w<CR>
--- inoremap ,w <Esc>:w<CR>
--- inoremap <leader>q <ESC>:q<CR>
--- inoremap <leader>x <ESC>:x<CR>
--- map <leader><leader> <Esc>/<++><Enter>"_c4l
--- map ,, <Esc>/<++><Enter>"_c4l
--- nnoremap <Enter> meo<Esc>k`e
--- nnoremap ü o<Esc>
--- nnoremap ğ mmO<Esc>`m
--- noremap <S-Del> <Esc>"_dd
--- inoremap <S-Del> <Esc>"_dda
--- nnoremap <Leader>j :m+<cr>==
--- nnoremap <Leader>k :m-2<cr>==
--- nnoremap <leader>q :q<CR>
--- nnoremap <leader>Q :q<CR>
--- nnoremap <leader>x :x<CR>
--- nnoremap <leader>w :w<CR>
--- nnoremap <leader>W :w<CR>
--- vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+map('v', '<', "<gv")
+map('v', '>', ">gv")
+map('n', "<S-J><S-J>", "i<CR><Esc>k$")
+map('i', "<S-J><S-J>", "<Esc>i<CR><Esc>kA")
+map('n', "<Leader>h", ":sp<CR>")
+map('n', "<Leader>v", ":vsp<CR>")
+map('i', "<Leader>i", "<++>")
+map('', "<Leader><Leader>", '<Esc>/<++><Enter>"_c4l')
+-- These can be an empty mode ''
+map('i', "<Leader>w", "<Esc>:w<CR>")
+map('i', "<Leader>W", "<Esc>:w<CR>")
+map('i', "<Leader>q", "<Esc>:q<CR>")
+map('i', "<Leader>Q", "<Esc>:q<CR>")
+map('i', "<Leader>x", "<Esc>:x<CR>")
+map('i', "<Leader>X", "<Esc>:x<CR>")
+map('', "<Leader>w", "<Esc>:w<CR>")
+map('', "<Leader>W", "<Esc>:w<CR>")
+map('', "<Leader>q", "<Esc>:q<CR>")
+map('', "<Leader>Q", "<Esc>:q<CR>")
+map('', "<Leader>x", "<Esc>:x<CR>")
+map('', "<Leader>X", "<Esc>:x<CR>")
+map('n', "<Enter>", "meo<Esc>k`e")
+map('n', 'ü', "o<Esc>")
+map('n', 'ğ', "mmO<Esc>`m")
+map('n', "<S-Del>", '<Esc>"_dd')
+map('i', "<S-Del>", '<Esc>"_dda')
+map('n', "<Leader>j", ":m+<cr>==")
+map('n', "<Leader>k", ":m-2<cr>==")
 
