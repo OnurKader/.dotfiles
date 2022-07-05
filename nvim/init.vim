@@ -118,6 +118,7 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
+let g:airline#extensions#tabline#enabled = 0
 " Views
 au BufWritePost,BufLeave,WinLeave ?* mkview
 au BufWinEnter ?* silent! loadview
