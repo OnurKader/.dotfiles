@@ -2,18 +2,21 @@
 
 export BROWSER="firefox"
 export EDITOR="nvim"
-export PISTOL_CHROMA_FORMATTER=terminal256
+export PISTOL_CHROMA_FORMATTER=terminal256 # Not 16m because of nnn's lack of support (?)
 export PISTOL_CHROMA_STYLE=vim
 export FILE="vifm"
 export LESSHISTFILE="-"
 
 # NNN CONFIG
-export NNN_BMS="d:~/Desktop/;P:~/Pictures/;p:~/Peki/;D:~/Downloads/"
-export NNN_USE_EDITOR=1
+export NNN_BMS="d:~/Desktop/;P:~/Pictures/;p:~/Peki/;D:~/Downloads/;m:~/MicroSD/YouTube;M:~/Movies/YouTube"
 export NNN_CONTEXT_COLORS="2136"
 export NNN_DE_FILE_MANAGER="$FILE"
-export NNN_OPENER="~/Code/nnn/plugins/nuke"
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_OPENER="~/.config/nnn/plugins/nuke"
+export NNN_OPTS="aceEgHR"
+export NNN_PLUG="d:diffs;r:renamer;p:preview"
 export NNN_TRASH=1
+export NNN_USE_EDITOR=1
 
 export TERMINAL="alacritty"
 export PAGER="less -RF -x4"
