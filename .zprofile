@@ -1,5 +1,6 @@
 export LC_NUMERIC="en_GB.utf8"
 export LC_TIME="en_GB.utf8"
+export LC_COLLATE="C"
 
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.config/scripts"
