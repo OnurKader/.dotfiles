@@ -96,7 +96,8 @@ alias magick="/usr/bin/gm"
 alias mdcat="mdcat --columns 100"
 alias mpva="mpv --no-audio-display"
 alias mv="mv -vi"
-alias n='nnn -aEgHR'
+# alias n='nnn -aEgHR' # Maybe -U for users and groups
+alias n="nnn"
 alias nano="nvim"
 alias ncdu="ncdu --si --color=dark"
 alias open="xdg-open"
