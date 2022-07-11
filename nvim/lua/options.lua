@@ -42,14 +42,15 @@ vim.opt.splitright = true
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.textwidth = 101 -- Should think about this again, possibly larger (wider)
-vim.opt.timeoutlen = 450
-vim.opt.updatetime = 333
+vim.opt.timeoutlen = 500
+vim.opt.updatetime = 500
 vim.opt.wildmenu = true
 vim.opt.wildmode = "list,longest,full"
 vim.opt.wildignore:append("*/.git,*/.ccls-cache,*/.idea,*/.cache")
 vim.opt.wrap = true
 
 vim.g.mapleader = ','
+vim.g["clang_format#detect_style_file"] = 1
 
 -- Should I change the set *number* stuff to lua versions
 
