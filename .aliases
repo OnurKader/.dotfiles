@@ -84,7 +84,7 @@ alias lat="exa --icons --tree --color=always"
 alias lcaer="clear"
 alias lcear="clear"
 alias lear="clear"
-alias less='less --RAW-CONTROL-CHARS -x4'
+alias less='less -RFx4 --mouse'
 alias lget="xbacklight -get"
 alias ll="exa"
 alias llg="exa | grep"

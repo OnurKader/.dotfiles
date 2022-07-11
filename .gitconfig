@@ -3,6 +3,7 @@
 	email = onurorkunkader1999@gmail.com
 [core]
 	editor = nvim
+	pager = "less -RFx4 --mouse"
 [pull]
 	rebase = false
 [github]
