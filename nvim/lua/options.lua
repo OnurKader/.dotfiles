@@ -48,6 +48,7 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = "list,longest,full"
 vim.opt.wildignore:append("*/.git,*/.ccls-cache,*/.idea,*/.cache")
 vim.opt.wrap = true
+vim.opt.cmdheight = 2
 
 vim.g.mapleader = ','
 vim.g["clang_format#detect_style_file"] = 1
@@ -164,3 +165,92 @@ iab mian main
 iab flaot float
 ]]
 
+-- Forgive me father for I have sinned
+vim.cmd [[
+" Clang-Format
+autocmd FileType c,cpp,h,hpp let g:clang_format#auto_format = 0
+let g:clang_format#detect_style_file = 0
+augroup ClangFormatSettings
+autocmd!
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,h,hpp,cc,hh nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,h,hpp,cc,hh inoremap <buffer><Leader>cf <Esc>:ClangFormat<CR>
+autocmd FileType c,cpp,h,hpp,cc,hh vnoremap <buffer><Leader>cf :ClangFormat<CR>
+autocmd FileType rust,rs nnoremap <buffer><Leader>cf :!rustfmt %<CR>
+autocmd FileType rust,rs inoremap <buffer><Leader>cf <Esc>:!rustfmt %<CR>
+autocmd FileType rust,rs vnoremap <buffer><Leader>cf :!rustfmt %<CR>
+augroup END
+let g:clang_format#style_options = {
+	\	"BasedOnStyle": "Mozilla",
+	\	"AccessModifierOffset": '-4',
+	\	"AlignAfterOpenBracket": "Align",
+	\	"AlignConsecutiveMacros": 'true',
+	\	"AlignConsecutiveAssignments": 'false',
+	\	"AlignConsecutiveDeclarations": 'false',
+	\	"AlignEscapedNewlines": "Left",
+	\	"AlignOperands": 'true',
+	\	"AlignTrailingComments": 'true',
+	\	"AllowAllArgumentsOnNextLine": 'true',
+	\	"AllowAllConstructorInitializersOnNextLine": 'true',
+	\	"AllowAllParametersOfDeclarationOnNextLine": 'true',
+	\	"AllowShortBlocksOnASingleLine": 'true',
+	\	"AllowShortCaseLabelsOnASingleLine": 'true',
+	\	"AllowShortFunctionsOnASingleLine": 'true',
+	\	"AllowShortIfStatementsOnASingleLine": "Never",
+	\	"AllowShortLambdasOnASingleLine": "All",
+	\	"AllowShortLoopsOnASingleLine": 'false',
+	\	"AlwaysBreakAfterDefinitionReturnType": "None",
+	\	"AlwaysBreakAfterReturnType": 'None',
+	\	"AlwaysBreakBeforeMultilineStrings": 'false',
+	\	"AlwaysBreakTemplateDeclarations": 'Yes',
+	\	"BinPackArguments": 'false',
+	\	"BinPackParameters": 'false',
+	\	"BreakBeforeBinaryOperators": "None",
+	\	"BreakBeforeBraces": "Allman",
+	\	"BreakBeforeTernaryOperators": 'true',
+	\	"BreakConstructorInitializers": "AfterColon",
+	\	"BreakInheritanceList": "AfterColon",
+	\	"BreakStringLiterals": 'true',
+	\	"CompactNamespaces": 'false',
+	\	"ConstructorInitializerAllOnOneLineOrOnePerLine": 'true',
+	\	"ConstructorInitializerIndentWidth": '4',
+	\	"ContinuationIndentWidth": '4',
+	\	"ColumnLimit": '101',
+	\	"Cpp11BracedListStyle": 'true',
+	\	"DerivePointerAlignment": 'false',
+	\	"DisableFormat": 'false',
+	\	"ExperimentalAutoDetectBinPacking": 'false',
+	\	"FixNamespaceComments": 'true',
+	\	"IncludeBlocks": "Regroup",
+	\	"IndentCaseLabels": 'true',
+	\	"IndentPPDirectives": "None",
+	\	"IndentWidth": '4',
+	\	"IndentWrappedFunctionNames": 'false',
+	\	"KeepEmptyLinesAtTheStartOfBlocks": 'false',
+	\	"Language": "Cpp",
+	\	"NamespaceIndentation": "None",
+	\	"PenaltyReturnTypeOnItsOwnLine": '10000',
+	\	"PointerAlignment": "Left",
+	\	"ReflowComments": 'true',
+	\	"SortIncludes": 'true',
+	\	"SortUsingDeclarations": 'false',
+	\	"SpaceAfterCStyleCast": 'false',
+	\	"SpaceAfterLogicalNot": 'false',
+	\	"SpaceAfterTemplateKeyword": 'false',
+	\	"SpaceBeforeAssignmentOperators": 'true',
+	\	"SpaceBeforeCpp11BracedList": 'true',
+	\	"SpaceBeforeCtorInitializerColon": 'true',
+	\	"SpaceBeforeInheritanceColon": 'true',
+	\	"SpaceBeforeParens": "Never",
+	\	"SpaceBeforeRangeBasedForLoopColon": 'false',
+	\	"SpaceInEmptyParentheses": 'false',
+	\	"SpacesBeforeTrailingComments": '4',
+	\	"SpacesInAngles": 'false',
+	\	"SpacesInCStyleCastParentheses": 'false',
+	\	"SpacesInContainerLiterals": 'false',
+	\	"SpacesInParentheses": 'false',
+	\	"SpacesInSquareBrackets": 'false',
+	\	"Standard": "Latest",
+	\	"TabWidth": '4',
+	\	"UseTab": "Always" }
+]]
