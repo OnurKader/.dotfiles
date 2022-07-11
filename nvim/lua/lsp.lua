@@ -141,3 +141,15 @@ require('lspconfig')['bashls'].setup {
 	capabilities = capabilities,
 }
 
+require('lspconfig')['sumneko_lua'].setup {
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = {'vim'},
+			},
+		},
+	},
+}
+
