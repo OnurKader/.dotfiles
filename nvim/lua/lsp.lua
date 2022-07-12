@@ -64,12 +64,13 @@ cmp.setup({
 		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	},
 	sources = cmp.config.sources({
-		{ name = 'nvim_lsp' },
-		{ name = 'vsnip' },
-		{ name = 'buffer' },
-		{ name = 'path' },
+		{ name = "nvim_lsp" },
+		{ name = "vsnip" },
+		{ name = "buffer" },
+		{ name = "path" },
 		-- { name = 'treesitter' },
-		{ name = 'crates' },
+		{ name = "crates" },
+		{ name = "nvim_lsp_signature_help" },
 	})
 })
 
@@ -98,8 +99,6 @@ buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_w
 buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
 buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 buf_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-buf_set_keymap('n', '<leader>T', '<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>', opts)
 --]]
 
 local on_attach = function (_, buf)
