@@ -101,6 +101,8 @@ buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 buf_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 --]]
 
+-- https://github.com/neovim/nvim-lspconfig
+-- Switch these to vim.keymap.set('n', <keys>, lua function, buf_opts)
 local on_attach = function (_, buf)
 	-- The rhs needs to be a string???
 	vim.api.nvim_buf_set_keymap(buf, 'n', "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {desc = "Jump to definition"})
