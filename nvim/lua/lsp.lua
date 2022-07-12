@@ -91,7 +91,6 @@ autopairs.setup({
 autopairs.add_rule(Rule('(', ')', '*'))
 autopairs.add_rule(Rule('{', '}', '*'))
 autopairs.add_rule(Rule('[', ']', '*'))
--- autopairs.add_rule(Rule('<', '>', '*'))
 autopairs.add_rule(Rule('"', '"', '*'))
 autopairs.add_rule(Rule("'", "'", '*'))
 
@@ -135,7 +134,7 @@ local on_attach = function (_, buf)
 	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", {desc = "Rename symbol"})
 	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {desc = "Show code actions"})
 	vim.api.nvim_buf_set_keymap(buf, 'n', "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {desc = "Show references"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", {desc = "Show line diagnostics"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", {desc = "Show line diagnostics"})
 	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", {desc = "Format file"})
 	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>T", "<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>", {desc = "Show inlay hints"})
 end
