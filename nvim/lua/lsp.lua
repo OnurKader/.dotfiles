@@ -34,26 +34,6 @@ cmp.setup({
 		})
 	},
 	mapping = {
-		--[[
-			buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-			buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-			buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-			buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-			buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-			buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-			buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-			buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-			buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-			buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-			buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-			buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-			buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-			buf_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-			buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-			buf_set_keymap('n', '<leader>T', '<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>', opts)
-		--]]
-		['gd'] = cmp.mapping(vim.lsp.buf.definition(), {'n'}),
-		['gD'] = cmp.mapping(vim.lsp.buf.declaration(), {'n'}),
 		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
 		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
 		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -111,16 +91,45 @@ cmp.setup.cmdline('/', {
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+--[[
+buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+buf_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+buf_set_keymap('n', '<leader>T', '<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>', opts)
+--]]
+
+local on_attach = function (_, buf)
+	-- The rhs needs to be a string???
+	vim.api.nvim_buf_set_keymap(buf, 'n', "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {desc = "Jump to definition"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", {desc = "Jump to declaration"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", {desc = "Show hover text"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", {desc = "Jump to implementation"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", {desc = "Signature help"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", {desc = "Show type definition"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", {desc = "Rename symbol"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {desc = "Show code actions"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {desc = "Show references"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", {desc = "Show line diagnostics"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", {desc = "Format file"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>T", "<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>", {desc = "Show inlay hints"})
+end
 
 require('lspconfig')['clangd'].setup {
 	capabilities = capabilities,
+	on_attach = on_attach,
 	flags = {
 		debounce_text_changes = 300,
 	}
 }
 
+-- Switch to rust-tools
 require('lspconfig')['rust_analyzer'].setup {
 	capabilities = capabilities,
+	on_attach = on_attach,
 	settings = {
 		["rust-analyzer"] = {
 			cargo = { allFeatures = true, autoReload = true },
@@ -131,18 +140,22 @@ require('lspconfig')['rust_analyzer'].setup {
 
 require('lspconfig')['pyright'].setup {
 	capabilities = capabilities,
+	on_attach = on_attach,
 }
 
 require('lspconfig')['tsserver'].setup {
 	capabilities = capabilities,
+	on_attach = on_attach,
 }
 
 require('lspconfig')['bashls'].setup {
 	capabilities = capabilities,
+	on_attach = on_attach,
 }
 
 require('lspconfig')['sumneko_lua'].setup {
 	capabilities = capabilities,
+	on_attach = on_attach,
 	settings = {
 		Lua = {
 			diagnostics = {
