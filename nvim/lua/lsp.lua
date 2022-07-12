@@ -75,11 +75,32 @@ cmp.setup({
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-	sources = {
-		{ name = 'buffer' }
-	}
+-- cmp.setup.cmdline('/', {
+-- 	sources = {
+-- 		{ name = 'buffer' }
+-- 	}
+-- })
+
+-- Setup autopairs
+local autopairs = require("nvim-autopairs");
+local Rule = require('nvim-autopairs.rule')
+
+autopairs.setup({
 })
+
+autopairs.add_rule(Rule('(', ')', '*'))
+autopairs.add_rule(Rule('{', '}', '*'))
+autopairs.add_rule(Rule('[', ']', '*'))
+-- autopairs.add_rule(Rule('<', '>', '*'))
+autopairs.add_rule(Rule('"', '"', '*'))
+autopairs.add_rule(Rule("'", "'", '*'))
+
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+cmp.event:on(
+	'confirm_done',
+	cmp_autopairs.on_confirm_done()
+)
 
 -- -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 -- cmp.setup.cmdline(':', {

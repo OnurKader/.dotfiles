@@ -33,6 +33,8 @@ return require('packer').startup(function(use)
 	use {"tweekmonster/startuptime.vim"}
 	use {"vim-airline/vim-airline"}
 	use {"vim-airline/vim-airline-themes"}
+	use {"windwp/nvim-autopairs"}
+	use {"windwp/nvim-ts-autotag"}
 	use {"ziglang/zig.vim"}
 end)
 
