@@ -6,6 +6,7 @@ return require('packer').startup(function(use)
 	use {"cespare/vim-toml"}
 	use {"christoomey/vim-sort-motion"}
 	use {"ctrlpvim/ctrlp.vim"}
+	use {"folke/which-key.nvim"}
 	use {"gko/vim-coloresque"}
 	use {"hrsh7th/cmp-buffer"}
 	use {"hrsh7th/cmp-cmdline"}
