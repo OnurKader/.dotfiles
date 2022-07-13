@@ -85,6 +85,7 @@ alias lcaer="clear"
 alias lcear="clear"
 alias lear="clear"
 alias less='less -RFx4'
+alias curl="curl -L"
 alias lget="xbacklight -get"
 alias ll="exa"
 alias llg="exa | grep"
