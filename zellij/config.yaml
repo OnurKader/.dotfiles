@@ -553,3 +553,4 @@ copy_on_select: false
 
 # Path to the default editor to use to edit pane scrollbuffer
 # scrollback_editor: /usr/bin/nano
+

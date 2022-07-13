@@ -22,7 +22,7 @@ case $BLOCK_BUTTON in
 	1) update_album_art; notify-send -i /tmp/album_art.jpg " ${NAME//\"/}" "${ARTIST//\"/}";;
 	2) sp play;;
 	3) notify-send "Usage:" "Just Left Click To Get The Whole Song Name";;
-	5) sp next && sleep 0.25 && update_album_art && notify-send -i /tmp/album_art.jpg "Playing Next Song" "$(spot-get)";;
-	4) sp prev && sleep 0.25 && update_album_art && notify-send -i /tmp/album_art.jpg "Playing Previous Song" "$(spot-get)";;
+	5) sp next && sleep 0.33 && update_album_art && notify-send -i /tmp/album_art.jpg "Playing Next Song" "$(spot-get)";;
+	4) sp prev && sleep 0.33 && update_album_art && notify-send -i /tmp/album_art.jpg "Playing Previous Song" "$(spot-get)";;
 esac
 
