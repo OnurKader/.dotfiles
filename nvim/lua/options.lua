@@ -144,9 +144,6 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 let g:cpp_member_highlight = 1
 let g:cpp_attributes_highlight = 1
 let c_no_curly_error=1
-" Git keybinds
-let g:gitgutter_grep=''
-let g:gitgutter_max_signs = 512
 " Remove Whitespace
 autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge | endif
 " Enable spell check for git commits
