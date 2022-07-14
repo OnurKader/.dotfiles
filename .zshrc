@@ -191,3 +191,22 @@ bindkey '^r' _atuin_search_widget
 
 xset b off
 
+# zellij Autostart
+export ZELLIJ_AUTO_ATTACH="false"
+if [[ -z "$ZELLIJ" ]]; then
+	if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+		zellij attach -c #Main
+	else
+		# A bad hack, if Main session doesn't exist create it
+		if [[ $(zellij ls | grep "Main") ]]; then
+			zellij
+		else
+			zellij -s Main
+		fi
+	fi
+
+	if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+		exit
+	fi
+fi
+
