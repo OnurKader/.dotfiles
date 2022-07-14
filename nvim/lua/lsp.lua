@@ -136,7 +136,6 @@ local on_attach = function (_, buf)
 	vim.api.nvim_buf_set_keymap(buf, 'n', "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {desc = "Show references"})
 	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", {desc = "Show line diagnostics"})
 	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", {desc = "Format file"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>T", "<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>", {desc = "Show inlay hints"})
 end
 
 require('lspconfig')['clangd'].setup {

@@ -251,3 +251,4 @@ let g:clang_format#style_options = {
 	\	"TabWidth": '4',
 	\	"UseTab": "Always" }
 ]]
+
