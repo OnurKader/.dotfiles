@@ -20,11 +20,15 @@ return require('packer').startup(function(use)
 	use { "hrsh7th/vim-vsnip" }
 	use { "hrsh7th/vim-vsnip-integ" }
 	use { "jose-elias-alvarez/null-ls.nvim" }
+	use { "kyazdani42/nvim-web-devicons" }
 	use { "kylechui/nvim-surround", config = function() require("nvim-surround").setup() end }
 	use { "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end }
 	use { "neovim/nvim-lspconfig" }
 	use { "nvim-lua/lsp_extensions.nvim" }
 	use { "nvim-lua/plenary.nvim" }
+	use { "nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
+	use { "nvim-telescope/telescope.nvim", tag = "0.1.0" }
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use { "onsails/lspkind-nvim" }
 	use { "rafamadriz/friendly-snippets" }
@@ -41,4 +45,3 @@ return require('packer').startup(function(use)
 	use { "windwp/nvim-ts-autotag" }
 	use { "ziglang/zig.vim" }
 end)
-
