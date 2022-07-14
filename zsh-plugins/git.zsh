@@ -301,7 +301,6 @@ alias gd='git diff'
 alias gf='git fetch'
 alias ggpull='git pull origin "$(git_current_branch)"'
 alias ggpush='git push origin "$(git_current_branch)"'
-alias ghist="cut -d\; -f2 ~/.zsh_history | fzf --ansi --tac --no-sort --print0 | xargs --null --delim='\n' xdotool type"
 alias glg1="git lg1"
 alias glg2="git lg2"
 alias glg3="git lg3"
