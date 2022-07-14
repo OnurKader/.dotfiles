@@ -114,18 +114,12 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/crates.nvim",
     url = "https://github.com/Saecki/crates.nvim"
   },
-  ["ctrlp.vim"] = {
-    loaded = true,
-    path = "/home/beron/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
-    url = "https://github.com/ctrlpvim/ctrlp.vim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
@@ -139,11 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/i3-vim-syntax",
     url = "https://github.com/PotatoesMaster/i3-vim-syntax"
-  },
-  ["lsp_extensions.nvim"] = {
-    loaded = true,
-    path = "/home/beron/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim",
-    url = "https://github.com/nvim-lua/lsp_extensions.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -171,7 +160,6 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-surround"] = {
-    config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18nvim-surround\frequire\0" },
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/nvim-surround",
     url = "https://github.com/kylechui/nvim-surround"
@@ -196,6 +184,11 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
+  },
   ["startuptime.vim"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/startuptime.vim",
@@ -206,10 +199,25 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
+  ["telescope-media-files.nvim"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
+    url = "https://github.com/nvim-telescope/telescope-media-files.nvim"
+  },
+  ["telescope-symbols.nvim"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/telescope-symbols.nvim",
+    url = "https://github.com/nvim-telescope/telescope-symbols.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tldr.nvim"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/tldr.nvim",
+    url = "https://github.com/mrjones2014/tldr.nvim"
   },
   ["vala.vim"] = {
     loaded = true,
@@ -279,14 +287,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
-time([[Config for nvim-surround]], false)
 if should_profile then save_profiles() end
 
 end)

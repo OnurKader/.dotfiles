@@ -1,14 +1,12 @@
+-- Check this out "https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim"
 return require('packer').startup(function(use)
-	-- use { "airblade/vim-gitgutter" }
-	-- use { "folke/which-key.nvim", config = function() require("which-key").setup() end }
-	-- use { "tpope/vim-surround" }
 	use { "PotatoesMaster/i3-vim-syntax" }
 	use { "Saecki/crates.nvim" }
 	use { "arrufat/vala.vim" }
 	use { "cespare/vim-toml" }
 	use { "christoomey/vim-sort-motion" }
-	use { "ctrlpvim/ctrlp.vim" }
 	use { "ellisonleao/gruvbox.nvim" }
+	use { "mrjones2014/tldr.nvim", requires = { "nvim-telescope/telescope.nvim" } }
 	use { "gko/vim-coloresque" }
 	use { "hrsh7th/cmp-buffer" }
 	use { "hrsh7th/cmp-cmdline" }
@@ -21,14 +19,16 @@ return require('packer').startup(function(use)
 	use { "hrsh7th/vim-vsnip-integ" }
 	use { "jose-elias-alvarez/null-ls.nvim" }
 	use { "kyazdani42/nvim-web-devicons" }
-	use { "kylechui/nvim-surround", config = function() require("nvim-surround").setup() end }
-	use { "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end }
+	use { "kylechui/nvim-surround" }
+	use { "lewis6991/gitsigns.nvim" }
 	use { "neovim/nvim-lspconfig" }
-	use { "nvim-lua/lsp_extensions.nvim" }
+	use { "nvim-telescope/telescope-symbols.nvim" }
 	use { "nvim-lua/plenary.nvim" }
-	use { "nvim-telescope/telescope-fzf-native.nvim",
+	use { "nvim-lua/popup.nvim" }
+	use { "nvim-telescope/telescope-media-files.nvim", requires = { { "nvim-telescope/telescope.nvim" } } }
+	use { "nvim-telescope/telescope-fzf-native.nvim", requires = { { "nvim-telescope/telescope.nvim" } },
 		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
-	use { "nvim-telescope/telescope.nvim", tag = "0.1.0" }
+	use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } }
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use { "onsails/lspkind-nvim" }
 	use { "rafamadriz/friendly-snippets" }

@@ -42,3 +42,25 @@ map('n', "<Leader>j", ":m+<cr>==")
 map('n', "<Leader>k", ":m-2<cr>==")
 map('n', "<Space>", "za")
 
+-- Telescope
+local telescope_builtin = require("telescope.builtin")
+map('n', "<C-p>", telescope_builtin.find_files)
+map('n', "<Leader>t", telescope_builtin.find_files)
+map('n', "<Leader>g", telescope_builtin.live_grep)
+map('n', "<Leader>b", telescope_builtin.buffers)
+map('n', "<Leader>m", function() telescope_builtin.man_pages({ sections = { "ALL" } }) end)
+
+--[[
+Map "<Leader>l*" to these
+builtin.lsp_references					Lists LSP references for word under the cursor
+builtin.lsp_incoming_calls				Lists LSP incoming calls for word under the cursor
+builtin.lsp_outgoing_calls				Lists LSP outgoing calls for word under the cursor
+builtin.lsp_document_symbols			Lists LSP document symbols in the current buffer
+builtin.lsp_workspace_symbols			Lists LSP document symbols in the current workspace
+builtin.lsp_dynamic_workspace_symbols 	Dynamically Lists LSP for all workspace symbols
+builtin.diagnostics						Lists Diagnostics for all open buffers or a specific buffer. Use option bufnr=0 for current buffer.
+builtin.lsp_implementations				Goto the implementation of the word under the cursor if there's only one, otherwise show all options in Telescope
+builtin.lsp_definitions					Goto the definition of the word under the cursor, if there's only one, otherwise show all options in Telescope
+builtin.lsp_type_definitions			Goto the definition of the type of the word under the cursor, if there's only one, otherwise show all options in Telescope
+]]--
+
