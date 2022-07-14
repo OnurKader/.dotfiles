@@ -1,5 +1,6 @@
 require("options")
 require("plugins")
-require("keybinds")
 require("lsp")
 require("treesitter")
+require("keybinds")
+require("plugin_setups")
