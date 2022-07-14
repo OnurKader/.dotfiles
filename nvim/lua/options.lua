@@ -111,22 +111,11 @@ autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 -- Clipboard & Statusline
 vim.opt.clipboard = "unnamedplus"
 vim.opt.statusline:append("%#warningmsg#")
-vim.opt.statusline:append("%{SyntasticStatuslineFlag()}")
 vim.opt.statusline:append("%*")
 
 -- I don't think this actually works
 -- aucmd("BufRead", {pattern = "/home/beron/.config/i3/*", command = "set ft=i3"})
 -- vim.filetype.add({pattern = {["/home/beron/.config/i3*/*"] = "i3"}})
-
--- CtrlP
-vim.g.ctrlp_map = "<C-p>"
-vim.g.ctrlp_cmd = "CtrlP"
-vim.g.ctrlp_switch_buffer = "et"
-vim.g.ctrlp_match_window = "bottom,order:ttb,min:2,max:15"
-vim.g.ctrlp_working_path_mode = 'a'
--- vim.g.ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-vim.g.ctrlp_show_hidden = 1
-
 
 vim.cmd [[
 " Python specific stuff
