@@ -478,10 +478,10 @@ key_bindings:
   #- { key: W,      mods: Command,         action: Quit             }
   #- { key: F,      mods: Command|Control, action: ToggleFullscreen }
 
-  - { key: J,        mods: Alt,     action: ScrollLineDown                   }
-  - { key: K,        mods: Alt,     action: ScrollLineUp                     }
-  - { key: D,        mods: Alt,     action: ScrollPageDown                   }
-  - { key: U,        mods: Alt,     action: ScrollPageUp                     }
+  # - { key: J,        mods: Alt,     action: ScrollLineDown                   }
+  # - { key: K,        mods: Alt,     action: ScrollLineUp                     }
+  # - { key: D,        mods: Alt,     action: ScrollPageDown                   }
+  # - { key: U,        mods: Alt,     action: ScrollPageUp                     }
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
   - { key: C,        mods: Alt,     action: Copy                             }
