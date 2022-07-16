@@ -24,6 +24,9 @@ telescope.setup({
 		}
 	},
 	pickers = {
+		find_files = {
+			find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+		},
 	},
 	extensions = {
 		fzf = {
@@ -46,4 +49,3 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 telescope.load_extension("media_files")
-
