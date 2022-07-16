@@ -6,6 +6,10 @@ require("nvim-surround").setup()
 
 require("gitsigns").setup()
 
+require("Comment").setup({
+	ignore = "^%s*$"
+})
+
 require("tldr").setup({
 	-- the shell command to use
 	tldr_command = "tldr",
@@ -49,3 +53,4 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 telescope.load_extension("media_files")
+

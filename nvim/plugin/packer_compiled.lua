@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   badwolf = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/badwolf",
@@ -243,11 +248,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-coloresque",
     url = "https://github.com/gko/vim-coloresque"
-  },
-  ["vim-commentary"] = {
-    loaded = true,
-    path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-commentary",
-    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-processing"] = {
     loaded = true,

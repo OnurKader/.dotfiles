@@ -6,7 +6,6 @@ return require('packer').startup(function(use)
 	use { "cespare/vim-toml" }
 	use { "christoomey/vim-sort-motion" }
 	use { "ellisonleao/gruvbox.nvim" }
-	use { "mrjones2014/tldr.nvim", requires = { "nvim-telescope/telescope.nvim" } }
 	use { "gko/vim-coloresque" }
 	use { "hrsh7th/cmp-buffer" }
 	use { "hrsh7th/cmp-cmdline" }
@@ -21,11 +20,13 @@ return require('packer').startup(function(use)
 	use { "kyazdani42/nvim-web-devicons" }
 	use { "kylechui/nvim-surround" }
 	use { "lewis6991/gitsigns.nvim" }
+	use { "mrjones2014/tldr.nvim", requires = { "nvim-telescope/telescope.nvim" } }
 	use { "neovim/nvim-lspconfig" }
-	use { "nvim-telescope/telescope-symbols.nvim" }
+	use { "numToStr/Comment.nvim" }
 	use { "nvim-lua/plenary.nvim" }
 	use { "nvim-lua/popup.nvim" }
 	use { "nvim-telescope/telescope-media-files.nvim", requires = { { "nvim-telescope/telescope.nvim" } } }
+	use { "nvim-telescope/telescope-symbols.nvim" }
 	use { "nvim-telescope/telescope-fzf-native.nvim", requires = { { "nvim-telescope/telescope.nvim" } },
 		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
 	use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } }
@@ -36,7 +37,6 @@ return require('packer').startup(function(use)
 	use { "rhysd/vim-clang-format" }
 	use { "sjl/badwolf" }
 	use { "sophacles/vim-processing" }
-	use { "tpope/vim-commentary" }
 	use { "tpope/vim-repeat" }
 	use { "tweekmonster/startuptime.vim" }
 	use { "vim-airline/vim-airline" }
@@ -44,4 +44,9 @@ return require('packer').startup(function(use)
 	use { "windwp/nvim-autopairs" }
 	use { "windwp/nvim-ts-autotag" }
 	use { "ziglang/zig.vim" }
+	-- Check out lualine https://github.com/nvim-lualine/lualine.nvim
+-- use {
+--   'nvim-lualine/lualine.nvim',
+--   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+-- }
 end)
