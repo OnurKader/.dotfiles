@@ -105,6 +105,7 @@ bindsym $mod+v split v
 # Go to center and click
 bindsym $mod+$alt+Delete $exe mousemove
 bindsym Ctrl+$alt+Delete $exe mouseclick 1
+bindsym $alt+Delete $exe mouseclick 2
 bindsym Shift+$alt+Delete $exe mouseclick 3
 
 # Rofi
