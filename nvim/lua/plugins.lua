@@ -2,6 +2,7 @@
 return require('packer').startup(function(use)
 	use { "PotatoesMaster/i3-vim-syntax" }
 	use { "Saecki/crates.nvim" }
+	use { "stephpy/vim-yaml" }
 	use { "arrufat/vala.vim" }
 	use { "cespare/vim-toml" }
 	use { "christoomey/vim-sort-motion" }
@@ -45,8 +46,9 @@ return require('packer').startup(function(use)
 	use { "windwp/nvim-ts-autotag" }
 	use { "ziglang/zig.vim" }
 	-- Check out lualine https://github.com/nvim-lualine/lualine.nvim
--- use {
---   'nvim-lualine/lualine.nvim',
---   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
--- }
+	-- use {
+	--   'nvim-lualine/lualine.nvim',
+	--   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	-- }
 end)
+
