@@ -206,9 +206,9 @@ setup_zellij ()
 		else
 			# A bad hack, if Main session doesn't exist create it
 			if [[ $(zellij ls | grep "Main") ]]; then
-				zellij
+				zellij -l disable-status-bar
 			else
-				zellij -s Main
+				zellij -s Main -l disable-status-bar
 			fi
 		fi
 
