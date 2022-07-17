@@ -54,6 +54,7 @@ telescope.setup({
 telescope.load_extension("fzf")
 telescope.load_extension("media_files")
 
+-- FIXME: SPELL option doesn't show in the statusline
 require("lualine").setup {
 	options = {
 		icons_enabled = true,

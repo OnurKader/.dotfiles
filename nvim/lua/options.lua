@@ -88,10 +88,6 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.statusline:append("%#warningmsg#")
 vim.opt.statusline:append("%*")
 
--- I don't think this actually works
--- aucmd("BufRead", {pattern = "/home/beron/.config/i3/*", command = "set ft=i3"})
--- vim.filetype.add({pattern = {["/home/beron/.config/i3*/*"] = "i3"}})
-
 vim.cmd [[
 " Python specific stuff
 au BufNewFile,BufRead *.py set textwidth=80
@@ -126,7 +122,7 @@ iab mian main
 iab flaot float
 ]]
 
--- Forgive me father for I have sinned
+-- Forgive me father for I have sinned, it doesn't read the .clang-format file >:(
 vim.cmd [[
 " Clang-Format
 autocmd FileType c,cpp,h,hpp let g:clang_format#auto_format = 0
