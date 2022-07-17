@@ -70,34 +70,9 @@ aucmd("FocusLost", {
 })
 
 -- Plugin options among other things
--- Colorscheme
-vim.g.badwolf_darkgutter = 1
-vim.g.badwolf_tabline = 2
-vim.g.badwolf_css_props_highlight = 1
-
 vim.cmd [[
   syntax enable
-  colorscheme badwolf
-]]
-
--- Airline
-vim.g.airline_powerline_fonts = 1
-
--- Had some problems so...
-vim.cmd [[
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-" Powerline Symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰ '
-let g:airline_symbols.maxlinenr = ''
-let g:airline#extensions#tabline#enabled = 0
+  colorscheme gruvbox
 ]]
 
 -- Also laziness

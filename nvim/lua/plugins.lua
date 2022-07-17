@@ -1,11 +1,12 @@
 -- Check this out "https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim"
 return require('packer').startup(function(use)
+	-- MAYBE: Switch to a single call to use with a list as the parameter
 	use { "PotatoesMaster/i3-vim-syntax" }
 	use { "Saecki/crates.nvim" }
-	use { "stephpy/vim-yaml" }
 	use { "arrufat/vala.vim" }
 	use { "cespare/vim-toml" }
 	use { "christoomey/vim-sort-motion" }
+	use { "dstein64/vim-startuptime" }
 	use { "ellisonleao/gruvbox.nvim" }
 	use { "gko/vim-coloresque" }
 	use { "hrsh7th/cmp-buffer" }
@@ -26,29 +27,22 @@ return require('packer').startup(function(use)
 	use { "numToStr/Comment.nvim" }
 	use { "nvim-lua/plenary.nvim" }
 	use { "nvim-lua/popup.nvim" }
-	use { "nvim-telescope/telescope-media-files.nvim", requires = { { "nvim-telescope/telescope.nvim" } } }
-	use { "nvim-telescope/telescope-symbols.nvim" }
+	use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
 	use { "nvim-telescope/telescope-fzf-native.nvim", requires = { { "nvim-telescope/telescope.nvim" } },
 		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
+	use { "nvim-telescope/telescope-media-files.nvim", requires = { { "nvim-telescope/telescope.nvim" } } }
+	use { "nvim-telescope/telescope-symbols.nvim" }
 	use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } }
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use { "onsails/lspkind-nvim" }
 	use { "rafamadriz/friendly-snippets" }
 	use { "ray-x/cmp-treesitter" }
 	use { "rhysd/vim-clang-format" }
-	use { "sjl/badwolf" }
 	use { "sophacles/vim-processing" }
+	use { "stephpy/vim-yaml" }
 	use { "tpope/vim-repeat" }
-	use { "tweekmonster/startuptime.vim" }
-	use { "vim-airline/vim-airline" }
-	use { "vim-airline/vim-airline-themes" }
 	use { "windwp/nvim-autopairs" }
 	use { "windwp/nvim-ts-autotag" }
 	use { "ziglang/zig.vim" }
-	-- Check out lualine https://github.com/nvim-lualine/lualine.nvim
-	-- use {
-	--   'nvim-lualine/lualine.nvim',
-	--   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	-- }
 end)
 

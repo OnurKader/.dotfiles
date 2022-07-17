@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  badwolf = {
-    loaded = true,
-    path = "/home/beron/.local/share/nvim/site/pack/packer/start/badwolf",
-    url = "https://github.com/sjl/badwolf"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -144,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -194,11 +194,6 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["startuptime.vim"] = {
-    loaded = true,
-    path = "/home/beron/.local/share/nvim/site/pack/packer/start/startuptime.vim",
-    url = "https://github.com/tweekmonster/startuptime.vim"
-  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -229,16 +224,6 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/vala.vim",
     url = "https://github.com/arrufat/vala.vim"
   },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
-  },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
-    url = "https://github.com/vim-airline/vim-airline-themes"
-  },
   ["vim-clang-format"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-clang-format",
@@ -264,6 +249,11 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-sort-motion",
     url = "https://github.com/christoomey/vim-sort-motion"
   },
+  ["vim-startuptime"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-startuptime",
+    url = "https://github.com/dstein64/vim-startuptime"
+  },
   ["vim-toml"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-toml",
@@ -278,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
     url = "https://github.com/hrsh7th/vim-vsnip-integ"
+  },
+  ["vim-yaml"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/vim-yaml",
+    url = "https://github.com/stephpy/vim-yaml"
   },
   ["zig.vim"] = {
     loaded = true,
