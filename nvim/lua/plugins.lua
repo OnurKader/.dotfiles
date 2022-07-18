@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
 	use { "rafamadriz/friendly-snippets" }
 	use { "ray-x/cmp-treesitter" }
 	use { "rhysd/vim-clang-format" }
+	use { "simrat39/rust-tools.nvim" }
 	use { "sophacles/vim-processing" }
 	use { "stephpy/vim-yaml" }
 	use { "tpope/vim-repeat" }

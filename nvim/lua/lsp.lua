@@ -1,7 +1,7 @@
 -- Setup nvim-cmp.
-local cmp = require'cmp'
-local lspkind = require'lspkind'
-require('crates').setup()
+local cmp = require("cmp")
+local lspkind = require("lspkind")
+require("crates").setup()
 
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -27,41 +27,41 @@ cmp.setup({
 			maxwidth = 64,
 			-- The function below will be called before any actual modifications from lspkind
 			-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-			before = function (_, vim_item)
+			before = function(_, vim_item)
 				-- Maybe get stuff from the link above?
 				return vim_item
 			end
 		})
 	},
 	mapping = {
-		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 		-- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-		['<C-e>'] = cmp.mapping({
+		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-		['<Tab>'] = cmp.mapping(function(fallback)
+		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif vim.fn["vsnip#available"](1) == 1 then
-				feedkey("<Plug>(vsnip-expand-or-jump)", "")
+				feedkey("<Plug>(vsnip-expand-or-jump)", '')
 			elseif has_words_before() then
 				cmp.complete()
 			else
 				fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
 			end
-		end, { "i", "s" }),
+		end, { 'i', 's' }),
 
-		['<S-Tab>'] = cmp.mapping(function()
+		["<S-Tab>"] = cmp.mapping(function()
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-				feedkey("<Plug>(vsnip-jump-prev)", "")
+				feedkey("<Plug>(vsnip-jump-prev)", '')
 			end
-		end, { "i", "s" }),
-		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		end, { 'i', 's' }),
+		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
@@ -97,7 +97,7 @@ autopairs.add_rule(Rule("'", "'", '*'))
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 cmp.event:on(
-	'confirm_done',
+	"confirm_done",
 	cmp_autopairs.on_confirm_done()
 )
 
@@ -111,7 +111,7 @@ cmp.event:on(
 -- })
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 --[[
@@ -123,22 +123,29 @@ buf_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>'
 
 -- https://github.com/neovim/nvim-lspconfig
 -- Switch these to vim.keymap.set('n', <keys>, lua function, buf_opts)
-local on_attach = function (_, buf)
+local on_attach = function(_, buf)
 	-- The rhs needs to be a string???
-	vim.api.nvim_buf_set_keymap(buf, 'n', "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {desc = "Jump to definition"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", {desc = "Jump to declaration"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", {desc = "Show hover text"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", {desc = "Jump to implementation"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", {desc = "Signature help"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", {desc = "Show type definition"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", {desc = "Rename symbol"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {desc = "Show code actions"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {desc = "Show references"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", {desc = "Show line diagnostics"})
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", {desc = "Format file"})
+	vim.api.nvim_buf_set_keymap(buf, 'n', "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Jump to definition" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Jump to declaration" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Show hover text" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>",
+		{ desc = "Jump to implementation" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Signature help" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>",
+		{ desc = "Show type definition" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename symbol" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>",
+		{ desc = "Show code actions" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Show references" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>",
+		{ desc = "Show line diagnostics" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>",
+		{ desc = "Format file" })
 end
 
-require('lspconfig')['clangd'].setup {
+local lspconfig = require("lspconfig")
+
+lspconfig["clangd"].setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = {
@@ -147,42 +154,210 @@ require('lspconfig')['clangd'].setup {
 }
 
 -- Switch to rust-tools
-require('lspconfig')['rust_analyzer'].setup {
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = {
-		["rust-analyzer"] = {
-			cargo = { allFeatures = true, autoReload = true },
-			checkOnSave = { enable = true, command = "clippy" },
+require("rust-tools").setup({
+	tools = { -- rust-tools options
+		-- automatically set inlay hints (type hints)
+		-- There is an issue due to which the hints are not applied on the first
+		-- opened file. For now, write to the file to trigger a reapplication of
+		-- the hints or just run :RustSetInlayHints.
+		-- default: true
+		autoSetHints = true,
+
+		-- whether to show hover actions inside the hover window
+		-- this overrides the default hover handler so something like lspsaga.nvim's hover would be overriden by this
+		-- default: true
+		hover_with_actions = true,
+
+		-- how to execute terminal commands
+		-- options right now: termopen / quickfix
+		executor = require("rust-tools/executors").termopen,
+
+		-- callback to execute once rust-analyzer is done initializing the workspace
+		-- The callback receives one parameter indicating the `health` of the server: "ok" | "warning" | "error"
+		on_initialized = nil,
+
+		-- These apply to the default RustSetInlayHints command
+		inlay_hints = {
+
+			-- Only show inlay hints for the current line
+			only_current_line = false,
+
+			-- Event which triggers a refersh of the inlay hints.
+			-- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
+			-- not that this may cause higher CPU usage.
+			-- This option is only respected when only_current_line and
+			-- autoSetHints both are true.
+			only_current_line_autocmd = "CursorHold",
+
+			-- whether to show parameter hints with the inlay hints or not
+			-- default: true
+			show_parameter_hints = true,
+
+			-- whether to show variable name before type hints with the inlay hints or not
+			-- default: false
+			show_variable_name = false,
+
+			-- prefix for parameter hints
+			-- default: "<-"
+			parameter_hints_prefix = "<- ",
+
+			-- prefix for all the other hints (type, chaining)
+			-- default: "=>"
+			other_hints_prefix = "=> ",
+
+			-- whether to align to the lenght of the longest line in the file
+			max_len_align = false,
+
+			-- padding from the left if max_len_align is true
+			max_len_align_padding = 1,
+
+			-- whether to align to the extreme right or not
+			right_align = false,
+
+			-- padding from the right if right_align is true
+			right_align_padding = 7,
+
+			-- The color of the hints
+			highlight = "Comment",
 		},
-	}
-}
 
-require('lspconfig')['pyright'].setup {
+		-- options same as lsp hover / vim.lsp.util.open_floating_preview()
+		hover_actions = {
+			-- the border that is used for the hover window
+			-- see vim.api.nvim_open_win()
+			border = {
+				{ "╭", "FloatBorder" },
+				{ "─", "FloatBorder" },
+				{ "╮", "FloatBorder" },
+				{ "│", "FloatBorder" },
+				{ "╯", "FloatBorder" },
+				{ "─", "FloatBorder" },
+				{ "╰", "FloatBorder" },
+				{ "│", "FloatBorder" },
+			},
+
+			-- whether the hover action window gets automatically focused
+			-- default: false
+			auto_focus = false,
+		},
+
+		-- settings for showing the crate graph based on graphviz and the dot
+		-- command
+		crate_graph = {
+			-- Backend used for displaying the graph
+			-- see: https://graphviz.org/docs/outputs/
+			-- default: x11
+			backend = "x11",
+			-- where to store the output, nil for no output stored (relative
+			-- path from pwd)
+			-- default: nil
+			output = nil,
+			-- true for all crates.io and external crates, false only the local
+			-- crates
+			-- default: true
+			full = true,
+
+			-- List of backends found on: https://graphviz.org/docs/outputs/
+			-- Is used for input validation and autocompletion
+			-- Last updated: 2021-08-26
+			enabled_graphviz_backends = {
+				"bmp",
+				"cgimage",
+				"canon",
+				"dot",
+				"gv",
+				"xdot",
+				"xdot1.2",
+				"xdot1.4",
+				"eps",
+				"exr",
+				"fig",
+				"gd",
+				"gd2",
+				"gif",
+				"gtk",
+				"ico",
+				"cmap",
+				"ismap",
+				"imap",
+				"cmapx",
+				"imap_np",
+				"cmapx_np",
+				"jpg",
+				"jpeg",
+				"jpe",
+				"jp2",
+				"json",
+				"json0",
+				"dot_json",
+				"xdot_json",
+				"pdf",
+				"pic",
+				"pct",
+				"pict",
+				"plain",
+				"plain-ext",
+				"png",
+				"pov",
+				"ps",
+				"ps2",
+				"psd",
+				"sgi",
+				"svg",
+				"svgz",
+				"tga",
+				"tiff",
+				"tif",
+				"tk",
+				"vml",
+				"vmlz",
+				"wbmp",
+				"webp",
+				"xlib",
+				"x11",
+			},
+		},
+	},
+
+	-- all the opts to send to nvim-lspconfig
+	-- these override the defaults set by rust-tools.nvim
+	-- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
+	server = {
+		-- standalone file support
+		-- setting it to false may improve startup time
+		standalone = true,
+		cargo = { allFeatures = true, autoReload = true },
+		checkOnSave = { enable = true, command = "clippy" },
+		on_attach = on_attach,
+	}, -- rust-analyer options
+})
+-- require("rust-tools.inlay_hints").toggle_inlay_hints()
+
+lspconfig["pyright"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-}
+})
 
-require('lspconfig')['tsserver'].setup {
+lspconfig["tsserver"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-}
+})
 
-require('lspconfig')['bashls'].setup {
+lspconfig["bashls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-}
+})
 
-require('lspconfig')['sumneko_lua'].setup {
+lspconfig["sumneko_lua"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
 		Lua = {
 			diagnostics = {
 				-- Get the language server to recognize the `vim` global
-				globals = {'vim'},
+				globals = { "vim" },
 			},
 		},
 	},
-}
+})
 
