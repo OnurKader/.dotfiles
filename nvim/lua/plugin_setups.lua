@@ -1,3 +1,5 @@
+require("impatient").enable_profile()
+
 require("nvim-web-devicons").setup({
 	default = true;
 })

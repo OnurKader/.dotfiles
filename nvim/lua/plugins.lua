@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
 	use { "kyazdani42/nvim-web-devicons" }
 	use { "kylechui/nvim-surround" }
 	use { "lewis6991/gitsigns.nvim" }
+	use { "lewis6991/impatient.nvim" }
 	use { "mrjones2014/tldr.nvim", requires = { "nvim-telescope/telescope.nvim" } }
 	use { "neovim/nvim-lspconfig" }
 	use { "numToStr/Comment.nvim" }
