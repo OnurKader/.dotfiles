@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
 	use { "christoomey/vim-sort-motion" }
 	use { "dstein64/vim-startuptime" }
 	use { "ellisonleao/gruvbox.nvim" }
+	use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
 	use { "gko/vim-coloresque" }
 	use { "hrsh7th/cmp-buffer" }
 	use { "hrsh7th/cmp-cmdline" }
