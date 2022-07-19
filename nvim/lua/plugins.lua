@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
 	use { "hrsh7th/nvim-cmp" }
 	use { "hrsh7th/vim-vsnip" }
 	use { "hrsh7th/vim-vsnip-integ" }
+	use { "jghauser/mkdir.nvim" }
 	use { "jose-elias-alvarez/null-ls.nvim" }
 	use { "kyazdani42/nvim-web-devicons" }
 	use { "kylechui/nvim-surround" }

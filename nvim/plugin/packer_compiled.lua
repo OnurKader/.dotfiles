@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["mkdir.nvim"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/mkdir.nvim",
+    url = "https://github.com/jghauser/mkdir.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
