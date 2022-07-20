@@ -40,3 +40,4 @@ label=
 [nightlight]
 interval=once
 
+; vim:ft=dosini
