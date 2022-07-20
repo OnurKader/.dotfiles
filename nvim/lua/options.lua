@@ -37,6 +37,7 @@ vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.smarttab = true
 vim.opt.softtabstop = 4
+vim.opt.spelllang = "en_us,en_gb,tr"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.tabstop = 4
