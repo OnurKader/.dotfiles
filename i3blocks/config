@@ -38,6 +38,7 @@ interval=1
 label=
 
 [nightlight]
+full-name=RedShift
 interval=once
 
 ; vim:ft=dosini
