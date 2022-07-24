@@ -37,8 +37,8 @@ command=battery
 interval=1
 label=
 
-[nightlight]
-full-name=RedShift
-interval=once
+[empty_spaces]
+full-name=What are we living for
+command=echo ""
 
 ; vim:ft=dosini

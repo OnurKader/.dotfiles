@@ -356,6 +356,7 @@ exec_always --no-startup-id numlockx on&
 exec_always --no-startup-id dunst&
 exec_always --no-startup-id /usr/lib/kdeconnectd
 exec_always --no-startup-id kdeconnect-indicator
+exec_always --no-startup-id nightlight
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Middle Emulation Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Disable While Typing Enabled" 0
@@ -363,5 +364,4 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
 # exec_always --no-startup-id activitywatcher&
 exec_always --no-startup-id copyq&
-$exe exec $term -t "TermStart"&
 
