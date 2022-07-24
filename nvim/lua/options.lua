@@ -1,4 +1,4 @@
-local augroup = vim.api.nvim_create_augroup("numbertoggle", {clear = true})
+local augroup = vim.api.nvim_create_augroup("numbertoggle", { clear = true })
 local aucmd = vim.api.nvim_create_autocmd
 
 vim.opt.autoread = true
@@ -53,20 +53,22 @@ vim.opt.cmdheight = 2
 
 vim.g.mapleader = ','
 vim.g["clang_format#detect_style_file"] = 1
+-- vim.g.do_filetype_lua = 1
+-- vim.g.did_load_filetypes = 0
 
 -- Should I change the set *number* stuff to lua versions
 
 -- InsertEnter
 aucmd("FocusGained", {
 	pattern = "*",
-	group= augroup,
+	group = augroup,
 	command = "set relativenumber number"
 })
 
 -- InsertLeave
 aucmd("FocusLost", {
 	pattern = "*",
-	group= augroup,
+	group = augroup,
 	command = "set norelativenumber"
 })
 
@@ -108,7 +110,7 @@ let c_no_curly_error=1
 " Remove Whitespace
 autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge | endif
 " Enable spell check for git commits
-autocmd BufRead COMMIT_EDITMSG set spell
+autocmd FileType gitcommit set spell
 " Abbreviations
 iab whit with
 iab wiht with
