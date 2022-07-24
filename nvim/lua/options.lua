@@ -215,3 +215,12 @@ let g:clang_format#style_options = {
 	\	"UseTab": "Always" }
 ]]
 
+-- Sorry about the laziness again, NeoVide config
+vim.cmd [[
+if exists("g:neovide")
+	let g:neovide_refresh_rate=60
+	let g:neovide_cursor_animation_length=0
+	set guifont=Hack\ Nerd\ Font:h9
+endif
+]]
+
