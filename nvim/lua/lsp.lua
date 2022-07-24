@@ -363,3 +363,8 @@ lspconfig["sumneko_lua"].setup({
 	},
 })
 
+lspconfig["gdscript"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
