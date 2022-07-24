@@ -218,5 +218,5 @@ setup_zellij ()
 	fi
 }
 
-setup_zellij
+# setup_zellij
 
