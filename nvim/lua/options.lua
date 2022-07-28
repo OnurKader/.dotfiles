@@ -224,3 +224,6 @@ if exists("g:neovide")
 endif
 ]]
 
+-- For some reason xxx.PKGBUILD files aren't recognized as PKGBUILD
+aucmd("BufEnter", { pattern = "*.PKGBUILD", command = "set ft=PKGBUILD" })
+
