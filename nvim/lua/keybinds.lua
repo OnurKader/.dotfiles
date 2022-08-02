@@ -51,6 +51,9 @@ map('n', "<Leader>g", telescope_builtin.live_grep)
 map('n', "<Leader>b", telescope_builtin.buffers)
 map('n', "<Leader>m", function() telescope_builtin.man_pages({ sections = { "ALL" } }) end)
 
+map('i', "<C-e>", "<Esc>A")
+map('i', "<C-a>", "<Esc>I")
+
 --[[
 Map "<Leader>l*" to these
 builtin.lsp_references					Lists LSP references for word under the cursor
