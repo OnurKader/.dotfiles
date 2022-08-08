@@ -75,8 +75,8 @@ gcl ()
 
 get_total_video_length ()
 {
-	for f in ${@:-*}; do mediainfo "$f" | awk -F: '/Duration/{print $2}' | head -n1 \
-	| xargs -I '{}' qalc '{} to seconds' | awk '{print $9}'; done | paste -sd+ | bc | xargs -I '{}' qalc '{} seconds'
+	for f in ${@:-*}; do mediainfo "$f" | awk -F: '/Duration/{print $2}' | head -n1 | sd 'h ' 'h+' | sd 'min ' 'min+'; done \
+	| paste -sd+ | xargs qalc | hck -d'[=]' -f2
 }
 
 play ()
