@@ -130,6 +130,7 @@ local on_attach = function(_, buf)
 	vim.api.nvim_buf_set_keymap(buf, 'n', "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Jump to definition" })
 	vim.api.nvim_buf_set_keymap(buf, 'n', "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Jump to declaration" })
 	vim.api.nvim_buf_set_keymap(buf, 'n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Show hover text" })
+	vim.api.nvim_buf_set_keymap(buf, 'n', 'Kr', "<cmd>RustHoverActions<CR>", { desc = "Hover actions for rust-tools" })
 	vim.api.nvim_buf_set_keymap(buf, 'n', "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>",
 		{ desc = "Jump to implementation" })
 	vim.api.nvim_buf_set_keymap(buf, 'n', "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Signature help" })
@@ -164,11 +165,6 @@ require("rust-tools").setup({
 		-- the hints or just run :RustSetInlayHints.
 		-- default: true
 		autoSetHints = true,
-
-		-- whether to show hover actions inside the hover window
-		-- this overrides the default hover handler so something like lspsaga.nvim's hover would be overriden by this
-		-- default: true
-		hover_with_actions = true,
 
 		-- how to execute terminal commands
 		-- options right now: termopen / quickfix
