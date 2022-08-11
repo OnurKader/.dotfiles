@@ -33,7 +33,7 @@ color=#EEEFF2
 interval=15
 command=battery
 
-[clock]
+[datetime]
 interval=1
 label=
 
