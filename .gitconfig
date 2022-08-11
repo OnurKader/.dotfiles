@@ -34,3 +34,5 @@
 	fontdiff = -family \"DejaVu Sans Mono\" -size 14 -weight normal -slant roman -underline 0 -overstrike 0
 	tabsize = 4
 
+[safe]
+	directory = /usr/lib/vlang/thirdparty/tcc

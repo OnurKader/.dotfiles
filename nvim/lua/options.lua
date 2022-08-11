@@ -227,3 +227,7 @@ endif
 -- For some reason xxx.PKGBUILD files aren't recognized as PKGBUILD
 aucmd("BufEnter", { pattern = "*.PKGBUILD", command = "set ft=PKGBUILD" })
 
+-- I forgot verilog so let's just focus on vlang
+aucmd("BufEnter", { pattern = "*.v", command = "set ft=vlang" })
+aucmd("BufEnter", { pattern = "*.vsh", command = "set ft=vlang" })
+

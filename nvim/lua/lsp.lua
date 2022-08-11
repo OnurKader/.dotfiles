@@ -364,3 +364,8 @@ lspconfig["gdscript"].setup({
 	on_attach = on_attach,
 })
 
+lspconfig["vls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+

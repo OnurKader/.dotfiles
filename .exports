@@ -42,6 +42,9 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 export DIFFPROG="nvim -d"
 
+export VEXE="/usr/lib/vlang/v"
+export VEXEROOT="/usr/lib/vlang"
+
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
