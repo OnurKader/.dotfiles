@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
 	use { "ellisonleao/gruvbox.nvim" }
 	use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
 	use { "gko/vim-coloresque" }
+	use { "gpanders/editorconfig.nvim" }
 	use { "habamax/vim-godot" }
 	use { "hrsh7th/cmp-buffer" }
 	use { "hrsh7th/cmp-cmdline" }
@@ -27,6 +28,7 @@ return require('packer').startup(function(use)
 	use { "kylechui/nvim-surround" }
 	use { "lewis6991/gitsigns.nvim" }
 	use { "lewis6991/impatient.nvim" }
+	use { "luisiacc/gruvbox-baby" }
 	use { "mrjones2014/tldr.nvim", requires = { "nvim-telescope/telescope.nvim" } }
 	use { "neovim/nvim-lspconfig" }
 	use { "numToStr/Comment.nvim" }
