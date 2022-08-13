@@ -42,8 +42,8 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 export DIFFPROG="nvim -d"
 
-export VEXE="/usr/lib/vlang/v"
-export VEXEROOT="/usr/lib/vlang"
+export VEXE="$HOME/Code/v/v"
+export VEXEROOT="$HOME/Code/v"
 
 zstyle ':completion:*' menu select
 zmodload zsh/complist

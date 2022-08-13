@@ -8,6 +8,7 @@ export PATH="$PATH:$XDG_DATA_HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 export PATH="$PATH:$HOME/.local/share/.npm_global/bin"
+export PATH="$PATH:$HOME/.nimble/bin"
 
 export TERM=alacritty
 export BROWSER=firefox
