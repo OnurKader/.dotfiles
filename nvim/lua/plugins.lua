@@ -1,6 +1,7 @@
 -- Check this out "https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim"
 return require('packer').startup(function(use)
 	-- MAYBE: Switch to a single call to use with a list as the parameter
+	use { "Pocco81/true-zen.nvim" }
 	use { "PotatoesMaster/i3-vim-syntax" }
 	use { "Saecki/crates.nvim" }
 	use { "arrufat/vala.vim" }

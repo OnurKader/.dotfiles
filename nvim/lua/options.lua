@@ -58,20 +58,6 @@ vim.g["clang_format#detect_style_file"] = 1
 
 -- Should I change the set *number* stuff to lua versions
 
--- InsertEnter
-aucmd("FocusGained", {
-	pattern = "*",
-	group = augroup,
-	command = "set relativenumber number"
-})
-
--- InsertLeave
-aucmd("FocusLost", {
-	pattern = "*",
-	group = augroup,
-	command = "set norelativenumber"
-})
-
 -- Plugin options among other things
 vim.cmd [[
   syntax enable

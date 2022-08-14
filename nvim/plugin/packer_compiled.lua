@@ -254,6 +254,11 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
   },
+  ["true-zen.nvim"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/true-zen.nvim",
+    url = "https://github.com/Pocco81/true-zen.nvim"
+  },
   ["vala.vim"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/vala.vim",
