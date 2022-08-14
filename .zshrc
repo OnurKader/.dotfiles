@@ -10,6 +10,13 @@ zle -N self-insert url-quote-magic
 autoload -U select-word-style
 select-word-style bash
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Exports
 source ~/.exports
 
@@ -24,7 +31,11 @@ done
 fpath=(~/Code/.dotfiles/zsh-plugins/zsh-completions/src $fpath)
 
 autoload -Uz compinit
-compinit
+if [ -n "$('find' $HOME -maxdepth 1 -mtime -1 -name .zcompdump)" ]; then
+	compinit -C
+else
+	compinit
+fi
 compdef ytdl=yt-dlp
 
 mkcd () { mkdir -p "$@"; cd "$@"; }
@@ -178,18 +189,14 @@ bindkey "^H" backward-delete-word
 bindkey "\C-k" vi-kill-eol
 bindkey ' ' magic-space
 
-# Don't really know how to change terminfo for Alacritty or XTERM so I'm calling tabs -4
-tabs -4
-
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-export ATUIN_NOBIND="true"
-eval "$(atuin init zsh)"
-bindkey '^r' _atuin_search_widget
-
-xset b off
+# export ATUIN_NOBIND="true"
+# eval "$(atuin init zsh)"
+# bindkey '^r' _atuin_search_widget
 
 # zellij Autostart
 export ZELLIJ_AUTO_ATTACH="false"
@@ -219,4 +226,7 @@ setup_zellij ()
 }
 
 # setup_zellij
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

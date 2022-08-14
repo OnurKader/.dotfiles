@@ -7,7 +7,6 @@ $git_branch\
 $git_commit\
 $git_state\
 $git_status\
-$python\
 $custom\
 $cmd_duration\
 $status\
