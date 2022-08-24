@@ -482,6 +482,10 @@ key_bindings:
   # - { key: K,        mods: Alt,     action: ScrollLineUp                     }
   # - { key: D,        mods: Alt,     action: ScrollPageDown                   }
   # - { key: U,        mods: Alt,     action: ScrollPageUp                     }
+  - { key: Down,      mods: Alt|Shift,  action: ScrollLineDown               }
+  - { key: Up,        mods: Alt|Shift,  action: ScrollLineUp                 }
+  - { key: PageDown,  mods: Alt|Shift,  action: ScrollPageDown               }
+  - { key: PageUp,    mods: Alt|Shift,  action: ScrollPageUp                 }
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
   - { key: C,        mods: Alt,     action: Copy                             }
