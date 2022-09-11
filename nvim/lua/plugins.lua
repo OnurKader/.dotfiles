@@ -2,6 +2,7 @@
 return require('packer').startup(function(use)
 	-- MAYBE: Switch to a single call to use with a list as the parameter
 	use { "Pocco81/true-zen.nvim" }
+	use { "NvChad/nvim-colorizer.lua" }
 	use { "PotatoesMaster/i3-vim-syntax" }
 	use { "Saecki/crates.nvim" }
 	use { "arrufat/vala.vim" }
@@ -10,7 +11,6 @@ return require('packer').startup(function(use)
 	use { "dstein64/vim-startuptime" }
 	use { "ellisonleao/gruvbox.nvim" }
 	use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
-	use { "gko/vim-coloresque" }
 	use { "gpanders/editorconfig.nvim" }
 	use { "habamax/vim-godot" }
 	use { "hrsh7th/cmp-buffer" }
@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
 	use { "hrsh7th/vim-vsnip-integ" }
 	use { "jghauser/mkdir.nvim" }
 	use { "jose-elias-alvarez/null-ls.nvim" }
+	use { "krady21/compiler-explorer.nvim", requires = { "nvim-lua/plenary.nvim" } }
 	use { "kyazdani42/nvim-web-devicons" }
 	use { "kylechui/nvim-surround" }
 	use { "lewis6991/gitsigns.nvim" }
