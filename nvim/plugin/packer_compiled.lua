@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/crates.nvim",
     url = "https://github.com/Saecki/crates.nvim"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/beron/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["editorconfig.nvim"] = {
     loaded = true,
     path = "/home/beron/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
