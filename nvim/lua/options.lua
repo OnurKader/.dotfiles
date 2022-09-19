@@ -217,3 +217,12 @@ aucmd("BufEnter", { pattern = "*.PKGBUILD", command = "set ft=PKGBUILD" })
 aucmd("BufEnter", { pattern = "*.v", command = "set ft=vlang" })
 aucmd("BufEnter", { pattern = "*.vsh", command = "set ft=vlang" })
 
+-- For some reason the current line number wasn't being highlighted properly
+-- Pretty sure CursorLineNr is unnecessary
+vim.cmd [[
+hi LineNr guifg=#fabd2f
+hi LineNrAbove guifg=#7c6f64
+hi LineNrBelow guifg=#7c6f64
+hi CursorLineNr guifg=#fabd2f
+]]
+
