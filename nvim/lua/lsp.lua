@@ -148,12 +148,30 @@ end
 
 local lspconfig = require("lspconfig")
 
+local clangd_capabilities = capabilities
+clangd_capabilities.textDocument.semanticHighlighting = true
+
 lspconfig["clangd"].setup {
-	capabilities = capabilities,
+	capabilities = clangd_capabilities,
 	on_attach = on_attach,
 	flags = {
 		debounce_text_changes = 300,
-	}
+	},
+	cmd = {
+		'clangd',
+		'--background-index',
+		'--pch-storage=memory',
+		'--clang-tidy', -- Look at clang-tidy options
+		'--suggest-missing-includes',
+		'--cross-file-rename',
+		'--completion-style=detailed',
+	},
+	init_options = {
+		clangdFileStatus = true,
+		usePlaceholders = true,
+		completeUnimported = true,
+		semanticHighlighting = true,
+	},
 }
 
 -- Switch to rust-tools
@@ -367,5 +385,28 @@ lspconfig["gdscript"].setup({
 lspconfig["vls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+})
+
+local nl = require("null-ls")
+local nl_builtins = nl.builtins
+
+nl.setup({
+	on_attach = on_attach,
+	sources = {
+		nl_builtins.code_actions.shellcheck,
+		nl_builtins.diagnostics.clang_check,
+		nl_builtins.diagnostics.cppcheck.with({ "--enable=warning,style,performance,portability,information,missingInclude",
+			"--template=gcc", "$FILENAME" }),
+		nl_builtins.diagnostics.editorconfig_checker,
+		nl_builtins.diagnostics.shellcheck,
+		nl_builtins.diagnostics.zsh,
+		nl_builtins.formatting.clang_format,
+		nl_builtins.formatting.prettier,
+		nl_builtins.diagnostics.flake8,
+		nl_builtins.formatting.black,
+		nl_builtins.formatting.rustfmt,
+		nl_builtins.formatting.shfmt,
+		nl_builtins.formatting.stylua
+	},
 })
 

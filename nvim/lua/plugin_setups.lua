@@ -245,3 +245,5 @@ require("colorizer").setup {
 	buftypes = {},
 }
 
+require("diffview").setup()
+
