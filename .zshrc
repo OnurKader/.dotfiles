@@ -14,7 +14,7 @@ select-word-style bash
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Exports
@@ -24,7 +24,7 @@ source ~/.exports
 source ~/.aliases
 
 source ~/Code/.dotfiles/zsh-plugins/fast-syntax-highlighting/F-Sy-H.plugin.zsh
-for plugin in ~/Code/.dotfiles/zsh-plugins/*.zsh; do
+for plugin in ~/Code/.dotfiles/zsh-plugins/*.zsh ~/Code/.dotfiles/zsh-plugins/zman/zman.zsh; do
 	source $plugin
 done
 
@@ -65,13 +65,13 @@ strlen ()
 
 man ()
 {
-    LESS_TERMCAP_md=$'\e[01;31m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;33m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[01;32m' \
-    command man "$@"
+	LESS_TERMCAP_md=$'\e[01;31m' \
+	LESS_TERMCAP_me=$'\e[0m' \
+	LESS_TERMCAP_se=$'\e[0m' \
+	LESS_TERMCAP_so=$'\e[01;44;33m' \
+	LESS_TERMCAP_ue=$'\e[0m' \
+	LESS_TERMCAP_us=$'\e[01;32m' \
+	command man "$@"
 }
 
 gcl ()
@@ -124,43 +124,43 @@ bindkey -M viins '^?' backward-delete-char
 bindkey -M vicmd '^?' backward-delete-char
 # [Delete] - delete forward
 if [[ -n "${terminfo[kdch1]}" ]]; then
-  bindkey -M emacs "${terminfo[kdch1]}" delete-char
-  bindkey -M viins "${terminfo[kdch1]}" delete-char
-  bindkey -M vicmd "${terminfo[kdch1]}" delete-char
+	bindkey -M emacs "${terminfo[kdch1]}" delete-char
+	bindkey -M viins "${terminfo[kdch1]}" delete-char
+	bindkey -M vicmd "${terminfo[kdch1]}" delete-char
 else
-  bindkey -M emacs "^[[3~" delete-char
-  bindkey -M viins "^[[3~" delete-char
-  bindkey -M vicmd "^[[3~" delete-char
+	bindkey -M emacs "^[[3~" delete-char
+	bindkey -M viins "^[[3~" delete-char
+	bindkey -M vicmd "^[[3~" delete-char
 
-  bindkey -M emacs "^[3;5~" delete-char
-  bindkey -M viins "^[3;5~" delete-char
-  bindkey -M vicmd "^[3;5~" delete-char
+	bindkey -M emacs "^[3;5~" delete-char
+	bindkey -M viins "^[3;5~" delete-char
+	bindkey -M vicmd "^[3;5~" delete-char
 fi
 
 # [PageUp] - Up a line of history
 if [[ -n "${terminfo[kpp]}" ]]; then
-  bindkey -M emacs "${terminfo[kpp]}" up-line-or-history
-  bindkey -M viins "${terminfo[kpp]}" up-line-or-history
-  bindkey -M vicmd "${terminfo[kpp]}" up-line-or-history
+	bindkey -M emacs "${terminfo[kpp]}" up-line-or-history
+	bindkey -M viins "${terminfo[kpp]}" up-line-or-history
+	bindkey -M vicmd "${terminfo[kpp]}" up-line-or-history
 fi
 # [PageDown] - Down a line of history
 if [[ -n "${terminfo[knp]}" ]]; then
-  bindkey -M emacs "${terminfo[knp]}" down-line-or-history
-  bindkey -M viins "${terminfo[knp]}" down-line-or-history
-  bindkey -M vicmd "${terminfo[knp]}" down-line-or-history
+	bindkey -M emacs "${terminfo[knp]}" down-line-or-history
+	bindkey -M viins "${terminfo[knp]}" down-line-or-history
+	bindkey -M vicmd "${terminfo[knp]}" down-line-or-history
 fi
 
 # [Home] - Go to beginning of line
 if [[ -n "${terminfo[khome]}" ]]; then
-  bindkey -M emacs "${terminfo[khome]}" beginning-of-line
-  bindkey -M viins "${terminfo[khome]}" beginning-of-line
-  bindkey -M vicmd "${terminfo[khome]}" beginning-of-line
+	bindkey -M emacs "${terminfo[khome]}" beginning-of-line
+	bindkey -M viins "${terminfo[khome]}" beginning-of-line
+	bindkey -M vicmd "${terminfo[khome]}" beginning-of-line
 fi
 # [End] - Go to end of line
 if [[ -n "${terminfo[kend]}" ]]; then
-  bindkey -M emacs "${terminfo[kend]}"  end-of-line
-  bindkey -M viins "${terminfo[kend]}"  end-of-line
-  bindkey -M vicmd "${terminfo[kend]}"  end-of-line
+	bindkey -M emacs "${terminfo[kend]}"  end-of-line
+	bindkey -M viins "${terminfo[kend]}"  end-of-line
+	bindkey -M vicmd "${terminfo[kend]}"  end-of-line
 fi
 
 # [Ctrl-Delete] - delete whole forward-word
@@ -179,9 +179,9 @@ bindkey -M vicmd '^[[1;5D' backward-word
 
 # [Shift-Tab] - move through the completion menu backwards
 if [[ -n "${terminfo[kcbt]}" ]]; then
-  bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
-  bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete
-  bindkey -M vicmd "${terminfo[kcbt]}" reverse-menu-complete
+	bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
+	bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete
+	bindkey -M vicmd "${terminfo[kcbt]}" reverse-menu-complete
 fi
 
 bindkey "^[[3;5~" delete-word
