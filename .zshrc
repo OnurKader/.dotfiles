@@ -198,6 +198,10 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # eval "$(atuin init zsh)"
 # bindkey '^r' _atuin_search_widget
 
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 # zellij Autostart
 export ZELLIJ_AUTO_ATTACH="false"
 export ZELLIJ_AUTO_EXIT="false"
