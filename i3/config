@@ -320,9 +320,9 @@ assign [class="jetbrains-clion"] $workspace3
 assign [class="(Mm)industry"] $workspace8
 assign [instance="(Mm)industry"] $workspace8
 assign [instance="^krita$"] $workspace4
-assign [class="polymc"] $workspace9
-assign [class="PolyMC"] $workspace9
-assign [instance="polymc"] $workspace9
+assign [class="prismlauncher"] $workspace9
+assign [class="PrismLauncher"] $workspace9
+assign [instance="prismlauncher"] $workspace9
 
 for_window [class="Code"] move workspace $workspace3
 for_window [class="Firefox"] move workspace $workspace1
