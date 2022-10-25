@@ -190,10 +190,10 @@ bindsym $mod+r reload
 bindsym $mod+Shift+r restart
 
 # Resize Window
-bindsym $mod+Shift+y $exe i3resize left 5
-bindsym $mod+Shift+u $exe i3resize down 5
-bindsym $mod+Shift+o $exe i3resize up 5
-bindsym $mod+Shift+p $exe i3resize right 5
+bindsym $mod+Shift+y $exe i3resize left 10
+bindsym $mod+Shift+u $exe i3resize down 10
+bindsym $mod+Shift+o $exe i3resize up 10
+bindsym $mod+Shift+p $exe i3resize right 10
 bindsym $mod+Ctrl+y  $exe i3resize left 48
 bindsym $mod+Ctrl+u  $exe i3resize down 48
 bindsym $mod+Ctrl+o  $exe i3resize up 48
@@ -217,6 +217,11 @@ bindsym $mod+Left	focus left
 bindsym $mod+Down	focus down
 bindsym $mod+Up		focus up
 bindsym $mod+Right	focus right
+
+bindsym $mod+Shift+Left	 move window left
+bindsym $mod+Shift+Down	 move window down
+bindsym $mod+Shift+Up	 move window up
+bindsym $mod+Shift+Right move window right
 
 # bindsym $mod+Insert exec --no-startup-id showclip
 bindsym Print $exe screenshot
