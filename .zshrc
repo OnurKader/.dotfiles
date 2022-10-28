@@ -201,6 +201,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+bindkey "^Xe" edit-command-line
 
 # zellij Autostart
 export ZELLIJ_AUTO_ATTACH="false"
