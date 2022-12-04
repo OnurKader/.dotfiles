@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
 	use { "cespare/vim-toml" }
 	use { "christoomey/vim-sort-motion" }
 	use { "dstein64/vim-startuptime" }
+	use { "eandrju/cellular-automaton.nvim" }
 	use { "ellisonleao/gruvbox.nvim" }
 	use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
 	use { "gpanders/editorconfig.nvim" }

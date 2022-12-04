@@ -394,10 +394,11 @@ nl.setup({
 	on_attach = on_attach,
 	sources = {
 		nl_builtins.code_actions.shellcheck,
-		nl_builtins.diagnostics.clang_check,
-		nl_builtins.diagnostics.cppcheck.with({ "--enable=warning,style,performance,portability,information,missingInclude",
-			"--template=gcc", "$FILENAME" }),
-		nl_builtins.diagnostics.editorconfig_checker,
+		-- nl_builtins.diagnostics.clang_check,
+		-- So annoying, it's checking headers, and reporting them in the source file but obviously the location is wrong
+		-- nl_builtins.diagnostics.cppcheck.with({ "-j4", "--std=c++23", "--suppress='*:source/*.h'", "--suppress='*:source/*.hpp'", "--suppress='*:src/*.hpp'", "--suppress='*:src/*.h'", "--suppress='*:**/*.hpp'", "--suppress='*:**/*.h'", "--suppress='*:include/*.h'", "--suppress='*:include/*.hpp'", "--suppress='*:*.hpp'", "--suppress='*:*.h'", "--enable=warning,style,performance,portability,information,missingInclude",
+		-- 	"--template=gcc", "$FILENAME" }),
+		-- nl_builtins.diagnostics.editorconfig_checker,
 		nl_builtins.diagnostics.shellcheck,
 		nl_builtins.diagnostics.zsh,
 		nl_builtins.formatting.clang_format,

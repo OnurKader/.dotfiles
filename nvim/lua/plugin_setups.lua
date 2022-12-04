@@ -31,7 +31,7 @@ telescope.setup({
 	},
 	pickers = {
 		find_files = {
-			find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+			find_command = { "fd", "--type", "f", "-H", "--strip-cwd-prefix" }
 		},
 	},
 	extensions = {
@@ -48,7 +48,6 @@ telescope.setup({
 			-- find_cmd = "rg" -- find command (defaults to `fd`)
 		},
 		tldr = {
-
 		}
 	},
 })
