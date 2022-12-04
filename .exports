@@ -45,6 +45,8 @@ export DIFFPROG="nvim -d"
 export VEXE="$HOME/Code/v/v"
 export VEXEROOT="$HOME/Code/v"
 
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
