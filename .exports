@@ -239,6 +239,7 @@ ex=:\
 # xdg-ninja stuff
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 export CGDB_DIR="$XDG_CONFIG_HOME"/cgdb
+export CONAN_USER_HOME="$XDG_CONFIG_HOME"
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GOPATH="$XDG_DATA_HOME"/go
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
@@ -250,4 +251,5 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export WINEPREFIX="$XDG_DATA_HOME"/wine
+export XCURSOR_PATH="$XCURSOR_PATH:${XDG_DATA_HOME}/icons:/usr/share/icons"
 

@@ -277,7 +277,7 @@ bindsym XF86AudioMute        $exe pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessUp   $exe light -A 9
 bindsym XF86MonBrightnessDown $exe light -U 9
 bindsym XF86Favorites $exe light -S 100
-bindsym XF86Calculator $exe light -S 65
+bindsym XF86Calculator $exe light -S 64
 
 # Media player controls
 bindsym XF86AudioPlay  $exe playerctl play-pause
