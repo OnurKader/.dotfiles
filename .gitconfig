@@ -30,9 +30,10 @@
 	defaultBranch = master
 
 [gui]
-	fontui = -family \"DejaVu Sans\" -size 14 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family \"DejaVu Sans Mono\" -size 14 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family \"DejaVu Sans\" -size 13 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"DejaVu Sans Mono\" -size 13 -weight normal -slant roman -underline 0 -overstrike 0
 	tabsize = 4
 
 [safe]
 	directory = /usr/lib/vlang/thirdparty/tcc
+	directory = /mnt/HDD/.hidden
