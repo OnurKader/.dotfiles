@@ -6,6 +6,7 @@ vim.opt.background = "dark"
 vim.opt.backspace = "indent,start,eol" -- Should I switch to a list?
 vim.opt.complete:remove('i')
 vim.opt.completeopt = "menuone,noselect"
+vim.opt.cursorline = true
 vim.opt.directory = "/home/beron/.config/nvim/tmp"
 vim.opt.encoding = "utf-8"
 vim.opt.foldmethod = "manual"
