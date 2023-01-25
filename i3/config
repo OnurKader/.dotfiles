@@ -147,6 +147,9 @@ bindsym $mod+Shift+l move right 24
 # Dijo Stuff
 bindsym $mod+g $exe $term -t "Dijo" -e dijo
 
+# Mind.nvim
+bindsym $mod+Shift+g $exe $term -t "Mind.nvim" -e nvim +MindOpenMain
+
 # Lock Screen
 # bindsym $mod+Ctrl+$alt+l $exe ~/.config/i3/scripts/i3exit.sh lock, mode "default"
 #bindsym $mod+Ctrl+$alt+l $exe arcolinux-logout

@@ -45,6 +45,14 @@ return require('packer').startup(function(use)
 	use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } }
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use { "onsails/lspkind-nvim" }
+	use {
+		"phaazon/mind.nvim",
+		branch = "v2.2",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require "mind".setup()
+		end
+	}
 	use { "rafamadriz/friendly-snippets" }
 	use { "ray-x/cmp-treesitter" }
 	use { "rhysd/vim-clang-format" }
