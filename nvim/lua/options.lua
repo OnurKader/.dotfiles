@@ -60,10 +60,6 @@ vim.g["clang_format#detect_style_file"] = 1
 -- Should I change the set *number* stuff to lua versions
 
 -- Plugin options among other things
-vim.cmd [[
-  syntax enable
-  colorscheme gruvbox
-]]
 
 -- Also laziness
 vim.cmd [[

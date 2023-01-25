@@ -1,7 +1,5 @@
-require("impatient").enable_profile()
-
 require("nvim-web-devicons").setup({
-	default = true;
+	default = true,
 })
 
 require("nvim-surround").setup()
