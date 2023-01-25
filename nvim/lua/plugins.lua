@@ -1,68 +1,88 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+
+vim.opt.rtp:prepend(lazypath)
+
 -- Check this out "https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim"
-return require('packer').startup(function(use)
-	-- MAYBE: Switch to a single call to use with a list as the parameter
-	use { "NvChad/nvim-colorizer.lua" }
-	use { "Pocco81/true-zen.nvim" }
-	use { "PotatoesMaster/i3-vim-syntax" }
-	use { "Saecki/crates.nvim" }
-	use { "arrufat/vala.vim" }
-	use { "cespare/vim-toml" }
-	use { "christoomey/vim-sort-motion" }
-	use { "dstein64/vim-startuptime" }
-	use { "eandrju/cellular-automaton.nvim" }
-	use { "ellisonleao/gruvbox.nvim" }
-	use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
-	use { "gpanders/editorconfig.nvim" }
-	use { "habamax/vim-godot" }
-	use { "hrsh7th/cmp-buffer" }
-	use { "hrsh7th/cmp-cmdline" }
-	use { "hrsh7th/cmp-nvim-lsp" }
-	use { "hrsh7th/cmp-nvim-lsp-signature-help" }
-	use { "hrsh7th/cmp-nvim-lua" }
-	use { "hrsh7th/cmp-path" }
-	use { "hrsh7th/cmp-vsnip" }
-	use { "hrsh7th/nvim-cmp" }
-	use { "hrsh7th/vim-vsnip" }
-	use { "hrsh7th/vim-vsnip-integ" }
-	use { "jghauser/mkdir.nvim" }
-	use { "jose-elias-alvarez/null-ls.nvim" }
-	use { "krady21/compiler-explorer.nvim", requires = { "nvim-lua/plenary.nvim" } }
-	use { "kyazdani42/nvim-web-devicons" }
-	use { "kylechui/nvim-surround" }
-	use { "lewis6991/gitsigns.nvim" }
-	use { "lewis6991/impatient.nvim" }
-	use { "luisiacc/gruvbox-baby" }
-	use { "mrjones2014/tldr.nvim", requires = { "nvim-telescope/telescope.nvim" } }
-	use { "neovim/nvim-lspconfig" }
-	use { "numToStr/Comment.nvim" }
-	use { "nvim-lua/plenary.nvim" }
-	use { "nvim-lua/popup.nvim" }
-	use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
-	use { "nvim-telescope/telescope-fzf-native.nvim", requires = { { "nvim-telescope/telescope.nvim" } },
-		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
-	use { "nvim-telescope/telescope-media-files.nvim", requires = { { "nvim-telescope/telescope.nvim" } } }
-	use { "nvim-telescope/telescope-symbols.nvim" }
-	use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } }
-	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-	use { "onsails/lspkind-nvim" }
-	use {
+require("lazy").setup({
+	{ "NvChad/nvim-colorizer.lua" },
+	{ "Pocco81/true-zen.nvim" },
+	{ "PotatoesMaster/i3-vim-syntax" },
+	{ "Saecki/crates.nvim" },
+	{ "arrufat/vala.vim" },
+	{ "cespare/vim-toml" },
+	{ "christoomey/vim-sort-motion" },
+	{ "dstein64/vim-startuptime" },
+	{ "eandrju/cellular-automaton.nvim" },
+	{ "ellisonleao/gruvbox.nvim", priority = 420, lazy = false },
+	{ "folke/todo-comments.nvim", dependencies = "nvim-lua/plenary.nvim" },
+	{ "gpanders/editorconfig.nvim" },
+	{ "habamax/vim-godot" },
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-cmdline" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-nvim-lsp-signature-help" },
+	{ "hrsh7th/cmp-nvim-lua" },
+	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-vsnip" },
+	{ "hrsh7th/nvim-cmp" },
+	{ "hrsh7th/vim-vsnip" },
+	{ "hrsh7th/vim-vsnip-integ" },
+	{ "jghauser/mkdir.nvim" },
+	{ "jose-elias-alvarez/null-ls.nvim" },
+	{ "krady21/compiler-explorer.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+	{ "kyazdani42/nvim-web-devicons" },
+	{ "kylechui/nvim-surround" },
+	{ "lewis6991/gitsigns.nvim" },
+	{ "luisiacc/gruvbox-baby" },
+	{ "mrjones2014/tldr.nvim", dependencies = { "nvim-telescope/telescope.nvim" } },
+	{ "neovim/nvim-lspconfig" },
+	{ "numToStr/Comment.nvim" },
+	{ "nvim-lua/plenary.nvim" },
+	{ "nvim-lua/popup.nvim" },
+	{ "nvim-lualine/lualine.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		dependencies = { { "nvim-telescope/telescope.nvim" } },
+		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	},
+	{ "nvim-telescope/telescope-media-files.nvim", dependencies = { { "nvim-telescope/telescope.nvim" } } },
+	{ "nvim-telescope/telescope-symbols.nvim" },
+	{ "nvim-telescope/telescope.nvim", dependencies = { { "nvim-lua/plenary.nvim" } } },
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{ "onsails/lspkind-nvim" },
+	{
 		"phaazon/mind.nvim",
 		branch = "v2.2",
-		requires = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require "mind".setup()
-		end
-	}
-	use { "rafamadriz/friendly-snippets" }
-	use { "ray-x/cmp-treesitter" }
-	use { "rhysd/vim-clang-format" }
-	use { "simrat39/rust-tools.nvim" }
-	use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
-	use { "sophacles/vim-processing" }
-	use { "stephpy/vim-yaml" }
-	use { "tpope/vim-repeat" }
-	use { "windwp/nvim-autopairs" }
-	use { "windwp/nvim-ts-autotag" }
-	use { "ziglang/zig.vim" }
-end)
+			require("mind").setup()
+		end,
+	},
+	{ "rafamadriz/friendly-snippets" },
+	{ "ray-x/cmp-treesitter" },
+	{ "rhysd/vim-clang-format" },
+	{ "simrat39/rust-tools.nvim" },
+	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
+	{ "sophacles/vim-processing" },
+	{ "stephpy/vim-yaml" },
+	{ "tpope/vim-repeat" },
+	{ "windwp/nvim-autopairs" },
+	{ "windwp/nvim-ts-autotag" },
+	{ "ziglang/zig.vim" },
+})
+
+vim.cmd [[
+  syntax enable
+  colorscheme gruvbox
+]]
 
