@@ -7,14 +7,14 @@ require("nvim-surround").setup()
 require("gitsigns").setup()
 
 require("Comment").setup({
-	ignore = "^%s*$"
+	ignore = "^%s*$",
 })
 
 require("tldr").setup({
 	-- the shell command to use
 	tldr_command = "tldr",
 	-- a string of extra arguments to pass to `tldr`, e.g. tldr_args = '--color always'
-	tldr_args = "--color=always"
+	tldr_args = "--color=always",
 })
 
 local telescope = require("telescope")
@@ -23,13 +23,13 @@ telescope.setup({
 	defaults = {
 		mappings = {
 			i = {
-				["<C-h>"] = "which_key"
-			}
-		}
+				["<C-h>"] = "which_key",
+			},
+		},
 	},
 	pickers = {
 		find_files = {
-			find_command = { "fd", "--type", "f", "-H", "--strip-cwd-prefix" }
+			find_command = { "fd", "--type", "f", "-H", "--strip-cwd-prefix" },
 		},
 	},
 	extensions = {
@@ -37,16 +37,15 @@ telescope.setup({
 			fuzzy = true,
 			override_generic_sorter = true,
 			override_file_sorter = true,
-			case_mode = "smart_case"
+			case_mode = "smart_case",
 		},
 		media_files = {
 			-- filetypes whitelist
 			-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-			filetypes = { "avi", "jpeg", "jpg", "mkv", "mp4", "pdf", "png", "webm", "webp" }
+			filetypes = { "avi", "jpeg", "jpg", "mkv", "mp4", "pdf", "png", "webm", "webp" },
 			-- find_cmd = "rg" -- find command (defaults to `fd`)
 		},
-		tldr = {
-		}
+		tldr = {},
 	},
 })
 
@@ -58,8 +57,8 @@ require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		theme = "gruvbox-material", -- "auto"
-		component_separators = { left = '', right = '' },
-		section_separators = { left = '', right = '' },
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = {},
 		always_divide_middle = true,
 		globalstatus = true,
@@ -70,7 +69,7 @@ require("lualine").setup({
 		lualine_c = { "filename" },
 		lualine_x = { "filetype", "encoding", "fileformat" },
 		lualine_y = {},
-		lualine_z = { "location", "progress" }
+		lualine_z = { "location", "progress" },
 	},
 	inactive_sections = {
 		lualine_a = {},
@@ -78,10 +77,10 @@ require("lualine").setup({
 		lualine_c = { "filename" },
 		lualine_x = { "location" },
 		lualine_y = {},
-		lualine_z = {}
+		lualine_z = {},
 	},
 	tabline = {},
-	extensions = {}
+	extensions = {},
 })
 
 require("todo-comments").setup({
@@ -160,7 +159,7 @@ require("true-zen").setup({
 				open_pre = nil,
 				open_pos = nil,
 				close_pre = nil,
-				close_pos = nil
+				close_pos = nil,
 			},
 		},
 		minimalist = {
@@ -176,13 +175,13 @@ require("true-zen").setup({
 				showcmd = false,
 				showmode = false,
 				ruler = false,
-				numberwidth = 1
+				numberwidth = 1,
 			},
 			callbacks = { -- run functions when opening/closing Minimalist mode
 				open_pre = nil,
 				open_pos = nil,
 				close_pre = nil,
-				close_pos = nil
+				close_pos = nil,
 			},
 		},
 		narrow = {
@@ -196,7 +195,7 @@ require("true-zen").setup({
 				open_pre = nil,
 				open_pos = nil,
 				close_pre = nil,
-				close_pos = nil
+				close_pos = nil,
 			},
 		},
 		focus = {
@@ -204,22 +203,22 @@ require("true-zen").setup({
 				open_pre = nil,
 				open_pos = nil,
 				close_pre = nil,
-				close_pos = nil
+				close_pos = nil,
 			},
-		}
+		},
 	},
 	integrations = {
 		tmux = false, -- hide tmux status bar in (minimalist, ataraxis)
 		kitty = { -- increment font size in Kitty. Note: you must set `allow_remote_control socket-only` and `listen_on unix:/tmp/kitty` in your personal config (ataraxis)
 			enabled = false,
-			font = "+3"
+			font = "+3",
 		},
 		twilight = false, -- enable twilight (ataraxis)
-		lualine = true -- hide nvim-lualine (ataraxis)
+		lualine = true, -- hide nvim-lualine (ataraxis)
 	},
 })
 
-require("colorizer").setup {
+require("colorizer").setup({
 	filetypes = { "*" },
 	user_default_options = {
 		RGB = true, -- #RGB hex codes
@@ -240,7 +239,7 @@ require("colorizer").setup {
 	},
 	-- all the sub-options of filetypes apply to buftypes
 	buftypes = {},
-}
+})
 
 require("diffview").setup()
 
