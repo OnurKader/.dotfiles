@@ -94,6 +94,7 @@ let c_no_curly_error=1
 autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge | endif
 " Enable spell check for git commits
 autocmd FileType gitcommit set spell
+autocmd FileType markdown set spell
 " Abbreviations
 iab whit with
 iab wiht with

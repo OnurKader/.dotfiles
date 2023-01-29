@@ -1,6 +1,8 @@
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"c",
+		"comment",
+		"bash",
 		"cpp",
 		"gitcommit",
 		"html",
