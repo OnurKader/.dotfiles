@@ -1,6 +1,7 @@
 #!/bin/bash
 
-TEMP=$(curl --silent wttr.in/"$1")
+LOCATION=${1-"Ankara"}
+TEMP=$(curl --silent wttr.in/"$LOCATION")
 clear
 echo "$TEMP" | head -n -2
 
