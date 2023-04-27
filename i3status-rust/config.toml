@@ -1,42 +1,99 @@
 icons_format = "{icon}"
 
 [theme]
-theme = "solarized-dark"
+theme = "plain"
 [theme.overrides]
-idle_bg = "#123456"
-idle_fg = "#abcdef"
+idle_bg = "#071115"
+idle_fg = "#F9FBFA"
+separator_fg = "#757972"
+# separator_width = 21
+separator = " | "
 
 [icons]
-icons = "awesome4"
-[icons.overrides]
-bat = ["|E|", "|_|", "|=|", "|F|"]
-bat_charging = "|^| "
+icons = "material-nf"
+
+# MAYBE: Switch to the builtin "music" block
+[[block]]
+block = "custom"
+interval = 12
+command = "getsong"
+format = " $text"
+hide_when_empty = true
+[block.theme_overrides]
+idle_fg = "#3BFFB5"
+[[block.click]]
+button = "left"
+cmd = "getsong 1"
+[[block.click]]
+button = "middle"
+cmd = "getsong 2"
+[[block.click]]
+button = "right"
+cmd = "getsong 3"
+[[block.click]]
+button = "up"
+cmd = "getsong 4"
+[[block.click]]
+button = "down"
+cmd = "getsong 5"
 
 [[block]]
-block = "temperature"
+block = "memory"
+format = "$icon $mem_used.eng(w:3,u:B,p:M)/$mem_total.eng(w:2,u:B,p:M)"
+interval = 15
+[[block.click]]
+button = "left"
+cmd = '''notify-send "Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head -n 13)"'''
+[[block.click]]
+button = ""
+update = true
 
 [[block]]
 block = "disk_space"
 path = "/"
 info_type = "available"
 alert_unit = "GB"
-interval = 30
+interval = 120
 warning = 20.0
 alert = 10.0
-format = " $icon root: $available.eng(w:2) "
-
-[[block]]
-block = "memory"
-format = " $icon $mem_total_used_percents.eng(w:2) "
-format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+format = "$icon $available.eng(w:2)/$total"
 
 [[block]]
 block = "sound"
+max_vol = 125
+format = "$icon {$volume.eng(w:2)}"
 [[block.click]]
 button = "left"
+update = true
+[[block.click]]
+button = "right"
 cmd = "pavucontrol"
+[[block.click]]
+button = "middle"
+action = "toggle_mute"
+
+# Temperature
+[[block]]
+block = "custom"
+command = "cpu-heat"
+format = "$text.pango-str()"
+interval = 10
+[[block.click]]
+button = ""
+update = true
+
+# Battery
+[[block]]
+block = "custom"
+command = "battery"
+format = "$text.pango-str()"
+interval = 15
+[[block.click]]
+button = "left"
+cmd = "battery 1"
 
 [[block]]
 block = "time"
 interval = 1
-format = " $timestamp.datetime(f:'%Y/%m/%d %H:%M:%S (%a)') "
+format = "$icon $timestamp.datetime(f:'%Y/%m/%d %H:%M:%S (%a)')"
+
