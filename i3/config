@@ -258,7 +258,8 @@ client.urgent				#E83637		#E54034			#F7F8F9		#92A4FC
 
 bar {
 	font pango:Hack Nerd Font 13
-	status_command i3blocks
+	# status_command i3blocks
+	status_command i3status-rs
 	mode dock
 	position top
 	colors {
@@ -374,4 +375,5 @@ exec_always --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput A
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
 # exec_always --no-startup-id activitywatcher&
 exec_always --no-startup-id copyq&
+exec_always --no-startup-id xrdb -merge ~/.Xresources
 
