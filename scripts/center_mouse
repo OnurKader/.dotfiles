@@ -1,4 +1,0 @@
-#/bin/sh
-
-xdotool mousemove --clearmodifiers -c 960 540
-

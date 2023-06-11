@@ -5,7 +5,7 @@
 # This can be simplified, but if it's a playlist put it in a subdir
 if [[ "$@" == *".com/playlist"* ]]; then
 	OUTPUT='%(playlist)s/%(playlist_index)s-%(upload_date,release_date)s_%(title)s(%(id)s).%(ext)s'
-elif [[ "$@" == *".com/c"* ]]; then
+elif [[ "$@" == *".com/c"* || "$@" == *".com/@"* ]]; then
 	OUTPUT='%(channel)s/%(playlist_autonumber)s-%(upload_date,release_date)s_%(title)s(%(id)s).%(ext)s'
 else
 	OUTPUT='%(upload_date,release_date)s_%(title)s(%(id)s).%(ext)s'

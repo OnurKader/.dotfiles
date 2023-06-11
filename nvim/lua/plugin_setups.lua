@@ -56,7 +56,7 @@ telescope.load_extension("media_files")
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "gruvbox-material", -- "auto"
+		theme = "auto", --"gruvbox-material", -- "auto"
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {},
@@ -97,8 +97,8 @@ require("todo-comments").setup({
 		TODO = { icon = " ", color = "info" },
 		HACK = { icon = " ", color = "warning" },
 		WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-		NOTE = { icon = " ", color = "hint", alt = { "INFO", "MAYBE" } },
+		PERF = { icon = "󰅒 ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+		NOTE = { icon = "󰍨 ", color = "hint", alt = { "INFO", "MAYBE" } },
 	},
 	merge_keywords = true, -- when true, custom keywords will be merged with the defaults
 	-- highlighting of the line containing the todo comment

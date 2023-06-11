@@ -28,8 +28,8 @@ workspace_layout tabbed
 # Define Workspaces
 set $workspace1  "1: Web  "
 set $workspace2  "2: Term  "
-set $workspace3  "3: Code ﭱ "
-set $workspace4  "4: Media 嗢 "
+set $workspace3  "3: Code 󰙲 "
+set $workspace4  "4: Media 󰕼 "
 set $workspace5  "5:"
 set $workspace6  "6:"
 set $workspace7  "7:"
@@ -320,6 +320,7 @@ assign [class="QtCreator"] $workspace3
 assign [class="Spotify"] $workspace10
 assign [class="spotify"] $workspace10
 assign [class="Steam"] $workspace9
+assign [instance="steamwebhelper"] $workspace9
 assign [class="VSCodium"] $workspace3
 assign [class="jetbrains-pycharm-ce"] $workspace3
 assign [class="mpv"] $workspace4
@@ -343,6 +344,7 @@ for_window [class="QtCreator"] move workspace $workspace3
 for_window [class="Spotify"] move workspace $workspace10
 for_window [class="spotify"] move workspace $workspace10
 for_window [class="Steam"] move workspace $workspace9
+for_window [instance="steamwebhelper"] move workspace $workspace9
 for_window [class="VSCodium"] move workspace $workspace3
 for_window [class="jetbrains-pycharm-ce"] move workspace $workspace3
 for_window [class="mpv"] move workspace $workspace4

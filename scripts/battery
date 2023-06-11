@@ -3,9 +3,9 @@
 START_COL="#FF0808" # 0%
 END_COL="#08FF08"   # 100%
 
-PERC="$(acpi -b | awk '{print $4}' | sed s/,//)"
+PERC="$(acpi -b | grep -P "\d{2}:\d{2}:\d{2}|100%" | awk '{print $4}' | sed s/,//)"
 PERC_INT=${PERC//\%/}
-[ "$(acpi -b | grep -i 'Discharging')" ] || DISC=" "
+[ "$(acpi -b | grep -P "\d{2}:\d{2}:\d{2}" | grep -i 'Discharging')" ] || DISC=" "
 
 if [ "$PERC_INT" -ge 90 ]; then
 	SYMBOL=" "
@@ -52,9 +52,9 @@ function getColor {
 	color=$(printf "#%02X%02X%02X" "$r" "$g" "$b")
 }
 
-TIME="$(acpi -b | cut -d, -f3 | cut -b1-9)"
+TIME="$(acpi -b | grep -P "\d{2}:\d{2}:\d{2}|100%" | cut -d, -f3 | cut -b1-9)"
 
-case $BLOCK_BUTTON in
+case $1 in
 1) if [ "$(acpi -b | grep "Discharging")" ]; then
 	notify-send "Remaining Time" "$TIME" &
 	DISC=""
@@ -62,8 +62,6 @@ else
 	notify-send "Time Until Charged" "$TIME" &
 	DISC=" "
 fi ;;
-2) notify-send "Why Middle Click?" "Weird Situation" ;;
-3) notify-send "No Right Click!" "Useless Shit" ;;
 esac
 
 if [ "$(acpi -b | grep "Discharging")" ]; then

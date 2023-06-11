@@ -13,7 +13,7 @@ vim.opt.foldmethod = "manual"
 vim.opt.hidden = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = "nosplit"
-vim.opt.incsearch = true
+vim.opt.incsearch = false
 vim.opt.laststatus = 3
 vim.opt.lazyredraw = true
 vim.opt.mouse = 'a'
@@ -24,7 +24,7 @@ vim.opt.visualbell = false
 vim.opt.nrformats:append("alpha")
 vim.opt.nrformats:remove("octal")
 vim.opt.number = true
-vim.opt.path = vim.opt.path + "**"
+vim.opt.path:append("**")
 vim.opt.relativenumber = true
 vim.opt.ruler = true
 vim.opt.scrolloff = 4
@@ -51,6 +51,7 @@ vim.opt.wildmode = "list,longest,full"
 vim.opt.wildignore:append("*/.git,*/.ccls-cache,*/.idea,*/.cache")
 vim.opt.wrap = true
 vim.opt.cmdheight = 2
+vim.opt.statuscolumn = '%s %l %=%{v:relnum?v:relnum:v:lnum} '
 
 vim.g.mapleader = ','
 vim.g["clang_format#detect_style_file"] = 1
@@ -214,13 +215,4 @@ aucmd("BufEnter", { pattern = "*.PKGBUILD", command = "set ft=PKGBUILD" })
 -- I forgot verilog so let's just focus on vlang
 aucmd("BufEnter", { pattern = "*.v", command = "set ft=vlang" })
 aucmd("BufEnter", { pattern = "*.vsh", command = "set ft=vlang" })
-
--- For some reason the current line number wasn't being highlighted properly
--- Pretty sure CursorLineNr is unnecessary
-vim.cmd [[
-hi LineNr guifg=#fabd2f
-hi LineNrAbove guifg=#7c6f64
-hi LineNrBelow guifg=#7c6f64
-hi CursorLineNr guifg=#fabd2f
-]]
 

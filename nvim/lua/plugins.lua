@@ -19,13 +19,13 @@ require("lazy").setup({
 	{ "PotatoesMaster/i3-vim-syntax" },
 	{ "Saecki/crates.nvim" },
 	{ "arrufat/vala.vim" },
+	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "cespare/vim-toml" },
 	{ "christoomey/vim-sort-motion" },
 	{ "dstein64/vim-startuptime" },
 	{ "eandrju/cellular-automaton.nvim" },
 	{ "ellisonleao/gruvbox.nvim", priority = 420, lazy = false },
-	{ "folke/todo-comments.nvim", dependencies = "nvim-lua/plenary.nvim" },
-	{ "gpanders/editorconfig.nvim" },
+	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 	{ "habamax/vim-godot" },
 	{ "hrsh7th/cmp-buffer" },
 	{ "hrsh7th/cmp-cmdline" },
@@ -37,6 +37,7 @@ require("lazy").setup({
 	{ "hrsh7th/nvim-cmp" },
 	{ "hrsh7th/vim-vsnip" },
 	{ "hrsh7th/vim-vsnip-integ" },
+	{ "imsnif/kdl.vim" },
 	{ "jghauser/mkdir.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "krady21/compiler-explorer.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
@@ -55,9 +56,9 @@ require("lazy").setup({
 		dependencies = { { "nvim-telescope/telescope.nvim" } },
 		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 	},
-	{ "nvim-telescope/telescope-media-files.nvim", dependencies = { { "nvim-telescope/telescope.nvim" } } },
+	{ "nvim-telescope/telescope-media-files.nvim", dependencies = { "nvim-telescope/telescope.nvim" } },
 	{ "nvim-telescope/telescope-symbols.nvim" },
-	{ "nvim-telescope/telescope.nvim", dependencies = { { "nvim-lua/plenary.nvim" } } },
+	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }, tag = "0.1.1" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{ "onsails/lspkind-nvim" },
 	{
@@ -81,8 +82,14 @@ require("lazy").setup({
 	{ "ziglang/zig.vim" },
 })
 
-vim.cmd [[
+vim.cmd([[
   syntax enable
-  colorscheme gruvbox
-]]
+  colorscheme gruvbox-baby
+  " For some reason the current line number wasn't being highlighted properly
+  " Pretty sure CursorLineNr is unnecessary
+  hi LineNr guifg=#fabd2f
+  hi LineNrAbove guifg=#7c6f64
+  hi LineNrBelow guifg=#7c6f64
+  hi CursorLineNr guifg=#fabd2f
+]])
 

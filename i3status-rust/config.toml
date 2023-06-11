@@ -6,6 +6,7 @@ theme = "plain"
 idle_bg = "#071115"
 idle_fg = "#F9FBFA"
 separator_fg = "#757972"
+separator_bg = "#071115"
 # separator_width = 21
 separator = " | "
 
@@ -24,6 +25,7 @@ idle_fg = "#3BFFB5"
 [[block.click]]
 button = "left"
 cmd = "getsong 1"
+update = true
 [[block.click]]
 button = "middle"
 cmd = "getsong 2"
@@ -44,6 +46,7 @@ interval = 15
 [[block.click]]
 button = "left"
 cmd = '''notify-send "Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head -n 13)"'''
+update = true
 [[block.click]]
 button = ""
 update = true
@@ -57,11 +60,14 @@ interval = 120
 warning = 20.0
 alert = 10.0
 format = "$icon $available.eng(w:2)/$total"
+[[block.click]]
+button = "left"
+update = true
 
 [[block]]
 block = "sound"
 max_vol = 125
-format = "$icon {$volume.eng(w:2)}"
+format = "$icon {$volume.eng(w:2)|}"
 [[block.click]]
 button = "left"
 update = true
@@ -71,6 +77,12 @@ cmd = "pavucontrol"
 [[block.click]]
 button = "middle"
 action = "toggle_mute"
+[[block.click]]
+button = "up"
+action = "volume_down"
+[[block.click]]
+button = "down"
+action = "volume_up"
 
 # Temperature
 [[block]]
@@ -91,6 +103,7 @@ interval = 15
 [[block.click]]
 button = "left"
 cmd = "battery 1"
+update = true
 
 [[block]]
 block = "time"

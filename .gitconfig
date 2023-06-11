@@ -27,7 +27,7 @@
 	hooksPath="/home/beron/.config/.hooks"
 
 [init]
-	defaultBranch = master
+	defaultBranch = main
 
 [gui]
 	fontui = -family \"DejaVu Sans\" -size 13 -weight normal -slant roman -underline 0 -overstrike 0
