@@ -55,8 +55,6 @@ vim.opt.statuscolumn = '%s %l %=%{v:relnum?v:relnum:v:lnum} '
 
 vim.g.mapleader = ','
 vim.g["clang_format#detect_style_file"] = 1
--- vim.g.do_filetype_lua = 1
--- vim.g.did_load_filetypes = 0
 
 -- Should I change the set *number* stuff to lua versions
 

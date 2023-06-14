@@ -120,4 +120,4 @@ alias update="clear; sudo pacman -Syu"
 alias vifm="vifmrun"
 alias watch="watch -ce"
 alias wget="wget -Nc"
-alias yay="yay --sudoloop"
+
