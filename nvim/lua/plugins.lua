@@ -19,7 +19,12 @@ require("lazy").setup({
 	{ "PotatoesMaster/i3-vim-syntax" },
 	{ "Saecki/crates.nvim" },
 	{ "arrufat/vala.vim" },
-	{ "catppuccin/nvim", name = "catppuccin" },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 421,
+		lazy = false,
+	},
 	{ "cespare/vim-toml" },
 	{ "christoomey/vim-sort-motion" },
 	{ "dstein64/vim-startuptime" },
