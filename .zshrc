@@ -252,3 +252,5 @@ function nvims() {
 	NVIM_APPNAME=$config nvim $@
 }
 
+alias lnv="NVIM_APPNAME=LazyVim nvim"
+
