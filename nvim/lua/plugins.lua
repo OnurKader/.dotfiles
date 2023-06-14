@@ -63,8 +63,13 @@ require("lazy").setup({
 	},
 	{ "nvim-telescope/telescope-media-files.nvim", dependencies = { "nvim-telescope/telescope.nvim" } },
 	{ "nvim-telescope/telescope-symbols.nvim" },
-	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }, tag = "0.1.1" },
+	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }, tag = "0.1.2" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{
+		"kaarmu/typst.vim",
+		ft = "typst",
+		lazy = false,
+	},
 	{ "onsails/lspkind-nvim" },
 	{
 		"phaazon/mind.nvim",
