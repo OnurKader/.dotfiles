@@ -31,6 +31,11 @@ require("lazy").setup({
 	{ "eandrju/cellular-automaton.nvim", event = "VeryLazy" },
 	{ "ellisonleao/gruvbox.nvim", priority = 420, lazy = false },
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+	{
+		"goolord/alpha-nvim",
+		event = "VimEnter",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 	{ "habamax/vim-godot", event = "VeryLazy" },
 	{ "hrsh7th/cmp-buffer", event = "InsertEnter" },
 	{ "hrsh7th/cmp-cmdline", event = "InsertEnter" },
