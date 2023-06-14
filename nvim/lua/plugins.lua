@@ -84,12 +84,13 @@ require("lazy").setup({
 
 vim.cmd([[
   syntax enable
-  colorscheme gruvbox-baby
+  " colorscheme gruvbox-baby
   " For some reason the current line number wasn't being highlighted properly
   " Pretty sure CursorLineNr is unnecessary
-  hi LineNr guifg=#fabd2f
-  hi LineNrAbove guifg=#7c6f64
-  hi LineNrBelow guifg=#7c6f64
-  hi CursorLineNr guifg=#fabd2f
+  " hi LineNr guifg=#fabd2f
+  " hi LineNrAbove guifg=#7c6f64
+  " hi LineNrBelow guifg=#7c6f64
+  " hi CursorLineNr guifg=#fabd2f
+  colorscheme catppuccin-mocha
 ]])
 

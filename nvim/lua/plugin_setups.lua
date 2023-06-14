@@ -63,7 +63,7 @@ end
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto", --"gruvbox-material", -- "auto"
+		theme = "auto", --"gruvbox-material",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {},
@@ -90,6 +90,10 @@ require("lualine").setup({
 	extensions = {},
 })
 
+-- TODO: asd
+-- NOTE: asd
+-- WARN: asd
+-- PERF: asd
 require("todo-comments").setup({
 	signs = true, -- show icons in the signs column
 	sign_priority = 8, -- sign priority
@@ -118,7 +122,7 @@ require("todo-comments").setup({
 		after = "", -- "fg" or "bg" or empty
 		pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlightng (vim regex)
 		comments_only = true, -- uses treesitter to match keywords in comments only
-		max_line_len = 256, -- ignore lines longer than this
+		max_line_len = 192, -- ignore lines longer than this
 		exclude = {}, -- list of file types to exclude highlighting
 	},
 	-- list of named colors where we try to extract the guifg from the
@@ -147,22 +151,26 @@ require("todo-comments").setup({
 })
 
 require("true-zen").setup({
-	modes = { -- configurations per mode
+	modes = {
+		-- configurations per mode
 		ataraxis = {
 			shade = "dark", -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
 			backdrop = 0, -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
-			minimum_writing_area = { -- minimum size of main window
+			minimum_writing_area = {
+				-- minimum size of main window
 				width = 70,
 				height = 44,
 			},
 			quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode
-			padding = { -- padding windows
+			padding = {
+				-- padding windows
 				left = 52,
 				right = 52,
 				top = 0,
 				bottom = 0,
 			},
-			callbacks = { -- run functions when opening/closing Ataraxis mode
+			callbacks = {
+				-- run functions when opening/closing Ataraxis mode
 				open_pre = nil,
 				open_pos = nil,
 				close_pre = nil,
@@ -171,7 +179,8 @@ require("true-zen").setup({
 		},
 		minimalist = {
 			ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
-			options = { -- options to be disabled when entering Minimalist mode
+			options = {
+				-- options to be disabled when entering Minimalist mode
 				number = false,
 				relativenumber = false,
 				showtabline = 0,
@@ -184,7 +193,8 @@ require("true-zen").setup({
 				ruler = false,
 				numberwidth = 1,
 			},
-			callbacks = { -- run functions when opening/closing Minimalist mode
+			callbacks = {
+				-- run functions when opening/closing Minimalist mode
 				open_pre = nil,
 				open_pos = nil,
 				close_pre = nil,
@@ -198,7 +208,8 @@ require("true-zen").setup({
 			--- function() end: pass a custom func with your fold lines. See :h foldtext
 			folds_style = "informative",
 			run_ataraxis = true, -- display narrowed text in a Ataraxis session
-			callbacks = { -- run functions when opening/closing Narrow mode
+			callbacks = {
+				-- run functions when opening/closing Narrow mode
 				open_pre = nil,
 				open_pos = nil,
 				close_pre = nil,
@@ -206,7 +217,8 @@ require("true-zen").setup({
 			},
 		},
 		focus = {
-			callbacks = { -- run functions when opening/closing Focus mode
+			callbacks = {
+				-- run functions when opening/closing Focus mode
 				open_pre = nil,
 				open_pos = nil,
 				close_pre = nil,
@@ -216,7 +228,8 @@ require("true-zen").setup({
 	},
 	integrations = {
 		tmux = false, -- hide tmux status bar in (minimalist, ataraxis)
-		kitty = { -- increment font size in Kitty. Note: you must set `allow_remote_control socket-only` and `listen_on unix:/tmp/kitty` in your personal config (ataraxis)
+		kitty = {
+			-- increment font size in Kitty. Note: you must set `allow_remote_control socket-only` and `listen_on unix:/tmp/kitty` in your personal config (ataraxis)
 			enabled = false,
 			font = "+3",
 		},
