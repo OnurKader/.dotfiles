@@ -52,7 +52,14 @@ telescope.setup({
 telescope.load_extension("fzf")
 telescope.load_extension("media_files")
 
--- FIXME: SPELL option doesn't show in the statusline
+-- Add a spell visual for lualine (From https://github.com/nvim-lualine/lualine.nvim/issues/487#issuecomment-1345625242)
+local function spell()
+	if vim.wo.spell == true then
+		return "[" .. vim.bo.spelllang .. "]" -- MAYBE: Change the spelllang to just the string "SPELL"
+	end
+	return ""
+end
+
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -67,7 +74,7 @@ require("lualine").setup({
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = { "filename" },
-		lualine_x = { "filetype", "encoding", "fileformat" },
+		lualine_x = { spell, "filetype", "encoding", "fileformat" },
 		lualine_y = {},
 		lualine_z = { "location", "progress" },
 	},
