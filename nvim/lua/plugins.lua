@@ -46,7 +46,7 @@ require("lazy").setup({
 	{ "jghauser/mkdir.nvim", event = "VeryLazy" },
 	{ "jose-elias-alvarez/null-ls.nvim", event = "VeryLazy" },
 	{ "krady21/compiler-explorer.nvim", dependencies = { "nvim-lua/plenary.nvim" }, event = "VeryLazy" },
-	{ "kyazdani42/nvim-web-devicons" },
+	{ "nvim-tree/nvim-web-devicons", lazy = true },
 	{ "kylechui/nvim-surround", event = "VeryLazy" },
 	{ "lewis6991/gitsigns.nvim" },
 	{ "luisiacc/gruvbox-baby" },
@@ -55,7 +55,7 @@ require("lazy").setup({
 	{ "numToStr/Comment.nvim" },
 	{ "nvim-lua/plenary.nvim" },
 	{ "nvim-lua/popup.nvim" },
-	{ "nvim-lualine/lualine.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
+	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
 		dependencies = { { "nvim-telescope/telescope.nvim" } },
