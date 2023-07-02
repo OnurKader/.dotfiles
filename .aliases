@@ -7,8 +7,7 @@ alias "cd.."="cd .."
 alias "ex,t"="exit"
 alias "exşt"="exit"
 alias -g bc="bc -lq"
-alias -g vim="nvim"
-alias -g vimdiff="nvim -d"
+alias -g nd="nvim -d"
 alias -s avi=mpv
 alias -s c=nvim
 alias -s cbr=zathura
@@ -30,6 +29,7 @@ alias -s pde=nvim
 alias -s pdf=mupdf
 alias -s png=nsxiv
 alias -s webp=nsxiv
+alias -s webp=mpv
 alias ......="../../../../.."
 alias .....="../../../.."
 alias ....="../../.."
@@ -120,4 +120,5 @@ alias update="clear; sudo pacman -Syu"
 alias vifm="vifmrun"
 alias watch="watch -ce"
 alias wget="wget -Nc"
+alias ytdlm="ytdl --cookies-from-browser=firefox --mark-watched"
 
