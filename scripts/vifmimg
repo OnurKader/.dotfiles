@@ -61,7 +61,7 @@ function preview() {
 
 function previewvideo() {
     if [[ ! -f "/tmp$PWD/$6.png" ]]; then
-        ffmpegthumbnailer -i "$PWD/$6" -o "/tmp$PWD/$6.png" -s 0 -q 9 -t 12
+        ffmpegthumbnailer -m -i "$PWD/$6" -o "/tmp$PWD/$6.png" -s 0 -q 8 -t 12
     fi
     declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \

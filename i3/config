@@ -365,6 +365,7 @@ $exe nm-applet &
 exec_always --no-startup-id gnome-keyring-daemon --start
 exec_always --no-startup-id numlockx on&
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id dunst&
 exec_always --no-startup-id /usr/lib/kdeconnectd
 exec_always --no-startup-id kdeconnect-indicator
@@ -377,5 +378,4 @@ exec_always --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput A
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
 # exec_always --no-startup-id activitywatcher&
 exec_always --no-startup-id copyq&
-exec_always --no-startup-id xrdb -merge ~/.Xresources
 

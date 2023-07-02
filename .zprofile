@@ -2,7 +2,7 @@ export LC_NUMERIC="en_GB.utf8"
 export LC_TIME="en_GB.utf8"
 export LC_COLLATE="C"
 
-export CPLUS_INCLUDE_PATH="$HOME/Code/cppfront/include:$CPLUS_INCLUDE_PATH"
+# export CPLUS_INCLUDE_PATH="$HOME/Code/cppfront/include:$CPLUS_INCLUDE_PATH"
 
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.config/scripts"

@@ -15,7 +15,6 @@ vim.opt.ignorecase = true
 vim.opt.inccommand = "nosplit"
 vim.opt.incsearch = false
 vim.opt.laststatus = 3
-vim.opt.lazyredraw = true
 vim.opt.mouse = 'a'
 vim.opt.backup = false
 vim.opt.errorbells = false
