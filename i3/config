@@ -226,6 +226,8 @@ bindsym $mod+Shift+Down	 move window down
 bindsym $mod+Shift+Up	 move window up
 bindsym $mod+Shift+Right move window right
 
+bindsym $mod+$alt+c exec i3-msg move position center
+
 # bindsym $mod+Insert exec --no-startup-id showclip
 bindsym Print $exe screenshot
 bindsym $mod+Print $exe screenshot-clip

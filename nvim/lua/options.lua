@@ -49,13 +49,11 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = "list,longest,full"
 vim.opt.wildignore:append("*/.git,*/.ccls-cache,*/.idea,*/.cache")
 vim.opt.wrap = true
-vim.opt.cmdheight = 2
+vim.opt.cmdheight = 1
 vim.opt.statuscolumn = '%s %l %=%{v:relnum?v:relnum:v:lnum} '
 
 vim.g.mapleader = ','
 vim.g["clang_format#detect_style_file"] = 1
-
--- Should I change the set *number* stuff to lua versions
 
 -- Plugin options among other things
 
