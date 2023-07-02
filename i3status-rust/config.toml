@@ -3,11 +3,10 @@ icons_format = "{icon}"
 [theme]
 theme = "plain"
 [theme.overrides]
-idle_bg = "#071115"
-idle_fg = "#F9FBFA"
-separator_fg = "#757972"
-separator_bg = "#071115"
-# separator_width = 21
+idle_bg = "#1E1E2E"
+idle_fg = "#CDD6F4"
+separator_fg = "#F5E0DC"
+separator_bg = "#1E1E2E"
 separator = " | "
 
 [icons]

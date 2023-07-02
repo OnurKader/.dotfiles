@@ -248,12 +248,44 @@ bindsym $mod+minus scratchpad show
 for_window [title="mpvfloat"] floating enable, sticky enable, border pixel 1
 no_focus   [title="mpvfloat"]
 
+# catppuccin-mocha
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
 
 # Window Colors				# Border	Background		Text		Indicator
-client.focused				#B812C8		#B812C8			#F7F8F9		#92A4FC
-client.unfocused			#616969		#616969			#A8A9AA		#92A4FC
-client.focused_inactive		#676E7D		#2F343F			#A8A9AA		#92A4FC
-client.urgent				#E83637		#E54034			#F7F8F9		#92A4FC
+# client.focused				#B812C8		#B812C8			#F7F8F9		#92A4FC
+# client.unfocused			#616969		#616969			#A8A9AA		#92A4FC
+# client.focused_inactive		#676E7D		#2F343F			#A8A9AA		#92A4FC
+# client.urgent				#E83637		#E54034			#F7F8F9		#92A4FC
+# target                 title      bg			text    indicator   border
+client.focused           $pink      $pink		$base	$rosewater  $maroon
+client.focused_inactive  $mauve     $maroon		$mantle	$rosewater  $mauve
+client.unfocused         $mauve     $surface1	$text   $rosewater  $mauve
+client.urgent            $peach     $base		$peach  $overlay0   $peach
+client.placeholder       $overlay0  $base		$text   $overlay0   $overlay0
 
 
 bar {
@@ -263,11 +295,11 @@ bar {
 	mode dock
 	position top
 	colors {
-		background			#071115
-		separator			#757972
+		background			$base
+		separator			$rosewater
 		# Workspace			Border		Background	Text
-		focused_workspace	#133224		#121924		#F9FBFA
-		inactive_workspace	#172431		#091314		#879292
+		focused_workspace	#133224		$surface0	$text
+		inactive_workspace	#172431		$base		$overlay2
 		urgent_workspace	#7D3238		#322025		#F9FFFE
 	}
 }

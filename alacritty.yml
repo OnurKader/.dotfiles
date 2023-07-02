@@ -141,8 +141,8 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x000201'
-    foreground: '0xFEFDFF'
+    background: '#191729' # Slightly different than catppuccin-mocha but whatevs (#1E1E2E)
+    foreground: "#e6e3fc" #'0xFEFDFF'
 
     # Bright and dim foreground colors
     #
@@ -213,7 +213,11 @@ colors:
   # Example:
   #   `- { index: 16, color: '0xff00ff' }`
   #
-  indexed_colors: []
+  # indexed_colors: []
+
+
+# import:
+#   - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 
 bell:
   animation: EaseOutExpo
