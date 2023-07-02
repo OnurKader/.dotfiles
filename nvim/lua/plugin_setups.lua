@@ -62,7 +62,7 @@ require("lualine").setup({
 		theme = "auto", --"gruvbox-material",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = {},
+		disabled_filetypes = { statusline = { "alpha" } },
 		always_divide_middle = true,
 		globalstatus = true,
 	},
@@ -378,7 +378,7 @@ require("catppuccin").setup({
 	},
 })
 
-vim.cmd([[
-let g:VM_mouse_mappings = 1
-]])
+-- vim.cmd([[
+-- let g:VM_mouse_mappings = 1
+-- ]])
 
