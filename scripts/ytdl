@@ -11,7 +11,7 @@ else
 	OUTPUT='%(upload_date,release_date)s_%(title)s(%(id)s).%(ext)s'
 fi
 
-yt-dlp -N4 --restrict-filenames --fragment-retries=20 --add-metadata --sponsorblock-api "https://sponsorblock.hankmccord.dev" --sponsorblock-mark all \
+yt-dlp -N4 --restrict-filenames --fragment-retries=20 --embed-metadata --sponsorblock-api "https://sponsorblock.hankmccord.dev" --sponsorblock-mark all \
 	--download-archive="$HOME/.cache/youtube-dl/download-archive.txt" --embed-subs --write-auto-sub \
-	--sub-langs='en.*' -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' --mark-watched "$@" && report_sync
+	--sub-langs='en.*' --embed-thumbnail -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' "$@" && report_sync
 
