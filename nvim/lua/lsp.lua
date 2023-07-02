@@ -30,13 +30,13 @@ cmp.setup({
 			before = function(_, vim_item)
 				-- Maybe get stuff from the link above?
 				return vim_item
-			end
-		})
+			end,
+		}),
 	},
 	mapping = {
-		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 		-- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 		["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		["<C-e>"] = cmp.mapping({
@@ -47,22 +47,22 @@ cmp.setup({
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif vim.fn["vsnip#available"](1) == 1 then
-				feedkey("<Plug>(vsnip-expand-or-jump)", '')
+				feedkey("<Plug>(vsnip-expand-or-jump)", "")
 			elseif has_words_before() then
 				cmp.complete()
 			else
 				fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
 			end
-		end, { 'i', 's' }),
+		end, { "i", "s" }),
 
 		["<S-Tab>"] = cmp.mapping(function()
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-				feedkey("<Plug>(vsnip-jump-prev)", '')
+				feedkey("<Plug>(vsnip-jump-prev)", "")
 			end
-		end, { 'i', 's' }),
-		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		end, { "i", "s" }),
+		["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lua" },
@@ -73,7 +73,7 @@ cmp.setup({
 		{ name = "crates" },
 		{ name = "nvim_lsp_signature_help" },
 		-- { name = 'treesitter' },
-	})
+	}),
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -84,24 +84,20 @@ cmp.setup({
 -- })
 
 -- Setup autopairs
-local autopairs = require("nvim-autopairs");
+local autopairs = require("nvim-autopairs")
 local Rule = require("nvim-autopairs.rule")
 
-autopairs.setup({
-})
+autopairs.setup({})
 
-autopairs.add_rule(Rule('(', ')', '*'))
-autopairs.add_rule(Rule('{', '}', '*'))
-autopairs.add_rule(Rule('[', ']', '*'))
-autopairs.add_rule(Rule('"', '"', '*'))
-autopairs.add_rule(Rule("'", "'", '*'))
+autopairs.add_rule(Rule("(", ")", "*"))
+autopairs.add_rule(Rule("{", "}", "*"))
+autopairs.add_rule(Rule("[", "]", "*"))
+autopairs.add_rule(Rule('"', '"', "*"))
+autopairs.add_rule(Rule("'", "'", "*"))
 
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
-cmp.event:on(
-	"confirm_done",
-	cmp_autopairs.on_confirm_done()
-)
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 -- -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 -- cmp.setup.cmdline(':', {
@@ -127,23 +123,66 @@ buf_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>'
 -- Switch these to vim.keymap.set('n', <keys>, lua function, buf_opts)
 local on_attach = function(_, buf)
 	-- The rhs needs to be a string???
-	vim.api.nvim_buf_set_keymap(buf, 'n', "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Jump to definition" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Jump to declaration" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Show hover text" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', 'Kr', "<cmd>RustHoverActions<CR>", { desc = "Hover actions for rust-tools" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>",
-		{ desc = "Jump to implementation" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Signature help" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>",
-		{ desc = "Show type definition" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename symbol" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>",
-		{ desc = "Show code actions" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Show references" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>",
-		{ desc = "Show line diagnostics" })
-	vim.api.nvim_buf_set_keymap(buf, 'n', "<Leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>",
-		{ desc = "Format file" })
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"gd",
+		"<cmd>lua vim.lsp.buf.definition()<CR>",
+		{ desc = "Jump to definition" }
+	)
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"gD",
+		"<cmd>lua vim.lsp.buf.declaration()<CR>",
+		{ desc = "Jump to declaration" }
+	)
+	vim.api.nvim_buf_set_keymap(buf, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Show hover text" })
+	vim.api.nvim_buf_set_keymap(buf, "n", "Kr", "<cmd>RustHoverActions<CR>", { desc = "Hover actions for rust-tools" })
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"gi",
+		"<cmd>lua vim.lsp.buf.implementation()<CR>",
+		{ desc = "Jump to implementation" }
+	)
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"<C-k>",
+		"<cmd>lua vim.lsp.buf.signature_help()<CR>",
+		{ desc = "Signature help" }
+	)
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"<Leader>D",
+		"<cmd>lua vim.lsp.buf.type_definition()<CR>",
+		{ desc = "Show type definition" }
+	)
+	vim.api.nvim_buf_set_keymap(buf, "n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename symbol" })
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"<Leader>ca",
+		"<cmd>lua vim.lsp.buf.code_action()<CR>",
+		{ desc = "Show code actions" }
+	)
+	vim.api.nvim_buf_set_keymap(buf, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Show references" })
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"<Leader>e",
+		"<cmd>lua vim.diagnostic.open_float()<CR>",
+		{ desc = "Show line diagnostics" }
+	)
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"<Leader>f",
+		"<cmd>lua vim.lsp.buf.format({async = true})<CR>",
+		{ desc = "Format file" }
+	)
 end
 
 local lspconfig = require("lspconfig")
@@ -151,20 +190,20 @@ local lspconfig = require("lspconfig")
 local clangd_capabilities = capabilities
 clangd_capabilities.textDocument.semanticHighlighting = true
 
-lspconfig["clangd"].setup {
+lspconfig["clangd"].setup({
 	capabilities = clangd_capabilities,
 	on_attach = on_attach,
 	flags = {
 		debounce_text_changes = 300,
 	},
 	cmd = {
-		'clangd',
-		'--background-index',
-		'--pch-storage=memory',
-		'--clang-tidy', -- Look at clang-tidy options
-		'--suggest-missing-includes',
-		'--cross-file-rename',
-		'--completion-style=detailed',
+		"clangd",
+		"--background-index",
+		"--pch-storage=memory",
+		"--clang-tidy", -- Look at clang-tidy options
+		"--suggest-missing-includes",
+		"--cross-file-rename",
+		"--completion-style=detailed",
 	},
 	init_options = {
 		clangdFileStatus = true,
@@ -172,7 +211,7 @@ lspconfig["clangd"].setup {
 		completeUnimported = true,
 		semanticHighlighting = true,
 	},
-}
+})
 
 -- Switch to rust-tools
 require("rust-tools").setup({
@@ -399,14 +438,14 @@ nl.setup({
 		-- nl_builtins.diagnostics.cppcheck.with({ "-j4", "--std=c++23", "--suppress='*:source/*.h'", "--suppress='*:source/*.hpp'", "--suppress='*:src/*.hpp'", "--suppress='*:src/*.h'", "--suppress='*:**/*.hpp'", "--suppress='*:**/*.h'", "--suppress='*:include/*.h'", "--suppress='*:include/*.hpp'", "--suppress='*:*.hpp'", "--suppress='*:*.h'", "--enable=warning,style,performance,portability,information,missingInclude",
 		-- 	"--template=gcc", "$FILENAME" }),
 		nl_builtins.diagnostics.shellcheck,
-		nl_builtins.diagnostics.zsh,
+		nl_builtins.diagnostics.zsh.with({ method = nl.methods.DIAGNOSTICS_ON_SAVE }),
 		nl_builtins.formatting.clang_format,
 		nl_builtins.formatting.prettier,
 		nl_builtins.diagnostics.flake8,
 		nl_builtins.formatting.black,
 		nl_builtins.formatting.rustfmt,
 		nl_builtins.formatting.shfmt,
-		nl_builtins.formatting.stylua
+		nl_builtins.formatting.stylua,
 	},
 })
 

@@ -71,5 +71,13 @@ builtin.diagnostics						Lists Diagnostics for all open buffers or a specific bu
 builtin.lsp_implementations				Goto the implementation of the word under the cursor if there's only one, otherwise show all options in Telescope
 builtin.lsp_definitions					Goto the definition of the word under the cursor, if there's only one, otherwise show all options in Telescope
 builtin.lsp_type_definitions			Goto the definition of the type of the word under the cursor, if there's only one, otherwise show all options in Telescope
-]]--
+]]
+--
+
+map("n", "s", "<Plug>(leap-forward-to)")
+map("n", "S", "<Plug>(leap-backward-to)")
+
+map("n", "<Leader>n", function()
+	require("notify").dismiss({ silent = true, pending = true })
+end)
 

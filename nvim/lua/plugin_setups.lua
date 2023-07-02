@@ -2,10 +2,6 @@ require("nvim-web-devicons").setup({
 	default = true,
 })
 
-require("nvim-surround").setup()
-
-require("gitsigns").setup()
-
 require("Comment").setup({
 	ignore = "^%s*$",
 })
@@ -74,7 +70,17 @@ require("lualine").setup({
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = { "filename" },
-		lualine_x = { spell, "filetype", "encoding", "fileformat" },
+		lualine_x = {
+			{
+				require("noice").api.statusline.mode.get,
+				cond = require("noice").api.statusline.mode.has,
+				color = { fg = "#a6e3a1", gui = "bold" },
+			},
+			spell,
+			"filetype",
+			"encoding",
+			"fileformat",
+		},
 		lualine_y = {},
 		lualine_z = { "location", "progress" },
 	},
@@ -156,6 +162,7 @@ require("true-zen").setup({
 		ataraxis = {
 			shade = "dark", -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
 			backdrop = 0, -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
+			options = { number = false, relativenumber = false, statuscolumn = "" },
 			minimum_writing_area = {
 				-- minimum size of main window
 				width = 70,
@@ -178,6 +185,7 @@ require("true-zen").setup({
 			},
 		},
 		minimalist = {
+			quit_untoggles = true,
 			ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
 			options = {
 				-- options to be disabled when entering Minimalist mode
@@ -186,6 +194,7 @@ require("true-zen").setup({
 				showtabline = 0,
 				signcolumn = "no",
 				statusline = "",
+				statuscolumn = "",
 				cmdheight = 1,
 				laststatus = 0,
 				showcmd = false,
@@ -261,8 +270,6 @@ require("colorizer").setup({
 	buftypes = {},
 })
 
-require("diffview").setup()
-
 local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 
@@ -294,5 +301,84 @@ vim.cmd([[
 	autocmd FileType alpha setlocal nonumber
 	autocmd FileType alpha setlocal norelativenumber
 	autocmd FileType alpha setlocal statuscolumn=""
+]])
+
+require("leap").opts.safe_labels = {}
+
+require("gitsigns").setup()
+require("nvim-surround").setup()
+require("diffview").setup()
+require("mind").setup()
+
+require("notify").setup({ stages = "fade", fps = 30, timeout = 2000 })
+
+-- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#hide-search-virtual-text
+require("noice").setup({
+	cmdline = {
+		view = "cmdline",
+	},
+	lsp = {
+		-- progress = { enabled = false },
+		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+		override = {
+			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+			["vim.lsp.util.stylize_markdown"] = true,
+			["cmp.entry.get_documentation"] = true,
+		},
+	},
+	presets = {
+		bottom_search = true, -- use a classic bottom cmdline for search
+		command_palette = true, -- position the cmdline and popupmenu together
+		long_message_to_split = true, -- long messages will be sent to a split
+		lsp_doc_border = true, -- add a border to hover docs and signature help
+	},
+})
+
+-- https://github.com/folke/noice.nvim/wiki/A-Guide-to-Messages
+-- local null_ls_token = nil
+-- vim.lsp.handlers['$/progress'] = function(_, result, ctx)
+--     local value = result.value
+--     if not value.kind then
+--         return vim.lsp.rpc.rpc_response_error(-1, nil, nil)
+--     end
+
+--     local client_id = ctx.client_id
+--     local name = vim.lsp.get_client_by_id(client_id).name
+
+--     if name == 'null-ls' then
+--         if result.token == null_ls_token then
+--             return vim.lsp.rpc.rpc_response_error(-1, nil, nil)
+--         end
+--         if value.title == 'formatting' then
+--             null_ls_token = result.token
+--             return vim.lsp.rpc.rpc_response_error(-1, nil, nil)
+--         end
+--     end
+
+--     vim.notify(value.message, 'info', {
+--         title = value.title,
+--     })
+-- 	return vim.lsp.rpc.rpc_response_error(-2, nil, nil)
+-- end
+
+require("catppuccin").setup({
+	integrations = {
+		leap = true,
+		notify = true,
+		noice = true,
+		native_lsp = {
+			enabled = true,
+			underlines = {
+				errors = { "undercurl" },
+				hints = { "undercurl" },
+				warnings = { "undercurl" },
+				information = { "undercurl" },
+			},
+		},
+	},
+})
+
+vim.cmd([[
+let g:VM_mouse_mappings = 1
 ]])
 
