@@ -28,8 +28,8 @@ alias -s mp4=mpv
 alias -s pde=nvim
 alias -s pdf=mupdf
 alias -s png=nsxiv
+alias -s webm=mpv
 alias -s webp=nsxiv
-alias -s webp=mpv
 alias ......="../../../../.."
 alias .....="../../../.."
 alias ....="../../.."
@@ -85,6 +85,7 @@ alias lcaer="clear"
 alias lcear="clear"
 alias lear="clear"
 alias less='less -RFx4'
+alias lfs="dysk"
 alias lget="xbacklight -get"
 alias ll="exal"
 alias lll="\ls -lAFh --si --color=always --group-directories-first"
