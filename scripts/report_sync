@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # From https://unix.stackexchange.com/a/683668
 
@@ -15,11 +15,11 @@ report
 sync &
 SYNC_PID=$!
 # Give a short sleep in case there's not much
-sleep 0.125
+sleep 0.25
 # While sync is running, report
 while ps -p $SYNC_PID >/dev/null 2>&1; do
-	report
 	sleep 1.5
+	report
 done
 
 echo "Done!"

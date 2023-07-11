@@ -19,7 +19,6 @@ require("lazy").setup({
 	{ "Pocco81/true-zen.nvim", cmd = { "TZAtaraxis", "TZFocus", "TZMinimalist", "TZNarrow" } },
 	{ "PotatoesMaster/i3-vim-syntax", ft = "i3" },
 	{ "Saecki/crates.nvim", event = "BufRead Cargo.toml" },
-	{ "ggandor/leap.nvim", event = { "BufReadPost", "BufNewFile" } },
 	{ "arrufat/vala.vim", ft = "vala" },
 	{
 		"catppuccin/nvim",
@@ -47,6 +46,7 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 		event = { "BufReadPost", "BufNewFile" },
 	},
+	{ "ggandor/leap.nvim", event = { "BufReadPost", "BufNewFile" } },
 	{
 		"goolord/alpha-nvim",
 		event = "VimEnter",

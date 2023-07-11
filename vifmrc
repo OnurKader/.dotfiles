@@ -12,6 +12,7 @@ set incsearch
 set nofollowlinks
 set norunexec
 set nowrap
+" set previewoptions=hardgraphicsclear
 set scrolloff=4
 set slowfs=curlftpfs
 set smartcase

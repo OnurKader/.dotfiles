@@ -9,6 +9,7 @@ export LESSHISTFILE="-"
 export TERMINAL="alacritty"
 export PAGER="less -RFx4"
 export BAT_PAGER="$PAGER"
+export BAT_THEME="Catppuccin-mocha"
 export SERENITY_ROOT="/home/beron/Desktop/Code/serenity"
 # export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
