@@ -26,7 +26,7 @@ set ignorecase true
 set drawbox true
 set globsearch true
 # MAYBE: set number and relativenumber
-set tapstop 4
+set tabstop 4
 
 set previewer ctpv
 set cleaner ctpvclear
