@@ -95,7 +95,7 @@ require("lazy").setup({
 		tag = "0.1.2",
 		event = "VeryLazy",
 	},
-	{ "nvim-treesitter/nvim-treesitter", event = { "BufReadPost", "BufNewFile" } },
+	{ "nvim-treesitter/nvim-treesitter", event = { "BufReadPost", "BufNewFile" }, build = ":TSUpdate" },
 	{ "kaarmu/typst.vim", ft = "typst" },
 	{ "onsails/lspkind-nvim", event = "VeryLazy" },
 	{
