@@ -7,7 +7,7 @@ report() {
 	local dirty="$(grep -w Dirty: /proc/meminfo | cut -d ':' -f 2 | tr -d ' ')"
 	# Remove the kB suffix and convert to bytes
 	dirty=${dirty%kB}
-	echo -n -e "\e[2K\rSyncing $(echo $((dirty*1000)) | numfmt --to=si --suffix=B)... "
+	echo -n -e "\e[2K\rSyncing \033[1m$(echo $((dirty*1000)) | numfmt --to=si --suffix=B)\033[m... "
 }
 
 report
@@ -22,5 +22,5 @@ while ps -p $SYNC_PID >/dev/null 2>&1; do
 	report
 done
 
-echo "Done!"
+echo -e "\033[1;32mDone!\033[m"
 
