@@ -35,12 +35,6 @@ require("lazy").setup({
 	},
 	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
 	{ "eandrju/cellular-automaton.nvim", cmd = "CellularAutomaton" },
-	{ "ellisonleao/gruvbox.nvim", priority = 420, lazy = true },
-	{
-		"folke/noice.nvim",
-		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-		event = "VeryLazy",
-	},
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -69,9 +63,7 @@ require("lazy").setup({
 	{ "krady21/compiler-explorer.nvim", dependencies = { "nvim-lua/plenary.nvim" }, cmd = "CECompile" },
 	{ "kylechui/nvim-surround", event = "VeryLazy" },
 	{ "lewis6991/gitsigns.nvim", event = "VeryLazy" },
-	{ "luisiacc/gruvbox-baby", lazy = true },
-	-- { "mg979/vim-visual-multi", event = { "BufEnter", "BufReadPost", "BufNewFile" } },
-	{ "mrjones2014/tldr.nvim", dependencies = { "nvim-telescope/telescope.nvim" }, event = "VeryLazy" },
+	{ "max397574/better-escape.nvim", event = "VeryLazy" },
 	{ "neovim/nvim-lspconfig", event = { "BufReadPost", "BufNewFile" } },
 	{ "numToStr/Comment.nvim", event = { "BufReadPost", "BufNewFile" } },
 	{ "nvim-lua/plenary.nvim", lazy = true },
@@ -107,9 +99,8 @@ require("lazy").setup({
 	{ "ray-x/cmp-treesitter", event = "InsertEnter" },
 	{ "rhysd/vim-clang-format", cmd = "ClangFormat" },
 	{ "simrat39/rust-tools.nvim", ft = "rust" },
-	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim", event = { "BufReadPost", "BufNewFile" } },
+	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim", event = "VeryLazy" },
 	{ "sophacles/vim-processing", ft = "processing" },
-	{ "rcarriga/nvim-notify", event = "VeryLazy" },
 	{ "stephpy/vim-yaml", ft = "yaml" },
 	{ "tpope/vim-repeat", event = "VeryLazy" },
 	{ "windwp/nvim-autopairs", event = "InsertEnter" },
@@ -119,7 +110,6 @@ require("lazy").setup({
 
 vim.cmd([[
   syntax enable
-  " colorscheme gruvbox-baby
   " For some reason the current line number wasn't being highlighted properly
   " Pretty sure CursorLineNr is unnecessary
   " hi LineNr guifg=#fabd2f

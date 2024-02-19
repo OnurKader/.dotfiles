@@ -6,13 +6,6 @@ require("Comment").setup({
 	ignore = "^%s*$",
 })
 
-require("tldr").setup({
-	-- the shell command to use
-	tldr_command = "tldr",
-	-- a string of extra arguments to pass to `tldr`, e.g. tldr_args = '--color always'
-	tldr_args = "--color=always",
-})
-
 local telescope = require("telescope")
 
 telescope.setup({
@@ -71,11 +64,6 @@ require("lualine").setup({
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = { "filename" },
 		lualine_x = {
-			{
-				require("noice").api.statusline.mode.get,
-				cond = require("noice").api.statusline.mode.has,
-				color = { fg = "#a6e3a1", gui = "bold" },
-			},
 			spell,
 			"filetype",
 			"encoding",
@@ -310,30 +298,6 @@ require("nvim-surround").setup()
 require("diffview").setup()
 require("mind").setup()
 
-require("notify").setup({ stages = "fade", fps = 30, timeout = 2000 })
-
--- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#hide-search-virtual-text
-require("noice").setup({
-	cmdline = {
-		view = "cmdline",
-	},
-	lsp = {
-		-- progress = { enabled = false },
-		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-		override = {
-			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-			["vim.lsp.util.stylize_markdown"] = true,
-			["cmp.entry.get_documentation"] = true,
-		},
-	},
-	presets = {
-		bottom_search = true, -- use a classic bottom cmdline for search
-		command_palette = true, -- position the cmdline and popupmenu together
-		long_message_to_split = true, -- long messages will be sent to a split
-		lsp_doc_border = true, -- add a border to hover docs and signature help
-	},
-})
-
 -- https://github.com/folke/noice.nvim/wiki/A-Guide-to-Messages
 -- local null_ls_token = nil
 -- vim.lsp.handlers['$/progress'] = function(_, result, ctx)
@@ -364,8 +328,6 @@ require("noice").setup({
 require("catppuccin").setup({
 	integrations = {
 		leap = true,
-		notify = true,
-		noice = true,
 		native_lsp = {
 			enabled = true,
 			underlines = {
@@ -381,4 +343,11 @@ require("catppuccin").setup({
 -- vim.cmd([[
 -- let g:VM_mouse_mappings = 1
 -- ]])
+
+require("better_escape").setup({
+	mapping = { "jk", "jj" },
+	timeout = vim.o.timeoutlen,
+	clear_empty_lines = false,
+	keys = "<Esc>",
+})
 

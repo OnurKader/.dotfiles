@@ -44,6 +44,7 @@ vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.textwidth = 101 -- Should think about this again, possibly larger (wider)
 vim.opt.timeoutlen = 666
+vim.opt.title = true
 vim.opt.updatetime = 500
 vim.opt.wildmenu = true
 vim.opt.wildmode = "list,longest,full"

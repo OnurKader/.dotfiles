@@ -6,6 +6,7 @@ require("nvim-treesitter.configs").setup({
 		"cpp",
 		"gitcommit",
 		"html",
+		"java",
 		"javascript",
 		"json",
 		"json5",
@@ -13,7 +14,9 @@ require("nvim-treesitter.configs").setup({
 		"markdown",
 		"python",
 		"rust",
+		"v",
 		"vim",
+		"vimdoc",
 	},
 	highlight = {
 		enable = true,
