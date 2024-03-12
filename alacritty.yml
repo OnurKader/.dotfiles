@@ -67,7 +67,7 @@ window:
 
   # Window class (Linux only):
   #class: Alacritty
-  dynamic_title: false
+  dynamic_title: true
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -82,7 +82,6 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Noto Emoji Nerd Font
     family: Hack Nerd Font
     style: Regular
 
