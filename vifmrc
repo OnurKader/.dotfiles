@@ -12,6 +12,8 @@ set incsearch
 set nofollowlinks
 set norunexec
 set nowrap
+set number
+set relativenumber
 " set previewoptions=hardgraphicsclear
 set scrolloff=4
 set slowfs=curlftpfs
@@ -111,6 +113,9 @@ fileviewer {*.pdf},<application/pdf>
 			\ %pc
 			\ vifmimg clear
 
+" Mobi
+filextype {*.mobi},<application/x-mobipocket-ebook> mupdf %c &, zathura %c %i &, calibre %c &
+
 " PostScript
 filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
 			\ {View in zathura}
@@ -126,7 +131,7 @@ filextype {*.djvu},<image/vnd.djvu>
 			\ apvlv %f,
 
 " Audio
-filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
+filetype {*.wav,*.mp3,*.flac,*.m4a,*.m4b,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
 			\<audio/*>
 			\ mpv --no-audio-display %f,
 
@@ -483,7 +488,7 @@ set classify+=' ::*.7z,,*.apk,,*.bz2,,*.cpio,,*.deb,,*.gz,,*.gzip,,*.gem,,*.l
              \  ::*.ai::,
              \  ::*.asm,,*.css,,*.less,,*.s,,*.sh,,*.zsh::,
              \  ::*.asp,,*.rom,,*.efi,,*.elf,,*.fish::,
-             \  ::*.aup,,*.cue,,*.flac,,*.m4a,,*.mp3,,*.ogg,,*.wav::,
+             \  ::*.aup,,*.cue,,*.flac,,*.m4a,,*.m4b,,*.mp3,,*.ogg,,*.wav::,
              \ 󰎁 ::*.avi,,*.flv,,*.m4v,,*.mkv,,*.mov,,*.mp4,,*.mpeg,,*.mpg,,*.webm::,
              \  ::*.bat,,*.conf,,*.cvs,,*.htaccess,,*.htpasswd,,*.ini,,*.rc,,*.yaml,,*.yml::,
              \  ::*.bmp,,*.gif,,*.ico,,*.jpeg,,*.jpg,,*.png,,*.ppt,,*.pptx::,
@@ -500,7 +505,7 @@ set classify+=' ::*.7z,,*.apk,,*.bz2,,*.cpio,,*.deb,,*.gz,,*.gzip,,*.gem,,*.l
              \  ::*.db,,*.dump,,*.img,,*.iso,,*.sql::,
              \  ::*.diff::,
              \  ::*.dll,,*.exe,,*.msi::,
-             \  ::*.doc,,*.docx,,*.epub,,*.pdf,,*.rtf,,*.xls,,*.xlsx::,
+             \  ::*.doc,,*.docx,,*.epub,,*.pdf,,*.rtf,,*.xls,,*.xlsx,,*.mobi::,
              \  ::*.ejs,,*.htm,,*.html,,*.slim,,*.xhtml,,*.xml::,
              \  ::*.erl,,*.hrl::,
              \  ::*.ex,,*.exs,,*.eex::,
