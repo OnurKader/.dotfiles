@@ -12,6 +12,9 @@ separator = " | "
 [icons]
 icons = "material-nf"
 
+[[block]]
+block = "music"
+
 # MAYBE: Switch to the builtin "music" block
 [[block]]
 block = "custom"
@@ -47,7 +50,7 @@ button = "left"
 cmd = '''notify-send "Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head -n 13)"'''
 update = true
 [[block.click]]
-button = ""
+button = "right"
 update = true
 
 [[block]]
@@ -66,6 +69,7 @@ update = true
 [[block]]
 block = "sound"
 max_vol = 125
+name = "alsa_output.pci-0000_06_00.6.analog-stereo" # Headphone channels are flipped ???
 format = "$icon {$volume.eng(w:2)|}"
 [[block.click]]
 button = "left"
@@ -90,7 +94,7 @@ command = "cpu-heat"
 format = "$text.pango-str()"
 interval = 10
 [[block.click]]
-button = ""
+button = "left"
 update = true
 
 # Battery
