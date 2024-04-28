@@ -28,6 +28,8 @@ for plugin in ~/Code/.dotfiles/zsh-plugins/*.zsh ~/Code/.dotfiles/zsh-plugins/zm
 	source $plugin
 done
 
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 fpath=(~/Code/.dotfiles/zsh-plugins/zsh-completions/src $fpath)
 
 autoload -Uz compinit
@@ -97,8 +99,14 @@ play ()
 	# echo $@ >> ~/.cache/youtube-dl/download-archive.txt
 }
 
-# zoxide
-eval "$(zoxide init zsh)"
+strip_playlist_from_yt_url ()
+{
+	echo "$(cut -d'&' -f1 <<< $1)"
+}
+
+# z.lua + czmod
+eval "$(lua ~/Code/z.lua/z.lua --init zsh once enhanced)"
+source "$HOME/Code/czmod/czmod.zsh"
 
 # Setopts
 setopt complete_in_word
@@ -116,6 +124,7 @@ setopt nobeep
 # setopt correctall
 setopt auto_continue
 setopt auto_pushd
+unsetopt FLOW_CONTROL
 
 bindkey -v
 # [Backspace] - delete backward
@@ -191,12 +200,7 @@ bindkey ' ' magic-space
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-# eval "$(starship init zsh)"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
-# export ATUIN_NOBIND="true"
-# eval "$(atuin init zsh)"
-# bindkey '^r' _atuin_search_widget
 
 autoload -z edit-command-line
 zle -N edit-command-line
@@ -235,11 +239,6 @@ setup_zellij ()
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-autoload bashcompinit
-bashcompinit
-source /opt/vcpkg/scripts/vcpkg_completion.zsh
-
 function nvims() {
 	items=("LazyVim" "default" "NvChad" "AstroNvim")
 	config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config 󰄾 " --height=~50% --layout=reverse --border --exit-0)
@@ -253,4 +252,27 @@ function nvims() {
 }
 
 alias lnv="NVIM_APPNAME=LazyVim nvim"
+
+function sle() {
+	MINS="${1-1}"
+	sleep "$MINS"m
+	mousemove
+	report_sync
+	exit
+}
+
+FZF_ALT_C_COMMAND= eval "$(fzf --zsh)" # Doesn't work with ^R for some reason? If I run this in the shell it's fine??
+bindkey "^o" fzf-history-widget # This works at least
+
+vterm_printf() {
+	if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ]); then
+		# Tell tmux to pass the escape sequences through
+		printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+	elif [ "${TERM%%-*}" = "screen" ]; then
+		# GNU screen (screen, screen-256color, screen-256color-bce)
+		printf "\eP\e]%s\007\e\\" "$1"
+	else
+		printf "\e]%s\e\\" "$1"
+	fi
+}
 
