@@ -1,5 +1,5 @@
 [user]
-	name = Onur Kader
+	name = Beron the Colossus
 	email = onurorkunkader1999@gmail.com
 [core]
 	editor = nvim
@@ -37,3 +37,5 @@
 [safe]
 	directory = /usr/lib/vlang/thirdparty/tcc
 	directory = /mnt/HDD/.hidden
+[rerere]
+	enabled = true
