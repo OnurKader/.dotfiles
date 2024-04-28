@@ -15,10 +15,10 @@ report
 sync &
 SYNC_PID=$!
 # Give a short sleep in case there's not much
-sleep 0.25
+sleep 0.333
 # While sync is running, report
 while ps -p $SYNC_PID >/dev/null 2>&1; do
-	sleep 1.5
+	sleep 1.75
 	report
 done
 
