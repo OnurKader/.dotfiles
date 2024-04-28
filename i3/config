@@ -26,16 +26,16 @@ default_orientation horizontal
 workspace_layout tabbed
 
 # Define Workspaces
-set $workspace1  "1: Web  "
-set $workspace2  "2: Term  "
-set $workspace3  "3: Code 󰙲 "
-set $workspace4  "4: Media 󰕼 "
+set $workspace1  "1:  "
+set $workspace2  "2:  "
+set $workspace3  "3: 󰙲 "
+set $workspace4  "4: 󰕼 "
 set $workspace5  "5:"
 set $workspace6  "6:"
 set $workspace7  "7:"
-set $workspace8  "8: Game  "
-set $workspace9  "9: Game  "
-set $workspace10 "10: Music  "
+set $workspace8  "8:  "
+set $workspace9  "9:  "
+set $workspace10 "10:  "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -119,7 +119,7 @@ bindsym $mod+Shift+d gaps inner current set 0, gaps outer current set 0
 bindsym $mod+e $exe thunar
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+$alt+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -134,8 +134,10 @@ bindsym $mod+Shift+z  gaps outer current minus 4
 # HTOP
 bindsym $mod+i $exe $term -e htop
 
-# VIFM / File Manager
+# VIFM / Text Editors (Also Emacs)
 bindsym $mod+Shift+n $exe $term -e "nvim"
+bindsym $mod+$alt+n $exe emacsclient -c
+bindsym $mod+Shift+e $exe emacs
 bindsym $mod+Shift+v $exe $term -e "vifmrun"
 
 # Move the Window Around with `vim` keys
@@ -147,8 +149,8 @@ bindsym $mod+Shift+l move right 24
 # Dijo Stuff
 bindsym $mod+g $exe $term -t "Dijo" -e dijo
 
-# Mind.nvim
-bindsym $mod+Shift+g $exe $term -t "Mind.nvim" -e nvim +MindOpenMain
+# Open Neorg's index, maybe a keybind for TODOs as well, Win+Alt+N is available
+bindsym $mod+Shift+g $exe $term -e nvim +"Neorg index"
 
 # Lock Screen
 # bindsym $mod+Ctrl+$alt+l $exe ~/.config/i3/scripts/i3exit.sh lock, mode "default"
@@ -158,25 +160,24 @@ bindsym $mod+Ctrl+$alt+l $exe i3lock -i ~/Pictures/Wallpaper/Lock.png
 # Default gaps
 bindsym $mod+Shift+t gaps inner current set 14, gaps outer current set 8
 
-# Launch Spotify
-bindsym $mod+Shift+s $exe spotify
+# Launch Music
+bindsym $mod+Shift+s $exe $term -T="MyMusic" --working-directory=/home/beron/Music/YouTube\ Music/Me\ songs/ -e \
+mpv --shuffle --speed=1 --volume=56 --input-ipc-server=/tmp/mpvsocket --pause .
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+w layout toggle split
 
-bindsym $mod+u $exe dmenuunicode
+# bindsym $mod+u $exe dmenuunicode
 bindsym $mod+$alt+u $exe enter_unicode
+bindsym $mod+u $exe ucmenu -r "rofi -dmenu -i -p %P" -m "rofi -dmenu -i -p %P" -n "rofi -dmenu -i -p %P" | xclip -sel clip
 
 # Firefox / Browser
 bindsym $mod+Shift+w $exe $BROWSER
 
 # QtCreator / IDE
 bindsym $mod+Shift+i $exe qtcreator
-
-# WIP Movie dir
-bindsym $mod+m $exe $term --working-directory "MicroSD"
 
 # Shutdown
 bindsym $mod+Shift+x $exe shut "Shutdown Now?" "shutdown --no-wall -h now"
@@ -323,6 +324,7 @@ bindsym XF86AudioPause $exe playerctl play-pause
 bindsym XF86AudioNext  $exe playerctl next
 bindsym XF86AudioPrev  $exe playerctl previous
 
+# MAYBE: Change to `sp next and what not`
 bindsym $mod+Shift+b $exe playerctl previous
 bindsym $mod+Shift+m $exe playerctl next
 bindsym $mod+n       $exe playerctl play-pause
@@ -367,6 +369,7 @@ assign [instance="^krita$"] $workspace4
 assign [class="prismlauncher"] $workspace9
 assign [class="PrismLauncher"] $workspace9
 assign [instance="prismlauncher"] $workspace9
+assign [title="MyMusic"] $workspace10
 
 for_window [class="Code"] move workspace $workspace3
 for_window [class="Firefox"] move workspace $workspace1
@@ -392,13 +395,14 @@ for_window [instance="^krita$"] move workspace $workspace4
 for_window [class="polymc"] move workspace $workspace9
 for_window [class="PolyMC"] move workspace $workspace9
 for_window [instance="polymc"] move workspace $workspace9
+for_window [title="MyMusic"] move workspace $workspace10
 
 # Execs
 # $exe picom -b
 $exe nm-applet &
-exec_always --no-startup-id gnome-keyring-daemon --start
+exec_always --no-startup-id gnome-keyring-daemon --start&
 exec_always --no-startup-id numlockx on&
-exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id dunst&
 exec_always --no-startup-id /usr/lib/kdeconnectd
@@ -410,6 +414,6 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" 0.05
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
-# exec_always --no-startup-id activitywatcher&
 exec_always --no-startup-id copyq&
+exec_always --no-startup-id emacs --daemon
 
