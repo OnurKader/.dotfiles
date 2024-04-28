@@ -2,6 +2,7 @@
 
 git init
 cp ~/.config/scripts/cpp-gitignore .gitignore
+cp ~/.clang-format .clang-format
 mkdir src include
 
 cp ~/.config/scripts/meson.build .
