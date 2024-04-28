@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
+# Battery 0: Not charging, 51%
+# Battery 0: Not charging, 35%
+
 START_COL="#FF0808" # 0%
 END_COL="#08FF08"   # 100%
 
-PERC="$(acpi -b | grep -P "\d{2}:\d{2}:\d{2}|100%" | awk '{print $4}' | sed s/,//)"
-PERC_INT=${PERC//\%/}
+BAT_LEVEL="$(acpi -b | sed -E "s/[a-zA-Z]*([0-9]{1,3}%).*/\1/" | cut -d' ' -f $([ "$(acpi -b | grep -v 'Not')" ] && echo 4 || echo 5))"
+# PERC="$(acpi -b | grep -P "\d{2}:\d{2}:\d{2}|100%" | awk '{print $4}' | sed s/,//)"
+PERC_INT=${BAT_LEVEL//\%/}
 [ "$(acpi -b | grep -P "\d{2}:\d{2}:\d{2}" | grep -i 'Discharging')" ] || DISC=" "
 
 if [ "$PERC_INT" -ge 90 ]; then
@@ -65,20 +69,20 @@ fi ;;
 esac
 
 if [ "$(acpi -b | grep "Discharging")" ]; then
-	[ "$PERC_INT" -lt 8 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!   $PERC"
+	[ "$PERC_INT" -lt 8 ] && notify-send --urgency=critical "WARNING" "LOW BATTERY!   $BAT_LEVEL"
 fi
 
 getColor "$PERC_INT" "$START_COL" "$END_COL"
 
 if [[ "$PERC_INT" -eq 69 ]]; then
 	SYMBOL="Nice 👌"
-	PERC=""
+	BAT_LEVEL=""
 	color='#1AFFFE'
 elif [[ "$PERC_INT" -eq 100 && "$(acpi -b | grep -v "Discharging")" ]]; then
-	notify-send --urgency=normal "FULLY CHARGED" "BATTERY PERCENTAGE AT $PERC"
+	notify-send --urgency=normal "FULLY CHARGED" "BATTERY PERCENTAGE AT $BAT_LEVEL"
 fi
 
-echo -n "<span foreground='$color'>$SYMBOL $PERC</span><span foreground='#FDFD16'>$DISC</span>"
+echo -n "<span foreground='$color'>$SYMBOL $BAT_LEVEL</span><span foreground='#FDFD16'>$DISC</span>"
 
 # The Tablet
 PERC="$(battery_wacom | awk '/percentage/ {print $2}')"
