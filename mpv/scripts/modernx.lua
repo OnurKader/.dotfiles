@@ -19,15 +19,15 @@ local user_opts = {
     showwindowed = true,        -- show OSC when windowed?
     showfullscreen = true,      -- show OSC when fullscreen?
     idlescreen = false,         -- draw logo and text when idle
-    scalewindowed = 0.90,       -- scaling of the controller when windowed
-    scalefullscreen = 0.90,     -- scaling of the controller when fullscreen
+    scalewindowed = 0.9,        -- scaling of the controller when windowed
+    scalefullscreen = 0.9,      -- scaling of the controller when fullscreen
     scaleforcedwindow = 2.0,    -- scaling when rendered on a forced window
     vidscale = true,            -- scale the controller with the video?
     hidetimeout = 1500,         -- duration in ms until the OSC hides if no
                                 -- mouse movement. enforced non-negative for the
                                 -- user, but internally negative is 'always-on'.
     fadeduration = 250,         -- duration of fade out in ms, 0 = no fade
-    minmousemove = 1,           -- minimum amount of pixels the mouse has to
+    minmousemove = 2,           -- minimum amount of pixels the mouse has to
                                 -- move between ticks to make the OSC show up
     iamaprogrammer = false,     -- use native mpv values and disable OSC
                                 -- internal track list management (and some
@@ -37,7 +37,7 @@ local user_opts = {
     seekrange = true,		-- show seekrange overlay
     seekrangealpha = 64,      	-- transparency of seekranges
     seekbarkeyframes = true,    -- use keyframes when dragging the seekbar
-    showjump = true,            -- show "jump forward/backward 5 seconds" buttons
+    showjump = false,            -- show "jump forward/backward 5 seconds" buttons
                                 -- shift+left-click to step 1 frame and
                                 -- right-click to jump 1 minute
     jumpamount = 5,             -- change the jump amount (in seconds by default)
@@ -46,15 +46,15 @@ local user_opts = {
                                 -- 'exact', 'relative+keyframes', etc.
     title = '${media-title}',   -- string compatible with property-expansion
                                 -- to be shown as OSC title
-    showtitle = true,		    -- show title in OSC
-    showonpause = false,        -- whether to disable the hide timeout on pause
-    timetotal = false,          -- display total time instead of remaining time?
+    showtitle = true,			-- show title in OSC
+    showonpause = false,         -- whether to disable the hide timeout on pause
+    timetotal = false,         	-- display total time instead of remaining time?
     timems = false,             -- Display time down to millliseconds by default
     visibility = 'auto',        -- only used at init to set visibility_mode(...)
-    windowcontrols = 'auto',    -- whether to show window controls
+    windowcontrols = 'no',		-- whether to show window controls
     greenandgrumpy = false,     -- disable santa hat
-    language = 'eng',		    -- eng=English, chs=Chinese
-    volumecontrol = true,       -- whether to show mute button and volumne slider
+    language = 'eng',		-- eng=English, chs=Chinese
+    volumecontrol = true,       -- whether to show mute button and volume slider
     keyboardnavigation = false, -- enable directional keyboard navigation
     chapter_fmt = "Chapter: %s", -- chapter print format for seekbar-hover. "no" to disable
 }
@@ -153,7 +153,7 @@ local osc_styles = {
     Ctrl2 = '{\\blur0\\bord0\\1c&HFFFFFF&\\3c&HFFFFFF&\\fs24\\fnmaterial-design-iconic-font}',
     Ctrl2Flip = '{\\blur0\\bord0\\1c&HFFFFFF&\\3c&HFFFFFF&\\fs24\\fnmaterial-design-iconic-font\\fry180',
     Ctrl3 = '{\\blur0\\bord0\\1c&HFFFFFF&\\3c&HFFFFFF&\\fs24\\fnmaterial-design-iconic-font}',
-    Time = '{\\blur0\\bord0\\1c&HFFFFFF&\\3c&H000000&\\fs17\\fn' .. user_opts.font .. '}',
+    Time = '{\\blur0\\bord0\\1c&HFFFFFF&\\3c&H000000&\\fs18\\fn' .. user_opts.font .. '}',
     Tooltip = '{\\blur1\\bord0.5\\1c&HFFFFFF&\\3c&H000000&\\fs18\\fn' .. user_opts.font .. '}',
     Title = '{\\blur1\\bord0.5\\1c&HFFFFFF&\\3c&H0\\fs38\\q2\\fn' .. user_opts.font .. '}',
     WinCtrl = '{\\blur1\\bord0.5\\1c&HFFFFFF&\\3c&H0\\fs20\\fnmpv-osd-symbols}',
@@ -823,6 +823,7 @@ function render_elements(master_ass)
 
                             elem_ass:new_event()
                             elem_ass:pos(thumbX * r_w, ty - thumbMarginY - thumbfast.height * r_h)
+                            elem_ass:an(7)
                             elem_ass:append(osc_styles.Tooltip)
                             elem_ass:draw_start()
                             elem_ass:rect_cw(-thumbPad * r_w, -thumbPad * r_h, (thumbfast.width + thumbPad) * r_w, (thumbfast.height + thumbPad) * r_h)
@@ -2513,8 +2514,8 @@ function visibility_mode(mode, no_osd)
         return
     end
 
-	user_opts.visibility = mode
-    utils.shared_script_property_set("osc-visibility", mode)
+    user_opts.visibility = mode
+    mp.set_property_native("user-data/osc/visibility", user_opts.visibility)
 
     if not no_osd and tonumber(mp.get_property('osd-level')) >= 1 then
         mp.osd_message('OSC visibility: ' .. mode)
