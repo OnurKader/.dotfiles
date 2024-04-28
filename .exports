@@ -250,6 +250,7 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
+export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export XCURSOR_PATH="$XCURSOR_PATH:${XDG_DATA_HOME}/icons:/usr/share/icons"
@@ -257,4 +258,7 @@ export XCURSOR_PATH="$XCURSOR_PATH:${XDG_DATA_HOME}/icons:/usr/share/icons"
 # vcpkg (Maybe I should change the root?)
 export VCPKG_DOWNLOADS="$XDG_CACHE_HOME/vcpkg"
 export VCPKG_MAX_CONCURRENCY="$(nproc --ignore=2)"
+
+# SGR Broke man-page colorings, even though it's outputting ANSI Escape Codes
+export GROFF_NO_SGR=1
 
