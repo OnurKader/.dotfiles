@@ -136,8 +136,8 @@ bindsym $mod+i $exe $term -e htop
 
 # VIFM / Text Editors (Also Emacs)
 bindsym $mod+Shift+n $exe $term -e "nvim"
-bindsym $mod+$alt+n $exe emacsclient -c
-bindsym $mod+Shift+e $exe emacs
+bindsym $mod+$alt+n $exe emacs
+bindsym $mod+Shift+e $exe emacsclient -c
 bindsym $mod+Shift+v $exe $term -e "vifmrun"
 
 # Move the Window Around with `vim` keys
