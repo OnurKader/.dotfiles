@@ -97,4 +97,5 @@ compile_commands.json
 tags
 bin/
 build/
+*~
 
