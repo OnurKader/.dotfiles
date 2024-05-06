@@ -50,7 +50,7 @@ search ()
 
 nrun ()
 {
-	clear && ninja && clear && ./$@
+	clear && ninja && ./$@
 }
 
 crun ()
