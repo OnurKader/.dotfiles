@@ -6,6 +6,7 @@ vim.opt.background = "dark"
 vim.opt.backspace = "indent,start,eol" -- Should I switch to a list?
 vim.opt.complete:remove('i')
 vim.opt.completeopt = "menuone,noselect"
+vim.opt.conceallevel = 2
 vim.opt.cursorline = true
 vim.opt.directory = "/home/beron/.config/nvim/tmp"
 vim.opt.encoding = "utf-8"
@@ -54,6 +55,7 @@ vim.opt.cmdheight = 1
 vim.opt.statuscolumn = '%s %l %=%{v:relnum?v:relnum:v:lnum} '
 
 vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 vim.g["clang_format#detect_style_file"] = 1
 
 -- Plugin options among other things
@@ -92,6 +94,7 @@ autocmd BufWrite * if ! &bin && &filetype != "gitcommit" | silent! %s/\s\+$//ge 
 " Enable spell check for git commits
 autocmd FileType gitcommit set spell
 autocmd FileType markdown set spell
+autocmd FileType norg set spell
 " Abbreviations
 iab whit with
 iab wiht with
@@ -206,7 +209,7 @@ endif
 ]]
 
 -- For some reason xxx.PKGBUILD files aren't recognized as PKGBUILD
-aucmd("BufEnter", { pattern = "*.PKGBUILD", command = "set ft=PKGBUILD" })
+aucmd("BufEnter", { pattern = "*.PKGBUILD", command = "set ft=PKGBUILD|set syntax=sh" })
 
 -- I forgot verilog so let's just focus on vlang
 aucmd("BufEnter", { pattern = "*.v", command = "set ft=vlang" })
