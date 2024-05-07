@@ -268,6 +268,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
 	dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
+	dashboard.button("n", " " .. " Neorg", ":Neorg index<CR>"),
 	dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 
@@ -298,33 +299,6 @@ require("nvim-surround").setup()
 require("diffview").setup()
 require("mind").setup()
 
--- https://github.com/folke/noice.nvim/wiki/A-Guide-to-Messages
--- local null_ls_token = nil
--- vim.lsp.handlers['$/progress'] = function(_, result, ctx)
---     local value = result.value
---     if not value.kind then
---         return vim.lsp.rpc.rpc_response_error(-1, nil, nil)
---     end
-
---     local client_id = ctx.client_id
---     local name = vim.lsp.get_client_by_id(client_id).name
-
---     if name == 'null-ls' then
---         if result.token == null_ls_token then
---             return vim.lsp.rpc.rpc_response_error(-1, nil, nil)
---         end
---         if value.title == 'formatting' then
---             null_ls_token = result.token
---             return vim.lsp.rpc.rpc_response_error(-1, nil, nil)
---         end
---     end
-
---     vim.notify(value.message, 'info', {
---         title = value.title,
---     })
--- 	return vim.lsp.rpc.rpc_response_error(-2, nil, nil)
--- end
-
 require("catppuccin").setup({
 	integrations = {
 		leap = true,
@@ -340,14 +314,27 @@ require("catppuccin").setup({
 	},
 })
 
--- vim.cmd([[
--- let g:VM_mouse_mappings = 1
--- ]])
-
 require("better_escape").setup({
 	mapping = { "jk", "jj" },
 	timeout = vim.o.timeoutlen,
 	clear_empty_lines = false,
 	keys = "<Esc>",
+})
+
+require("neorg").setup({
+	load = {
+		["core.defaults"] = {},
+		["core.concealer"] = {},
+		["core.dirman"] = {
+			config = {
+				workspaces = {
+					notes = "~/Peki/Notes",
+				},
+				default_workspace = "notes",
+			},
+		},
+		["core.ui.calendar"] = {},
+		["core.itero"] = {},
+	},
 })
 
