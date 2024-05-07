@@ -34,10 +34,10 @@ map("", "<Leader>q", ":q<CR>")
 map("", "<Leader>Q", ":q<CR>")
 map("", "<Leader>x", ":x<CR>")
 map("", "<Leader>X", ":x<CR>")
-map("n", "<Leader><Enter>", "mqo<Esc>k`q") -- Changed to ',<CR>' to have the default functionality
+map("n", "<Leader><Enter>", "mqo<Esc>`q") -- Changed to ',<CR>' to have the default functionality
 map("n", "ü", "o<Esc>")
 map("n", "ğ", "mqO<Esc>`q")
-map("n", "<S-Del>", '<Esc>"_dd')
+map("n", "<S-Del>", '"_dd')
 map("i", "<S-Del>", '<Esc>"_dda')
 map("n", "<Leader>j", ":m+<cr>==")
 map("n", "<Leader>k", ":m-2<cr>==")
