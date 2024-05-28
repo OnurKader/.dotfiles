@@ -1,4 +1,5 @@
 # Completion stuff
+# zmodload zsh/zprof
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=**' 'l:|=* r:|=*'
 zstyle :compinstall filename '/home/beron/.zshrc'
 setopt interactive_comments
@@ -17,10 +18,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Exports
 source ~/.exports
 
-# Aliases
 source ~/.aliases
 
 source ~/Code/.dotfiles/zsh-plugins/fast-syntax-highlighting/F-Sy-H.plugin.zsh
@@ -253,7 +252,7 @@ function nvims() {
 
 alias lnv="NVIM_APPNAME=LazyVim nvim"
 
-function sle() {
+function sl() {
 	MINS="${1-1}"
 	sleep "$MINS"m
 	mousemove
@@ -275,4 +274,6 @@ vterm_printf() {
 		printf "\e]%s\e\\" "$1"
 	fi
 }
+
+# zprof
 
