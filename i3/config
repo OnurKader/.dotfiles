@@ -89,7 +89,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return $exe $term; focus
 bindsym $mod+KP_Enter $exe $term; focus
-bindsym $mod+$alt+t $exe $term; focus
+bindsym $mod+$alt+a $exe $term; focus
 bindsym $mod+Shift+Return $exe $term; focus
 
 bindsym $mod+a $exe "rofi -matching fuzzy -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 27 -width 46"
@@ -138,7 +138,8 @@ bindsym $mod+i $exe $term -e htop
 bindsym $mod+Shift+n $exe $term -e "nvim"
 bindsym $mod+$alt+n $exe emacs
 bindsym $mod+Shift+e $exe emacsclient -c
-bindsym $mod+Shift+v $exe $term -e "vifmrun"
+bindsym $mod+Shift+t $exe $term -e emacsclient -c -nw
+bindsym $mod+Shift+v $exe $term -e vifmrun
 
 # Move the Window Around with `vim` keys
 bindsym $mod+Shift+h move left 24
@@ -149,8 +150,8 @@ bindsym $mod+Shift+l move right 24
 # Dijo Stuff
 bindsym $mod+g $exe $term -t "Dijo" -e dijo
 
-# Open Neorg's index, maybe a keybind for TODOs as well, Win+Alt+N is available
-bindsym $mod+Shift+g $exe $term -e nvim +"Neorg index"
+# bindsym $mod+Shift+g $exe $term -e nvim +"Neorg index"
+bindsym $mod+Shift+g $exe emacsclient -cn ~/.config/emacs/agenda/main.org
 
 # Lock Screen
 # bindsym $mod+Ctrl+$alt+l $exe ~/.config/i3/scripts/i3exit.sh lock, mode "default"
@@ -158,7 +159,7 @@ bindsym $mod+Shift+g $exe $term -e nvim +"Neorg index"
 bindsym $mod+Ctrl+$alt+l $exe i3lock -i ~/Pictures/Wallpaper/Lock.png
 
 # Default gaps
-bindsym $mod+Shift+t gaps inner current set 14, gaps outer current set 8
+# bindsym $mod+Shift+t gaps inner current set 14, gaps outer current set 8
 
 # Launch Music
 bindsym $mod+Shift+s $exe $term -T="MyMusic" --working-directory=/home/beron/Music/YouTube\ Music/Me\ songs/ -e \
@@ -415,5 +416,5 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" 0.05
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jpg
 exec_always --no-startup-id copyq&
-exec_always --no-startup-id emacs --daemon
+exec_always --no-startup-id $term -e launch-emacs-then-quit
 
