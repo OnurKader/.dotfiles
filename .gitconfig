@@ -1,6 +1,6 @@
 [user]
-	name = Beron the Colossus
-	email = onurorkunkader1999@gmail.com
+	name = BeronTheColossus
+	email = beronthecolossus@gmail.com
 [core]
 	editor = nvim
 	pager = "less -RFx4"
