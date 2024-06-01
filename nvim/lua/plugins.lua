@@ -120,7 +120,7 @@ require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		tag = "0.1.2",
+		tag = "0.1.8",
 		event = "VeryLazy",
 	},
 	{ "nvim-treesitter/nvim-treesitter",       event = { "BufReadPost", "BufNewFile" }, build = ":TSUpdate" },
