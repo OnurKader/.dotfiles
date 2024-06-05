@@ -5,7 +5,7 @@ vim.opt.autoread = true
 vim.opt.background = "dark"
 vim.opt.backspace = "indent,start,eol" -- Should I switch to a list?
 vim.opt.complete:remove('i')
-vim.opt.completeopt = "menuone,noselect"
+vim.opt.completeopt = "menuone,noselect,fuzzy"
 vim.opt.conceallevel = 2
 vim.opt.cursorline = true
 vim.opt.directory = "/home/beron/.config/nvim/tmp"
