@@ -329,6 +329,7 @@ bindsym XF86AudioPrev  $exe playerctl previous
 bindsym $mod+Shift+b $exe playerctl previous
 bindsym $mod+Shift+m $exe playerctl next
 bindsym $mod+n       $exe playerctl play-pause
+bindsym $mod+m       $exe $term --working-directory=/home/beron/MicroSD/YouTube
 
 
 # Move the mouse using the keyboard
