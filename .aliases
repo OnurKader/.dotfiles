@@ -75,6 +75,7 @@ alias grep='grep -i --color=auto'
 alias highlight="source-highlight -oSTDOUT -fesc256 -i"
 alias htop="htop -d 7"
 alias hwatch="hwatch -c"
+alias lc="wc -l"
 alias l1="ls -A1"
 alias l="eza -xa --icons --group-directories-first"
 alias lat="ezal --tree"
