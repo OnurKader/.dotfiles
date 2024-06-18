@@ -162,7 +162,7 @@ use-fork = true
 #
 # Example:
 [fonts]
-size = 13
+size = 11
 family = "Hack Nerd Font"
 #
 # [fonts.regular]
