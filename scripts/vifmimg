@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 readonly ID_PREVIEW="preview"
 
+# TODO: Generate jxl's instead of png's?
+
 #PLAY_GIF="yes"
 # By enabling this option the GIF will be animated, by leaving it commented like it
 # is now will make the gif previews behave the same way as video previews.
@@ -22,8 +24,8 @@ PDF_FILE=""
 
 
 # Create temporary working directory if the directory structure doesn't exist
-if [[ ! -d "/tmp$PWD/" ]]; then
-    mkdir -p "/tmp$PWD/"
+if [[ ! -d "$HOME/.cache/vifm$PWD/" ]]; then
+    mkdir -p "$HOME/.cache/vifm$PWD/"
 fi
 
 function inc() {
@@ -45,10 +47,10 @@ function previewclear() {
 }
 
 function fileclean() {
-    if [[ -f "/tmp$PWD/$6.png" ]]; then
-        rm -f "/tmp$PWD/$6.png"
-    elif  [[ -d "/tmp$PWD/$6/" ]]; then
-        rm -rf "/tmp$PWD/$6/"
+    if [[ -f "$HOME/.cache/vifm$PWD/$6.png" ]]; then
+        rm -f "$HOME/.cache/vifm$PWD/$6.png"
+    elif  [[ -d "$HOME/.cache/vifm$PWD/$6/" ]]; then
+        rm -rf "$HOME/.cache/vifm$PWD/$6/"
     fi
 }
 
@@ -60,52 +62,52 @@ function preview() {
 }
 
 function previewvideo() {
-    if [[ ! -f "/tmp$PWD/$6.png" ]]; then
-        ffmpegthumbnailer -m -i "$PWD/$6" -o "/tmp$PWD/$6.png" -s 0 -q 8 -t 12
+    if [[ ! -f "$HOME/.cache/vifm$PWD/$6.png" ]]; then
+        ffmpegthumbnailer -m -i "$PWD/$6" -o "$HOME/.cache/vifm$PWD/$6.png" -s 0 -q 8 -t 12
     fi
     declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-        [path]="/tmp$PWD/$6.png") \
+        [path]="$HOME/.cache/vifm$PWD/$6.png") \
         > "$FIFO_UEBERZUG"
 }
 
 function previewepub() {
-    if [[ ! -f "/tmp$PWD/$6.png" ]]; then
-        epub-thumbnailer "$6" "/tmp$PWD/$6.png" 1024
+    if [[ ! -f "$HOME/.cache/vifm$PWD/$6.png" ]]; then
+        epub-thumbnailer "$6" "$HOME/.cache/vifm$PWD/$6.png" 1024
     fi
     declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-        [path]="/tmp$PWD/$6.png") \
+        [path]="$HOME/.cache/vifm$PWD/$6.png") \
         > "$FIFO_UEBERZUG"
 }
 
 function previewaudio() {
-  if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
-    ffmpeg -i "$6" "/tmp${PWD}/$6.png" -y &> /dev/null
+  if [[ ! -f "$HOME/.cache/vifm${PWD}/$6.png" ]]; then
+    ffmpeg -i "$6" "$HOME/.cache/vifm${PWD}/$6.png" -y &> /dev/null
   fi
   declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
                      [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-                     [path]="/tmp${PWD}/$6.png") \
+                     [path]="$HOME/.cache/vifm${PWD}/$6.png") \
     > "$FIFO_UEBERZUG"
 }
 
 function previewfont() {
-  if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
-    fontpreview -i "$6" -o "/tmp${PWD}/$6.png"
+  if [[ ! -f "$HOME/.cache/vifm${PWD}/$6.png" ]]; then
+    fontpreview -i "$6" -o "$HOME/.cache/vifm${PWD}/$6.png"
   fi
   declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
                      [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-                     [path]="/tmp${PWD}/$6.png") \
+                     [path]="$HOME/.cache/vifm${PWD}/$6.png") \
     > "$FIFO_UEBERZUG"
 }
 
 function previewgif() {
-    if [[ ! -d "/tmp$PWD/$6/" ]]; then
-        mkdir -p "/tmp$PWD/$6/"
-        convert -coalesce "$PWD/$6" "/tmp$PWD/$6/$6.png"
+    if [[ ! -d "$HOME/.cache/vifm$PWD/$6/" ]]; then
+        mkdir -p "$HOME/.cache/vifm$PWD/$6/"
+        convert -coalesce "$PWD/$6" "$HOME/.cache/vifm$PWD/$6/$6.png"
     fi
     if [[ ! -z "$PLAY_GIF" ]]; then
-        for frame in $(ls -1 /tmp$PWD/$6/$6*.png | sort -V); do
+        for frame in $(ls -1 $HOME/.cache/vifm$PWD/$6/$6*.png | sort -V); do
             declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
                 [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
                 [path]="$frame") \
@@ -116,7 +118,7 @@ function previewgif() {
     else
             declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
                 [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-                [path]="/tmp$PWD/$6/$6-0.png") \
+                [path]="$HOME/.cache/vifm$PWD/$6/$6-0.png") \
                 > "$FIFO_UEBERZUG"
     fi
 }
@@ -125,37 +127,37 @@ function previewpdf() {
     if [[ ! "$6" == "$PDF_FILE" ]]; then
         PDF_PAGE=1
         echo 1 > $PDF_PAGE_CONFIG
-        rm -f "/tmp$PWD/$6.png"
+        rm -f "$HOME/.cache/vifm$PWD/$6.png"
     fi
 
-    if [[ ! "$PDF_PAGE" == "1" ]] && [[ -f "/tmp$PWD/$6.png" ]]; then
-        rm -f "/tmp$PWD/$6.png"
+    if [[ ! "$PDF_PAGE" == "1" ]] && [[ -f "$HOME/.cache/vifm$PWD/$6.png" ]]; then
+        rm -f "$HOME/.cache/vifm$PWD/$6.png"
     fi
 
-    if [[ ! -f "/tmp$PWD/$6.png" ]]; then
-        pdftoppm -png -f $PDF_PAGE -singlefile "$6" "/tmp$PWD/$6"
+    if [[ ! -f "$HOME/.cache/vifm$PWD/$6.png" ]]; then
+        pdftoppm -png -f $PDF_PAGE -singlefile "$6" "$HOME/.cache/vifm$PWD/$6"
     fi
     echo "$6" > $PDF_FILE_CONFIG
 
     declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-        [path]="/tmp$PWD/$6.png") \
+        [path]="$HOME/.cache/vifm$PWD/$6.png") \
         > "$FIFO_UEBERZUG"
 }
 
 
 function previewmagick() {
-    if [[ ! -f "/tmp$PWD/$6.png" ]]; then
-        convert -thumbnail $(identify -format "%wx%h" "$6") "$PWD/$6" "/tmp$PWD/$6.png"
+    if [[ ! -f "$HOME/.cache/vifm$PWD/$6.png" ]]; then
+        convert -thumbnail $(identify -format "%wx%h" "$6") "$PWD/$6" "$HOME/.cache/vifm$PWD/$6.png"
     fi
     declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-        [path]="/tmp$PWD/$6.png") \
+        [path]="$HOME/.cache/vifm$PWD/$6.png") \
         > "$FIFO_UEBERZUG"
 }
 
 function previewcomic() {
-	if [[ ! -f "/tmp$PWD/$6.jpg" ]]; then
+	if [[ ! -f "$HOME/.cache/vifm$PWD/$6.jpg" ]]; then
 		shopt -s extglob
 
 		case "$6" in
@@ -165,8 +167,8 @@ function previewcomic() {
 				[ -z "$PAGE_PATH" ] && PAGE_PATH="$(echo "$LISTING" | awk '/001.{,3}jpg$/{ i=4; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
 				PAGE_PATH="${PAGE_PATH%%*( )}"
 				IMAGE_NAME="${PAGE_PATH/*\//}"
-				unzip -jn -qq "$6" "*000*.jpg" -d /tmp || unzip -jn -qq "$6" "*001.jpg" -d /tmp
-				mv "/tmp/$IMAGE_NAME" "/tmp$PWD/$6.jpg"
+				unzip -jn -qq "$6" "*000*.jpg" -d $HOME/.cache/vifm || unzip -jn -qq "$6" "*001.jpg" -d $HOME/.cache/vifm
+				mv "$HOME/.cache/vifm/$IMAGE_NAME" "$HOME/.cache/vifm$PWD/$6.jpg"
 				;;
 			*.cbr)
 				LISTING="$(unrar l "$6")"
@@ -174,8 +176,8 @@ function previewcomic() {
 				[ -z "$PAGE_PATH" ] && PAGE_PATH="$(echo "$LISTING" | awk '/001.{,3}jpg$/{ i=5; while(1){ if($i == "") {break} printf $i " "; i++ } print "" }' | head -n1)"
 				PAGE_PATH="${PAGE_PATH%%*( )}"
 				IMAGE_NAME="${PAGE_PATH/*\//}"
-				unrar e -o- "$6" "$PAGE_PATH" /tmp > /dev/null
-				mv "/tmp/$IMAGE_NAME" "/tmp$PWD/$6.jpg" ;;
+				unrar e -o- "$6" "$PAGE_PATH" $HOME/.cache/vifm > /dev/null
+				mv "$HOME/.cache/vifm/$IMAGE_NAME" "$HOME/.cache/vifm$PWD/$6.jpg" ;;
 			*) echo "How did you get here?" ;;
 		esac
 
@@ -184,7 +186,7 @@ function previewcomic() {
 
 	declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
 	[x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-		[path]="/tmp$PWD/$6.jpg") \
+		[path]="$HOME/.cache/vifm$PWD/$6.jpg") \
 		> "$FIFO_UEBERZUG"
 }
 
