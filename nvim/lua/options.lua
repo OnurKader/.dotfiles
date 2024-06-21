@@ -52,7 +52,7 @@ vim.opt.wildmode = "list,longest,full"
 vim.opt.wildignore:append("*/.git,*/.ccls-cache,*/.idea,*/.cache")
 vim.opt.wrap = true
 vim.opt.cmdheight = 1
-vim.opt.statuscolumn = '%s %l %=%{v:relnum?v:relnum:v:lnum} '
+-- vim.opt.statuscolumn = '%s %l %=%{v:relnum?v:relnum:v:lnum} '
 
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
