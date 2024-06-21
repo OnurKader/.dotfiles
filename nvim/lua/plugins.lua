@@ -15,6 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 -- Check this out "https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim"
 -- Also this https://github.com/nvim-telescope/telescope-file-browser.nvim
 require("lazy").setup({
+	{
+		'BranimirE/fix-auto-scroll.nvim',
+		config = true,
+		event = 'VeryLazy'
+	},
 	{ "NvChad/nvim-colorizer.lua",    event = { "BufReadPost", "BufNewFile" } },
 	{ "Pocco81/true-zen.nvim",        cmd = { "TZAtaraxis", "TZFocus", "TZMinimalist", "TZNarrow" } },
 	{ "PotatoesMaster/i3-vim-syntax", ft = "i3" },
