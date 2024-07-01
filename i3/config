@@ -132,7 +132,7 @@ bindsym $mod+z        gaps outer current plus 4
 bindsym $mod+Shift+z  gaps outer current minus 4
 
 # HTOP
-bindsym $mod+i $exe $term -e htop
+bindsym $mod+i $exe $term -t htop -e htop
 
 # VIFM / Text Editors (Also Emacs)
 bindsym $mod+Shift+n $exe $term -e nvim
