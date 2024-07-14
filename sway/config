@@ -1,0 +1,421 @@
+# vim: filetype=i3
+
+set $mod Mod4
+set $alt Mod1
+
+font pango:Hack Nerd Font 14
+set $up k
+set $down j
+set $left h
+set $right l
+
+set $term alacritty
+set $browser firefox
+set $exe exec --no-startup-id
+
+gaps inner 0
+gaps outer 0
+
+for_window [class="^.*"] border pixel 3
+
+smart_gaps on
+hide_edge_borders smart
+popup_during_fullscreen smart
+focus_follows_mouse no
+default_orientation horizontal
+workspace_layout tabbed
+
+# Define Workspaces
+set $workspace1  "1:  "
+set $workspace2  "2:  "
+set $workspace3  "3: 󰙲 "
+set $workspace4  "4: 󰕼 "
+set $workspace5  "5:"
+set $workspace6  "6:"
+set $workspace7  "7:"
+set $workspace8  "8:  "
+set $workspace9  "9:  "
+set $workspace10 "10:  "
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+for_window [instance="sun-awt-X11-XFramePeer"] floating enable, border pixel 2
+for_window [instance="glfw-application"] floating enable
+for_window [class="X-terminal-emulator"] border pixel 2
+for_window [title="^Cal$"] floating enable, border pixel 3, resize set 1280 768, move position center
+for_window [title="^dijo$"] floating enable, resize set 1280 832, border pixel 3, move position center
+for_window [title="TermStart"] floating enable, border pixel 3, move scratchpad, scratchpad show, resize set 1210 782, move position center
+for_window [title="FloatTerm"] floating enable, border pixel 3, resize set 1120 720, move position center
+for_window [instance="hl2_linux"] floating disable, fullscreen
+for_window [class="Godot_Engine$"] floating enable, move position center, border pixel 3
+for_window [instance="Godot_Engine$"] floating enable, move position center, border pixel 3
+for_window [instance="OkTerminal$"] floating enable, move position center
+for_window [class="^Term$"] floating enable, move position center
+for_window [class="^Timer$"] floating enable
+for_window [class="^Sloppy"] floating enable
+for_window [class="Webcam"] floating enable, move position center
+for_window [title="\[Float\]"] floating enable, move position center
+for_window [title="Dijo"] floating enable, border pixel 2, resize set 1250 800, move position center
+for_window [title="^textsnatcher$"] floating enable, border pixel 2, resize set 460 240, move position center
+for_window [class="BeeRef"] floating enable, move position mouse, border pixel 1
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+## Key Bindings
+
+# start a terminal
+bindsym $mod+Return $exe $term; focus
+bindsym $mod+KP_Enter $exe $term; focus
+bindsym $mod+$alt+a $exe $term; focus
+bindsym $mod+Shift+Return $exe $term; focus
+
+bindsym $mod+a $exe "rofi -matching fuzzy -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 27 -width 46"
+
+# split orientation
+bindsym $mod+b split h
+bindsym $mod+v split v
+
+# Logout screen
+#bindsym Ctrl+$alt+k $exe arcolinux-logout
+#bindsym Ctrl+$alt+l $exe arcolinux-logout
+
+# Go to center and click
+bindsym $mod+$alt+Delete $exe mousemove
+bindsym Ctrl+$alt+Delete $exe mouseclick 1
+bindsym $alt+Delete $exe mouseclick 2
+bindsym Shift+$alt+Delete $exe mouseclick 3
+
+# Rofi
+# bindsym $mod+d $exe "rofi -hide-scrollbar -show run -display-run 'Run:' -lines 10 -width 40 -fg '#f5f5f5' -bg '#323232' -hlfg '#ffffff' -hlbg '#325489' -show-icons"
+bindsym $mod+d $exe "rofi -matching fuzzy -hide-scrollbar -show combi -combi-modi 'run,drun' -display-run 'cmd' -display-drun 'App' -display-combi 'Run' -lines 27 -width 46"
+
+# Disable Gaps
+bindsym $mod+Shift+d gaps inner current set 0, gaps outer current set 0
+
+# Thunar / FILE
+bindsym $mod+e $exe thunar
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+$alt+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f $exe $term -t Cal -e calcurse
+
+# Increase-Decrease Gaps
+bindsym $mod+c        gaps inner current plus 4
+bindsym $mod+Shift+c  gaps inner current minus 4
+bindsym $mod+z        gaps outer current plus 4
+bindsym $mod+Shift+z  gaps outer current minus 4
+
+# HTOP
+bindsym $mod+i $exe $term -t htop -e htop
+
+# VIFM / Text Editors (Also Emacs)
+bindsym $mod+Shift+n $exe $term -e nvim
+bindsym $mod+$alt+n $exe emacs
+bindsym $mod+Shift+e $exe emacsclient -c
+bindsym $mod+Shift+t $exe $term -e emacsclient -c -nw
+bindsym $mod+Shift+v $exe $term -t "Vifm" -e vifmrun
+
+# Move the Window Around with `vim` keys
+bindsym $mod+Shift+h move left 24
+bindsym $mod+Shift+j move down 22
+bindsym $mod+Shift+k move up 22
+bindsym $mod+Shift+l move right 24
+
+# Dijo Stuff
+bindsym $mod+g $exe $term -t "Dijo" -e dijo
+
+# bindsym $mod+Shift+g $exe $term -e nvim +"Neorg index"
+bindsym $mod+Shift+g $exe emacsclient -cn ~/.config/emacs/agenda/main.org
+
+# Lock Screen
+# bindsym $mod+Ctrl+$alt+l $exe ~/.config/i3/scripts/i3exit.sh lock, mode "default"
+#bindsym $mod+Ctrl+$alt+l $exe arcolinux-logout
+bindsym $mod+Ctrl+$alt+l $exe i3lock -i ~/Pictures/Wallpaper/Lock.png
+
+# Default gaps
+# bindsym $mod+Shift+t gaps inner current set 14, gaps outer current set 8
+
+# Launch Music
+bindsym $mod+Shift+s $exe $term -T="MyMusic" --working-directory=/home/beron/Music/YouTube\ Music/Me\ songs/ -e \
+mpv --shuffle --speed=1 --volume=56 --input-ipc-server=/tmp/mpvsocket --pause .
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+w layout toggle split
+
+# bindsym $mod+u $exe dmenuunicode
+bindsym $mod+$alt+u $exe enter_unicode
+bindsym $mod+u $exe ucmenu -r "rofi -dmenu -i -p %P" -m "rofi -dmenu -i -p %P" -n "rofi -dmenu -i -p %P" | xclip -sel clip
+
+# Firefox / Browser
+bindsym $mod+Shift+w $exe $BROWSER
+
+# QtCreator / IDE
+bindsym $mod+Shift+i $exe qtcreator
+
+# Shutdown
+bindsym $mod+Shift+x $exe shut "Shutdown Now?" "shutdown --no-wall -h now"
+
+# Open Floating Centered Terminal?
+bindsym $mod+x $exe $term -t "FloatTerm"
+
+# Kill focused window
+bindsym $mod+Shift+q [con_id="__focused__" instance="^(?!dropdown_).*$"] $exe kill -9 `xdotool getwindowfocus getwindowpid`
+bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+
+# Reload config
+bindsym $mod+r reload
+bindsym $mod+Shift+r restart
+
+# Resize Window
+bindsym $mod+Shift+y $exe i3resize left 10
+bindsym $mod+Shift+u $exe i3resize down 10
+bindsym $mod+Shift+o $exe i3resize up 10
+bindsym $mod+Shift+p $exe i3resize right 10
+bindsym $mod+Ctrl+y  $exe i3resize left 48
+bindsym $mod+Ctrl+u  $exe i3resize down 48
+bindsym $mod+Ctrl+o  $exe i3resize up 48
+bindsym $mod+Ctrl+p  $exe i3resize right 48
+
+# Some Workspace
+bindsym $mod+Home workspace $workspace1
+bindsym $mod+End workspace $workspace10
+bindsym $mod+Shift+Home move container to workspace $workspace1
+bindsym $mod+Shift+End move container to workspace $workspace10
+bindsym $mod+Tab workspace back_and_forth
+bindsym $alt+Tab workspace next
+bindsym $alt+Shift+Tab workspace prev
+
+# change focus
+bindsym $mod+$left	focus left
+bindsym $mod+$down	focus down
+bindsym $mod+$up	focus up
+bindsym $mod+$right focus right
+bindsym $mod+Left	focus left
+bindsym $mod+Down	focus down
+bindsym $mod+Up		focus up
+bindsym $mod+Right	focus right
+
+bindsym $mod+Shift+Left	 move window left
+bindsym $mod+Shift+Down	 move window down
+bindsym $mod+Shift+Up	 move window up
+bindsym $mod+Shift+Right move window right
+
+bindsym $mod+$alt+c exec i3-msg move position center
+
+# bindsym $mod+Insert exec --no-startup-id showclip
+bindsym Print $exe screenshot
+bindsym $mod+Print $exe screenshot-clip
+bindsym Shift+Print $exe screenshot-direct
+bindsym Ctrl+Print $exe screenshot-direct
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+for_window [title="mpvfloat"] floating enable, sticky enable, border pixel 1
+no_focus   [title="mpvfloat"]
+
+# catppuccin-mocha
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
+
+# Window Colors				# Border	Background		Text		Indicator
+# client.focused				#B812C8		#B812C8			#F7F8F9		#92A4FC
+# client.unfocused			#616969		#616969			#A8A9AA		#92A4FC
+# client.focused_inactive		#676E7D		#2F343F			#A8A9AA		#92A4FC
+# client.urgent				#E83637		#E54034			#F7F8F9		#92A4FC
+# target                 title      bg			text    indicator   border
+client.focused           $pink      $pink		$base	$rosewater  $maroon
+client.focused_inactive  $mauve     $maroon		$mantle	$rosewater  $mauve
+client.unfocused         $mauve     $surface1	$text   $rosewater  $mauve
+client.urgent            $peach     $base		$peach  $overlay0   $peach
+client.placeholder       $overlay0  $base		$text   $overlay0   $overlay0
+
+
+bar {
+	font pango:Hack Nerd Font 13
+	# status_command i3blocks
+	status_command i3status-rs
+	mode dock
+	position top
+	colors {
+		background			$base
+		separator			$rosewater
+		# Workspace			Border		Background	Text
+		focused_workspace	#133224		$surface0	$text
+		inactive_workspace	#172431		$base		$overlay2
+		urgent_workspace	#7D3238		#322025		#F9FFFE
+	}
+}
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume $exe pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume $exe pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute        $exe pactl set-sink-mute 0 toggle
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp   $exe light -A 9
+bindsym XF86MonBrightnessDown $exe light -U 9
+bindsym XF86Favorites $exe light -S 100
+bindsym XF86Calculator $exe light -S 64
+
+# Media player controls
+bindsym XF86AudioPlay  $exe playerctl play-pause
+bindsym XF86AudioPause $exe playerctl play-pause
+bindsym XF86AudioNext  $exe playerctl next
+bindsym XF86AudioPrev  $exe playerctl previous
+
+# MAYBE: Change to `sp next and what not`
+bindsym $mod+Shift+b $exe playerctl previous
+bindsym $mod+Shift+m $exe playerctl next
+bindsym $mod+n       $exe playerctl play-pause
+bindsym $mod+m       $exe $term --working-directory=/home/beron/MicroSD/YouTube
+
+
+# Move the mouse using the keyboard
+bindsym Ctrl+$mod+h exec --no-startup-id mousemove_relative left
+bindsym Ctrl+$mod+j exec --no-startup-id mousemove_relative down
+bindsym Ctrl+$mod+k exec --no-startup-id mousemove_relative up
+bindsym Ctrl+$mod+l exec --no-startup-id mousemove_relative right
+bindsym $alt+$mod+h exec --no-startup-id mousemove_relative LEFT
+bindsym $alt+$mod+j exec --no-startup-id mousemove_relative DOWN
+bindsym $alt+$mod+k exec --no-startup-id mousemove_relative UP
+bindsym $alt+$mod+l exec --no-startup-id mousemove_relative RIGHT
+
+# dunst keys
+# bindsym Ctrl+space $exe dunstctl close
+bindsym Ctrl+$mod+space $exe dunstctl close-all
+bindsym Ctrl+$alt+space $exe dunstctl history-pop
+
+# Move workspaces
+assign [class="Code"] $workspace3
+assign [class="Firefox"] $workspace1
+assign [class="firefox"] $workspace1
+assign [class="Brave-browser"] $workspace1
+assign [class="Godot_Engine"] $workspace3
+assign [class="Processing"] $workspace3
+assign [class="QtCreator"] $workspace3
+assign [class="Spotify"] $workspace10
+assign [class="spotify"] $workspace10
+assign [class="Steam"] $workspace9
+assign [instance="steamwebhelper"] $workspace9
+assign [class="VSCodium"] $workspace3
+assign [class="jetbrains-pycharm-ce"] $workspace3
+assign [class="mpv"] $workspace4
+assign [class="vlc"] $workspace4
+assign [instance="Godot_Engine$"] $workspace3
+assign [class="jetbrains-clion"] $workspace3
+assign [class="(Mm)industry"] $workspace8
+assign [instance="(Mm)industry"] $workspace8
+assign [instance="^krita$"] $workspace4
+assign [class="prismlauncher"] $workspace9
+assign [class="PrismLauncher"] $workspace9
+assign [instance="prismlauncher"] $workspace9
+assign [title="MyMusic"] $workspace10
+
+for_window [class="Code"] move workspace $workspace3
+for_window [class="Firefox"] move workspace $workspace1
+for_window [class="firefox"] move workspace $workspace1
+for_window [class="Brave-browser"] move workspace $workspace1
+for_window [class="Godot_Engine"] move workspace $workspace3
+for_window [class="Processing"] move workspace $workspace3
+for_window [class="QtCreator"] move workspace $workspace3
+for_window [class="Spotify"] move workspace $workspace10
+for_window [class="spotify"] move workspace $workspace10
+for_window [class="Steam"] move workspace $workspace9
+for_window [instance="steamwebhelper"] move workspace $workspace9
+for_window [class="VSCodium"] move workspace $workspace3
+for_window [class="jetbrains-pycharm-ce"] move workspace $workspace3
+for_window [class="mpv"] move workspace $workspace4
+for_window [class="vlc"] move workspace $workspace4
+for_window [instance="Godot_Engine$"] move workspace $workspace3
+for_window [class="jetbrains-clion"] move workspace $workspace3
+for_window [title="(Mm)industry"] move workspace $workspace8
+for_window [class="(Mm)industry"] move workspace $workspace8
+for_window [instance="(Mm)industry"] move workspace $workspace8
+for_window [instance="^krita$"] move workspace $workspace4
+for_window [class="polymc"] move workspace $workspace9
+for_window [class="PolyMC"] move workspace $workspace9
+for_window [instance="polymc"] move workspace $workspace9
+for_window [title="MyMusic"] move workspace $workspace10
+
+# Execs
+# $exe picom -b
+$exe nm-applet &
+exec_always --no-startup-id gnome-keyring-daemon --start&
+exec_always --no-startup-id numlockx on&
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&
+exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id dunst&
+exec_always --no-startup-id /usr/lib/kdeconnectd
+exec_always --no-startup-id kdeconnect-indicator
+exec_always --no-startup-id nightlight
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Middle Emulation Enabled" 1
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Disable While Typing Enabled" 0
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" 0.05
+exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jxl
+exec_always --no-startup-id copyq&
+exec_always --no-startup-id $term -e launch-emacs-then-quit
+
