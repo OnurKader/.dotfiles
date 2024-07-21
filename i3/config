@@ -310,14 +310,21 @@ bar {
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume $exe pactl set-sink-volume 0 +5%
+bindsym $mod+F3				 $exe pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume $exe pactl set-sink-volume 0 -5%
+bindsym $mod+F2				 $exe pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute        $exe pactl set-sink-mute 0 toggle
+bindsym $mod+F1		         $exe pactl set-sink-mute 0 toggle
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp   $exe light -A 9
+bindsym $mod+F6   $exe light -A 9
 bindsym XF86MonBrightnessDown $exe light -U 9
+bindsym $mod+F5 $exe light -U 9
 bindsym XF86Favorites $exe light -S 100
+bindsym $mod+F12 $exe light -S 100
 bindsym XF86Calculator $exe light -S 64
+bindsym $mod+F11 $exe light -S 64
 
 # Media player controls
 bindsym XF86AudioPlay  $exe playerctl play-pause
