@@ -7,9 +7,10 @@ if [[ "$@" == *".com/playlist"* ]]; then
 	OUTPUT='%(playlist)s/%(playlist_index)s-%(upload_date,release_date)s_%(title).200B(%(id)s).%(ext)s'
 elif [[ "$@" == *".com/c"* || "$@" == *".com/@"* ]]; then
 	OUTPUT='%(channel)s/%(playlist_autonumber)s-%(upload_date,release_date)s_%(title).200B(%(id)s).%(ext)s'
-	CFG=' --playlist-reverse'
+	CFG=' --playlist-reverse '
 else
 	OUTPUT='%(upload_date,release_date)s_%(title).200B(%(id)s).%(ext)s'
+	CFG=' --no-playlist '
 fi
 
 yt-dlp -N6 --restrict-filenames --fragment-retries=20 --embed-metadata --sponsorblock-mark all \
