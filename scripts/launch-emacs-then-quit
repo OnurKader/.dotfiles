@@ -1,4 +1,6 @@
 #/bin/sh
 i3-msg move window scratchpad
 emacs --daemon
+setxkbmap -option ctrl:nocaps
+setxkbmap -option compose:lctrl
 exit
