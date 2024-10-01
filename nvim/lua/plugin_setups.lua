@@ -89,7 +89,7 @@ require("lualine").setup({
 -- WARN: asd
 -- PERF: asd
 require("todo-comments").setup({
-	signs = true, -- show icons in the signs column
+	signs = true,   -- show icons in the signs column
 	sign_priority = 8, -- sign priority
 	-- keywords recognized as todo comments
 	keywords = {
@@ -111,13 +111,13 @@ require("todo-comments").setup({
 	-- * keyword: highlights of the keyword
 	-- * after: highlights after the keyword (todo text)
 	highlight = {
-		before = "", -- "fg" or "bg" or empty
-		keyword = "fg", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
-		after = "", -- "fg" or "bg" or empty
+		before = "",               -- "fg" or "bg" or empty
+		keyword = "fg",            -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
+		after = "",                -- "fg" or "bg" or empty
 		pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlighting (vim regex)
-		comments_only = true, -- uses treesitter to match keywords in comments only
-		max_line_len = 192, -- ignore lines longer than this
-		exclude = {}, -- list of file types to exclude highlighting
+		comments_only = true,      -- uses treesitter to match keywords in comments only
+		max_line_len = 192,        -- ignore lines longer than this
+		exclude = {},              -- list of file types to exclude highlighting
 	},
 	-- list of named colors where we try to extract the guifg from the
 	-- list of hilight groups or use the hex color if hl not found as a fallback
@@ -238,14 +238,14 @@ require("true-zen").setup({
 require("colorizer").setup({
 	filetypes = { "*" },
 	user_default_options = {
-		RGB = true, -- #RGB hex codes
+		RGB = true,    -- #RGB hex codes
 		RRGGBB = true, -- #RRGGBB hex codes
-		names = true, -- "Name" codes like Blue or blue
+		names = true,  -- "Name" codes like Blue or blue
 		RRGGBBAA = false, -- #RRGGBBAA hex codes
 		AARRGGBB = false, -- 0xAARRGGBB hex codes
 		rgb_fn = false, -- CSS rgb() and rgba() functions
 		hsl_fn = false, -- CSS hsl() and hsla() functions
-		css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+		css = false,   -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
 		css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
 		-- Available modes for `mode`: foreground, background,  virtualtext
 		mode = "background", -- Set the display mode.
@@ -315,10 +315,35 @@ require("catppuccin").setup({
 })
 
 require("better_escape").setup({
-	mapping = { "jk", "jj" },
+	i = {
+		j = {
+			k = "<Esc>",
+			j = "<Esc>",
+		},
+	},
+	c = {
+		j = {
+			k = "<Esc>",
+			j = "<Esc>",
+		},
+	},
+	t = {
+		j = {
+			k = "<C-\\><C-n>",
+		},
+	},
+	v = {
+		j = {
+			k = "<Esc>",
+		},
+	},
+	s = {
+		j = {
+			k = "<Esc>",
+		},
+	},
 	timeout = vim.o.timeoutlen,
 	clear_empty_lines = false,
-	keys = "<Esc>",
 })
 
 require("neorg").setup({
