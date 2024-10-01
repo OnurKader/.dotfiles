@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo -en " \b"
-exa --time-style=long-iso --color=always --group-directories-first --icons --group -1a "$@"
+eza --time-style=long-iso --color=always --group-directories-first --icons --group -1a "$@"
 
