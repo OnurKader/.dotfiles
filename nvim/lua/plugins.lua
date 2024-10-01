@@ -9,7 +9,6 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
-
 vim.opt.rtp:prepend(lazypath)
 
 -- Check this out "https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim"
@@ -25,26 +24,6 @@ require("lazy").setup({
 	{ "PotatoesMaster/i3-vim-syntax", ft = "i3" },
 	{ "Saecki/crates.nvim",           event = "BufRead Cargo.toml" },
 	{ "arrufat/vala.vim",             ft = "vala" },
-	{
-		"brenton-leighton/multiple-cursors.nvim",
-		version = "*",
-		opts = {
-			pre_hook = function()
-				require('nvim-autopairs').disable()
-			end,
-			post_hook = function()
-				require('nvim-autopairs').enable()
-			end,
-		},
-		keys = {
-			{ "<C-j>",         "<Cmd>MultipleCursorsAddDown<CR>" },
-			{ "<C-Down>",      "<Cmd>MultipleCursorsAddDown<CR>",        mode = { "n", "i" } },
-			{ "<C-k>",         "<Cmd>MultipleCursorsAddUp<CR>" },
-			{ "<C-Up>",        "<Cmd>MultipleCursorsAddUp<CR>",          mode = { "n", "i" } },
-			{ "<C-LeftMouse>", "<Cmd>MultipleCursorsMouseAddDelete<CR>", mode = { "n", "i" } },
-			{ "<Leader>a",     "<Cmd>MultipleCursorsAddMatches<CR>",     mode = { "n", "x" } },
-		},
-	},
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -78,7 +57,7 @@ require("lazy").setup({
 	{ "hrsh7th/cmp-nvim-lsp-signature-help", event = "InsertEnter" },
 	{ "hrsh7th/cmp-nvim-lua",                event = "InsertEnter" },
 	{ "hrsh7th/cmp-path",                    event = "InsertEnter" },
-	{ "hrsh7th/cmp-vsnip",                   event = "InsertEnter" },
+	{ "hrsh7th/cmp-vsnip",                   commit = "1ae05c6c867d9ad44bce811056e861e0d5c531cb", event = "InsertEnter" },
 	{ "hrsh7th/nvim-cmp",                    event = "InsertEnter" },
 	{ "hrsh7th/vim-vsnip",                   event = "InsertEnter" },
 	{ "hrsh7th/vim-vsnip-integ",             event = "InsertEnter" },
