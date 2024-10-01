@@ -255,6 +255,13 @@ alias lnv="NVIM_APPNAME=LazyVim nvim"
 function sl() {
 	MINS="${1-1}"
 	sleep "$MINS"m
+	report_sync
+	exit
+}
+
+function slm() {
+	MINS="${1-1}"
+	sleep "$MINS"m
 	mousemove
 	report_sync
 	exit
