@@ -1,4 +1,4 @@
-﻿---
+---
 "BasedOnStyle": "Mozilla"
 "AccessModifierOffset": '-4'
 "AlignAfterOpenBracket": "Align"
@@ -44,6 +44,8 @@
 "IndentPPDirectives": "None"
 "IndentWidth": '4'
 "IndentWrappedFunctionNames": 'false'
+"InsertNewlineAtEOF": 'true'
+"KeepEmptyLinesAtEOF": "true"
 "KeepEmptyLinesAtTheStartOfBlocks": 'false'
 "Language": "Cpp"
 "NamespaceIndentation": "None"
@@ -71,5 +73,4 @@
 "Standard": "Latest"
 "TabWidth": '4'
 "UseTab": "Always"
-
 ...
