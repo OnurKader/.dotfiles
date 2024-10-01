@@ -43,7 +43,7 @@ colorscheme Molokai Default-256 Default
 mark C ~/Desktop/Code/
 mark D ~/Downloads/
 mark H ~/
-mark M ~/Movies/
+mark M ~/Movies/YouTube
 mark P ~/Pictures/
 mark t ~/.local/share/vifm/Trash/
 mark c ~/.config/
