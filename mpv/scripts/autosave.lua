@@ -14,7 +14,7 @@
 local options = require 'mp.options'
 
 local o = {
-	save_period = 45
+	save_period = 32
 }
 
 options.read_options(o)
