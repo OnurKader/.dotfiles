@@ -163,7 +163,7 @@ bindsym $mod+Ctrl+$alt+l $exe i3lock -i ~/Pictures/Wallpaper/Lock.png
 
 # Launch Music
 bindsym $mod+Shift+s $exe $term -T="MyMusic" --working-directory=/home/beron/Music/YouTube\ Music/Me\ songs/ -e \
-mpv --shuffle --speed=1 --volume=56 --input-ipc-server=/tmp/mpvsocket --pause .
+mpv --shuffle --speed=1 --volume=50 --input-ipc-server=/tmp/mpvsocket --pause .
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -315,6 +315,7 @@ bindsym XF86AudioLowerVolume $exe pactl set-sink-volume 0 -5%
 bindsym $mod+F2				 $exe pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute        $exe pactl set-sink-mute 0 toggle
 bindsym $mod+F1		         $exe pactl set-sink-mute 0 toggle
+bindsym $mod+F4				 $exe pactl set-sink-volume 0 30%
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp   $exe light -A 9
@@ -422,6 +423,8 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Disable While Typing Enabled" 0
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" 0.05
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id setxkbmap -option compose:lctrl
 exec_always --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/Wallpaper/background.jxl
 exec_always --no-startup-id copyq&
 exec_always --no-startup-id $term -e launch-emacs-then-quit
