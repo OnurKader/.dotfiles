@@ -4,7 +4,7 @@ export LC_COLLATE="C"
 
 export CPLUS_INCLUDE_PATH="$HOME/Code/cppfront/include:$CPLUS_INCLUDE_PATH"
 
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.config/scripts"
 export PATH="$PATH:$XDG_DATA_HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
