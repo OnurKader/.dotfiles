@@ -16,5 +16,3 @@ fmt = dependency('fmt')
 exe = executable('<++>', sources: srcs, dependencies: fmt, include_directories:
 				 includes, cpp_args: compiler_args)
 
-test('Simple Test', exe)
-
