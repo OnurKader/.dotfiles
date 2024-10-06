@@ -1,0 +1,115 @@
+# Choose whether or not colors should be enabled. Possible
+# values are 'never', 'auto' (default) or 'always'
+enable-colors = 'auto'
+
+# Maximum number of calculations to store in fend's
+# history file
+max-history-size = 1024
+
+# The characters that are shown as the prompt when
+# using fend interactively
+prompt = '❯ '
+
+# Change 'C' and 'F' to refer to coulomb and farad
+# instead of degrees celsius and degrees fahrenheit
+coulomb-and-farad = false
+
+# What to do if this configuration file contains unknown
+# settings. These are the possible values:
+#  * 'warn': print a warning on startup if there are any
+#            unknown config settings (default)
+#  * 'ignore': ignore any unknown configuration settings
+unknown-settings = 'warn'
+
+# Whether to enable internet access. This is required for
+# currency conversions, where fend makes a request to
+# the UN treasury or the European Central Bank website
+# to download up-to-date exchange rates.
+enable-internet-access = true
+
+# Data source for currency exchange rates. fend supports
+# the following options:
+#   * `UN` retrieves data from the UN treasury
+#     (endpoint: https://treasury.un.org/operationalrates/xsql2XML.php)
+#   * `EU` retrieves data from the EU central bank
+#     (endpoint: https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml)
+#   * 'disabled' will disable loading of exchange rate data
+exchange-rate-source = "EU"
+
+# Decimal and thousands separator style. This can be used to switch
+# between e.g. 1,234.56 and 1.234,56.
+#
+# Possible values:
+#   * `default`: uses the default
+#   * `dot`: uses dots as decimal separator and commas as the thousands
+#       separator. This is commonly used in English.
+#   * `comma`: uses commas as decimal separator and dots as the thousands
+#       separator. This is common in European languages.
+decimal-separator-style = "dot"
+
+# This section controls the colors that are used by
+# fend. Make sure the `enable-colors` setting is
+# turned on for this to work.
+#
+# Color options:
+#   foreground: the foreground color to use
+#   bold:       whether or not to show text in bold font
+#   underline:  whether or not to underline text
+#
+# Valid colors are:
+#   * 'black', 'red', 'green', 'yellow', 'blue',
+#       'magenta', 'cyan' or 'white'
+#   * '256:n' (where `n` is a number between 0 and 255).
+#
+[colors]
+number = {}
+string = { foreground = 'green' }
+identifier = { foreground = 'white' }
+keyword = { foreground = 'blue', bold = true }
+built-in-function = { foreground = 'blue', bold = true }
+date = {}
+other = {}
+
+# You can define custom units via a `custom-units` array. If there's
+# a unit you would like to see added to fend, please consider making
+# a pull request to add it to the built-in unit definitions.
+#
+# Example syntax:
+# ```
+# [[custom-units]]
+# singular = 'mile'
+# plural = 'miles'  # plural name can be omitted if it is
+#                   # the same as the singular name
+# definition = '1609.344 meters'
+# attribute = 'allow_long_prefix'
+# ```
+#
+# If the singular and plural names are the same, you can omit
+# the `plural` setting.
+#
+# The `attribute` setting is optional. It can be set
+# to one of these values:
+#   * 'none': this unit cannot be used with prefixes (default)
+#   * 'allow-long-prefix': allow prefixes like
+#         'milli-' or 'giga-' with this unit
+#   * 'allow-short-prefix': allow abbreviated
+#         prefixes like 'm' or 'G' (for 'milli' and 'giga' respectively)
+#   * 'is-long-prefix': allow using this unit
+#         as a long prefix with another unit
+#   * 'alias': always expand this unit to its definition
+#
+# Here are some more examples of how you could define custom units:
+#
+# ```
+# [[custom-units]]
+# singular = 'milli'
+# definition = '0.001'
+# attribute = 'is_long_prefix'
+#
+# [[custom-units]]
+# singular = 'byte'
+# plural = 'bytes'
+# definition = '!' # an exclamation mark defines a new base unit
+# attribute = 'allow_long_prefix'
+# ```
+
