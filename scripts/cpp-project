@@ -13,6 +13,6 @@ echo -e "#pragma once" > include/dummy.hpp
 echo -e "int main()\n{\n\treturn 0;\n}\n" > src/main.cpp
 cp ~/.config/scripts/MIT LICENSE
 
-git add .gitignore .clang-format src include README.md meson.build LICENSE
+git add .gitignore .clang-format .clang-tidy src include README.md meson.build LICENSE
 # git commit -am "Initial Commit"
 
