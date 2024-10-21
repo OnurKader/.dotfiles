@@ -19,7 +19,7 @@ cmp.setup({
 		end,
 	},
 	completion = {
-		keyword_length = 2,
+		keyword_length = 1,
 	},
 	formatting = {
 		format = lspkind.cmp_format({
@@ -51,7 +51,13 @@ cmp.setup({
 				fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
 			end
 		end, { "i", "s" }),
-
+		["<C-j>"] = cmp.mapping(function(fallback)
+			if vim.fn["vsnip#available"](1) == 1 then
+				feedkey("<Plug>(vsnip-expand-or-jump)", "<C-j>")
+			else
+				fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+			end
+		end, { "i", "s" }),
 		["<S-Tab>"] = cmp.mapping(function()
 			if cmp.visible() then
 				cmp.select_prev_item()
@@ -62,8 +68,8 @@ cmp.setup({
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lua" },
-		{ name = "nvim_lsp" },
 		{ name = "vsnip" },
+		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "buffer" },
 		{ name = "crates" },
@@ -190,7 +196,7 @@ lspconfig["clangd"].setup({
 	capabilities = clangd_capabilities,
 	on_attach = on_attach,
 	flags = {
-		debounce_text_changes = 300,
+		debounce_text_changes = 200,
 	},
 	cmd = {
 		"clangd",
@@ -198,8 +204,11 @@ lspconfig["clangd"].setup({
 		"--pch-storage=memory",
 		"--clang-tidy", -- Look at clang-tidy options
 		"--suggest-missing-includes",
+		"--header-insertion=iwyu",
+		"--header-insertion-decorators",
 		"--cross-file-rename",
 		"--completion-style=detailed",
+		"-j=14",
 	},
 	init_options = {
 		clangdFileStatus = true,
@@ -389,7 +398,7 @@ lspconfig["pyright"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["tsserver"].setup({
+lspconfig["ts_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
@@ -422,7 +431,7 @@ lspconfig["vls"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["ruff_lsp"].setup({
+lspconfig["ruff"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
