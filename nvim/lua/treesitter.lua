@@ -18,6 +18,7 @@ require("nvim-treesitter.configs").setup({
 		"v",
 		"vim",
 		"vimdoc",
+		"xml",
 	},
 	highlight = {
 		enable = true,
@@ -34,4 +35,3 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 	},
 })
-
