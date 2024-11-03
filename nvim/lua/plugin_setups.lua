@@ -342,7 +342,7 @@ require("better_escape").setup({
 			k = "<Esc>",
 		},
 	},
-	timeout = vim.o.timeoutlen,
+	timeout = 300,
 	clear_empty_lines = false,
 })
 
@@ -361,5 +361,21 @@ require("neorg").setup({
 		["core.ui.calendar"] = {},
 		["core.itero"] = {},
 	},
+})
+
+require("feed").setup({
+	feeds = {
+		{
+			"https://neovim.io/news.xml",
+			-- name = "NeoVIM",
+			-- tags = { "vim", "news", "editor" }
+		},
+		{
+			"https://dotfyle.com/this-week-in-neovim/rss.xml",
+			-- name = "TWIN",
+			-- tags = { "vim", "news", "editor" }
+		},
+	},
+	colorscheme = "catppuccin-mocha",
 })
 
