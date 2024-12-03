@@ -24,6 +24,7 @@ popup_during_fullscreen smart
 focus_follows_mouse no
 default_orientation horizontal
 workspace_layout tabbed
+tiling_drag modifier titlebar
 
 # Define Workspaces
 set $workspace1  "1:  "
