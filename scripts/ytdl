@@ -14,4 +14,4 @@ else
 fi
 
 yt-dlp -N6 --restrict-filenames --fragment-retries=20 --embed-metadata --sponsorblock-mark all \
---download-archive="$HOME/.cache/youtube-dl/download-archive.txt" -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' $CFG "$@" && report_sync
+--download-archive="$HOME/.cache/youtube-dl/download-archive.txt" -ciwo "$OUTPUT" -f 'ba+bv[height<=1080]/best' $CFG --sleep-interval=5 "$@" && report_sync
