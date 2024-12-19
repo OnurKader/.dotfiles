@@ -15,6 +15,7 @@ vim.opt.hidden = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = "nosplit"
 vim.opt.incsearch = false
+vim.opt.messagesopt = "history:1024,wait:1024"
 vim.opt.laststatus = 3
 vim.opt.mouse = 'a'
 vim.opt.backup = false
