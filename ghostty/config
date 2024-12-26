@@ -1,0 +1,10 @@
+font-family = Hack Nerd Font Mono
+font-size = 13
+theme = catppuccin-mocha
+cursor-style-blink = false
+window-decoration = false
+gtk-single-instance = true
+gtk-tabs-location = hidden
+bold-is-bright = true
+auto-update = off
+
