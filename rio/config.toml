@@ -1,25 +1,9 @@
 
-# Editor
+# Hide the cursor while typing
 #
-# Default editor is "vi".
+# Default is `false`
 #
-# Whenever the key binding `OpenConfigEditor` is triggered it will
-# use the value of the editor along with the rio configuration path.
-editor = 'nvim'
-
-# Cursor
-#
-# Default cursor is Block
-# Other available options are: '_' and '|'
-#
-# cursor = '▇'
-# cursor = '|'
-
-# Blinking Cursor
-#
-# Default is false
-#
-blinking-cursor = false
+# hide-cursor-when-typing = false
 
 # Ignore theme selection foreground color
 #
@@ -35,7 +19,7 @@ blinking-cursor = false
 # (windows: C:\Users\USER\AppData\Local\rio\themes\dracula.toml)
 #
 # Example:
-# theme = "catppuccin-mocha"
+# theme = "dracula"
 
 # Padding-x
 #
@@ -44,28 +28,41 @@ blinking-cursor = false
 # Example:
 # padding-x = 10
 
+# Padding-y
+#
+# define y axis padding based on a format [top, left]
+# (default is [0, 0])
+#
+# Example:
+# padding-y = [30, 10]
+
 # Option as Alt
 #
-# This config only works on MacOs.
+# This config only works on MacOS.
 # Possible choices: 'both', 'left' and 'right'.
 #
 # Example:
 # option-as-alt = 'left'
+
+# Line height
+#
+# This option will apply an modifier to line-height
+# Default is `1.0`
+#
+# Example:
+# line-height = 1.2
 
 # Startup directory
 #
 # Directory the shell is started in. If this is unset the working
 # directory of the parent process will be used.
 #
-# This configuration only has effect if use-fork is disabled
+# This configuration only has effect if use-fork is disabled.
 #
 # Example:
 # working-dir = "/Users/raphael/Documents/"
 
 # Environment variables
-#
-# The example below sets fish as the default SHELL using env vars
-# please do not copy this if you do not need
 #
 # Example:
 # env-vars = []
@@ -79,12 +76,42 @@ blinking-cursor = false
 # Example:
 use-fork = true
 
+# Confirm before exiting Rio
+# Default is `true`
+#
+# confirm-before-quit = false
+
+# Cursor
+#
+# shape - Default cursor shape is 'block'
+# Other available options are: 'underline', 'beam' or 'hidden'
+#
+# blinking - Whether the cursor blinks. The default is false
+#
+# blinking-interval - Cursor update on milliseconds interval
+#
+# [cursor]
+# shape = 'block'
+# blinking = false
+# blinking-interval = 800
+
+# Editor
+#
+# Default editor on Linux and MacOS is "vi",
+# on Windows it is "notepad".
+#
+# Whenever the key binding `OpenConfigEditor` is triggered it will
+# use the value of the editor along with the rio configuration path.
+[editor]
+program = "nvim"
+args = []
+
 # Window configuration
 #
-# • width - define the intial window width.
+# • width - define the initial window width.
 #   Default: 600
 #
-# • height - define the inital window height.
+# • height - define the initial window height.
 #   Default: 400
 #
 # • mode - define how the window will be created
@@ -92,9 +119,7 @@ use-fork = true
 #     - "Maximized" window is created with maximized
 #     - "Fullscreen" window is created with fullscreen
 #
-# • background-opacity - Set background opacity
-#
-# • foreground-opacity - Set foreground opacity
+# • opacity - Set window opacity
 #
 # • blur - Set blur on the window background. Changing this config requires restarting Rio to take effect.
 #
@@ -104,11 +129,10 @@ use-fork = true
 # [window]
 # width = 600
 # height = 400
-# mode = "Windowed"
-# foreground-opacity = 1.0
-# background-opacity = 1.0
+# mode = "windowed"
+# opacity = 1.0
 # blur = false
-# decorations = "Enabled"
+# decorations = "enabled"
 
 # Renderer
 #
@@ -121,16 +145,25 @@ use-fork = true
 #   - GL: Supported on Linux/Android, and Windows and macOS/iOS via ANGLE
 #   - Vulkan: Supported on Windows, Linux/Android
 #   - DX12: Supported on Windows 10
-#   - DX11: Supported on Windows 7+
 #   - Metal: Supported on macOS/iOS
 #
-# • disable-renderer-when-unfocused: This property disable renderer processes while Rio is unfocused.
+# • disable-unfocused-render: This property disable renderer processes while Rio is unfocused.
+#
+# • level: Configure renderer level
+#   - Available options: 0 and 1.
+#       Higher the level more rendering features and computations
+#       will be done like enable font ligatures or emoji support.
+#       For more information please check the docs.
+#
+# • filters: A list of paths to RetroArch slang shaders. Might not work with OpenGL.
 #
 # Example:
 # [renderer]
-# performance = "High"
-# backend = "Automatic"
-# disable-renderer-when-unfocused = false
+# performance = "high"
+# backend = "automatic"
+# disable-unfocused-render = false
+# level = 1
+# filters = []
 
 # Keyboard
 #
@@ -151,19 +184,29 @@ use-fork = true
 # Note: You can set different font families but Rio terminal
 # will always look for regular font bounds whene
 #
-# You can also set family on root to overwritte all fonts
-# [fonts]
-#   family = "cascadiamono"
+# You can also set family on root to overwrite all fonts.
+[fonts]
+family = "Hack Nerd Font"
+size = 11.5
 #
 # You can also specify extra fonts to load
 # [fonts]
 # extras = [{ family = "Microsoft JhengHei" }]
 #
+# In case you want to specify any font feature:
+# [fonts]
+# features = ["ss02", "ss03", "ss05", "ss19"]
+#
+# Note: Font features do not have support to live reload on configuration,
+# so to reflect your changes, you will need to close and reopen Rio.
+#
+# You can also disable font hinting. Font hinting is enabled by default.
+# [fonts]
+# hinting = false
 #
 # Example:
-[fonts]
-size = 11
-family = "Hack Nerd Font"
+# [fonts]
+# size = 18
 #
 # [fonts.regular]
 # family = "cascadiamono"
@@ -204,21 +247,22 @@ family = "Hack Nerd Font"
 # Navigation
 #
 # "mode" - Define navigation mode
-#   • NativeTab (MacOs only)
-#   • CollapsedTab
+#   • NativeTab (MacOS only)
+#   • Bookmark
 #   • BottomTab
 #   • TopTab
-#   • Breadcrumb
 #   • Plain
 #
+# "hide-if-single" - Hide navigation UI if is single.
 # "clickable" - Enable click on tabs to switch.
-# "use-current-path" - Use same path whenever a new tab is created.
+# "use-current-path" - Use same path whenever a new tab is created (Note: requires `use-fork` to be set to false).
 # "color-automation" - Set a specific color for the tab whenever a specific program is running, or in a specific directory.
 #
 # Example:
 # [navigation]
-# mode = "CollapsedTab"
+# mode = "bookmark"
 # clickable = false
+# hide-if-single = true
 # use-current-path = false
 # color-automation = []
 
@@ -296,7 +340,7 @@ foreground = "#e6e3fc"
 # Bindings
 #
 # Create custom Key bindings for Rio terminal
-# More information in: raphamorim.io/rio/docs/custom-key-bindings
+# More information in: https://raphamorim.io/rio/docs/config/bindings
 #
 # Example:
 # [bindings]
@@ -306,11 +350,33 @@ foreground = "#e6e3fc"
 #   { key = "home", with = "super | shift", bytes = [27, 91, 53, 126] }
 # ]
 
+# Platform
+#
+# Rio now allows you to have different configurations per OS
+# You can write ovewrite properties like `Shell`, `Navigation`
+# and `Window`.
+#
+# Example:
+# [shell]
+# # default (in this case will be used only on MacOS)
+# program = "/bin/fish"
+# args = ["--login"]
+#
+# [platform]
+# # Microsoft Windows overwrite
+# windows.shell.program = "pwsh"
+# windows.shell.args = ["-l"]
+#
+# # Linux overwrite
+# linux.shell.program = "tmux"
+# linux.shell.args = ["new-session", "-c", "/var/www"]
+
 # Log level
 #
-# This property enables log level filter. Default is "OFF".
+# This property enables log level filter and file. The default level is "OFF" and the logs are not logged to a file as default.
 #
 # Example:
 # [developer]
 # log-level = "OFF"
+# enable-log-file = false
 
