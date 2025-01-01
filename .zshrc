@@ -282,5 +282,7 @@ vterm_printf() {
 	fi
 }
 
+# ${GHOSTTY_RESOURCES_DIR}/shell-integration/zsh/ghostty-integration
+
 # zprof
 
