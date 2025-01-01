@@ -77,12 +77,8 @@ require("lazy").setup({
 	{ "max397574/better-escape.nvim",    event = "VeryLazy" },
 	{ "michaeljsmith/vim-indent-object", event = { "BufReadPost", "BufNewFile" } },
 	{ "neovim/nvim-lspconfig",           event = { "BufReadPost", "BufNewFile" } },
-	{
-		"neo451/feed.nvim",
-		cmd = "Feed",
-	},
-	{ "numToStr/Comment.nvim", event = { "BufReadPost", "BufNewFile" } },
-	{ "nvim-lua/plenary.nvim", lazy = true },
+	{ "numToStr/Comment.nvim",           event = { "BufReadPost", "BufNewFile" } },
+	{ "nvim-lua/plenary.nvim",           lazy = true },
 	{
 		"nvim-neorg/neorg",
 		lazy = true,

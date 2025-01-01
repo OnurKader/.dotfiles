@@ -363,19 +363,3 @@ require("neorg").setup({
 	},
 })
 
-require("feed").setup({
-	feeds = {
-		{
-			"https://neovim.io/news.xml",
-			-- name = "NeoVIM",
-			-- tags = { "vim", "news", "editor" }
-		},
-		{
-			"https://dotfyle.com/this-week-in-neovim/rss.xml",
-			-- name = "TWIN",
-			-- tags = { "vim", "news", "editor" }
-		},
-	},
-	colorscheme = "catppuccin-mocha",
-})
-
