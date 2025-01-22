@@ -1,0 +1,20 @@
+[[manager.prepend_keymap]]
+on = ["d", "r"]
+run = '''shell 'dragon-drop -x "$0"' '''
+desc = "Drag and Drop a single file"
+
+[[manager.prepend_keymap]]
+on = ["d", "a"]
+run = '''shell 'dragon-drop -x -a "$@"''''
+desc = "Drag and Drop multiple files"
+
+[[manager.prepend_keymap]]
+on = "!"
+run = 'shell "$SHELL" --block'
+desc = "Open shell here"
+
+[[manager.prepend_keymap]]
+on   = "f"
+run  = "plugin jump-to-char"
+desc = "Jump to char"
+
