@@ -13,6 +13,7 @@ max_width = 939
 max_height = 1000
 image_quality = 85
 sixel_fraction = 10
+image_delay = 25
 cache_dir = "~/.cache/yazi"
 
 # Plugins
@@ -25,4 +26,21 @@ run  = "git"
 id   = "git"
 name = "*/"
 run  = "git"
+
+[[plugin.append_previewers]]
+name = "*"
+run = "hexyl"
+
+[plugin]
+prepend_previewers = [
+	# Archive previewer
+	{ mime = "application/*zip", run = "ouch" },
+	{ mime = "application/x-tar", run = "ouch" },
+	{ mime = "application/x-bzip2", run = "ouch" },
+	{ mime = "application/x-7z-compressed", run = "ouch" },
+	{ mime = "application/x-rar", run = "ouch" },
+	{ mime = "application/x-xz", run = "ouch" },
+	{ mime = "application/x-zstd-compressed-tar", run = "ouch" },
+	{ mime = "application/zstd", run = "ouch" },
+]
 

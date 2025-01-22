@@ -15,3 +15,13 @@ require("git"):setup()
 -- 	return string.format("%s %s", size and ya.readable_size(size) or "-", time)
 -- end
 
+require("relative-motions"):setup({ show_numbers="relative_absolute", show_motion = true })
+
+require("bookmarks"):setup({
+	persist = "all"
+})
+
+-- https://github.com/pirafrank/what-size.yazi
+-- https://github.com/yazi-rs/plugins/tree/main/no-status.yazi
+-- https://github.com/Reledia/glow.yazi
+
