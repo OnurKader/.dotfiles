@@ -141,6 +141,7 @@ bindsym $mod+$alt+n $exe emacs
 bindsym $mod+Shift+e $exe emacsclient -c
 bindsym $mod+Shift+t $exe $term -e emacsclient -c -nw
 bindsym $mod+Shift+v $exe $term -t "Vifm" -e vifmrun
+bindsym $mod+y $exe $term -t "Yazi" -e yazi
 
 # Move the Window Around with `vim` keys
 bindsym $mod+Shift+h move left 24
